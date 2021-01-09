@@ -1,0 +1,2 @@
+conky -c /home/dt/.config/conky/conky_left.conkyrc & sleep 1s
+conky -c /home/dt/.config/conky/conky_right.conkyrc & sleep 1s

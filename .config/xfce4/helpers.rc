@@ -1,0 +1,4 @@
+WebBrowser=firefox
+MailReader=thunderbird
+TerminalEmulator=custom-TerminalEmulator
+FileManager=Thunar

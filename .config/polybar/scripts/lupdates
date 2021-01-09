@@ -1,0 +1,3 @@
+#!/bin/bash
+
+alacritty --class="Polybar-Updates" -e yay -Syu

@@ -1,0 +1,12 @@
+# GIMP action-history
+
+(history-item "file-quit" 1)
+(history-item "layers-duplicate" 1)
+(history-item "filters-hue-saturation" 0)
+(history-item "layers-merge-layers" 0)
+(history-item "edit-copy" 1)
+(history-item "filters-colorize" 0)
+(history-item "image-crop-to-selection" 0)
+(history-item "select-all" 1)
+
+# end of action-history

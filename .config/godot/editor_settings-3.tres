@@ -1,0 +1,97 @@
+[gd_resource type="EditorSettings" load_steps=13 format=2]
+
+[sub_resource type="InputEventKey" id=1]
+control = true
+command = true
+scancode = 78
+unicode = 78
+
+[sub_resource type="InputEventKey" id=2]
+scancode = 16777224
+unicode = 16777224
+
+[sub_resource type="InputEventKey" id=3]
+control = true
+command = true
+scancode = 68
+unicode = 68
+
+[sub_resource type="InputEventKey" id=4]
+alt = true
+scancode = 16777231
+unicode = 16777231
+
+[sub_resource type="InputEventKey" id=5]
+alt = true
+scancode = 16777233
+unicode = 16777233
+
+[sub_resource type="InputEventKey" id=6]
+alt = true
+scancode = 16777232
+unicode = 16777232
+
+[sub_resource type="InputEventKey" id=7]
+control = true
+command = true
+scancode = 16777234
+unicode = 16777234
+
+[sub_resource type="InputEventKey" id=8]
+control = true
+command = true
+scancode = 16777232
+unicode = 16777232
+
+[sub_resource type="InputEventKey" id=9]
+scancode = 16777248
+unicode = 16777248
+
+[sub_resource type="InputEventKey" id=10]
+alt = true
+scancode = 70
+unicode = 70
+
+[sub_resource type="InputEventKey" id=11]
+control = true
+command = true
+scancode = 72
+unicode = 72
+
+[sub_resource type="InputEventKey" id=12]
+alt = true
+scancode = 86
+unicode = 86
+
+[resource]
+text_editor/highlighting/symbol_color = Color( 0.67, 0.785, 1, 1 )
+text_editor/highlighting/keyword_color = Color( 1, 0.44, 0.52, 1 )
+text_editor/highlighting/base_type_color = Color( 0.26, 1, 0.76, 1 )
+text_editor/highlighting/engine_type_color = Color( 0.556, 1, 0.856, 1 )
+text_editor/highlighting/user_type_color = Color( 0.778, 1, 0.928, 1 )
+text_editor/highlighting/comment_color = Color( 0.8, 0.8075, 0.8275, 0.5 )
+text_editor/highlighting/string_color = Color( 1, 0.925, 0.63, 1 )
+text_editor/highlighting/background_color = Color( 0.125, 0.14375, 0.19375, 1 )
+text_editor/highlighting/completion_background_color = Color( 0.2, 0.23, 0.31, 1 )
+text_editor/highlighting/completion_selected_color = Color( 1, 1, 1, 0.07 )
+text_editor/highlighting/completion_existing_color = Color( 1, 1, 1, 0.14 )
+text_editor/highlighting/completion_scroll_color = Color( 1, 1, 1, 0.07 )
+text_editor/highlighting/completion_font_color = Color( 0.8, 0.8075, 0.8275, 1 )
+text_editor/highlighting/text_color = Color( 0.8, 0.8075, 0.8275, 1 )
+text_editor/highlighting/line_number_color = Color( 0.8, 0.8075, 0.8275, 0.5 )
+text_editor/highlighting/safe_line_number_color = Color( 0.8, 0.969, 0.8275, 0.75 )
+text_editor/highlighting/caret_color = Color( 1, 1, 1, 1 )
+text_editor/highlighting/text_selected_color = Color( 0.1, 0.115, 0.155, 1 )
+text_editor/highlighting/brace_mismatch_color = Color( 1, 0.47, 0.42, 1 )
+text_editor/highlighting/current_line_color = Color( 1, 1, 1, 0.07 )
+text_editor/highlighting/line_length_guideline_color = Color( 0.2, 0.23, 0.31, 1 )
+text_editor/highlighting/word_highlighted_color = Color( 1, 1, 1, 0.07 )
+text_editor/highlighting/number_color = Color( 0.63, 1, 0.88, 1 )
+text_editor/highlighting/function_color = Color( 0.34, 0.7, 1, 1 )
+text_editor/highlighting/member_variable_color = Color( 0.736, 0.88, 1, 1 )
+text_editor/highlighting/mark_color = Color( 1, 0.47, 0.42, 0.3 )
+text_editor/highlighting/breakpoint_color = Color( 1, 0.47, 0.42, 1 )
+text_editor/highlighting/code_folding_color = Color( 1, 1, 1, 0.7 )
+text_editor/highlighting/search_result_color = Color( 1, 1, 1, 0.07 )
+asset_library/use_threads = true
+shortcuts = [ "file_dialog/create_folder", SubResource( 1 ), "file_dialog/delete", SubResource( 2 ), "file_dialog/focus_path", SubResource( 3 ), "file_dialog/go_back", SubResource( 4 ), "file_dialog/go_forward", SubResource( 5 ), "file_dialog/go_up", SubResource( 6 ), "file_dialog/move_favorite_down", SubResource( 7 ), "file_dialog/move_favorite_up", SubResource( 8 ), "file_dialog/refresh", SubResource( 9 ), "file_dialog/toggle_favorite", SubResource( 10 ), "file_dialog/toggle_hidden_files", SubResource( 11 ), "file_dialog/toggle_mode", SubResource( 12 ) ]

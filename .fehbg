@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+feh --no-fehbg --bg-fill '/home/dt/.config/i3/backgrounds/wallpaper.jpg'

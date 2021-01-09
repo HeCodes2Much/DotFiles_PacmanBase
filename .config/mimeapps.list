@@ -1,0 +1,5 @@
+[Default Applications]
+text/plain=vim.desktop
+
+[Added Associations]
+text/plain=vim.desktop;
