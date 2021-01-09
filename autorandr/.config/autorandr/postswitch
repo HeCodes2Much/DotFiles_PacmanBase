@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+if [ "$DESKTOP_SESSION" == "i3" ]; then
+    if ! command -v polybar &> /dev/null; then
+        echo "polybar could not be found"
+    else
+        if ! pgrep -x "polybar" > /dev/null; then
+            if ! test -f "$HOME/.config/polybar/launch.sh"; then
+                echo "$HOME/.config/polybar/launch.sh could not be found"
+            else
+                sh $HOME/.config/polybar/launch.sh
+            fi
+        else
+            echo "polybar already Running"
+        fi
+    fi
+fi
+
+if ! command -v autostart &> /dev/null; then
+    echo "autostart could not be found"
+else
+    if ! pgrep -x "autostart" > /dev/null; then
+        autostart &
+    else
+        echo "autostart already Running"
+    fi
+fi

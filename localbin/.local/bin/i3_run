@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+#------------------------------------------------------------------------------
+# Path          - /usr/bin/i3_run
+# GitHub        - https://github.com/The-Repo-Club/
+# Author        - The-Repo-Club [wayne6324@gmail.com]
+# Start on      - Sun 24 Oct 13:26:51 BST 2021
+# Modified On   - Sun 31 Oct 00:28:04 BST 2021
+#------------------------------------------------------------------------------
+
+i3_run () {
+    for terminal in "$TERMINAL" kitty alacritty terminator xfce4-terminal urxvt termit xterm termite lxterminal terminology st konsole ; do
+        if command -v "$terminal" > /dev/null 2>&1; then
+            if [ "$terminal" = "alacritty" ]; then
+                exec "$terminal" --title $1 --class $1,$1 -e "$@"
+            elif [ "$terminal" = "kitty" ]; then
+                exec "$terminal" --title=$1 --class=$1 --name=$1 -e "$@"
+            else
+                exec "$terminal" "$@"
+            fi
+        fi
+    done
+}
+
+i3_run $@

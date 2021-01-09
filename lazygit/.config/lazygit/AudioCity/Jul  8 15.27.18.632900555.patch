@@ -1,0 +1,8 @@
+--- a/modules/mod-script-pipe/CMakeLists.txt
++++ b/modules/mod-script-pipe/CMakeLists.txt
+@@ -14,5 +14,4 @@ set( DEFINES
+       wxDEBUG_LEVEL=0
+ )
+ audacity_module( mod-script-pipe "${SOURCES}" "Audacity"
+-audiocity_module( mod-script-pipe "${SOURCES}" "Audacity"
+    "${DEFINES}" "" )

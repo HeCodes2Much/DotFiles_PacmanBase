@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+sep() {
+    sep=""
+    printf "%s" "%{F#1e222a^%{B#282a36}$sep %{F-}%{B-}"
+}
+
+sep

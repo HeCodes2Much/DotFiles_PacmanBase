@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+disk() {
+    icon="  "
+
+    while IFS=' ' read F1 F2 F3 F4 F5 F6; do
+	    case $F6 in
+		    /)
+			    diskRoot=$F6': '$F4'/'$F2 ;;
+		    /home)
+			    diskHome=$F6': '$F4'/'$F2 ;;
+	    esac
+    done <<< $(df -h)
+
+    printf "%s%s%s%s\n" "%{F#1e222a}%{B#00B19F}$icon%{F-}%{B-}" "%{F#1e222a}%{B#C4C7C5} $diskRoot %{F-}%{B-}" "%{F#1e222a}%{B#00B19F}$icon%{F-}%{B-}" "%{F#1e222a}%{B#C4C7C5} $diskHome %{F-}%{B-}"
+}
+
+disk

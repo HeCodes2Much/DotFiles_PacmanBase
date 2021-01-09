@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+desktop() {
+    icon=""
+
+    if [[ ! -z "$XDG_CURRENT_DESKTOP" ]]; then
+        desktop="$XDG_CURRENT_DESKTOP"
+    elif [[ ! -z "$XDG_SESSION_DESKTOP" ]]; then
+        desktop="$XDG_SESSION_DESKTOP"
+    elif [[ ! -z "$DESKTOP_SESSION" ]]; then
+        desktop="$DESKTOP_SESSION"
+    fi
+
+    if [[ -z $desktop ]] ; then
+        id=$(xprop -root -notype _NET_SUPPORTING_WM_CHECK)
+        id=${id##* }
+        desktop=$(xprop -id "$id" -notype -len 100 -f _NET_WM_NAME 8t)
+        desktop=${desktop/*WM_NAME = }
+        desktop=${desktop/\"}
+        desktop=${desktop/\"*}
+        desktop=$(echo $desktop | sed 's/[\].*$//')
+    else
+        desktop="Can not detech desktop"
+    fi
+
+    printf " %s %s \n" "$icon" "$desktop"
+}
+
+desktop

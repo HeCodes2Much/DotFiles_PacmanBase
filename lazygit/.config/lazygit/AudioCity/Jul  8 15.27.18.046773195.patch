@@ -1,0 +1,10 @@
+--- a/modules/mod-nyq-bench/CMakeLists.txt
++++ b/modules/mod-nyq-bench/CMakeLists.txt
+@@ -13,7 +13,6 @@ set( DEFINES
+       wxDEBUG_LEVEL=0
+ )
+ audacity_module( ${TARGET} "${SOURCES}" "Audacity"
+-audiocity_module( ${TARGET} "${SOURCES}" "Audacity"
+    "${DEFINES}" "" )
+ 
+ set_target_properties( ${TARGET} PROPERTIES EXCLUDE_FROM_ALL YES )

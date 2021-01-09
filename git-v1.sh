@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ##################################################################################################################
-# Author 	: 	TheCynicalLiger
-# Website	:	https://github.com/TheCynicalLiger/
+# Author 	: 	The-Repo-Club
+# Website	:	https://github.com/The-Repo-Club/
 ##################################################################################################################
 #
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
@@ -24,7 +24,7 @@ read input
 
 # Committing to the local repository with a message containing the time details and commit text
 
-git commit -S -m "$input"
+git commit -m "$input"
 
 # Push the local files to github
 

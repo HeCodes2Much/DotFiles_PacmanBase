@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+activeWindow(){
+    window=$(xdotool getwindowfocus getwindowclassname)
+
+	printf "%s%s%s\n" "%{F#1e222a}%{B#EDB83F} %{F-}" "%{F#1e222a}%{B#C4C7C5} ${window:0:50} %{F-}" "%{F#1e222a}%{B#EDB83F}%{F-}"
+}
+
+activeWindow

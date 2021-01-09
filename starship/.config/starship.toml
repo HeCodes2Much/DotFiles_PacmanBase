@@ -1,0 +1,67 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[](green)[](purple)[](red)[](yellow)[](blue)[](cyan)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[✗](green)[✗](purple)[✗](red)[✗](yellow)[✗](blue)[✗](cyan)"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[line_break]
+disabled = false
+
+[hostname]
+ssh_only = false
+format = '[@](bold green)[$hostname]($style) '
+style = 'bold blue'
+disabled = false
+
+[username]
+format = '[\[](bold red)[$user]($style)'
+style_user = 'bold yellow'
+show_always = true
+
+[git_branch]
+symbol = " "
+format = ' [$symbol$branch]($style) '
+truncation_length = 4
+truncation_symbol = ''
+style = 'bold green'
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = '[🍒 PICKING](bold red)'
+
+[git_commit]
+format = '[\\($hash\\)]($style) [\\($tag\\)]($style)'
+commit_hash_length = 4
+tag_symbol = '🏷'
+
+[git_status]
+format='([\[$all_status$ahead_behind\]]($style))'
+conflicted = '='
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+untracked = '?'
+stashed = '$'
+modified = '!'
+staged = '[++\($count\)](green)'
+renamed = '»'
+deleted = '✘'
+style = "bold purple"
+
+[directory]
+truncation_length = 8
+truncation_symbol = '…/'
+format = '[$path]($style)[$lock_symbol]($lock_style)[\]](bold red)'
+style = 'bold red'
+read_only = '🔒'
+read_only_style= 'bold white'
+
+[cmd_duration]
+min_time = 10_000  # Show command duration over 10,000 milliseconds (= 10 sec)
+format = " took [$duration]($style)"

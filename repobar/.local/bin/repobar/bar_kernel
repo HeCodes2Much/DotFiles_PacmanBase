@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+kernel() {
+    icon=""
+
+    kernel=$(uname -r | awk '{print $1}')
+
+    printf " %s %s \n" "$icon" "$kernel"
+}
+
+kernel

@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+#------------------------------------------------------------------------------
+# Path          - /usr/bin/postcode
+# GitHub        - https://github.com/The-Repo-Club/
+# Author        - The-Repo-Club [wayne6324@gmail.com]
+# Start on      - Thurs 12 Aug 16:24:07 BST 2021
+# Modified On   - Sun 31 Oct 00:24:44 BST 2021
+#------------------------------------------------------------------------------
+
+FILE=$@
+if [ -f "$FILE" ]; then
+    isvalid=$(isutf8 $FILE)
+    if [[ -z $isvalid ]]; then
+        printf "%s exists uplading now...\n" "$FILE"
+        cat $FILE | gist -f $FILE
+    else
+        printf "%s does not have a valid UTF8 file type.\n" "$FILE"
+    fi
+else
+    printf "%s does not exists.\n" "$FILE"
+fi
+
+

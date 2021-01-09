@@ -1,0 +1,92 @@
+#!/usr/bin/env bash
+EDITOR='nvim-qt'
+
+## Reset Colors
+Reset='\e[0m'
+### Custom colors
+Purple='\e[1;35m'
+Yellow='\e[1;33m'
+Green='\e[1;32m'
+Blue='\e[1;34m'
+Cyan='\e[1;36m'
+Red='\e[1;31m'
+### Custom colors
+alias bfetch='bfetch --source ~/.config/bfetch/ascii.art --ascii_colors 7 1 2 3 5 8'
+
+#clear
+alias clear='reset && zsh'
+
+#grub update
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
+#free
+alias free='free -mt'
+
+#list
+alias l='lsd'
+alias ls='lsd'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ls -la'
+alias lt='ls --tree'
+alias lg="ls -A | egrep '^\.'"
+
+#pacman unlock
+alias unlock='sudo rm /var/lib/pacman/db.lck'
+
+### Update Repo
+alias updaterepo='updaterepo'
+alias updatereadme='updatereadme'
+
+### Check ports for current user
+alias ports='sudo netstat -tulanp'
+
+### Permissions
+alias setperm='sudo chown dt:dt'
+alias ulock='faillock --reset'
+
+### Update
+alias pacman='sudo pacman --color auto'
+alias yay='yay --color auto'
+alias update='sudo pacman -Syu'
+alias aurupdate='mkdir -p ~/.cache/pkgs && auracle update -C ~/.cache/pkgs'
+alias checkarch='pacman -Qqen >~/package_list.txt'
+alias checkaur='pacman -Qqem >~/package_list_aur.txt'
+#Cleanup orphaned packages
+alias cleanup='yay -c'
+
+# yay as aur helper - updates everything
+alias upall="yay -Fy && yay -Syu --noconfirm"
+
+#add new fonts
+alias update-fc='sudo fc-cache -fv'
+
+###Function for commands!
+function updaterepo () {
+    read -r "response?Are you sure you want to update TheRepoClub repo? [Y/n] "
+    response=${response:l} #tolower
+    if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
+        sudo echo -e "${Purple}$(whoami) ${Reset}has used the ${Cyan}updaterepo ${Reset}alias."
+        cd /mnt/500GB/.gitlabs/Arch.TheRepo.Club/
+        ./git-v1.sh $argv
+        cd "$OLDPWD"
+        echo -e "${Green} ✔ ${Yellow}TheRepoClub repo has been updated.${Green} ✔ ${Reset}"
+    fi
+    return
+}
+
+function updatereadme () {
+    read -r "response?Are you sure you want to update TheRepoClub repo readme? [Y/n] "
+    response=${response:l} #tolower
+    if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
+        sudo echo -e "${Purple}$(whoami) ${Reset}has used the ${Cyan}updatereadme ${Reset}alias."
+        cd /mnt/500GB/.gitlabs/Arch.TheRepo.Club/docs/
+        python updatereadme.py
+        cd "$OLDPWD"
+        cd /mnt/500GB/.gitlabs/Arch.TheRepo.Club/x86_64/
+        python updatereadme.py
+        cd "$OLDPWD"
+        echo -e "${Green} ✔ ${Yellow}TheRepoClub repo readme has been updated.${Green} ✔ ${Reset}"
+    fi
+    return
+}

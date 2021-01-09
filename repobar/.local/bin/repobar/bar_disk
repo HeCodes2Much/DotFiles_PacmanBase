@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+disk() {
+    icon=""
+
+    disk="$(df -h | awk 'NR==4{print $3"/"$2, $5}')"
+    printf " %s %s \\n" "$icon" "$disk"
+}
+
+disk

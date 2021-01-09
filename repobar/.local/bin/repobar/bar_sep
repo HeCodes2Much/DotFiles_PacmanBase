@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+sep() {
+    sep=""
+    printf "%s" "^c#1e222a^^b#282a36^$sep"
+}
+
+sep

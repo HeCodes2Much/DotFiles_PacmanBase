@@ -1,0 +1,40 @@
+# Comment out below or deleted the lines for things you dont want displayed!
+# You may also change the order of these if you wish too...
+display=(
+    'title'         # Daytime and name
+    'sep'           # Seperator
+    'uptime'        # Uptime
+    'hwinfo'        # Hardware Information (Header)
+    'host'          # Host (PC Model Information)
+    'cpu'           # CPU Information
+    'gpu'           # GPU Information
+    'mem'           # Memory Information
+    'res'           # Resolution Information
+    'disk'          # Disk Information (All disks installed)
+    'pinfo'         # Peripherals Information (Header)
+    'keyboard'      # Keyboard Information
+    'mouse'         # Mouse Information
+    'monitor'       # Monitor Information
+    'audio'         # Audio Information
+    'swinfo'        # Software Information (Header)
+    'distro'        # Distro Information
+    'init'          # Init Information
+    'kernel'        # Kernel Information
+    'pkgs'          # Packages Information
+    'shell'         # Shell Information
+    'term'          # Terminal Information
+    'de'            # Desktop Environment Information
+    'wm'            # Window Manager Information
+    'wmTheme'       # Window Manager Theme Information
+    'gtkTheme'      # GTK Theme Information
+    'gtkIcons'      # GTK Icons Information
+    'gtkFonts'      # GTK Fonts Information
+    'qtTheme'       # QT Theme Information
+    'qtIcons'       # QT Icons Information
+    'qtFonts'       # QT Fonts Information
+    'end'           # End (Header)
+    'blank'         # Empty Block
+    'blank'         # Empty Block
+    'color1'        # Normal Colors
+    'color2'        # Bright Colors
+)

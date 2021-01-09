@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+ram() {
+    icon=" "
+
+    ram=$(free -h | awk '/Mem:/ { print $3 }' | cut -f1 -d 'i')
+    ram=" $ram"
+
+    printf " %s %s \n" "^c#1e222a^^b#7b8047^$icon" "^c#1e222a^^b#f1fa8c^$ram"
+}
+
+ram

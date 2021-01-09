@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+#------------------------------------------------------------------------------
+# Path         - /usr/bin/editbash
+# GitHub       - https://github.com/The-Repo-Club/
+# Author       - The-Repo-Club [wayne6324@gmail.com]
+# Start On     - Sat 30 Oct 15:00:06 BST 2021
+# Modified On  - Sun 31 Oct 01:01:56 BST 2021
+#------------------------------------------------------------------------------
+
+
+Err(){
+	printf '%s\n' "$2" 1>&2
+	[ $1 -gt 0 ] && exit $1
+}
+
+File=$1
+[ -z "$File" ] && Err 1 "No file provided"
+[ -f "$File" ] || Err 1 "File doesn't exist"
+
+NewDoc=
+while IFS= read -r Line; do
+    [[ $Line == "# Modified"* ]] && Line='# Modified On  - '$( date -r "$File" )
+    NewDoc=$NewDoc$Line$'\n'
+done < "$File"
+printf '%s' "$NewDoc" > "$File"
+
+printf "%s/%s has been edited!\n" "$(pwd)" "$File"

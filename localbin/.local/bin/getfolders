@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+#------------------------------------------------------------------------------
+# Path         - /usr/bin/getfolders
+# GitHub       - https://github.com/The-Repo-Club/
+# Author       - The-Repo-Club [wayne6324@gmail.com]
+# Start On     - Sun 31 Oct 00:28:23 BST 2021
+# Modified On  - Sun 31 Oct 00:28:23 BST 2021
+#------------------------------------------------------------------------------
+
+
+folder_flag=
+all_flag=
+
+getFolderFiles() {
+    folders=$(stat -c "%n" $@/*/ 2>/dev/null)
+
+    for folder in $folders; do
+        dir=${folder%/*}     # trim everything past the last /
+        dir=${dir##*/}       # ...then remove everything before the last / remaining
+        printf '%s\n' "$dir" # demonstrate output
+    done
+}
+
+getFolderFull() {
+    folders=$(stat -c "%n" $@*/ 2>/dev/null)
+
+    for folder in $folders; do
+        printf '%s\n' "$folder" # demonstrate output
+    done
+}
+
+while true; do
+    case $1 in
+        -f|--folder)
+            folder_flag=1
+            shift
+            ;;
+        -a|--all)
+            all_flag=1
+            shift
+            ;;
+        *)
+            break
+            ;;
+    esac
+done
+
+if [[ "$folder_flag" ]]; then
+    getFolderFiles "$@"
+elif [[ "$all_flag" ]]; then
+    getFolderFull "$@"
+else
+    getFolderFiles "$PWD"
+fi

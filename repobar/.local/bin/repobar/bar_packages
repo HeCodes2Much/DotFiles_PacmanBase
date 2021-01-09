@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+packages() {
+    packages=$(pacman -Q | wc -l)
+    icon=""
+    printf " %s %s \n" "$icon" "$packages"
+}
+
+packages
+

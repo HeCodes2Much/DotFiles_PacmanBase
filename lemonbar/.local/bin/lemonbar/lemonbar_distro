@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+distro() {
+    icon=""
+
+    OS="$(lsb_release -a | grep "Distributor ID:" | sed 's/Distributor ID://g' | awk '{print $1}')"
+    
+    printf " %s %s \n" "$icon" "$OS"
+}
+
+distro

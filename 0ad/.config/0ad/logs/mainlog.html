@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Pyrogenesis Log</title>
+<style>body { background: #eee; color: black; font-family: sans-serif; } p { background: white; margin: 3px 0 3px 0; } .error { color: red; } .warning { color: blue; }</style>
+<h2>0 A.D. (0.0.25) Main log</h2>
+<p>Loading config file "config/default.cfg"</p>
+<p>Loaded config string "windowed" = "false"</p>
+<p>Loaded config string "showdetailedtooltips" = "false"</p>
+<p>Loaded config string "pauseonfocusloss" = "true"</p>
+<p>Loaded config string "persistmatchsettings" = "true"</p>
+<p>Loaded config string "multiplayerserver" = "127.0.0.1"</p>
+<p>Loaded config string "xres" = "0"</p>
+<p>Loaded config string "yres" = "0"</p>
+<p>Loaded config string "bpp" = "0"</p>
+<p>Loaded config string "display" = "0"</p>
+<p>Loaded config string "hidpi" = "false"</p>
+<p>Loaded config string "forceglversion" = "false"</p>
+<p>Loaded config string "forceglprofile" = "compatibility"</p>
+<p>Loaded config string "forceglmajorversion" = "3"</p>
+<p>Loaded config string "forceglminorversion" = "3"</p>
+<p>Loaded config string "screenshot.tiles" = "4"</p>
+<p>Loaded config string "screenshot.tilewidth" = "480"</p>
+<p>Loaded config string "screenshot.tileheight" = "270"</p>
+<p>Loaded config string "macmouse" = "false"</p>
+<p>Loaded config string "renderactors" = "true"</p>
+<p>Loaded config string "watereffects" = "true"</p>
+<p>Loaded config string "waterfancyeffects" = "false"</p>
+<p>Loaded config string "waterrealdepth" = "true"</p>
+<p>Loaded config string "waterrefraction" = "true"</p>
+<p>Loaded config string "waterreflection" = "true"</p>
+<p>Loaded config string "shadows" = "true"</p>
+<p>Loaded config string "shadowquality" = "0"</p>
+<p>Loaded config string "shadowpcf" = "true"</p>
+<p>Loaded config string "shadowscascadecount" = "1"</p>
+<p>Loaded config string "shadowscascadedistanceratio" = "1.7"</p>
+<p>Loaded config string "shadowscutoffdistance" = "300.0"</p>
+<p>Loaded config string "shadowscovermap" = "false"</p>
+<p>Loaded config string "texturequality" = "5"</p>
+<p>Loaded config string "vsync" = "false"</p>
+<p>Loaded config string "particles" = "true"</p>
+<p>Loaded config string "fog" = "true"</p>
+<p>Loaded config string "silhouettes" = "true"</p>
+<p>Loaded config string "showsky" = "true"</p>
+<p>Loaded config string "gl.checkerrorafterswap" = "false"</p>
+<p>Loaded config string "nohwcursor" = "false"</p>
+<p>Loaded config string "renderpath" = "default"</p>
+<p>Loaded config string "preferglsl" = "false"</p>
+<p>Loaded config string "gpuskinning" = "false"</p>
+<p>Loaded config string "smoothlos" = "false"</p>
+<p>Loaded config string "postproc" = "false"</p>
+<p>Loaded config string "antialiasing" = "disabled"</p>
+<p>Loaded config string "sharpening" = "disabled"</p>
+<p>Loaded config string "sharpness" = "0.3"</p>
+<p>Loaded config string "max_actor_quality" = "200"</p>
+<p>Loaded config string "variant_diversity" = "full"</p>
+<p>Loaded config string "materialmgr.quality" = "2.0"</p>
+<p>Loaded config string "materialmgr.PARALLAX_DIST.max" = "150"</p>
+<p>Loaded config string "materialmgr.PARALLAX_HQ_DIST.max" = "75"</p>
+<p>Loaded config string "materialmgr.PARALLAX_VHQ_DIST.max" = "0"</p>
+<p>Loaded config string "forcealphatest" = "false"</p>
+<p>Loaded config string "skycolor" = "0 0 0"</p>
+<p>Found config header 'adaptivefps'</p>
+<p>Loaded config string "adaptivefps.session" = "60"</p>
+<p>Loaded config string "adaptivefps.menu" = "60"</p>
+<p>Found config header 'profiler2'</p>
+<p>Loaded config string "profiler2.server" = "127.0.0.1"</p>
+<p>Loaded config string "profiler2.server.port" = "8000"</p>
+<p>Loaded config string "profiler2.server.threads" = "6"</p>
+<p>Found config header 'hotkey'</p>
+<p>Loaded config string "hotkey.exit" = (empty)</p>
+<p>Loaded config string "hotkey.cancel" = "Escape"</p>
+<p>Loaded config string "hotkey.confirm" = "Return"</p>
+<p>Loaded config string "hotkey.pause" = "Pause", "Shift+Space"</p>
+<p>Loaded config string "hotkey.screenshot" = "F2"</p>
+<p>Loaded config string "hotkey.bigscreenshot" = "Shift+F2"</p>
+<p>Loaded config string "hotkey.togglefullscreen" = "Alt+Return"</p>
+<p>Loaded config string "hotkey.screenshot.watermark" = "Alt+K"</p>
+<p>Loaded config string "hotkey.wireframe" = "Alt+Shift+W"</p>
+<p>Loaded config string "hotkey.silhouettes" = "Alt+Shift+S"</p>
+<p>Loaded config string "hotkey.summary" = "Ctrl+Tab"</p>
+<p>Loaded config string "hotkey.lobby" = "Alt+L"</p>
+<p>Loaded config string "hotkey.structree" = "Alt+Shift+T"</p>
+<p>Loaded config string "hotkey.civinfo" = "Alt+Shift+H"</p>
+<p>Loaded config string "hotkey.copy" = "Ctrl+C"</p>
+<p>Loaded config string "hotkey.paste" = "Ctrl+V"</p>
+<p>Loaded config string "hotkey.cut" = "Ctrl+X"</p>
+<p>Loaded config string "hotkey.console.toggle" = "BackQuote", "F9"</p>
+<p>Loaded config string "hotkey.fps.toggle" = "Alt+F"</p>
+<p>Loaded config string "hotkey.realtime.toggle" = "Alt+T"</p>
+<p>Loaded config string "hotkey.timeelapsedcounter.toggle" = "F12"</p>
+<p>Loaded config string "hotkey.ceasefirecounter.toggle" = (empty)</p>
+<p>Loaded config string "hotkey.chat" = "Return"</p>
+<p>Loaded config string "hotkey.teamchat" = "T"</p>
+<p>Loaded config string "hotkey.privatechat" = "L"</p>
+<p>Loaded config string "hotkey.quicksave" = "Shift+F5"</p>
+<p>Loaded config string "hotkey.quickload" = "Shift+F8"</p>
+<p>Found config header 'hotkey.camera'</p>
+<p>Loaded config string "hotkey.camera.reset" = "R"</p>
+<p>Loaded config string "hotkey.camera.follow" = "F"</p>
+<p>Loaded config string "hotkey.camera.rallypointfocus" = (empty)</p>
+<p>Loaded config string "hotkey.camera.lastattackfocus" = "Space"</p>
+<p>Loaded config string "hotkey.camera.zoom.in" = "Plus", "NumPlus"</p>
+<p>Loaded config string "hotkey.camera.zoom.out" = "Minus", "NumMinus"</p>
+<p>Loaded config string "hotkey.camera.zoom.wheel.in" = "WheelUp"</p>
+<p>Loaded config string "hotkey.camera.zoom.wheel.out" = "WheelDown"</p>
+<p>Loaded config string "hotkey.camera.rotate.up" = "Ctrl+UpArrow", "Ctrl+W"</p>
+<p>Loaded config string "hotkey.camera.rotate.down" = "Ctrl+DownArrow", "Ctrl+S"</p>
+<p>Loaded config string "hotkey.camera.rotate.cw" = "Ctrl+LeftArrow", "Ctrl+A", "Q"</p>
+<p>Loaded config string "hotkey.camera.rotate.ccw" = "Ctrl+RightArrow", "Ctrl+D", "E"</p>
+<p>Loaded config string "hotkey.camera.rotate.wheel.cw" = "Shift+WheelUp", "MouseX1"</p>
+<p>Loaded config string "hotkey.camera.rotate.wheel.ccw" = "Shift+WheelDown", "MouseX2"</p>
+<p>Loaded config string "hotkey.camera.pan" = "MouseMiddle"</p>
+<p>Loaded config string "hotkey.camera.left" = "A", "LeftArrow"</p>
+<p>Loaded config string "hotkey.camera.right" = "D", "RightArrow"</p>
+<p>Loaded config string "hotkey.camera.up" = "W", "UpArrow"</p>
+<p>Loaded config string "hotkey.camera.down" = "S", "DownArrow"</p>
+<p>Loaded config string "hotkey.camera.scroll.speed.increase" = "Ctrl+Shift+S"</p>
+<p>Loaded config string "hotkey.camera.scroll.speed.decrease" = "Ctrl+Alt+S"</p>
+<p>Loaded config string "hotkey.camera.rotate.speed.increase" = "Ctrl+Shift+R"</p>
+<p>Loaded config string "hotkey.camera.rotate.speed.decrease" = "Ctrl+Alt+R"</p>
+<p>Loaded config string "hotkey.camera.zoom.speed.increase" = "Ctrl+Shift+Z"</p>
+<p>Loaded config string "hotkey.camera.zoom.speed.decrease" = "Ctrl+Alt+Z"</p>
+<p>Found config header 'hotkey.camera.jump'</p>
+<p>Loaded config string "hotkey.camera.jump.1" = "F5"</p>
+<p>Loaded config string "hotkey.camera.jump.2" = "F6"</p>
+<p>Loaded config string "hotkey.camera.jump.3" = "F7"</p>
+<p>Loaded config string "hotkey.camera.jump.4" = "F8"</p>
+<p>Found config header 'hotkey.camera.jump.set'</p>
+<p>Loaded config string "hotkey.camera.jump.set.1" = "Ctrl+F5"</p>
+<p>Loaded config string "hotkey.camera.jump.set.2" = "Ctrl+F6"</p>
+<p>Loaded config string "hotkey.camera.jump.set.3" = "Ctrl+F7"</p>
+<p>Loaded config string "hotkey.camera.jump.set.4" = "Ctrl+F8"</p>
+<p>Found config header 'hotkey.profile'</p>
+<p>Loaded config string "hotkey.profile.toggle" = "F11"</p>
+<p>Loaded config string "hotkey.profile.save" = "Shift+F11"</p>
+<p>Found config header 'hotkey.profile2'</p>
+<p>Loaded config string "hotkey.profile2.toggle" = "Ctrl+F11"</p>
+<p>Found config header 'hotkey.selection'</p>
+<p>Loaded config string "hotkey.selection.cancel" = "Esc"</p>
+<p>Loaded config string "hotkey.selection.add" = "Shift"</p>
+<p>Loaded config string "hotkey.selection.militaryonly" = "Alt"</p>
+<p>Loaded config string "hotkey.selection.nonmilitaryonly" = "Alt+Y"</p>
+<p>Loaded config string "hotkey.selection.idleonly" = "I"</p>
+<p>Loaded config string "hotkey.selection.woundedonly" = "O"</p>
+<p>Loaded config string "hotkey.selection.remove" = "Ctrl"</p>
+<p>Loaded config string "hotkey.selection.idlebuilder" = "Semicolon"</p>
+<p>Loaded config string "hotkey.selection.idleworker" = "Period", "NumDecimal"</p>
+<p>Loaded config string "hotkey.selection.idlewarrior" = "Slash", "NumDivide"</p>
+<p>Loaded config string "hotkey.selection.idleunit" = "BackSlash"</p>
+<p>Loaded config string "hotkey.selection.offscreen" = "Alt"</p>
+<p>Found config header 'hotkey.selection.group.add'</p>
+<p>Loaded config string "hotkey.selection.group.add.0" = "Shift+0", "Shift+Num0"</p>
+<p>Loaded config string "hotkey.selection.group.add.1" = "Shift+1", "Shift+Num1"</p>
+<p>Loaded config string "hotkey.selection.group.add.2" = "Shift+2", "Shift+Num2"</p>
+<p>Loaded config string "hotkey.selection.group.add.3" = "Shift+3", "Shift+Num3"</p>
+<p>Loaded config string "hotkey.selection.group.add.4" = "Shift+4", "Shift+Num4"</p>
+<p>Loaded config string "hotkey.selection.group.add.5" = "Shift+5", "Shift+Num5"</p>
+<p>Loaded config string "hotkey.selection.group.add.6" = "Shift+6", "Shift+Num6"</p>
+<p>Loaded config string "hotkey.selection.group.add.7" = "Shift+7", "Shift+Num7"</p>
+<p>Loaded config string "hotkey.selection.group.add.8" = "Shift+8", "Shift+Num8"</p>
+<p>Loaded config string "hotkey.selection.group.add.9" = "Shift+9", "Shift+Num9"</p>
+<p>Found config header 'hotkey.selection.group.save'</p>
+<p>Loaded config string "hotkey.selection.group.save.0" = "Ctrl+0", "Ctrl+Num0"</p>
+<p>Loaded config string "hotkey.selection.group.save.1" = "Ctrl+1", "Ctrl+Num1"</p>
+<p>Loaded config string "hotkey.selection.group.save.2" = "Ctrl+2", "Ctrl+Num2"</p>
+<p>Loaded config string "hotkey.selection.group.save.3" = "Ctrl+3", "Ctrl+Num3"</p>
+<p>Loaded config string "hotkey.selection.group.save.4" = "Ctrl+4", "Ctrl+Num4"</p>
+<p>Loaded config string "hotkey.selection.group.save.5" = "Ctrl+5", "Ctrl+Num5"</p>
+<p>Loaded config string "hotkey.selection.group.save.6" = "Ctrl+6", "Ctrl+Num6"</p>
+<p>Loaded config string "hotkey.selection.group.save.7" = "Ctrl+7", "Ctrl+Num7"</p>
+<p>Loaded config string "hotkey.selection.group.save.8" = "Ctrl+8", "Ctrl+Num8"</p>
+<p>Loaded config string "hotkey.selection.group.save.9" = "Ctrl+9", "Ctrl+Num9"</p>
+<p>Found config header 'hotkey.selection.group.select'</p>
+<p>Loaded config string "hotkey.selection.group.select.0" = "0", "Num0"</p>
+<p>Loaded config string "hotkey.selection.group.select.1" = "1", "Num1"</p>
+<p>Loaded config string "hotkey.selection.group.select.2" = "2", "Num2"</p>
+<p>Loaded config string "hotkey.selection.group.select.3" = "3", "Num3"</p>
+<p>Loaded config string "hotkey.selection.group.select.4" = "4", "Num4"</p>
+<p>Loaded config string "hotkey.selection.group.select.5" = "5", "Num5"</p>
+<p>Loaded config string "hotkey.selection.group.select.6" = "6", "Num6"</p>
+<p>Loaded config string "hotkey.selection.group.select.7" = "7", "Num7"</p>
+<p>Loaded config string "hotkey.selection.group.select.8" = "8", "Num8"</p>
+<p>Loaded config string "hotkey.selection.group.select.9" = "9", "Num9"</p>
+<p>Found config header 'hotkey.gamesetup'</p>
+<p>Loaded config string "hotkey.gamesetup.mapbrowser.open" = "M"</p>
+<p>Found config header 'hotkey.session'</p>
+<p>Loaded config string "hotkey.session.kill" = "Delete", "Backspace"</p>
+<p>Loaded config string "hotkey.session.stop" = "H"</p>
+<p>Loaded config string "hotkey.session.backtowork" = "Y"</p>
+<p>Loaded config string "hotkey.session.unload" = "U"</p>
+<p>Loaded config string "hotkey.session.unloadturrets" = "U"</p>
+<p>Loaded config string "hotkey.session.leaveturret" = "U"</p>
+<p>Loaded config string "hotkey.session.move" = (empty)</p>
+<p>Loaded config string "hotkey.session.attack" = "Ctrl"</p>
+<p>Loaded config string "hotkey.session.attackmove" = "Ctrl"</p>
+<p>Loaded config string "hotkey.session.attackmoveUnit" = "Ctrl+Q"</p>
+<p>Loaded config string "hotkey.session.garrison" = "Ctrl"</p>
+<p>Loaded config string "hotkey.session.occupyturret" = "Ctrl"</p>
+<p>Loaded config string "hotkey.session.autorallypoint" = "Ctrl"</p>
+<p>Loaded config string "hotkey.session.guard" = "G"</p>
+<p>Loaded config string "hotkey.session.patrol" = "P"</p>
+<p>Loaded config string "hotkey.session.repair" = "J"</p>
+<p>Loaded config string "hotkey.session.queue" = "Shift"</p>
+<p>Loaded config string "hotkey.session.pushorderfront" = (empty)</p>
+<p>Loaded config string "hotkey.session.orderone" = "Alt"</p>
+<p>Loaded config string "hotkey.session.batchtrain" = "Shift"</p>
+<p>Loaded config string "hotkey.session.massbarter" = "Shift"</p>
+<p>Loaded config string "hotkey.session.masstribute" = "Shift"</p>
+<p>Loaded config string "hotkey.session.noconfirmation" = "Shift"</p>
+<p>Loaded config string "hotkey.session.fulltradeswap" = "Shift"</p>
+<p>Loaded config string "hotkey.session.unloadtype" = "Shift"</p>
+<p>Loaded config string "hotkey.session.deselectgroup" = "Ctrl"</p>
+<p>Loaded config string "hotkey.session.rotate.cw" = "RightBracket"</p>
+<p>Loaded config string "hotkey.session.rotate.ccw" = "LeftBracket"</p>
+<p>Loaded config string "hotkey.session.snaptoedges" = "Ctrl"</p>
+<p>Loaded config string "hotkey.session.toggledefaultformation" = (empty)</p>
+<p>Loaded config string "hotkey.session.flare" = "K"</p>
+<p>Loaded config string "hotkey.session.flareactivate" = (empty)</p>
+<p>Loaded config string "hotkey.session.showstatusbars" = "Tab"</p>
+<p>Loaded config string "hotkey.session.devcommands.toggle" = "Alt+D"</p>
+<p>Loaded config string "hotkey.session.highlightguarding" = "PageDown"</p>
+<p>Loaded config string "hotkey.session.highlightguarded" = "PageUp"</p>
+<p>Loaded config string "hotkey.session.diplomacycolors" = "Alt+X"</p>
+<p>Loaded config string "hotkey.session.toggleattackrange" = "Alt+C"</p>
+<p>Loaded config string "hotkey.session.toggleaurasrange" = "Alt+V"</p>
+<p>Loaded config string "hotkey.session.togglehealrange" = "Alt+B"</p>
+<p>Found config header 'hotkey.session.gui'</p>
+<p>Loaded config string "hotkey.session.gui.toggle" = "Alt+G"</p>
+<p>Loaded config string "hotkey.session.gui.menu.toggle" = "F10"</p>
+<p>Loaded config string "hotkey.session.gui.diplomacy.toggle" = "Ctrl+H"</p>
+<p>Loaded config string "hotkey.session.gui.barter.toggle" = "Ctrl+B"</p>
+<p>Loaded config string "hotkey.session.gui.objectives.toggle" = "Ctrl+O"</p>
+<p>Loaded config string "hotkey.session.gui.tutorial.toggle" = "Ctrl+P"</p>
+<p>Found config header 'hotkey.session.savedgames'</p>
+<p>Loaded config string "hotkey.session.savedgames.delete" = "Delete", "Backspace"</p>
+<p>Loaded config string "hotkey.session.savedgames.noconfirmation" = "Shift"</p>
+<p>Found config header 'hotkey.session.queueunit'</p>
+<p>Loaded config string "hotkey.session.queueunit.1" = "Z"</p>
+<p>Loaded config string "hotkey.session.queueunit.2" = "X"</p>
+<p>Loaded config string "hotkey.session.queueunit.3" = "C"</p>
+<p>Loaded config string "hotkey.session.queueunit.4" = "V"</p>
+<p>Loaded config string "hotkey.session.queueunit.5" = "B"</p>
+<p>Loaded config string "hotkey.session.queueunit.6" = "N"</p>
+<p>Loaded config string "hotkey.session.queueunit.7" = "M"</p>
+<p>Loaded config string "hotkey.session.queueunit.8" = "Comma"</p>
+<p>Found config header 'hotkey.session.timewarp'</p>
+<p>Loaded config string "hotkey.session.timewarp.fastforward" = "Ctrl+Space"</p>
+<p>Loaded config string "hotkey.session.timewarp.rewind" = "Shift+Backspace"</p>
+<p>Found config header 'hotkey.tab'</p>
+<p>Loaded config string "hotkey.tab.next" = "Tab", "Alt+S"</p>
+<p>Loaded config string "hotkey.tab.prev" = "Shift+Tab", "Alt+W"</p>
+<p>Found config header 'hotkey.text'</p>
+<p>Loaded config string "hotkey.text.delete.left" = "Ctrl+Backspace"</p>
+<p>Loaded config string "hotkey.text.delete.right" = "Ctrl+Del"</p>
+<p>Loaded config string "hotkey.text.move.left" = "Ctrl+LeftArrow"</p>
+<p>Loaded config string "hotkey.text.move.right" = "Ctrl+RightArrow"</p>
+<p>Found config header 'gui'</p>
+<p>Loaded config string "gui.cursorblinkrate" = "0.5"</p>
+<p>Loaded config string "gui.scale" = "1.0"</p>
+<p>Found config header 'gui.gamesetup'</p>
+<p>Loaded config string "gui.gamesetup.enabletips" = "true"</p>
+<p>Loaded config string "gui.gamesetup.assignplayers" = "everyone"</p>
+<p>Loaded config string "gui.gamesetup.aidifficulty" = "3"</p>
+<p>Loaded config string "gui.gamesetup.aibehavior" = "random"</p>
+<p>Loaded config string "gui.gamesetup.settingsslide" = "true"</p>
+<p>Found config header 'gui.loadingscreen'</p>
+<p>Loaded config string "gui.loadingscreen.progressdescription" = "false"</p>
+<p>Found config header 'gui.session'</p>
+<p>Loaded config string "gui.session.camerajump.threshold" = "40"</p>
+<p>Loaded config string "gui.session.timeelapsedcounter" = "false"</p>
+<p>Loaded config string "gui.session.ceasefirecounter" = "false"</p>
+<p>Loaded config string "gui.session.batchtrainingsize" = "5"</p>
+<p>Loaded config string "gui.session.scrollbatchratio" = "1"</p>
+<p>Loaded config string "gui.session.flarelifetime" = "6"</p>
+<p>Loaded config string "gui.session.woundedunithotkeythreshold" = "33"</p>
+<p>Loaded config string "gui.session.attackrange" = "true"</p>
+<p>Loaded config string "gui.session.aurasrange" = "true"</p>
+<p>Loaded config string "gui.session.healrange" = "true"</p>
+<p>Loaded config string "gui.session.rankabovestatusbar" = "true"</p>
+<p>Loaded config string "gui.session.experiencestatusbar" = "true"</p>
+<p>Loaded config string "gui.session.respoptooltipsort" = "0"</p>
+<p>Loaded config string "gui.session.snaptoedges" = "disabled"</p>
+<p>Loaded config string "gui.session.snaptoedgesdistancethreshold" = "15"</p>
+<p>Loaded config string "gui.session.disjointcontrolgroups" = "true"</p>
+<p>Loaded config string "gui.session.defaultformation" = "special/formations/box"</p>
+<p>Loaded config string "gui.session.formationwalkonly" = "true"</p>
+<p>Loaded config string "gui.session.howtoshownames" = "0"</p>
+<p>Found config header 'gui.session.minimap'</p>
+<p>Loaded config string "gui.session.minimap.blinkduration" = "1.7"</p>
+<p>Loaded config string "gui.session.minimap.pingduration" = "50.0"</p>
+<p>Found config header 'gui.session.notifications'</p>
+<p>Loaded config string "gui.session.notifications.attack" = "true"</p>
+<p>Loaded config string "gui.session.notifications.tribute" = "true"</p>
+<p>Loaded config string "gui.session.notifications.barter" = "true"</p>
+<p>Loaded config string "gui.session.notifications.phase" = "completed"</p>
+<p>Found config header 'gui.splashscreen'</p>
+<p>Loaded config string "gui.splashscreen.enable" = "true"</p>
+<p>Loaded config string "gui.splashscreen.version" = "0"</p>
+<p>Found config header 'gui.session.diplomacycolors'</p>
+<p>Loaded config string "gui.session.diplomacycolors.self" = "21 55 149"</p>
+<p>Loaded config string "gui.session.diplomacycolors.ally" = "86 180 31"</p>
+<p>Loaded config string "gui.session.diplomacycolors.neutral" = "231 200 5"</p>
+<p>Loaded config string "gui.session.diplomacycolors.enemy" = "150 20 20"</p>
+<p>Found config header 'joystick'</p>
+<p>Loaded config string "joystick.enable" = "false"</p>
+<p>Loaded config string "joystick.deadzone" = "8192"</p>
+<p>Found config header 'chat'</p>
+<p>Loaded config string "chat.timestamp" = "true"</p>
+<p>Found config header 'chat.session'</p>
+<p>Loaded config string "chat.session.extended" = "true"</p>
+<p>Found config header 'lobby'</p>
+<p>Loaded config string "lobby.history" = "0"</p>
+<p>Loaded config string "lobby.room" = "arena25"</p>
+<p>Loaded config string "lobby.server" = "lobby.wildfiregames.com"</p>
+<p>Loaded config string "lobby.tls" = "true"</p>
+<p>Loaded config string "lobby.verify_certificate" = "false"</p>
+<p>Loaded config string "lobby.terms_url" = "https://trac.wildfiregames.com/browser/ps/trunk/binaries/data/mods/public/gui/prelobby/common/terms/"</p>
+<p>Loaded config string "lobby.terms_of_service" = "0"</p>
+<p>Loaded config string "lobby.terms_of_use" = "0"</p>
+<p>Loaded config string "lobby.privacy_policy" = "0"</p>
+<p>Loaded config string "lobby.xpartamupp" = "wfgbot25"</p>
+<p>Loaded config string "lobby.echelon" = "echelon25"</p>
+<p>Loaded config string "lobby.buddies"</p>
+<p>Loaded config string "lobby.rememberpassword" = "true"</p>
+<p>Found config header 'lobby.columns'</p>
+<p>Loaded config string "lobby.columns.gamerating" = "false"</p>
+<p>Found config header 'lobby.stun'</p>
+<p>Loaded config string "lobby.stun.enabled" = "true"</p>
+<p>Loaded config string "lobby.stun.server" = "lobby.wildfiregames.com"</p>
+<p>Loaded config string "lobby.stun.port" = "3478"</p>
+<p>Loaded config string "lobby.stun.delay" = "200"</p>
+<p>Found config header 'mod'</p>
+<p>Loaded config string "mod.enabledmods" = "mod public"</p>
+<p>Found config header 'modio'</p>
+<p>Loaded config string "modio.public_key" = "RWTVElEmCfAMGk/jtMc2I9/ElBvoJituKdbDWqqj6D69qz2cKexU4gv+"</p>
+<p>Loaded config string "modio.disclaimer" = "0"</p>
+<p>Found config header 'modio.v1'</p>
+<p>Loaded config string "modio.v1.baseurl" = "https://api.mod.io/v1"</p>
+<p>Loaded config string "modio.v1.api_key" = "23df258a71711ea6e4b50893acc1ba55"</p>
+<p>Loaded config string "modio.v1.name_id" = "0ad"</p>
+<p>Found config header 'network'</p>
+<p>Loaded config string "network.duplicateplayernames" = "false"</p>
+<p>Loaded config string "network.lateobservers" = "everyone"</p>
+<p>Loaded config string "network.observerlimit" = "8"</p>
+<p>Loaded config string "network.observermaxlag" = "10"</p>
+<p>Loaded config string "network.autocatchup" = "true"</p>
+<p>Found config header 'overlay'</p>
+<p>Loaded config string "overlay.fps" = "false"</p>
+<p>Loaded config string "overlay.realtime" = "false"</p>
+<p>Loaded config string "overlay.netwarnings" = "true"</p>
+<p>Found config header 'profiler2'</p>
+<p>Loaded config string "profiler2.autoenable" = "false"</p>
+<p>Loaded config string "profiler2.gpu.arb.enable" = "true"</p>
+<p>Loaded config string "profiler2.gpu.ext.enable" = "true"</p>
+<p>Loaded config string "profiler2.gpu.intel.enable" = "true"</p>
+<p>Found config header 'rlinterface'</p>
+<p>Loaded config string "rlinterface.address" = "127.0.0.1:6000"</p>
+<p>Found config header 'sound'</p>
+<p>Loaded config string "sound.mastergain" = "0.9"</p>
+<p>Loaded config string "sound.musicgain" = "0.2"</p>
+<p>Loaded config string "sound.ambientgain" = "0.6"</p>
+<p>Loaded config string "sound.actiongain" = "0.7"</p>
+<p>Loaded config string "sound.uigain" = "0.7"</p>
+<p>Loaded config string "sound.mindistance" = "1"</p>
+<p>Loaded config string "sound.maxdistance" = "350"</p>
+<p>Loaded config string "sound.maxstereoangle" = "0.62"</p>
+<p>Found config header 'sound.notify'</p>
+<p>Loaded config string "sound.notify.nick" = "true"</p>
+<p>Loaded config string "sound.notify.gamesetup.join" = "false"</p>
+<p>Found config header 'tinygettext'</p>
+<p>Loaded config string "tinygettext.debug" = "false"</p>
+<p>Found config header 'userreport'</p>
+<p>Loaded config string "userreport.url_upload" = "https://feedback.wildfiregames.com/report/upload/v1/"</p>
+<p>Loaded config string "userreport.url_publication" = "https://feedback.wildfiregames.com/"</p>
+<p>Loaded config string "userreport.url_terms" = "https://trac.wildfiregames.com/browser/ps/trunk/binaries/data/mods/public/gui/userreport/Terms_and_Conditions.txt"</p>
+<p>Loaded config string "userreport.terms" = "0"</p>
+<p>Found config header 'view'</p>
+<p>Loaded config string "view.scroll.speed" = "120.0"</p>
+<p>Loaded config string "view.scroll.speed.modifier" = "1.05"</p>
+<p>Loaded config string "view.rotate.x.speed" = "1.2"</p>
+<p>Loaded config string "view.rotate.x.min" = "28.0"</p>
+<p>Loaded config string "view.rotate.x.max" = "60.0"</p>
+<p>Loaded config string "view.rotate.x.default" = "35.0"</p>
+<p>Loaded config string "view.rotate.y.speed" = "2.0"</p>
+<p>Loaded config string "view.rotate.y.speed.wheel" = "0.45"</p>
+<p>Loaded config string "view.rotate.y.default" = "0.0"</p>
+<p>Loaded config string "view.rotate.speed.modifier" = "1.05"</p>
+<p>Loaded config string "view.drag.speed" = "0.5"</p>
+<p>Loaded config string "view.zoom.speed" = "256.0"</p>
+<p>Loaded config string "view.zoom.speed.wheel" = "32.0"</p>
+<p>Loaded config string "view.zoom.min" = "50.0"</p>
+<p>Loaded config string "view.zoom.max" = "200.0"</p>
+<p>Loaded config string "view.zoom.default" = "120.0"</p>
+<p>Loaded config string "view.zoom.speed.modifier" = "1.05"</p>
+<p>Loaded config string "view.pos.smoothness" = "0.1"</p>
+<p>Loaded config string "view.zoom.smoothness" = "0.4"</p>
+<p>Loaded config string "view.rotate.x.smoothness" = "0.5"</p>
+<p>Loaded config string "view.rotate.y.smoothness" = "0.3"</p>
+<p>Loaded config string "view.near" = "2.0"</p>
+<p>Loaded config string "view.far" = "4096.0"</p>
+<p>Loaded config string "view.fov" = "45.0"</p>
+<p>Loaded config string "view.height.smoothness" = "0.5"</p>
+<p>Loaded config string "view.height.min" = "16"</p>
+<p>Cannot find config file "config/local.cfg" - ignoring</p>
+<p>Loading config file "config/user.cfg"</p>
+<p>Loaded config string "gui.gamesetup.enabletips" = "true"</p>
+<p>Loaded config string "gui.session.respoptooltipsort" = "0"</p>
+<p>Loaded config string "gui.splashscreen.enable" = "false"</p>
+<p>Loaded config string "gui.splashscreen.version" = "1627421894"</p>
+<p>Loaded config string "lobby.login" = "TheRepoClub"</p>
+<p>Loaded config string "lobby.password"</p>
+<p>Loaded config string "lobby.privacy_policy" = "b00f8ebe8ff92d10061f2934f0824376"</p>
+<p>Loaded config string "lobby.terms_of_service" = "cd813281162778ab480e4804e9ea1762"</p>
+<p>Loaded config string "lobby.terms_of_use" = "7ec8becf53dcfe438dced26936a4f39d"</p>
+<p>Loaded config string "max_actor_quality" = "200"</p>
+<p>Loaded config string "modio.disclaimer" = "3afe6d7d4ec92b87b757936664df4591"</p>
+<p>Loaded config string "multiplayerhosting.port" = "20595"</p>
+<p>Loaded config string "playername.multiplayer" = "TheRepoClub"</p>
+<p>Loaded config string "playername.singleplayer" = "dt"</p>
+<p>Loaded config string "shadowquality" = "2"</p>
+<p>Loaded config string "shadowscovermap" = "true"</p>
+<p>Loaded config string "silhouettes" = "true"</p>
+<p>Loaded config string "sound.mastergain" = "2"</p>
+<p>Loaded config string "userreport.enabledversion" = "1"</p>
+<p>Loaded config string "userreport.id"</p>
+<p>Loaded config string "userreport.terms" = "42780012b25000ce5f11a07db5b95585"</p>
+<p>Loaded config string "variant_diversity" = "full"</p>
+<p>CRenderer::Open: depth bits 24</p>
+<p>CRenderer::Open: stencil bits 8</p>
+<p>CRenderer::Open: alpha bits 0</p>
+<p>Loading config file "config/user.cfg"</p>
+<p>Loaded config string "gui.gamesetup.enabletips" = "true"</p>
+<p>Loaded config string "gui.session.respoptooltipsort" = "0"</p>
+<p>Loaded config string "gui.splashscreen.enable" = "false"</p>
+<p>Loaded config string "gui.splashscreen.version" = "1627421894"</p>
+<p>Loaded config string "lobby.login" = "TheRepoClub"</p>
+<p>Loaded config string "lobby.password"</p>
+<p>Loaded config string "lobby.privacy_policy" = "b00f8ebe8ff92d10061f2934f0824376"</p>
+<p>Loaded config string "lobby.terms_of_service" = "cd813281162778ab480e4804e9ea1762"</p>
+<p>Loaded config string "lobby.terms_of_use" = "7ec8becf53dcfe438dced26936a4f39d"</p>
+<p>Loaded config string "max_actor_quality" = "200"</p>
+<p>Loaded config string "modio.disclaimer" = "3afe6d7d4ec92b87b757936664df4591"</p>
+<p>Loaded config string "multiplayerhosting.port" = "20595"</p>
+<p>Loaded config string "playername.multiplayer" = "TheRepoClub"</p>
+<p>Loaded config string "playername.singleplayer" = "dt"</p>
+<p>Loaded config string "shadowquality" = "2"</p>
+<p>Loaded config string "shadowscovermap" = "true"</p>
+<p>Loaded config string "silhouettes" = "true"</p>
+<p>Loaded config string "sound.mastergain" = "2"</p>
+<p>Loaded config string "userreport.enabledversion" = "1"</p>
+<p>Loaded config string "userreport.id"</p>
+<p>Loaded config string "userreport.terms" = "42780012b25000ce5f11a07db5b95585"</p>
+<p>Loaded config string "variant_diversity" = "full"</p>
+<p>Shutting down profiler2 GPU mode</p>
+<p>Engine exited successfully on 2021-12-15 at 18:14:47 with 449 message(s), 0 error(s) and 0 warning(s).</p>

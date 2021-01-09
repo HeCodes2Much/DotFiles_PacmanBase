@@ -1,5 +1,0 @@
-#!/bin/bash
-
-## Created By TheCynicalTeam
-
-i3-dmenu-desktop --dmenu='instamenu -h 50 -i -l 15 -g 5 -w 1500 -c -p "Launcher" -q "Launch a app"'

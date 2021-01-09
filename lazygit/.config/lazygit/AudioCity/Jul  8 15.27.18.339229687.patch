@@ -1,0 +1,9 @@
+--- a/modules/mod-script-pipe/CMakeLists.txt
++++ b/modules/mod-script-pipe/CMakeLists.txt
+@@ -13,5 +13,6 @@ set( DEFINES
+       # debug versions of wxWidgets...even if the build is for Release.
+       wxDEBUG_LEVEL=0
+ )
++audacity_module( mod-script-pipe "${SOURCES}" "Audacity"
+ audiocity_module( mod-script-pipe "${SOURCES}" "Audacity"
+    "${DEFINES}" "" )

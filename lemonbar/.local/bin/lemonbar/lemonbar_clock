@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+DaySuffix() {
+    if [ "x`date +%-d | cut -c2`x" = "xx" ]
+    then
+        DayNum=`date +%-d`
+    else
+        DayNum=`date +%-d | cut -c2`
+    fi
+
+    CheckSpecialCase=`date +%-d`
+    case $DayNum in
+    0 )
+      echo "th" ;;
+    1 )
+      if [ "$CheckSpecialCase" = "11" ]
+      then
+        echo "th"
+      else
+        echo "st"
+      fi ;;
+    2 )
+      if [ "$CheckSpecialCase" = "12" ]
+      then
+        echo "th"
+      else
+        echo "nd"
+      fi ;;
+    3 )
+      if [ "$CheckSpecialCase" = "13" ]
+      then
+        echo "th"
+      else
+        echo "rd"
+      fi ;;
+    [4-9] )
+      echo "th" ;;
+    * )
+      return 1 ;;
+    esac
+}
+
+clock() {
+    icon_date=" "
+    icon_time=" "
+
+    date=$(date +" %-d`DaySuffix` %b %Y")
+    time=$(date +" %I:%M %P")
+
+    printf "%s%s%s%s\n" "%{F#1e222a}%{B#EDB83F}$icon_date %{F-}%{B-}" "%{F#1e222a}%{B#C4C7C5}$date %{F-}%{B-}" "%{F#1e222a}%{B#EDB83F}$icon_time %{F-}%{B-}" "%{F#1e222a}%{B#C4C7C5}$time %{F-}%{B-}"
+}
+
+clock

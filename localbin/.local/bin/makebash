@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+#------------------------------------------------------------------------------
+# Path          - /usr/bin/makebash
+# GitHub        - https://github.com/The-Repo-Club/
+# Author        - The-Repo-Club [wayne6324@gmail.com]
+# Start on      - Sat 30 Oct 15:56:33 BST 2021
+# Modified On   - Sun 31 Oct 00:27:07 BST 2021
+#------------------------------------------------------------------------------
+
+Err(){
+	printf '%s\n' "$2" 1>&2
+	[ $1 -gt 0 ] && exit $1
+}
+
+while [ "$1" ]; do
+	case $1 in
+		--repo|-r)
+			Repo=$2
+			shift;;
+		--file|-f)
+			File=$2
+			shift;;
+		-*)
+			Err 1 'Incorrect option(s) specified.' ;;
+		*)
+			break ;;
+	esac
+	shift
+done
+
+[ -z "$Repo" ] && Err 1 'Missing repo'
+[ -z "$File" ] && Err 1 'Missing file'
+[ -f "$File" ] && Err 1 'File already exists'
+
+Date=$(date)
+
+cat << EOF > "$File"
+#!/usr/bin/env bash
+
+# Path          - /usr/bin/$File
+# Author        - The-Repo-Club [wayne6324@gmail.com]
+# Github        - https://github.com/The-Repo-Club/$Repo
+# Start on      - $Date
+# Modified on   - $Date
+EOF
+
+printf "%s/%s has been created!\n" "$(pwd)" "$File"

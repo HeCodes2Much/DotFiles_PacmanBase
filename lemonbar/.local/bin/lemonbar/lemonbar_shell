@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+shell() {
+    icon=""
+
+    if [[ ! -z "$SHELL" ]]; then
+        shell="$SHELL"
+    else
+        shell="Can not detech shell"
+    fi
+
+    printf " %s %s \n" "$icon" "$shell"
+}
+
+shell

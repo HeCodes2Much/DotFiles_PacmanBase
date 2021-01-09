@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+volume_alsa() {
+
+    analog=$(pamixer --list-sinks | grep analog | awk '{ print $2 }' | sed 's/"//g')
+    hdmi=$(pamixer --list-sinks | grep hdmi | awk '{ print $2 }' | sed 's/"//g')
+
+    if [ ! -z "$analog" ]; then
+        muted=$(pamixer --sink $analog --get-volume-human | grep muted)
+        vol=$(pamixer --sink $analog --get-volume | sed 's/[^0-9]*//g')
+
+        if [ "$muted" = "muted" ]; then
+            vol_a=" ﱝ muted"
+        else
+            if [ "$vol" -ge 75 ]; then
+                vol_a="  $vol%"
+            elif [ "$vol" -ge 50 ]; then
+                vol_a=" 墳 $vol%"
+            elif [ "$vol" -ge 25 ]; then
+                vol_a=" 奔 $vol%"
+            elif [ "$vol" -ge 0 ]; then
+                vol_a=" 奄 $vol%"
+            fi
+        fi
+    fi
+
+    if [ ! -z "$hdmi" ]; then
+        muted=$(pamixer --sink $hdmi --get-volume-human | grep muted)
+        vol=$(pamixer --sink $hdmi --get-volume | sed 's/[^0-9]*//g')
+
+        if [ "$muted" = "muted" ]; then
+            vol_a=" ﱝ muted"
+        else
+            if [ "$vol" -ge 75 ]; then
+                vol_h="  $vol%"
+            elif [ "$vol" -ge 50 ]; then
+                vol_h=" 墳 $vol%"
+            elif [ "$vol" -ge 25 ]; then
+                vol_h=" 奔 $vol%"
+            elif [ "$vol" -ge 0 ]; then
+                vol_h=" 奄 $vol%"
+            fi
+        fi
+    fi
+    if [ ! -z "$vol_a" ] && [ ! -z "$vol_h" ]; then
+        icon_a="  "
+        icon_h="  "
+
+        printf "%s%s%s%s\n" "%{F#1e222a}%{B#75A4CD}$icon_a%{F-}%{B-}" "%{F#1e222a}%{B#C4C7C5}$vol_a %{F-}%{B-}" "%{F#1e222a}%{B#75A4CD}$icon_h%{F-}%{B-}" "%{F#1e222a}%{B#C4C7C5}$vol_h %{F-}%{B-}"
+    elif [ ! -z "$vol_h" ]; then
+        icon_h="  "
+
+        printf "%s%s\n" "%{F#1e222a}%{B#75A4CD}$icon_h%{F-}%{B-}" "%{F#1e222a}%{B#C4C7C5}$vol_h %{F-}%{B-}"
+    elif [ ! -z "$vol_a" ]; then
+        icon_a="  "
+
+        printf "%s%s\n" "%{F#1e222a}%{B#75A4CD}$icon_a%{F-}%{B-}" "%{F#1e222a}%{B#C4C7C5}$vol_a %{F-}%{B-}"
+    else
+        icon=" ﱝ "
+        text=" Auido Disconnected"
+        printf "%s%s%s\n" "%{F#1e222a}%{B#75A4CD}$icon%{F-}%{B-}" "%{F#1e222a}%{B#C4C7C5}$text %{F-}%{B-}" "%{F#1e222a}%{B#75A4CD}$icon%{F-}%{B-}"
+    fi
+}
+
+volume_alsa

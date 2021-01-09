@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+keyboard () {
+    icon="  "
+
+    keyboard="$(setxkbmap -query | awk '/layout/{print $2}')"
+    keyboard=" $keyboard"
+
+    printf "%s%s\n" "%{F#1e222a}%{B#6D8895}$icon%{F-}%{B-}" "%{F#1e222a}%{B#C4C7C5}$keyboard %{F-}%{B-}"
+}
+
+keyboard

@@ -1,0 +1,184 @@
+#!/usr/bin/env bash
+
+#------------------------------------------------------------------------------
+# Path         - /usr/bin/hostswitcher
+# GitHub       - https://github.com/The-Repo-Club/
+# Author       - The-Repo-Club [wayne6324@gmail.com]
+# Start On     - Sun 31 Oct 00:28:37 BST 2021
+# Modified On  - Sun 31 Oct 00:28:37 BST 2021
+#------------------------------------------------------------------------------
+
+## Script metadata
+SCRIPTNAME=${0##*/}
+VERSION="2021.10.13"
+DESCRIPTION="A bach hosts wrapper"
+AUTHOR="The-Repo-Club <wayne6324@gmail.com>"
+
+defaults() {
+    if [ -f /etc/hosts ]; then
+        if [ -f $HOME/.local/share/hosts/hosts-check ]; then
+            hostfile=$(awk 'NR==1{print $1}' $HOME/.local/share/hosts/hosts-check)
+            case $hostfile in
+                default)
+                    printf "hosts-default is the default hosts file\n"
+                ;;
+                google)
+                    printf "hosts-google is the default hosts file\n"
+                ;;
+                degoogle)
+                    printf "hosts-degoogle is the default hosts file\n"
+                ;;
+                *)
+                    printf "No such hosts file can be found\n"
+                ;;
+            esac
+        else
+            printf "No such hosts file can be found\n"
+        fi
+    else
+        if [ -f $HOME/.local/share/hosts/hosts-default ]; then
+            pkexec cp $HOME/.local/share/hosts/hosts-default /etc/hosts
+        fi
+    fi
+}
+
+sethosts() {
+    if [ -f /etc/hosts ]; then
+        if [ -f $HOME/.local/share/hosts/hosts-check ]; then
+            hostfile=$(awk 'NR==1{print $1}' $HOME/.local/share/hosts/hosts-check)
+            case $1 in
+                default*)
+                    pkexec cp $HOME/.local/share/hosts/hosts-default /etc/hosts
+                    auth=$?
+                    if [ ! $auth = 126 ]; then
+                        echo "default" > $HOME/.local/share/hosts/hosts-check
+                        printf "hosts-default will be set as the default hosts file\n"
+                        if pgrep -x "chrome" > /dev/null; then
+                            pkill chrome
+                            google-chrome-stable
+                        fi
+                    fi
+                ;;
+                google*)
+                    pkexec cp $HOME/.local/share/hosts/hosts-google /etc/hosts
+                    auth=$?
+                    if [ ! $auth = 126 ]; then
+                        echo "google" > $HOME/.local/share/hosts/hosts-check
+                        printf "hosts-google will be set as the default hosts file\n"
+                        if pgrep -x "chrome" > /dev/null; then
+                            pkill chrome
+                            google-chrome-stable
+                        fi
+                    fi
+
+                ;;
+                degoogle*)
+                    pkexec cp $HOME/.local/share/hosts/hosts-degoogle /etc/hosts
+                    auth=$?
+                    if [ ! $auth = 126 ]; then
+                        echo "degoogle" > $HOME/.local/share/hosts/hosts-check
+                        printf "hosts-degoogle will be set as the default hosts file\n"
+                        if pgrep -x "chrome" > /dev/null; then
+                            pkill chrome
+                            google-chrome-stable
+                        fi
+                    fi
+                ;;
+                *)
+                    printf "No such hosts file can be found\n"
+                ;;
+            esac
+        else
+            printf "No such hosts file can be found\n"
+        fi
+    else
+        if [ -f $HOME/.local/share/hosts/hosts-default ]; then
+            pkexec cp $HOME/.local/share/hosts/hosts-default /etc/hosts
+        fi
+    fi
+}
+
+#=== FUNCTION =================================================================
+#        Name: usage
+# Description: Prints the usage
+#==============================================================================
+
+usage() {
+
+    printf "
+    Download packages from AUR or check installed, foreign packages, if there are updates available.
+    Usage:
+        %s --default
+        %s --google
+        %s --degoogle
+        \n" "$SCRIPTNAME" "$SCRIPTNAME" "$SCRIPTNAME"
+}
+
+#=== FUNCTION =================================================================
+#        Name: version
+# Description: Prints version information
+#==============================================================================
+
+version() {
+    pacver=$($pacmanbin -V 2>/dev/null | grep -o "Pacman v.*")
+    printf "
+    %s v%s - %s
+
+    This program may be freely redistributed under
+    the terms of the GNU General Public License v3.0.
+    %s
+    \n" "$SCRIPTNAME" "$VERSION" "$DESCRIPTION" "$AUTHOR"
+    exit
+}
+
+default_flag=
+google_flag=
+degoogle_flag=
+
+if [[ $# -eq 0 ]]; then
+    defaults
+    exit 1
+fi
+
+while true; do
+    case $1 in
+        -h|--help|-\?)
+            usage
+            exit 0
+            ;;
+        -v|--version)
+            version
+            exit 0
+            ;;
+        --default)
+            default_flag=1
+            shift
+            ;;
+        --google)
+            google_flag=1
+            shift
+            ;;
+        --degoogle)
+            degoogle_flag=1
+            shift
+            ;;
+        -*)
+            error "Unknown option: $1"
+            usage
+            exit 1
+            ;;
+        *)
+            break
+            ;;
+    esac
+done
+
+if [[ "$default_flag" ]]; then
+    sethosts "default_flag"
+elif [[ "$google_flag" ]]; then
+    sethosts "google_flag"
+elif [[ "$degoogle_flag" ]]; then
+    sethosts "degoogle_flag"
+else
+    defaults
+fi

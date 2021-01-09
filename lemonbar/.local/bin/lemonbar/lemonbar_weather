@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+weather() {
+    configFile=$HOME/.config/repowm/repobar/bar_weather.ini
+
+    timestamp=$(date +%s)
+    icon=""
+    [[ -f $configFile ]] && . $configFile
+    if [ -z "$LastUsed" ] || [ -z "$Message" ]; then
+        weather=$(ansiweather | awk '{print $4 $5}')
+        printf " %s %s \n" "$icon" "$weather"
+        newtime=`expr $timestamp + 900`
+        echo -e "LastUsed=${newtime}\nMessage='${weather}'" > $configFile
+    else
+        if [ "$Message" == "weatherdata" ]; then
+            weather=$(ansiweather | awk '{print $4 $5}')
+            printf " %s %s \n" "$icon" "$weather"
+            newtime=`expr $timestamp + 900`
+            echo -e "LastUsed=${newtime}\nMessage='${weather}'" > $configFile
+        else
+            if [ "$timestamp" -ge "$LastUsed" ]; then
+                weather=$(ansiweather | awk '{print $4 $5}')
+                printf " %s %s \n" "$icon" "$weather"
+                newtime=`expr $timestamp + 900`
+                echo -e "LastUsed=${newtime}\nMessage='${weather}'" > $configFile
+            else
+                printf " %s %s \n" "$icon" "$Message"
+            fi
+        fi
+    fi
+}
+
+weather
+

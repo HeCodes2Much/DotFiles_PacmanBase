@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+feh --no-fehbg --bg-scale '/home/dt/.config/feh/backgrounds/endeavour.png'
+

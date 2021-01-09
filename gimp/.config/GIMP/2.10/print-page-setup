@@ -1,0 +1,10 @@
+[print-page-setup]
+PPDName=A5
+DisplayName=A5
+Width=148
+Height=210
+MarginTop=12.699999999999999
+MarginBottom=2.9633331987592908
+MarginLeft=2.9633331987592908
+MarginRight=2.9633419460720485
+Orientation=portrait
