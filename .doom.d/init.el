@@ -173,7 +173,7 @@
        ;;notmuch
        ;;(wanderlust +gmail)
 
-       :app
+        :app
        ;;calendar
        ;;irc               ; how neckbeards socialize
        ;;(rss +org)        ; emacs as an RSS reader
@@ -181,5 +181,4 @@
 
        :config
        ;;literate
-       (default +bindings +smartparens)
-       (global-wakatime-mode))
+       (default +bindings +smartparens))
