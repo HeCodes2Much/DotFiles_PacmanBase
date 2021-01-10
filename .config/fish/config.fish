@@ -253,10 +253,10 @@ function updatereadme
         switch $confirm
             case Y y
                 cd ~/.gitlabs/Arch.TheRepo.Club/docs/
-                python updatereadme.py
+                ruby updatereadme.rb
                 cd $dirprev[1]
                 cd ~/.gitlabs/Arch.TheRepo.Club/x86_64/
-                python updatereadme.py
+                ruby updatereadme.rb
                 cd $dirprev[1]
                 echoResponce "Arch readme has been updated."
                 return

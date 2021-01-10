@@ -1,79 +1,78 @@
-auracle
-autotiling
-bpytop
-bumblebee-status
-checkupdates+aur
-checkupdates-aur
-ckb-next
-code
-colorgrab
-gamehub
-glow
-godot
-gtk4
-guitar
-i3-cheat
-i3-maim
-i3-session
-i3-swallow
-i3lock-color
-instamenu
-instamenu-extra
-instamenu-schemas
-lib32-libxft-bgra
-libgaminggear
-libxft-bgra
-minecraft-launcher
-multimc5
-multimonitorlock
-multimonitorlock-gui
-nbteditor
-nerd-fonts-fira-code
-nerd-fonts-hack
-nerd-fonts-iosevka
-nerd-fonts-mononoki
-nerd-fonts-roboto-mono
-nerd-fonts-source-code-pro
-perl-checkupdates-aur
-perl-www-aur
-picker
-polkit-dumb-agent
-pyfetch
-python-gputil
-python-i3-py
-python-pyparted
-qt-logout
-qt5-color-widgets
-qt5-styleplugins
-qt6ct
-qt6gtk2
-recycle-cli
-roccat-tools-arvo
-roccat-tools-common
-roccat-tools-isku
-roccat-tools-iskufx
-roccat-tools-kiro
-roccat-tools-kone
-roccat-tools-koneplus
-roccat-tools-konepure
-roccat-tools-konepuremilitary
-roccat-tools-konepureoptical
-roccat-tools-konextd
-roccat-tools-konextdoptical
-roccat-tools-kova2016
-roccat-tools-kovaplus
-roccat-tools-lua
-roccat-tools-nyth
-roccat-tools-pyra
-roccat-tools-ryosmk
-roccat-tools-ryosmkfx
-roccat-tools-ryostkl
-roccat-tools-savu
-roccat-tools-skeltr
-roccat-tools-sova
-roccat-tools-suora
-roccat-tools-tyon
-siji
-touchpad-indicator
-tty-clock
-xtitle
+auracle r366.8739929-1
+autotiling 1.2-1
+bpytop 1.0.57-1
+bumblebee-status 2.1.1-1
+checkupdates+aur 1-3
+checkupdates-aur 0.04-1
+ckb-next 0.4.3-1
+colorgrab 0.3-1
+gamehub 0.16.0.1-1
+glow 1.3.0-1
+godot 3.2.3-1
+gtk4 4.0.0-1
+guitar 1.2.0-1
+i3-cheat 2021.01.01-1
+i3-maim 2021.01.01-1
+i3-session 2021.01.01-1
+i3-swallow 2021.01.01-1
+i3lock-color 2.13.c.1-1
+instamenu 2021.01.08-1
+instamenu-extra 2021.01.10-1
+instamenu-schemas 2021.01.01-1
+lib32-libxft-bgra 2.3.3.r7.7808631e-1
+libgaminggear 0.15.1-9
+libxft-bgra 2.3.3.r7.7808631e-1
+minecraft-launcher 2.2.909-1
+multimc5 0.6.11-2
+multimonitorlock 2021.01.01-1
+multimonitorlock-gui 2021.01.02-1
+nbteditor 1.3-1
+nerd-fonts-fira-code 2.1.0-2
+nerd-fonts-hack 2.1.0-3
+nerd-fonts-iosevka 2.1.0-2
+nerd-fonts-mononoki 2.1.0-2
+nerd-fonts-roboto-mono 2.1.0-1
+nerd-fonts-source-code-pro 2.1.0-2
+perl-checkupdates-aur 0.04-1
+perl-www-aur 0.22-3
+picker 2021.01.01-1
+polkit-dumb-agent 2020.12.30-1
+pyfetch 2021.01.01-1
+python-gputil 1.4.0-3
+python-i3-py 0.6.7-7
+python-pyparted 3.11.7-1
+qt-logout 2021.01.02-1
+qt5-color-widgets 2021.01.01-1
+qt5-styleplugins 5.0.0.20170311-26
+qt6ct 0.2-4
+qt6gtk2 0.1-1
+recycle-cli 2021.01.01-1
+roccat-tools-arvo 5.9.0-3
+roccat-tools-common 5.9.0-3
+roccat-tools-isku 5.9.0-3
+roccat-tools-iskufx 5.9.0-3
+roccat-tools-kiro 5.9.0-3
+roccat-tools-kone 5.9.0-3
+roccat-tools-koneplus 5.9.0-3
+roccat-tools-konepure 5.9.0-3
+roccat-tools-konepuremilitary 5.9.0-3
+roccat-tools-konepureoptical 5.9.0-3
+roccat-tools-konextd 5.9.0-3
+roccat-tools-konextdoptical 5.9.0-3
+roccat-tools-kova2016 5.9.0-3
+roccat-tools-kovaplus 5.9.0-3
+roccat-tools-lua 5.9.0-3
+roccat-tools-nyth 5.9.0-3
+roccat-tools-pyra 5.9.0-3
+roccat-tools-ryosmk 5.9.0-3
+roccat-tools-ryosmkfx 5.9.0-3
+roccat-tools-ryostkl 5.9.0-3
+roccat-tools-savu 5.9.0-3
+roccat-tools-skeltr 5.9.0-3
+roccat-tools-sova 5.9.0-3
+roccat-tools-suora 5.9.0-3
+roccat-tools-tyon 5.9.0-3
+siji 2021.01.01-1
+touchpad-indicator 2.3.2-1
+tty-clock 2.3-1
+xtitle 20190826-1

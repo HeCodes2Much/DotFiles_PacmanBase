@@ -1,12 +1,12 @@
 #InstaMenu Variables
-export EDITOR=code
-export TERMINAL=alacritty
+export EDITOR=emacs
+export TERMINAL=kitty
 export WEBBROWSER=firefox
 export FILEMANAGER=nemo
 export MAILREADER=thunderbird
-export TEXTEDITOR=code
+export TEXTEDITOR=emacs
 export HYPERVISOR=virt-manager
-export GITBROWSER=gitkraken
+export GITBROWSER=guitar
 
 #QT and GTK Variables
 export QT_QPA_PLATFORMTHEME="qt5ct"
