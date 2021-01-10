@@ -1,16 +1,11 @@
 #!/bin/bash
 
+OPENPROGRAMS=$HOME/.config/instamenu/configs/edit-configs.ini
 asksetting() {
-    echo ">>h Edit config file
-Awesome
-Bash
-i3
-Kitty
-Pacman
-Picom
-PolyBar
-xResources
-ZSH" | instamenu -c -l 10 -w -400 -i -h -1 -bw 4 -q "${1:-Search...}"
+while read line; do
+# reading each line
+echo $line
+done < $OPENPROGRAMS | instamenu -c -l 10 -w -400 -i -h -1 -bw 4 -q "${1:-Search...}"
 }
 
 LOOPSETTING="true"

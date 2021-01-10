@@ -1,19 +1,11 @@
 #!/bin/bash
 
+OPENPROGRAMS=$HOME/.config/instamenu/configs/i3-layout-switcher.ini
 asksetting() {
-    options="max
-mainLeft
-mainCenter
-mainRight
-MainMainVStack
-MainVStackMain
-VerticalTileTop
-VerticalTileBottom
-NestedRight
-SmartNestedRight"
-
-    echo ">>h Switch to a Workspace
-$options" | instamenu -c -l 10 -w -400 -i -h -1 -bw 4 -q "${1:-Search...}"
+while read line; do
+# reading each line
+echo $line
+done < $OPENPROGRAMS | instamenu -c -l 10 -w -400 -i -h -1 -bw 4 -q "${1:-Search...}"
 }
 
 while [ -n "$1" ]; do

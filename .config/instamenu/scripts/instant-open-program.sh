@@ -1,15 +1,11 @@
 #!/bin/bash
 
+OPENPROGRAMS=$HOME/.config/instamenu/configs/open-programs.ini
 asksetting() {
-    echo ">>h Run a App
-Vim
-GoDot
-gParted
-MultiMC
-Steam
-GameHub
-UbisoftConnect
-Tiled" | instamenu -c -l 10 -w -400 -i -h -1 -bw 4 -q "${1:-Search...}"
+while read line; do
+# reading each line
+echo $line
+done < $OPENPROGRAMS | instamenu -c -l 10 -w -400 -i -h -1 -bw 4 -q "${1:-Search...}"
 }
 
 LOOPSETTING="true"

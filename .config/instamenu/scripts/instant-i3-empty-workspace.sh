@@ -1,8 +1,11 @@
 #!/bin/bash
 
+OPENPROGRAMS=$HOME/.config/instamenu/configs/i3-empty-workspace.ini
 asksetting() {
-    echo ">>h Create a Workspace
-MultiMC" | instamenu -c -l 10 -w -400 -i -h -1 -bw 4 -q "${1:-Search...}"
+while read line; do
+# reading each line
+echo $line
+done < $OPENPROGRAMS | instamenu -c -l 10 -w -400 -i -h -1 -bw 4 -q "${1:-Search...}"
 }
 
 LOOPSETTING="true"
