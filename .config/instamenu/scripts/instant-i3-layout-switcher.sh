@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 OPENPROGRAMS=$HOME/.config/instamenu/configs/i3-layout-switcher.ini
 asksetting() {

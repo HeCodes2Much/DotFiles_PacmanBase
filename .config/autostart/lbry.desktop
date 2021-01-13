@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=lbry
+Comment=lbrystartup script
+Exec=/opt/LBRY/lbry --hidden
+StartupNotify=false
+Terminal=false

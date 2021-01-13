@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 OPENPROGRAMS=$HOME/.config/instamenu/configs/open-programs.ini
 asksetting() {

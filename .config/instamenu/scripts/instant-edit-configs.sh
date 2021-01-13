@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 OPENPROGRAMS=$HOME/.config/instamenu/configs/edit-configs.ini
 asksetting() {
