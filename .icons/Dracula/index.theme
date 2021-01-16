@@ -20,7 +20,39 @@ Context=Actions
 Size=22
 Type=Fixed
 
+[actions/24]
+Context=Actions
+Size=24
+Type=Fixed
 
+[actions/32]
+Context=Actions
+Size=32
+Type=Fixed
+
+[actions/16@2x]
+Context=Actions
+Size=16
+Type=Fixed
+Scale=2
+
+[actions/22@2x]
+Context=Actions
+Size=22
+Type=Fixed
+Scale=2
+
+[actions/24@2x]
+Context=Actions
+Size=24
+Type=Fixed
+Scale=2
+
+[actions/32@2x]
+Context=Actions
+Size=32
+Type=Fixed
+Scale=2
 
 
 [Apps]

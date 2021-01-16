@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+getsettings() {
+    TERMINAL=$(gsettings get org.cynicalteam.instamenu.preferences terminal | sed s/\'//g)
+    WEBBROWSER=$(gsettings get org.cynicalteam.instamenu.preferences webbrowser | sed s/\'//g)
+    FILEMANAGER=$(gsettings get org.cynicalteam.instamenu.preferences filemanager | sed s/\'//g)
+    MAILREADER=$(gsettings get org.cynicalteam.instamenu.preferences mailreader | sed s/\'//g)
+    TEXTEDITOR=$(gsettings get org.cynicalteam.instamenu.preferences texteditor | sed s/\'//g)
+    HYPERVISOR=$(gsettings get org.cynicalteam.instamenu.preferences hypervisor | sed s/\'//g)
+    GITBROWSER=$(gsettings get org.cynicalteam.instamenu.preferences gitbrowser | sed s/\'//g)
+}
+
 OPENPROGRAMS=$HOME/.config/instamenu/configs/edit-configs.ini
 asksetting() {
 while read line; do
@@ -45,5 +55,7 @@ while [ -n "$LOOPSETTING" ]; do
             echo "Program terminated." && exit 1
         ;;
     esac
-    code "$CHOICE"
+    $TEXTEDITOR "$CHOICE"
 done
+
+getsettings
