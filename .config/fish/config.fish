@@ -52,11 +52,11 @@ function pacman
 end
 
 function update
-    pacman -Syyu
+    pacman -Syu
 end
 
 function yay-update
-    yay -Syyu
+    yay -Syu
 end
 
 #clear command
