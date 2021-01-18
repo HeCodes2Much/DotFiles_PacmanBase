@@ -1,6 +1,7 @@
 auracle
 autotiling
 bpytop
+bspwm-cheat
 bumblebee-status
 checkupdates+aur
 checkupdates-aur
@@ -40,7 +41,6 @@ polkit-dumb-agent
 pyfetch
 python-gputil
 python-i3-py
-python-pyparted
 qt-logout
 qt5-color-widgets
 qt5-styleplugins

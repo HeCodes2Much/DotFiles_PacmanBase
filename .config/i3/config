@@ -16,8 +16,7 @@ set $TerminalEmulator kitty
 set $WebBrowser firefox
 set $FileManager nemo
 set $MailReader thunderbird
-set $TextEditor notepadqq
-set $EmacsEditor emacs
+set $TextEditor emacs
 set $Hypervisor virt-manager
 set $GitBrowser guitar
 
@@ -666,11 +665,6 @@ $super_b+$control+b \
 # Description: Launch $TextEditor;
 $super_b+$control+c \
     $exe $TextEditor;focus
-
-## Category: Applications;
-# Description: Launch $EmacsEditor;
-$super_b+$control+z \
-    $exe $EmacsEditor;focus
 
 #workspace 3 related
 
