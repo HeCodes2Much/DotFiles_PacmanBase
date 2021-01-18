@@ -1,5 +1,5 @@
 function fish_greeting
-    neofetch
+    bfetch -b 16/06
 end
 
 # Check ports for current user

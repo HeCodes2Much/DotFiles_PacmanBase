@@ -966,15 +966,15 @@ $super_b+minus \
 #################          active scratchpad          #################
 #######################################################################
 
-for_window [instance="(?i)dropdown"] floating enable
-for_window [instance="(?i)dropdown"] resize set 800 600
-for_window [instance="(?i)dropdown"] move scratchpad
-$exe $TerminalEmulator --title=dropdown --class=dropdown,dropdown
+for_window [instance="(?i)dropdown kitty"] floating enable
+for_window [instance="(?i)dropdown kitty"] resize set 800 600
+for_window [instance="(?i)dropdown kitty"] move scratchpad
+$exe $TerminalEmulator --title="Dropdown Kitty" --name="Dropdown Kitty" --class="Dropdown Kitty"
 
 ## Category: Scratchpad;
 # Description: Toggle $TerminalEmulator;
 $control_b+Return \
-    [instance="(?i)dropdown"] scratchpad show, move position center
+    [instance="(?i)dropdown kitty"] scratchpad show, move position center
 
 #####################################################################################################################
 #####################################################################################################################
