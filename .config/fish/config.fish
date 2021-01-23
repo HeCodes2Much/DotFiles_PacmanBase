@@ -1,5 +1,5 @@
 function fish_greeting
-    bfetch -b 16/06
+    bfetch --birthday 16/06
 end
 
 # Check ports for current user
@@ -55,8 +55,8 @@ function update
     pacman -Syu
 end
 
-function yay-update
-    yay -Syu
+function yup-update
+    yup -Syu
 end
 
 #clear command

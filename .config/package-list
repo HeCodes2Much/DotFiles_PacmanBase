@@ -21,6 +21,7 @@ i3lock-color
 instamenu
 instamenu-extra
 instamenu-schemas
+lazygit
 lib32-libxft-bgra
 libgaminggear
 libxft-bgra
@@ -35,6 +36,8 @@ nerd-fonts-iosevka
 nerd-fonts-mononoki
 nerd-fonts-roboto-mono
 nerd-fonts-source-code-pro
+opendoas
+opendoas-sudo
 perl-checkupdates-aur
 perl-www-aur
 picker
