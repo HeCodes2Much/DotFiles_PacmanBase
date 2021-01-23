@@ -19,6 +19,7 @@ set $MailReader thunderbird
 set $TextEditor emacs
 set $Hypervisor virt-manager
 set $GitBrowser guitar
+set $TextMessage telegram-desktop
 
 #####################################################################################################################
 #####################################################################################################################
@@ -579,7 +580,7 @@ assign [class="(?i)Mail|Thunderbird"]                                           
 assign [class="(?i)Minecraft*|Steam*"]                                          → $ws8
 
 # Workspace $ws9 Chat
-assign [class="(?i)Discord|Element"]                                            → $ws9
+assign [class="(?i)Telegram|Element"]                                           → $ws9
 
 # Workspace $ws0 Settings
 assign [class="(?i)Pamac-Manager|BpyTop"]                                       → $ws0
@@ -657,7 +658,7 @@ $super_b+o \
 
 ## Category: Applications;
 # Description: Launch $WebBrowser;
-$super_b+$control+b \
+$super_b+$control+f \
     $exe $WebBrowser;focus
 
 #workspace 2 related
@@ -702,7 +703,7 @@ $super_b+$control+v \
 
 ## Category: Applications;
 # Description: Launch $MailReader;
-$super_b+$control+t \
+$super_b+$control+b \
     $exe $MailReader;focus
 
 #workspace 8 related
@@ -718,6 +719,11 @@ $super_b+$control+m \
     $exe prime-run minecraft-launcher
 
 #workspace 9 related
+
+## Category: Applications;
+# Description: Launch $TextMessage;
+$super_b+$control+t \
+    $exe $TextMessage;focus
 
 ## Category: Applications;
 # Description: Launch Element;
