@@ -47,6 +47,11 @@ function lg --argument-names "filename"
 end
 
 # Update Repo
+
+function yay
+    command paru $argv
+end
+
 function pacman
     command sudo pacman $argv
 end
@@ -55,8 +60,8 @@ function update
     pacman -Syu
 end
 
-function yup-update
-    yup -Syu
+function yay-update
+    yay -Syu
 end
 
 #clear command
@@ -253,10 +258,10 @@ function updatereadme
         switch $confirm
             case Y y
                 cd ~/.gitlabs/Arch.TheRepo.Club/docs/
-                ruby updatereadme.rb
+                python updatereadme.py
                 cd $dirprev[1]
                 cd ~/.gitlabs/Arch.TheRepo.Club/x86_64/
-                ruby updatereadme.rb
+                python updatereadme.py
                 cd $dirprev[1]
                 echoResponce "Arch readme has been updated."
                 return
