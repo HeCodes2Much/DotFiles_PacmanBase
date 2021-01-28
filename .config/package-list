@@ -8,6 +8,7 @@ checkupdates+aur
 checkupdates-aur
 ckb-next
 colorgrab
+dracula-gtk-theme
 gamehub
 glow
 godot
@@ -80,4 +81,6 @@ roccat-tools-tyon
 siji
 touchpad-indicator
 tty-clock
+wmappearance
+wmappearance-gtk3
 xtitle

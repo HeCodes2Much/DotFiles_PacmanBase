@@ -1,10 +1,10 @@
-# DO NOT EDIT! This file will be overwritten by LXAppearance.
+# DO NOT EDIT! This file will be overwritten by wmappearance.
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/dt/.gtkrc-2.0.mine"
 gtk-theme-name="Dracula GTK"
 gtk-icon-theme-name="Dracula"
-gtk-font-name="Misc Termsyn 10"
+gtk-font-name="Source Code Pro 10"
 gtk-cursor-theme-name="xcursor-breeze-snow"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH
@@ -15,5 +15,5 @@ gtk-enable-event-sounds=1
 gtk-enable-input-feedback-sounds=1
 gtk-xft-antialias=1
 gtk-xft-hinting=1
-gtk-xft-hintstyle="hintfull"
+gtk-xft-hintstyle="hintslight"
 gtk-xft-rgba="rgb"
