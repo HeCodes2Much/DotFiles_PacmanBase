@@ -1,2 +1,2 @@
-#!/usr/bin/env bash
-feh --no-fehbg --bg-fill '/home/dt/.config/i3/backgrounds/wallpaper.jpg'
+#!/bin/sh
+feh --no-fehbg --bg-scale '/home/dt/.config/i3/backgrounds/manjaro.png' 
