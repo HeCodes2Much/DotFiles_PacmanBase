@@ -1,5 +1,3 @@
-export ERRFILE=/dev/null
-
 
 #QT and GTK Variables
 export QT_QPA_PLATFORMTHEME="qt5ct"

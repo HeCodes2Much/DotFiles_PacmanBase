@@ -48,10 +48,6 @@ end
 
 # Update Repo
 
-function yay
-    command paru $argv
-end
-
 function pacman
     command sudo pacman $argv
 end
