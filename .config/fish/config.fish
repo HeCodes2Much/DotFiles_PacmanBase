@@ -7,11 +7,6 @@ function ports
     sudo netstat -tulanp
 end
 
-# Do a quick speedtest
-function speedtest
-    speedtest-cli --server 2406 --simple
-end
-
 #set permissions for user
 function setperm --argument-names "filename"
     sudo chown dt:dt $filename
