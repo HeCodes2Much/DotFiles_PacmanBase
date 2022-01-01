@@ -44,12 +44,12 @@ while true ; do
 
     if [[ $number -eq 0 ]]; then
         if [[ $autolock -eq 0 ]]; then
-            xautolock -enable && notify-send -t 2400 "xautolock" "enabled"
+            xautolock -enable && notify-send -t 1400 "xautolock" "enabled"
             autolock=1
         fi
     else
         if [[ $autolock -eq 1 ]]; then
-            xautolock -disable && notify-send -t 2400 "xautolock" "disabled"
+            xautolock -disable && notify-send -t 1400 "xautolock" "disabled"
             autolock=0
         fi
     fi

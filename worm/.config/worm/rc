@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+exec ~/.fehbg  &
+
+polybar --reload main -c ~/.config/polybar/config_top.ini  &
+polybar --reload main -c ~/.config/polybar/config_bottom.ini  &
+
+exec sxhkd -c ~/.config/worm/sxhkdrc &
+
+wormc border-width 2
+
+wormc layout tiling
+wormc struts 35 35 20 20
+wormc gaps 10
+wormc frame-height 20

@@ -598,7 +598,7 @@ assign [instance="(?i)Nemo"]                                                    
 assign [instance="(?i)Aseprite|Krita"]                                              → $ws4
 
 # Workspace $ws5 Music
-assign [instance="(?i)Vlc"]                                                         → $ws5
+assign [instance="(?i)Xephyr"]                                                      → $ws5
 
 # Workspace $ws6 WebBrowser
 assign [instance="(?i)Firefox|Google-Chrome"]                                       → $ws6
@@ -798,11 +798,6 @@ $control_b+$alt+p \
 # Description: Launch $Hypervisor;
 $super_b+$control+h \
     $exe $Hypervisor;focus
-
-## Category: Applications;
-# Description: Launch $GitBrowser;
-$super_b+$control+l \
-    $exe i3_run $GitBrowser;focus
 
 # }}} applications keyboard shortcuts
 

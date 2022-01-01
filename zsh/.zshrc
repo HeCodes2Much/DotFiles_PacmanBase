@@ -36,9 +36,7 @@ if [ "$TERM" = "linux" ]; then
 fi
 
 if [ ! "$TERM" = "linux" ]; then
-    bbsif --birthday 16/06
-    # fm6000 -f ~/.config/fm6000/art
-    # bfetch --source ~/.config/bfetch/ascii.art --ascii_colors 7 1 2 3 5 8 --birthday 16/06
+    bfetch --source ~/.config/bfetch/ascii.art --ascii_colors 7 1 2 3 5 8 --birthday 16/06
 fi
 
 autoload -U compinit

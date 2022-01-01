@@ -1,21 +1,4 @@
 function fish_prompt
-    set -g fish_prompt_pwd_dir_length 3
-    # Cache exit status
-    set -l last_status $status
-
-    # Just calculate these once, to save a few cycles when displaying the prompt
-    if not set -q __fish_prompt_hostname
-        set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
-    end
-    if not set -q __fish_prompt_char
-        switch (id -u)
-            case 0
-                set -g __fish_prompt_char \u276f\u276f
-            case '*'
-                set -g __fish_prompt_char '$'
-        end
-    end
-
     # Setup colors
     #Bold Colors
     set -l bnormal (set_color -o normal)
@@ -39,6 +22,23 @@ function fish_prompt
     set -l cyan (set_color cyan)
     set -l white (set_color white)
 
+    set -g fish_prompt_pwd_dir_length 3
+    # Cache exit status
+    set -l last_status $status
+
+    # Just calculate these once, to save a few cycles when displaying the prompt
+    if not set -q __fish_prompt_hostname
+        set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
+    end
+    if not set -q __fish_prompt_char
+        switch (id -u)
+            case 0
+                set -g __fish_prompt_char \u276f\u276f
+            case '*'
+                set -g __fish_prompt_char $bgreen''$bmagenta''$bred''$byellow''$bblue''$bcyan''
+        end
+    end
+
     # Configure __fish_git_prompt
     set -g __fish_git_prompt_show_informative_status true
     set -g __fish_git_prompt_showcolorhints true
@@ -50,9 +50,8 @@ function fish_prompt
     end
 
     # Top
-    echo -n $bred"["$byellow"$USER"$bgreen"@"$bblue"$__fish_prompt_hostname"$bnormal $bred(prompt_pwd)"]"$normal
-    __fish_git_prompt
+    echo -n $bred"["$byellow"$USER"$bgreen"@"$bblue"$__fish_prompt_hostname"$bnormal $bred(prompt_pwd)"]" $normal(fish_vcs_prompt)
 
     # Bottom
-    echo -n $bmagenta$__fish_prompt_char $normal
+    echo -e "\n$__fish_prompt_char $normal"
 end
