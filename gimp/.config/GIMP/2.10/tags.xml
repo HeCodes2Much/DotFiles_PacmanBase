@@ -1795,6 +1795,9 @@
   <resource identifier="Allencon Demo" checksum="(null)">
   </resource>
 
+  <resource identifier="all-the-icons" checksum="(null)">
+  </resource>
+
   <resource identifier="Almagro Thin" checksum="(null)">
   </resource>
 
@@ -3871,6 +3874,9 @@
   <resource identifier="FightThis" checksum="(null)">
   </resource>
 
+  <resource identifier="file-icons" checksum="(null)">
+  </resource>
+
   <resource identifier="Filthy Habits" checksum="(null)">
   </resource>
 
@@ -4238,6 +4244,9 @@
   </resource>
 
   <resource identifier="GingerPeachy" checksum="(null)">
+  </resource>
+
+  <resource identifier="github-octicons" checksum="(null)">
   </resource>
 
   <resource identifier="GlazKrak Ultra-Heavy" checksum="(null)">
@@ -5618,9 +5627,6 @@
   </resource>
 
   <resource identifier="Mr.Goodbaur" checksum="(null)">
-  </resource>
-
-  <resource identifier="mtx" checksum="(null)">
   </resource>
 
   <resource identifier="Much too loud" checksum="(null)">
@@ -9220,9 +9226,6 @@
   <resource identifier="siji" checksum="(null)">
   </resource>
 
-  <resource identifier="Siji" checksum="(null)">
-  </resource>
-
   <resource identifier="Simpleman" checksum="(null)">
   </resource>
 
@@ -9971,6 +9974,9 @@
   </resource>
 
   <resource identifier="Weathered (BRK)" checksum="(null)">
+  </resource>
+
+  <resource identifier="Weather Icons" checksum="(null)">
   </resource>
 
   <resource identifier="Wellbutrin Medium" checksum="(null)">

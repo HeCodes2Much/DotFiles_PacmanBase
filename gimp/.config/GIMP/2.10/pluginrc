@@ -4313,7 +4313,7 @@
         (proc-arg 13 "image" "Input image")
         (proc-arg 16 "drawable" "Input drawable (unused)")
         (proc-arg 13 "result" "Resulting image")))
-(plug-in-def "${gimp_plug_in_dir}/plug-ins/file-jxl/file-jxl" 1635546066
+(plug-in-def "${gimp_plug_in_dir}/plug-ins/file-jxl/file-jxl" 1640434877
     (proc-def "file-jxl-load" 1
          "Loads JPEG XL image files"
          "Loads JPEG XL image files"
@@ -4352,7 +4352,7 @@
         (proc-arg 16 "drawable" "Drawable to save")
         (proc-arg 4 "filename" "The name of the file to save")
         (proc-arg 4 "raw-filename" "The name of the file to save")))
-(plug-in-def "${gimp_dir}/plug-ins/webexport" 1635965668
+(plug-in-def "${gimp_dir}/plug-ins/webexport" 1640928050
     (proc-def "file-web-export" 1
          "Optimize & save image for web"
          "Optimize image for web."
@@ -4369,7 +4369,7 @@
         (proc-arg 13 "image" "Input image")
         (proc-arg 16 "drawable" "Input drawable"))
     (locale-def "gimp20-save-for-web" "${gimp_installation_dir}/share/locale"))
-(plug-in-def "${gimp_dir}/plug-ins/wavelet-denoise" 1635965668
+(plug-in-def "${gimp_dir}/plug-ins/wavelet-denoise" 1640928050
     (proc-def "plug-in-wavelet-denoise" 1
          "Removes noise in the image using wavelets."
          "This plugin allows the separate denoising of image channels in multiple color spaces using wavelets."
@@ -4386,7 +4386,7 @@
         (proc-arg 13 "image" "Input image")
         (proc-arg 16 "drawable" "Input drawable"))
     (locale-def "gimp20-wavelet-denoise-plug-in" "${gimp_installation_dir}/share/locale"))
-(plug-in-def "${gimp_dir}/plug-ins/streak" 1635965668
+(plug-in-def "${gimp_dir}/plug-ins/streak" 1640928050
     (proc-def "plug_in_streak" 1
          "Streak image creation"
          "This plug-in creates a streak-image from a film. Width and position of the slit are selectable. Position default is the center of the image."
@@ -4405,7 +4405,7 @@
         (proc-arg 0 "slit-position" "Slit position")
         (proc-arg 0 "slit-width" "Slit Width")
         (proc-arg 0 "vertical" "vertical slit? (0, 1)")))
-(plug-in-def "${gimp_dir}/plug-ins/separate_import" 1635965668
+(plug-in-def "${gimp_dir}/plug-ins/separate_import" 1640928050
     (proc-def "plug_in_separate_import" 1
          "Import CMYK TIFF image"
          "Load the CMYK TIFF image, and generate four layers as pseudo C/M/Y/K channels.\nTo convert to single-layered RGB image, try to use the \"plug-in-separate-proof\" procedure."
@@ -4422,7 +4422,7 @@
         (proc-arg 4 "filename" "Filename")
         (proc-arg 13 "new-image" "Separated image"))
     (locale-def "gimp20-separate"))
-(plug-in-def "${gimp_dir}/plug-ins/separate" 1635965668
+(plug-in-def "${gimp_dir}/plug-ins/separate" 1640928050
     (proc-def "plug_in_separate_separate" 1
          "Generate CMYK separations"
          "Separate performs CMYK colour separation of an image, into the four layers."
@@ -4567,7 +4567,7 @@
         (proc-arg 0 "compression" "Compress pixel data if available (TRUE, FALSE)")
         (proc-arg 19 "vectors" "Clipping path or -1"))
     (locale-def "gimp20-separate"))
-(plug-in-def "${gimp_dir}/plug-ins/plug_in_lqr_iter" 1635965668
+(plug-in-def "${gimp_dir}/plug-ins/plug_in_lqr_iter" 1640928050
     (proc-def "plug-in-lqr-Iterator" 1
          "This procedure calculates the modified values for one iterationstep for the call of plug-in-lqr"
          ""
@@ -4583,7 +4583,7 @@
         (proc-arg 0 "total-steps" "total number of steps (# of layers-1 to apply the related plug-in)")
         (proc-arg 3 "current-step" "current (for linear iterations this is the layerstack position, otherwise some value inbetween)")
         (proc-arg 0 "len-struct" "length of stored data structure with id is equal to the plug_in  proc_name")))
-(plug-in-def "${gimp_dir}/plug-ins/gimpmask" 1635965668
+(plug-in-def "${gimp_dir}/plug-ins/gimpmask" 1640928050
     (proc-def "plug_in_gimpmask" 1
          "GIMP MASK"
          "GIMP MASK"
@@ -4602,7 +4602,7 @@
         (proc-arg 0 "mask-type" "mask type [0:CP 1:FL 2:Q0 3:MEKO]")
         (proc-arg 4 "cp-code" "CP code")
         (proc-arg 0 "direction" "MEKO direction [0:PLUS 1:MINUS]")))
-(plug-in-def "${gimp_dir}/plug-ins/gimp-lqr-plugin" 1635965668
+(plug-in-def "${gimp_dir}/plug-ins/gimp-lqr-plugin" 1640928050
     (proc-def "plug-in-lqr" 1
          "scaling which keeps layer features (or removes them)"
          "Resize a layer preserving (or removing) content"
@@ -4644,7 +4644,7 @@
         (proc-arg 4 "selected-layer-name" "Selected layer name (for noninteractive mode only)"))
     (locale-def "gimp20-lqr-plugin" "${gimp_installation_dir}/share/locale")
     (help-def "plug-in-lqr-help" "file:///usr/share/gimp-lqr-plugin/help"))
-(plug-in-def "${gimp_dir}/plug-ins/fix-ca" 1635965668
+(plug-in-def "${gimp_dir}/plug-ins/fix-ca" 1640928050
     (proc-def "Fix-CA" 1
          "Fix-CA Version 3.0.2"
          "Fix chromatic aberration caused by imperfect lens.  It works by shifting red and blue components of image pixels in the specified amounts."
@@ -4667,7 +4667,7 @@
         (proc-arg 3 "x-red" "Red amount (x axis)")
         (proc-arg 3 "y-blue" "Blue amount (y axis)")
         (proc-arg 3 "y-red" "Red amount (y axis)")))
-(plug-in-def "${gimp_dir}/plug-ins/dbp" 1635965668
+(plug-in-def "${gimp_dir}/plug-ins/dbp" 1640928050
     (proc-def "extension_dbp" 2
          "Batch processes multiple images"
          "DBP performs simple batch processing of images."

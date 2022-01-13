@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-feh --no-fehbg --bg-scale '/home/dt/.config/feh/backgrounds/therepoclub_dracula2.png'
+feh --no-fehbg --bg-scale "$HOME/.config/feh/backgrounds/therepoclub_dracula2.png"

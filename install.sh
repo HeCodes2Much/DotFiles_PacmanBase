@@ -11,7 +11,7 @@ sync_flag=
 unsync_flag=
 
 syncFolders() {
-    folders=$(getfolders)
+    folders=$(./localbin/.local/bin/getfolders)
 
     for folder in $folders; do
         stow -St ~ $folder && echo "$folder has been synced"

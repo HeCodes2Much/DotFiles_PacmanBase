@@ -133,6 +133,7 @@ flock -x -n "$session_lock_fd" ||
 declare -A last_data_sel
 declare -A updated_sel
 
+command -v clipnotify >/dev/null 2>&1 || die 2 "clipnotify not in PATH"
 command -v xdotool >/dev/null 2>&1 && has_xdotool=1
 
 if [[ $CM_IGNORE_WINDOW ]] && ! (( has_xdotool )); then
@@ -146,6 +147,21 @@ trap sig_enable USR2
 trap 'trap - INT TERM EXIT; kill_background_jobs; exit 0' INT TERM EXIT
 
 while true; do
+    if ! (( CM_ONESHOT )); then
+        # Make sure we're interruptible for the sig_{en,dis}able traps
+        clipnotify &
+        _CM_CLIPNOTIFY_PID="$!"
+        wait "$_CM_CLIPNOTIFY_PID"
+    fi
+
+    # Trapping a signal breaks the `wait`
+    if (( _CM_TRAP )); then
+        # Prevent spawning another clipnotify job restarting the loop
+        kill_background_jobs
+        unset _CM_TRAP
+        continue
+    fi
+
     if (( _CM_DISABLED )); then
         # The first one will just be from interrupting `wait`, so don't print
         if (( _CM_FIRST_DISABLE )); then

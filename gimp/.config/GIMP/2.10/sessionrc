@@ -24,7 +24,7 @@
     (gimp-dock
         (side right)
         (book
-            (current-page 0)
+            (current-page 2)
             (dockable "gimp-color-editor"
                 (tab-style automatic)
                 (aux-info

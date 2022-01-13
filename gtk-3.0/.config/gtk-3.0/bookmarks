@@ -1,6 +1,6 @@
 file:///mnt/500GB/.aur .aur
-file:///home/dt/.cache .cache
-file:///home/dt/.config .config
+file:///home/repo/.cache .cache
+file:///home/repo/.config .config
 file:///mnt/500GB/.gitlabs .gitlabs
-file:///home/dt/.local .local
+file:///home/repo/.local .local
 file:///mnt/500GB/.makpkg .makpkg

@@ -1,19 +1,21 @@
-# Update Repo
-
+# pacman functions
 function pacman
-    command sudo pacman $argv
+    if [ "$argv" != "-c" ]
+        command sudo pacman --color auto $argv
+    else
+        if pacman -Qttdq
+            pacman -Qttdq | pacman -Rns -
+        end
+    end
 end
 
-function yay
-    command yay --color auto $argv
-end
-
+# Update Repo
 function update
     pacman -Syu
 end
 
 function upall
-    yay -Fy && yay -Syu --noconfirm
+    pacman -Fy && pacman -Syu --noconfirm
 end
 
 #check aur and arch packages

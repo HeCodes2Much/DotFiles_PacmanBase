@@ -536,6 +536,7 @@ $alt_b+d \
 
 # resize {{{
 
+## Category: i3-Windows;
 # Description: Resize window (you can also use the mouse for that);
 $super_b+r \
     mode "$resize"
@@ -888,11 +889,6 @@ bindsym XF86MonBrightnessDown $exe xbacklight -dec 10 # decrease screen brightne
 # Description: Toggle Polybar;
 $super_b+b \
     $exe ~/.config/polybar/scripts/toggle_bar.sh
-
-## Category: Main Keybinds;
-# Description: Toggle i3bar;
-# $super_b+b \
-#     bar mode toggle
 
 #####################################################################################################################
 #################                          border control                                           #################
