@@ -1,12 +1,20 @@
 #!/usr/bin/env bash
-
-#------------------------------------------------------------------------------
-# Path          - /usr/bin/i3_run
-# GitHub        - https://github.com/The-Repo-Club/
-# Author        - The-Repo-Club [wayne6324@gmail.com]
-# Start on      - Sun 24 Oct 13:26:51 BST 2021
-# Modified On   - Sun 31 Oct 00:28:04 BST 2021
-#------------------------------------------------------------------------------
+# -*-coding:utf-8 -*-
+# Auto updated?
+#   Yes
+#File :
+#   i3_run
+#Author :
+#   The-Repo-Club [wayne6324:gmail.com]
+#
+# Created:
+#   Sun 19 October 2022, 01:26:51 PM [GMT]
+# Last edited:
+#   Wed 19 January 2022, 03:06:59 PM [GMT]
+#
+# Description:
+#   <Todo>
+#
 
 i3_run () {
     for terminal in "$TERMINAL" kitty alacritty terminator xfce4-terminal urxvt termit xterm termite lxterminal terminology st konsole ; do

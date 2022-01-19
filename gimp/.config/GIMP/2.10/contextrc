@@ -1,6 +1,6 @@
 # GIMP user context
 
-(tool "gimp-zoom-tool")
+(tool "gimp-scale-tool")
 (paint-info "gimp-paintbrush")
 (foreground (color-rgb 0.49411764705882355 0.49411764705882355 1))
 (brush "2. Hardness 025")

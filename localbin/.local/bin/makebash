@@ -1,12 +1,23 @@
 #!/usr/bin/env bash
+# -*-coding:utf-8 -*-
+# Auto updated?
+#   Yes
+#File :
+#   makebash
+#Author :
+#   The-Repo-Club [wayne6324:gmail.com]
+#Github :
+#   https://github.com/The-Repo-Club/
+#
+# Created:
+#   Wed 19 January 2022, 05:34:21 PM [GMT]
+# Last edited:
+#   Wed 19 January 2022, 05:34:27 PM [GMT]
+#
+# Description:
+#   <Todo>
+#
 
-#------------------------------------------------------------------------------
-# Path          - /usr/bin/makebash
-# GitHub        - https://github.com/The-Repo-Club/
-# Author        - The-Repo-Club [wayne6324@gmail.com]
-# Start on      - Sat 30 Oct 15:56:33 BST 2021
-# Modified On   - Sun 31 Oct 00:27:07 BST 2021
-#------------------------------------------------------------------------------
 
 Err(){
 	printf '%s\n' "$2" 1>&2

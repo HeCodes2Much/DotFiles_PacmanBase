@@ -1,4 +1,5 @@
 #i3 config file (v4)
+#### vscode-fold=1
 ####
 ####   _____ _          ____                   ____ _       _
 ####  |_   _| |__   ___|  _ \ ___ _ __   ___  / ___| |_   _| |__
@@ -13,7 +14,7 @@ workspace_auto_back_and_forth yes
 #############  Set Custom Variables ##############
 ##################################################
 
-# variables {{{
+# {{{ Variables
 set $TerminalEmulator kitty
 set $WebBrowserB google-chrome-stable
 set $WebBrowserF firefox
@@ -22,13 +23,13 @@ set $MailReader thunderbird
 set $TextEditor code
 set $Hypervisor virtualbox
 set $GitBrowser lazygit
-# }}} variables
+# }}} Variables
 
 #####################################################################################################################
 #################                          Define the variables/keys                             #################
 #####################################################################################################################
 
-# definitions  {{{
+# {{{ Definitions
 # Key to rule them all : Super(Windows) or Alt key?
 
 # Mod4 = Windows or Super key on keyboard
@@ -46,6 +47,7 @@ set $shift_b    bindsym Shift
 set $exe        exec --no-startup-id
 set $exe_always exec_always --no-startup-id
 set $print_b    bindsym Print
+
 
 #####################################################################################################################
 #################                          Define the movements keys - variables                    #################
@@ -78,7 +80,7 @@ set $ws0 "10: Settings"
 
 # }}} definitions
 
-# workspaces  {{{
+# {{{ Workspaces
 workspace $ws1 output $firstMonitor
 workspace $ws2 output $firstMonitor
 workspace $ws3 output $firstMonitor
@@ -243,13 +245,13 @@ $super_b+$shift+9 \
 $super_b+$shift+0 \
     move container to workspace $ws0; workspace $ws0
 
-# }}} workspaces
+# }}} Workspaces
 
 #####################################################################################################################
 #################                                  Main Keybinds                                    #################
 #####################################################################################################################
 
-# cheat {{{
+# {{{ Cheat
 
 ## Category: Main Keybinds;
 # Description: Show Keybinds;
@@ -257,13 +259,13 @@ $super_b+F1 \
     $exe i3-cheat
     #$exe ~/.config/i3/scripts/keybinds.sh
 
-# }}} cheat
+# }}} Cheat
 
 #####################################################################################################################
 #################                        i3 menu's in archlinux                                     #################
 #####################################################################################################################
 
-# menus {{{
+# {{{ Menus
 
 ## Category: Menus;
 # Description: Edit Configs;
@@ -334,13 +336,13 @@ $super_b+p \
 $super_b+s \
     $exe repomenue_smartrun
 
-# }}} menus
+# }}} Menus
 
 #####################################################################################################################
 #################                          how to exit, logoff, suspend, ...                        #################
 #####################################################################################################################
 
-# power {{{
+# {{{ Power
 
 ## Category:  Main Keybinds;
 # Description: Exit / Quit / Restart;
@@ -357,13 +359,13 @@ $super_b+$shift+x \
 $super_b+x \
     $exe repomenue_powermenu
 
-# }}} power
+# }}} Power
 
 #####################################################################################################################
 #################                          reload changed configuration                             #################
 #####################################################################################################################
 
-# reload {{{
+# {{{ Reload
 
 ## Category: i3-Config;
 # Description: Restart i3 (preserves your layout/session);
@@ -378,7 +380,7 @@ $super_b+$controlr+r \
 $super_b+$shift+c \
     reload
 
-# }}} reload
+# }}} Reload
 
 #####################################################################################################################
 #################                          Stopping an application                                  #################
@@ -398,7 +400,7 @@ $super_b+$shift+q \
 #################                          Moving around in i3                                      #################
 #####################################################################################################################
 
-# moving about {{{
+# {{{ Moving Around
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
@@ -529,13 +531,13 @@ $alt_b+a \
 $alt_b+d \
     focus child
 
-# }}} moving about
+# }}} Moving Around
 
 #####################################################################################################################
 #################                          resize                                                   #################
 #####################################################################################################################
 
-# resize {{{
+# {{{ Resize
 
 ## Category: i3-Windows;
 # Description: Resize window (you can also use the mouse for that);
@@ -566,7 +568,7 @@ mode "$resize" {
     bindsym Escape mode "default"
 }
 
-# }}} resize
+# }}} Resize
 
 #####################################################################################################################
 #################                          choose the font                                          #################
@@ -581,7 +583,7 @@ font pango:Noto Mono Regular 13
 #################                          assign applications to workspaces                       #################
 #####################################################################################################################
 
-# assign applications {{{
+# {{{ Assign Applications
 
 # Assign application to start on a specific workspace
 # you can find the class with the program xprop
@@ -623,13 +625,13 @@ assign [class="(?i)Dconf-editor|Piper*"]                                        
 assign [class="(?i)Actions|Btop"]                                                → $ws0
 assign [class="(?i)PkgBrowser"]                                                  → $ws0
 
-# }}} assign applications
+# }}} Assign Applications
 
 #####################################################################################################################
 #################                                 system applications                               #################
 #####################################################################################################################
 
-# system applications {{{
+# {{{ System Applications
 
 ## Category: Applications;
 # Description: Change Hosts;
@@ -651,13 +653,13 @@ mode "$hosts_launcher" {
     bindsym Return mode "default"
 }
 
-# }}} system applications
+# }}} System Applications
 
 #####################################################################################################################
 #################                          applications keyboard shortcuts                          #################
 #####################################################################################################################
 
-# applications keyboard shortcuts {{{
+# {{{ Applications Keyboard Shortcuts
 
 #workspace related
 
@@ -802,13 +804,13 @@ $control_b+$alt+p \
 $super_b+$control+h \
     $exe $Hypervisor;focus
 
-# }}} applications keyboard shortcuts
+# }}} Applications Keyboard Shortcuts
 
 #####################################################################################################################
 #################                          screenshots                                              #################
 #####################################################################################################################
 
-# screenshots {{{
+# {{{ Screenshots
 
 ## Category: Screenshots;
 # Description: Screen Shot Mode;
@@ -831,13 +833,13 @@ mode "$screenshot" {
     bindsym Escape mode "default"
 }
 
-# }}} screenshots
+# }}} Screenshots
 
 #####################################################################################################################
 #################                          floating or tiled                                        #################
 #####################################################################################################################
 
-# floating or tiled {{{
+# {{{ Floating/Tiled
 
 #floating enabled from some programs - find with xprop
 
@@ -854,13 +856,13 @@ for_window [title="Copying"] floating enable
 for_window [title="Deleting"] floating enable
 for_window [title="Moving"] floating enable
 
-# }}} floating or tiled
+# }}} Floating/Tiled
 
 #####################################################################################################################
 #################                          audio settings                                           #################
 #####################################################################################################################
 
-# audio settings {{{
+# {{{ Audio Settings
 
 bindsym XF86AudioRaiseVolume $exe "amixer -D pulse sset Master '5%+'"
 bindsym XF86AudioLowerVolume $exe "amixer -D pulse sset Master '5%-'"
@@ -870,13 +872,13 @@ bindsym XF86AudioPlay $exe playerctl play-pause
 bindsym XF86AudioNext $exe playerctl next
 bindsym XF86AudioPrev $exe playerctl previous
 bindsym XF86AudioStop $exe playerctl stop
-# }}} audio settings
+# }}} Audio Settings
 
 #####################################################################################################################
 #################                          xbacklight                                               #################
 #####################################################################################################################
 
-# xbacklight {{{
+# {{{ xbacklight
 
 bindsym XF86MonBrightnessUp $exe xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown $exe xbacklight -dec 10 # decrease screen brightness
@@ -896,7 +898,7 @@ $super_b+b \
 #################                          border control                                           #################
 #####################################################################################################################
 
-# border control {{{
+# {{{ Border Control
 
 # Border control
 hide_edge_borders none
@@ -929,7 +931,7 @@ new_float pixel 1
 #new_float normal
 #new_float none
 
-# }}} border control
+# }}} Border Control
 
 #####################################################################################################################
 #################                          Popups  control                                          #################
@@ -957,7 +959,7 @@ gaps outer 2
 #################                          i3 gaps change                                           #################
 #####################################################################################################################
 
-# gaps change {{{
+# {{{ Gaps Change
 
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift++|-|0 (global)
@@ -999,7 +1001,7 @@ mode "$mode_gaps_outer" {
     bindsym Escape mode "default"
 }
 
-# }}} gaps change
+# }}} Gaps Change
 
 #####################################################################################################################
 #####################################################################################################################
@@ -1011,16 +1013,16 @@ mode "$mode_gaps_outer" {
 #################           autostart   -    execute applications at boot time                      #################
 #####################################################################################################################
 
-# autostart {{{
+# {{{ Autostart
 
 # USER APPLICATIONS TO START AT BOOT
 
 # start autostart
 $exe autostart
 
-# }}} autostart
+# }}} Autostart
 
-# settings {{{
+# {{{ Settings
 
 exec --no-startup-id setxkbmap -option caps:super
 exec --no-startup-id repomenue_youtube_subs -d
@@ -1049,7 +1051,7 @@ $control_b+$alt+o \
 #################                          Scratchpad                                               #################
 #####################################################################################################################
 
-# scratchpad {{{
+# {{{ Scratchpad
 
 # move the currently focused window to the scratchpad
 
@@ -1080,7 +1082,7 @@ $exe $TerminalEmulator --title="Dropdown-Terminal" --class="Dropdown-Terminal" -
 $control_b+Return \
     [class="(?i)dropdown-terminal"] scratchpad show, move position center
 
-# }}} scratchpad
+# }}} Scratchpad
 
 #####################################################################################################################
 #####################################################################################################################
@@ -1090,7 +1092,7 @@ $control_b+Return \
 #####################################################################################################################
 #####################################################################################################################
 
-# colors {{{
+# {{{ Colors
 
 # Theme colors
 # class                 border  bground text    indicator child_border
@@ -1103,7 +1105,7 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
 ##STOP THEMING
 
-# }}} colors
+# }}} Colors
 
 #####################################################################################################################
 #####################################################################################################################
