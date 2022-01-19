@@ -1,0 +1,298 @@
+#!/usr/bin/python
+
+import sys, os
+import requests
+import time
+import json
+import platform
+import urllib
+from PySide6.QtWidgets import QDialog, QWidget, QLabel, QLineEdit, QPlainTextEdit, QMenu
+from PySide6.QtWidgets import QPushButton, QDialogButtonBox, QVBoxLayout, QSystemTrayIcon
+from discord_webhook import DiscordWebhook, DiscordEmbed
+from PySide6 import QtCore, QtWidgets, QtGui
+from PySide6.QtGui import QIcon, QAction
+from os.path import expanduser, isfile
+from PySide6.QtCore import QSize
+from datetime import datetime
+import struct
+
+# for all params, see https://discordapp.com/developers/docs/resources/webhook#execute-webhook
+# Discord webhook url:
+url = "https://discord.com/api/webhooks/932406481704349766/TJV5m3oprNRQYM1k4_ar8TsokMLuHxoupvsTe9UJlD8Bk7GAcB8xAgxGeLac-U2EZ879"
+avatar_url = "https://cdn.discordapp.com/icons/895523133975572510/6511420be1ad5c7e9cfba0e2214281c1.webp?size=96"
+username = "LinkNSync Update"
+path = os.path.dirname(os.path.realpath(__file__))
+
+class MainWindow(QDialog):
+    def __init__(self):
+        QDialog.__init__(self)
+        self.hidden = False
+
+        tray_icon = QIcon(path+"/tray_icon.png")
+        self.tray = QSystemTrayIcon(self)
+        self.tray.setIcon(tray_icon)
+        self.tray.setToolTip("lol")
+        self.tray.setVisible(True)
+        self.menu = QMenu()
+        self.showHide = QAction("Show/Hide", self)
+        self.menu.addAction(self.showHide)
+        self.showHide.triggered.connect(self.showHideApp)
+        self.quit = QAction("Quit", self)
+        self.menu.addAction(self.quit)
+        self.quit.triggered.connect(self.quitApp)
+        self.menu.updatesEnabled()
+        self.menu.setUpdatesEnabled(True)
+        self.tray.setContextMenu(self.menu)
+        self.tray.show()
+
+        self.resize(620,900)
+        self.setWindowTitle("Discord Bot")
+
+        self.msg_id_text_label = QLabel(self)
+        self.msg_id_text_label.setText('Message ID:')
+        self.msg_id_text_label.move(10, 10)
+
+        self.msg_id_text_entry = QLineEdit(self)
+        self.msg_id_text_entry.move(110, 5)
+        self.msg_id_text_entry.resize(505, 25)
+
+        self.content_text_label = QLabel(self)
+        self.content_text_label.setText('Content:')
+        self.content_text_label.move(10, 40)
+
+        self.content_text_entry = QLineEdit(self)
+        self.content_text_entry.move(110, 35)
+        self.content_text_entry.resize(505, 25)
+
+        self.embed_text_label = QLabel(self)
+        self.embed_text_label.setText('Title:')
+        self.embed_text_label.move(10, 70)
+
+        self.embed_text_entry = QLineEdit(self)
+        self.embed_text_entry.move(110, 65)
+        self.embed_text_entry.resize(250, 25)
+
+        self.embed_url_entry = QLineEdit(self)
+        self.embed_url_entry.move(365, 65)
+        self.embed_url_entry.resize(250, 25)
+
+        self.embed_text_label = QLabel(self)
+        self.embed_text_label.setText('Footer:')
+        self.embed_text_label.move(10, 100)
+
+        self.embed_footer_entry = QLineEdit(self)
+        self.embed_footer_entry.move(110, 95)
+        self.embed_footer_entry.resize(505, 25)
+
+        self.embed_text_label = QLabel(self)
+        self.embed_text_label.setText('Image:')
+        self.embed_text_label.move(10, 130)
+
+        self.embed_image_entry = QLineEdit(self)
+        self.embed_image_entry.move(110, 125)
+        self.embed_image_entry.resize(505, 25)
+
+        self.msg_text_label = QLabel(self)
+        self.msg_text_label.setText('Message:')
+        self.msg_text_label.move(10, 160)
+
+        self.msg_text_entry = QPlainTextEdit(self)
+        self.msg_text_entry.move(110, 155)
+        self.msg_text_entry.resize(505, 300)
+
+        msg_text_button = QPushButton('Send message!', self)
+        msg_text_button.clicked.connect(self.send_msg)
+        msg_text_button.move(50, 465)
+        msg_text_button.resize(150,25)
+
+        json_text_button_exit = QPushButton('Get JSON', self)
+        json_text_button_exit.clicked.connect(self.getJson)
+        json_text_button_exit.move(280, 465)
+        json_text_button_exit.resize(100,25)
+
+        quit_text_button_exit = QPushButton('Quit', self)
+        quit_text_button_exit.clicked.connect(self.quitApp)
+        quit_text_button_exit.move(480, 465)
+        quit_text_button_exit.resize(100,25)
+
+        self.main_window_text_history = QPlainTextEdit(self)
+        self.main_window_text_history.setReadOnly(1)
+        self.main_window_text_history.move(10, 495)
+        self.main_window_text_history.resize(605, 400)
+
+        load_history_file(self)
+
+    def showHideApp(self):
+        hidden = self.hidden
+        if hidden == False:
+            mainWin.hide()
+            self.hidden = True
+        else:
+            mainWin.show()
+            self.hidden = False
+
+    def send_msg(self):
+        msg_id_text = self.msg_id_text_entry.text()
+        msg_text = self.msg_text_entry.document().toPlainText()
+        time_now = datetime.now()
+        current_time = time_now.strftime("%d/%m/%Y %H:%M:%S")
+
+        color_embed = QtWidgets.QColorDialog.getColor()
+        if color_embed.isValid():
+            color_ = int(color_embed.name().replace('#',''), 16)
+        else:
+           self.quitApp()
+
+        content_text = self.content_text_entry.text()
+        title_text = self.embed_text_entry.text()
+        title_url = self.embed_url_entry.text()
+        footer_text = self.embed_footer_entry.text()
+        embed_image = self.embed_image_entry.text()
+
+        if embed_image != "":
+            isURL = is_url(embed_image)
+
+            if isURL:
+                isImage = is_image(embed_image)
+                if not isImage:
+                    self.dialog = noImageTypePopup()
+                    self.dialog.show()
+
+        webhook = DiscordWebhook(url=url, content=content_text, avatar_url=avatar_url, username=username)
+
+        embed = DiscordEmbed(title=title_text, url=title_url, description=msg_text, color=color_)
+
+        embed.set_image(url=embed_image)
+        if footer_text == "":
+            footer_text = current_time
+
+        embed.set_footer(text=footer_text, icon_url=avatar_url)
+
+        # add embed object to webhook
+        webhook.add_embed(embed)
+
+        if msg_id_text is None:
+            response = webhook.execute()
+        else:
+            response = webhook.edit(msg_id_text)
+
+        jsonPost = json.dumps(response.json(), indent=4)
+        jsonGet = json.loads(jsonPost)
+        message_id = jsonGet['id']
+
+        msg_data = {
+            "username": username,
+            "avatar_url": avatar_url,
+            "content": content_text,
+            "embeds": [
+                {
+                    "title": title_text,
+                    "url": title_url,
+                    "description": msg_text,
+                    "color": color_,
+                    "image": {
+                        "url": embed_image,
+                        },
+                    "footer": {
+                        "text": footer_text,
+                        "icon_url": avatar_url,
+                        }
+                    }
+                ]
+            }
+        json_object = json.dumps(msg_data, indent = 4)
+
+        self.main_window_text_history.appendPlainText(json_object + "\n\n")
+        save_history_file(self, message_id, json_object)
+
+    def quitApp(self):
+        sys.exit()
+
+    def getJson(self):
+        msg_id_text = self.msg_id_text_entry.text()
+
+        if msg_id_text is not None:
+            if platform.system() == 'Linux':
+                home = expanduser("~")
+                file = home+'/.cache/discord_history/'+msg_id_text+".json"
+                if isfile(file):
+                    f = open(file)
+                    data = json.load(f)
+                    json_object = json.dumps(data, indent = 4)
+
+                    self.content_text_entry.setText(data['content'])
+                    self.embed_text_entry.setText(data['embeds'][0]['title'])
+                    self.embed_url_entry.setText(data['embeds'][0]['url'])
+                    self.embed_footer_entry.setText(data['embeds'][0]['footer']['text'])
+                    self.embed_image_entry.setText(data['embeds'][0]['image']['url'])
+                    self.msg_text_entry.setPlainText(data['embeds'][0]['description'])
+                    self.main_window_text_history.setPlainText(json_object + "\n")
+
+class noImageTypePopup(QDialog):
+    def __init__(self, parent=None):
+        super().__init__()
+        print("Opening a new popup window...")
+
+        self.setWindowTitle("Error!")
+
+        QBtn = QDialogButtonBox.Ok | QDialogButtonBox.Cancel
+
+        self.buttonBox = QDialogButtonBox(QBtn)
+        self.buttonBox.accepted.connect(self.accept)
+        self.buttonBox.rejected.connect(self.reject)
+
+        self.layout = QVBoxLayout()
+        message = QLabel("Something happened, please chack the url again?")
+        self.layout.addWidget(message)
+        self.layout.addWidget(self.buttonBox)
+        self.setLayout(self.layout)
+
+def save_history_file(self, message_id, json_object):
+    if platform.system() == 'Linux':
+        home = expanduser("~")
+        discord_history = open(home+'/.cache/discord_history/'+message_id+".json",'w+')
+        discord_history.write(json_object+"\n")
+
+def load_history_file(self):
+    if platform.system() == 'Linux':
+        home = expanduser("~")
+        if isfile(home+'/.cache/discord_history'):
+            discord_history = open(home+'/.cache/discord_history','r+')
+            lines = discord_history.readlines()
+            # Strips the newline character
+            for line in lines:
+                self.main_window_text_history.appendPlainText(line.replace('\n',''))
+
+def is_url(url):
+    if not url:
+        raise ValueError("url is required")
+    try:
+        resp = requests.head(url)
+        return True if resp.status_code == 200 else False
+    except Exception as e:
+        return False
+
+def is_image(image_url):
+    try:
+        image_formats = ("image/png", "image/jpeg", "image/jpg")
+        r = requests.head(image_url)
+        if r.headers["content-type"] in image_formats:
+            return True
+        return False
+    except Exception as e:
+        return False
+
+def mkDirs():
+    if platform.system() == 'Linux':
+        home = expanduser("~")
+        path = home+"/.cache/discord_history/"
+        isExist = os.path.exists(path)
+        if not isExist:
+            os.mkdir(path)
+
+if __name__ == "__main__":
+    mkDirs()
+    app = QtWidgets.QApplication(sys.argv)
+    mainWin = MainWindow()
+    mainWin.show()
+    sys.exit( app.exec() )
