@@ -17,6 +17,10 @@ hooks.add("install_plugins", function(use)
     }
 
     use {
+        "gko/vim-coloresque"
+    }
+
+    use {
         "liuchengxu/vim-clap"
     }
 
@@ -31,7 +35,6 @@ hooks.add("install_plugins", function(use)
         config = function()
             require("custom.configs.trim")
         end
-
     }
 
     use {

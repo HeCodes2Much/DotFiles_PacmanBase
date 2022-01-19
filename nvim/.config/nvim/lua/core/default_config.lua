@@ -67,24 +67,24 @@ M.plugins = {
         luasnip = {
             snippet_path = {},
         },
-	    statusline = { -- statusline related options
-            -- these are filetypes, not pattern matched
-            -- shown filetypes will overrule hidden filetypes
-            hidden = {
-                "help",
-                "dashboard",
-                "NvimTree",
-                "terminal",
-            },
-            -- show short statusline on small screens
-            shortline = true,
-            shown = {},
-            -- default, round , slant , block , arrow
-            style = "default",
+        statusline = { -- statusline related options
+        -- these are filetypes, not pattern matched
+        -- shown filetypes will overrule hidden filetypes
+        hidden = {
+            "help",
+            "dashboard",
+            "NvimTree",
+            "terminal",
         },
-        esc_insertmode_timeout = 300,
+        -- show short statusline on small screens
+        shortline = true,
+        shown = {},
+        -- default, round , slant , block , arrow
+        style = "default",
     },
-    default_plugin_config_replace = {},
+    esc_insertmode_timeout = 300,
+},
+default_plugin_config_replace = {},
 }
 
 -- mappings -- don't use a single keymap twice --

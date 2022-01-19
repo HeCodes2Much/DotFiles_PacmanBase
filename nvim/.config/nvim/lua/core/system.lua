@@ -12,22 +12,22 @@ local M = {}
 -- 'C:\Users\JohnDoe\AppData\Local' for windows and '~/.config' for *nix
 -- @return string
 local function get_config_dir()
-  if string.find(vim.loop.os_uname().sysname, "Windows") then
-    return os.getenv("USERPROFILE") .. "\\AppData\\Local\\"
-  end
+    if string.find(vim.loop.os_uname().sysname, "Windows") then
+        return os.getenv("USERPROFILE") .. "\\AppData\\Local\\"
+    end
 
-  return (os.getenv("XDG_CONFIG_HOME") and os.getenv("XDG_CONFIG_HOME"))
+    return (os.getenv("XDG_CONFIG_HOME") and os.getenv("XDG_CONFIG_HOME"))
     or (os.getenv("HOME") .. "/.config")
 end
 
 -- get_separator will return the system paths separator, e.g. \ for Windows and / for *nix
 -- @return string
 local function get_separator()
-  if vim.loop.os_uname().sysname == "Windows" then
-    return "\\"
-  end
+    if vim.loop.os_uname().sysname == "Windows" then
+        return "\\"
+    end
 
-  return "/"
+    return "/"
 end
 
 M.config_dir = get_config_dir()

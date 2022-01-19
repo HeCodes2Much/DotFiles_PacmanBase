@@ -31,7 +31,8 @@
 (history-item "image-scale" 0)
 (history-item "select-all" 0)
 (history-item "tools-bucket-fill" 0)
-(history-item "file-save-as" 1)
+(history-item "file-save-as" 0)
+(history-item "file-web-export" 0)
 (history-item "filters-curves" 0)
 (history-item "tools-unified-transform" 0)
 (history-item "select-border" 0)
@@ -99,6 +100,5 @@
 (history-item "layers-mask-delete" 0)
 (history-item "filters-gaussian-blur" 0)
 (history-item "dialogs-about" 0)
-(history-item "tools-smudge" 0)
 
 # end of action-history

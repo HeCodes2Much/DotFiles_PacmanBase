@@ -36,25 +36,25 @@ my $CurVer = '2021-02-01';
 my $Progrm = 'dayborn';
 
 sub Usage{
-	print(qq{Usage: $Progrm [OPTS] [FILE]
+    print(qq{Usage: $Progrm [OPTS] [FILE]
 
-		  -h, --help               - Display this help information.
-		  -v, --version            - Output the version datestamp.
-	} =~ tr/\t//dr)
+            -h, --help               - Display this help information.
+            -v, --version            - Output the version datestamp.
+        } =~ tr/\t//dr)
 }
 
 while (defined($ARGV[0])){
-	if ($ARGV[0] =~ '^(--help|-h|-\?)$'){
-		Usage(1); exit(0)
-	}elsif ($ARGV[0] =~ '^(--version|-v)$'){
-		print("$CurVer\n"); exit(0)
-	}elsif ($ARGV[0] =~ '^-'){
-		die("Incorrect option(s) specified")
-	}else{
-		last
-	}
+    if ($ARGV[0] =~ '^(--help|-h|-\?)$'){
+        Usage(1); exit(0)
+    }elsif ($ARGV[0] =~ '^(--version|-v)$'){
+        print("$CurVer\n"); exit(0)
+    }elsif ($ARGV[0] =~ '^-'){
+        die("Incorrect option(s) specified")
+    }else{
+        last
+    }
 
-	shift()
+    shift()
 }
 
 scalar(@ARGV) == 1 or die("File name required");
@@ -68,29 +68,29 @@ open(my $FH, '<', $ARGV[0]);
 
 my ($Start, $Now);
 while (<$FH>){
-	/^# (Start|Modified) / or next;
+    /^# (Start|Modified) / or next;
 
-	chomp(my @Arr = split(' '));
+    chomp(my @Arr = split(' '));
 
-	# The following format (sans quotes) is expected:
-	#
-	#   '# Started On        - Mon 10 Feb 23:49:15 GMT 2020'
-	#
-	if ($Arr[1] eq 'Start') {
-		$Start = Time::Piece->strptime(
-			join(' ', @Arr[4,6,5,7,9]), '%a %b %d %T %Z %Y'
-		)->epoch()
-	}
+    # The following format (sans quotes) is expected:
+    #
+    #   '# Started On        - Mon 10 Feb 23:49:15 GMT 2020'
+    #
+    if ($Arr[1] eq 'Start') {
+        $Start = Time::Piece->strptime(
+            join(' ', @Arr[4,6,5,7,9]), '%a %b %d %T %Z %Y'
+        )->epoch()
+    }
 
-	# The following format (sans quotes) is expected:
-	#
-	#   '# Modified On       - Tue 11 Feb 01:00:34 GMT 2020'
-	#
-	if ($Arr[1] eq 'Modified') {
-		$Now = Time::Piece->strptime(
-			join(' ', @Arr[4,6,5,7,9]), '%a %b %d %T %Z %Y'
-		)->epoch()
-	}
+    # The following format (sans quotes) is expected:
+    #
+    #   '# Modified On       - Tue 11 Feb 01:00:34 GMT 2020'
+    #
+    if ($Arr[1] eq 'Modified') {
+        $Now = Time::Piece->strptime(
+            join(' ', @Arr[4,6,5,7,9]), '%a %b %d %T %Z %Y'
+        )->epoch()
+    }
 }
 
 close($FH);
@@ -99,4 +99,3 @@ my $Project = ($ARGV[0] =~ m{(?:.*/)?([^/].*)})[0];
 my $DeltaDay = ($Now - $Start) / 60 / 60 / 24;
 
 printf("Project '%s' was born %.2f day's ago.\n", $Project, $DeltaDay)
-

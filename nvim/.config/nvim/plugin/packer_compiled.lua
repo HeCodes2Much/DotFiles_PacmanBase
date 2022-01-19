@@ -343,6 +343,11 @@ _G.packer_plugins = {
     path = "/home/repo/.local/share/nvim/site/pack/packer/start/vim-clap",
     url = "https://github.com/liuchengxu/vim-clap"
   },
+  ["vim-coloresque"] = {
+    loaded = true,
+    path = "/home/repo/.local/share/nvim/site/pack/packer/start/vim-coloresque",
+    url = "https://github.com/gko/vim-coloresque"
+  },
   ["vim-css-color"] = {
     loaded = true,
     path = "/home/repo/.local/share/nvim/site/pack/packer/start/vim-css-color",
@@ -486,11 +491,11 @@ vim.cmd [[ packadd nvim-autopairs ]]
 require('plugins.configs.others').autopairs()
 vim.cmd [[ packadd cmp-buffer ]]
 vim.cmd [[ packadd cmp_luasnip ]]
-vim.cmd [[ packadd cmp-nvim-lua ]]
 vim.cmd [[ packadd cmp-path ]]
 vim.cmd [[ packadd LuaSnip ]]
 -- Config for: LuaSnip
 require('plugins.configs.others').luasnip()
+vim.cmd [[ packadd cmp-nvim-lua ]]
 time([[Sequenced loading]], false)
 
 -- Command lazy-loads

@@ -44,7 +44,7 @@ local function lsCustomPluginSettingsDir()
     for key, file in pairs(files) do
         lst[key] = { line = file, path = (settings_dir..""..file) }
     end
-  return lst
+    return lst
 end
 
 local function lsDefaultPluginSettingsDir()
@@ -54,7 +54,7 @@ local function lsDefaultPluginSettingsDir()
     for key, file in pairs(files) do
         lst[key] = { line = file, path = (settings_dir..""..file) }
     end
-  return lst
+    return lst
 end
 
 local function lsCustomSettingsDir()
@@ -64,7 +64,7 @@ local function lsCustomSettingsDir()
     for key, file in pairs(files) do
         lst[key] = { line = file, path = (settings_dir..""..file) }
     end
-  return lst
+    return lst
 end
 
 local function lsDefaultSettingsDir()
@@ -74,7 +74,7 @@ local function lsDefaultSettingsDir()
     for key, file in pairs(files) do
         lst[key] = { line = file, path = (settings_dir..""..file) }
     end
-  return lst
+    return lst
 end
 
 local function lsGitDir()

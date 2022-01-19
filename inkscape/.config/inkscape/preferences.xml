@@ -1026,8 +1026,8 @@
   <group
      id="theme"
      defaultPreferDarkTheme="1"
-     defaultGtkTheme="oomox-Dracula"
-     defaultIconTheme="oomox-Dracula"
+     defaultGtkTheme="themix-Dracula"
+     defaultIconTheme="themix-Dracula"
      symbolicIcons="0"
      menuIcons_canvas="0"
      menuIcons_layers="0"
