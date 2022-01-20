@@ -32,6 +32,14 @@ if command -v audiolock &> /dev/null; then
     fi
 fi
 
+if command -v twmn_check-disk &> /dev/null; then
+    if ! pgrep -f "twmn_check-disk" > /dev/null; then
+        twmn_check-disk &
+    else
+        echo "twmn_check-disk already Running"
+    fi
+fi
+
 if command -v clipmenu-daemon &> /dev/null; then
     if ! pgrep -f "clipmenu-daemon" > /dev/null; then
         clipmenu-daemon &
@@ -126,15 +134,6 @@ fi
 ################
 ## Other Junk ##
 ################
-
-if command -v dunst &> /dev/null; then
-    if ! pgrep -x "dunst" > /dev/null; then
-        dunst &
-    else
-        echo "dunst already Running"
-    fi
-fi
-
 
 # see https://unix.stackexchange.com/a/295652/332452
 source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
