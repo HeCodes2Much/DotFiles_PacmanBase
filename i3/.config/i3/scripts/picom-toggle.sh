@@ -1,4 +1,22 @@
 #!/usr/bin/env bash
+# -*-coding:utf-8 -*-
+# Auto updated?
+#   Yes
+#File :
+#   picom-toggle
+#Author :
+#   The-Repo-Club [wayne6324:gmail.com]
+#Github :
+#   https://github.com/The-Repo-Club/
+#
+# Created:
+#   Thu 20 January 2022, 04:40:04 PM [GMT]
+# Last edited:
+#   Thu 20 January 2022, 04:40:07 PM [GMT]
+#
+# Description:
+#   <Todo>
+#
 
 # https://github.com/jaagr/polybar/wiki/User-contributed-modules
 

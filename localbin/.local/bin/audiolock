@@ -1,12 +1,22 @@
 #!/usr/bin/env bash
-
-#------------------------------------------------------------------------------
-# Path         - /usr/bin/audiolock
-# GitHub       - https://github.com/The-Repo-Club/
-# Author       - The-Repo-Club [wayne6324@gmail.com]
-# Start On     - Mon 08 Nov 19:03:28 GMT 2021
-# Modified On  - Mon 08 Nov 21:30:20 GMT 2021
-#------------------------------------------------------------------------------
+# -*-coding:utf-8 -*-
+# Auto updated?
+#   Yes
+#File :
+#   audiolock
+#Author :
+#   The-Repo-Club [wayne6324:gmail.com]
+#Github :
+#   https://github.com/The-Repo-Club/
+#
+# Created:
+#   Mon 08 November 2021, 07:14:09 PM [GMT]
+# Last edited:
+#   Thu 20 January 2022, 05:14:45 PM [GMT]
+#
+# Description:
+#   <Todo>
+#
 
 if ! command -v audiolock &> /dev/null; then
     echo "audiolock could not be found"

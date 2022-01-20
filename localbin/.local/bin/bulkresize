@@ -1,12 +1,24 @@
 #!/usr/bin/env bash
-
-#------------------------------------------------------------------------------
-# Path         - /usr/bin/bulkresize
-# GitHub       - https://github.com/The-Repo-Club/
-# Author       - The-Repo-Club [wayne6324@gmail.com]
-# Start On     - Sun 31 Oct 00:30:03 BST 2021
-# Modified On  - Sun 31 Oct 00:30:03 BST 2021
-#------------------------------------------------------------------------------
+# -*-coding:utf-8 -*-
+# Auto updated?
+#   Yes
+#File :
+#   bulkresize
+#Author :
+#   The-Repo-Club [wayne6324:gmail.com]
+#Github :
+#   https://github.com/The-Repo-Club/
+#
+# Created:
+#   Sun 31 October 2022, 01:17:37 AM [GMT]
+# Last edited:
+#   Thu 20 January 2022, 05:18:37 PM [GMT]
+#
+# Description:
+#   Run this script by setting it at: # Nemo -> Edit -> Preferences ->
+#   Behavior -> Bulk Resize # Select multiple files in Nemo and hit F2 (or
+#   right-click -> Resize)
+#
 
 size=1920x1080
 

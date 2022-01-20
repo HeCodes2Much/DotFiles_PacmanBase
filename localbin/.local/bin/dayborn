@@ -1,24 +1,30 @@
 #!/usr/bin/env perl
-#cito M:755 O:0 G:0 T:/usr/bin/dayborn
-#------------------------------------------------------------------------------
-# Path         - /usr/bin/dayborn#
-# GitHub       - https://github.com/The-Repo-Club/
-# # Author       - The-Repo-Club [wayne6324@gmail.com]
-# # Start On     - Sun 31 Oct 18:54:42 GMT 2021#
-# Modified On  - Sun 31 Oct 18:54:42 GMT 2021#
-#------------------------------------------------------------------------------
+# -*-coding:utf-8 -*-
+# Auto updated?
+#   Yes
+#File :
+#   dayborn
+#Author :
+#   The-Repo-Club [wayne6324:gmail.com]
+#Github :
+#   https://github.com/The-Repo-Club/
 #
-# This project was originally called Iteration. The aim was to generate a more
-# traditional version number from the delta of the two timestamps, the time the
-# project was born, and the time of the last change made.
+# Created:
+#   Thu 20 January 2022, 05:40:19 PM [GMT]
+# Last edited:
+#   Thu 20 January 2022, 07:08:03 PM [GMT]
 #
-# In the end, it wound up being a nifty little program which simply outputs how
-# many days it has been since the project was born, hence the name.
+# Description:
+#   This project was originally called Iteration. The aim was to generate a more
+#   traditional version number from the delta of the two timestamps, the time the
+#   project was born, and the time of the last change made.
+#
+#   In the end, it wound up being a nifty little program which simply outputs how
+#   many days it has been since the project was born, hence the name.
 #
 # Dependencies:
-#
 #   perl (>= 5.22.1-9)
-#------------------------------------------------------------------------------
+#
 
 require Date::Format;
 require Time::Piece;

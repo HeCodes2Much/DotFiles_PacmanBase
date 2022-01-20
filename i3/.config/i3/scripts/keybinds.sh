@@ -1,13 +1,22 @@
 #!/usr/bin/env bash
-
-####
-####   _____ _          ____                   ____ _       _
-####  |_   _| |__   ___|  _ \ ___ _ __   ___  / ___| |_   _| |__
-####    | | | '_ \ / _ \ |_) / _ \ '_ \ / _ \| |   | | | | | '_ \
-####    | | | | | |  __/  _ <  __/ |_) | (_) | |___| | |_| | |_) |
-####    |_| |_| |_|\___|_| \_\___| .__/ \___/ \____|_|\__,_|_.__/
-####                             |_|
-####
+# -*-coding:utf-8 -*-
+# Auto updated?
+#   Yes
+#File :
+#   keybinds
+#Author :
+#   The-Repo-Club [wayne6324:gmail.com]
+#Github :
+#   https://github.com/The-Repo-Club/
+#
+# Created:
+#   Wed 10 March 2021, 12:34:47 PM [GMT]
+# Last edited:
+#   Thu 20 January 2022, 05:13:48 PM [GMT]
+#
+# Description:
+#   <Todo>
+#
 
 cmd="\grep -A 1 Description $HOME/.config/i3/config | sed -e s/--/\ /g"
 case $1 in

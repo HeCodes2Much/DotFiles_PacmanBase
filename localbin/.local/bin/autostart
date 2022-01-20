@@ -1,12 +1,22 @@
 #!/usr/bin/env bash
-
-#------------------------------------------------------------------------------
-# Path         - ~/.config/autostart/autostart
-# GitHub       - https://github.com/The-Repo-Club/
-# Author       - The-Repo-Club [wayne6324@gmail.com]
-# Start On     - Mon 22 Nov 15:12:43 GMT 2021
-# Modified On  - Mon 22 Nov 15:12:43 GMT 2021
-#------------------------------------------------------------------------------
+# -*-coding:utf-8 -*-
+# Auto updated?
+#   Yes
+#File :
+#   autostart
+#Author :
+#   The-Repo-Club [wayne6324:gmail.com]
+#Github :
+#   https://github.com/The-Repo-Club/
+#
+# Created:
+#   Mon 22 November 2021, 03:15:54 PM [GMT]
+# Last edited:
+#   Thu 20 January 2022, 05:16:18 PM [GMT]
+#
+# Description:
+#   <Todo>
+#
 
 if command -v /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &> /dev/null; then
     if ! pgrep -f "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" > /dev/null; then
