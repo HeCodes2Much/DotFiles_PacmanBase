@@ -27,8 +27,12 @@ function update
     pacman -Syu
 end
 
+function aurupdate
+    auracle update -C ~/.cache/pkg/
+end
+
 function upall
-    pacman -Fy && pacman -Syu --noconfirm
+    pacman -Fy && pacman -Syu --noconfirm && aurupdate
 end
 
 #check aur and arch packages
@@ -38,10 +42,6 @@ end
 
 function checkaur
     pacman -Qqem >~/package_list_aur.txt
-end
-
-function aurupdate
-    auracle update -C ~/.cache/pkg/
 end
 
 # Pacman unlock

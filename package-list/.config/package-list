@@ -20,6 +20,7 @@ dracula-gtk-theme
 dracula-icons
 dracula-qt5-theme
 dracula-qt6-theme
+fish-nvm
 fm6000
 gamehub
 gdlauncher
@@ -85,11 +86,13 @@ transset-df
 ttf-material-design-icons
 ttf-remixicon
 tty-clock
+twmn-git
 ufw-icon-bar
 w3m-imgcat
 win-shot
 woeusb-gui
 xcursor-breeze
+xidlehook
 xmenu
 xtitle
 xwingridselect

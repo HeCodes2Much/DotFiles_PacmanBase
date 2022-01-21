@@ -590,40 +590,40 @@ font pango:Noto Mono Regular 13
 
 # sign via class
 # Workspace $ws1 Terminal
-assign [class="(?i)Alacritty|Kitty"]                                             → $ws1
+assign [class="(?i)Alacritty|Kitty"]                                            → $ws1
 
 # Workspace $ws2 Text Editor
-assign [class="(?i)Code|Jetbrains-Idea-CE"]                                      → $ws2
+assign [class="(?i)Code|Jetbrains"]                                             → $ws2
 
 # Workspace $ws3 Files
-assign [class="(?i)Nemo"]                                                        → $ws3
+assign [class="(?i)Nemo"]                                                       → $ws3
 
 # Workspace $ws4 Graphics
-assign [class="(?i)Aseprite|Krita"]                                              → $ws4
+assign [class="(?i)Aseprite|Krita"]                                             → $ws4
 
 # Workspace $ws5 Music
-assign [class="(?i)Xephyr"]                                                      → $ws5
-assign [class="(?i)CmusImage"]                                                   → $ws5
+assign [class="(?i)Xephyr"]                                                     → $ws5
+assign [class="(?i)CmusImage"]                                                  → $ws5
 
 # Workspace $ws6 WebBrowser
-assign [class="(?i)Firefox|Google-Chrome"]                                       → $ws6
+assign [class="(?i)Firefox|Google-Chrome"]                                      → $ws6
 
-# Workspace $ws7 Other Stuff
-assign [class="(?i)Mail|Thunderbird"]                                            → $ws7
-assign [class="(?i)Keybase"]                                                     → $ws7
+# Workspace $ws7 Other Stuf
+assign [class="(?i)Mail|Thunderbird"]                                           → $ws7
+assign [class="(?i)Keybase"]                                                    → $ws7
 
-# Workspace $ws8 file GitAhead
-assign [class="(?i)Minecraft*|Steam*"]                                           → $ws8
-assign [class="(?i)0ad*|Minetest"]                                               → $ws8
+# Workspace $ws8 file GitAhea
+assign [class="(?i)Minecraft*|Steam*"]                                          → $ws8
+assign [class="(?i)0ad*|Minetest"]                                              → $ws8
 
-# Workspace $ws9 Chat
-assign [class="(?i)Telegram|Element"]                                            → $ws9
+# Workspace $ws9 Cha
+assign [class="(?i)Telegram|Element"]                                           → $ws9
 
-# Workspace $ws0 Settings
-assign [class="(?i)Virt*|LazyGit"]                                               → $ws0
-assign [class="(?i)Dconf-editor|Piper*"]                                         → $ws0
-assign [class="(?i)Actions|Btop"]                                                → $ws0
-assign [class="(?i)PkgBrowser"]                                                  → $ws0
+# Workspace $ws0 Setting
+assign [class="(?i)Virt*|LazyGit"]                                              → $ws0
+assign [class="(?i)Dconf-editor|Piper*"]                                        → $ws0
+assign [class="(?i)Actions|Btop"]                                               → $ws0
+assign [class="(?i)PkgBrowser"]                                                 → $ws0
 
 # }}} Assign Applications
 

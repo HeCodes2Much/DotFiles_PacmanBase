@@ -4,15 +4,15 @@
 #   Yes
 #File :
 #   picom-toggle
-#Author :
-#   The-Repo-Club [wayne6324:gmail.com]
-#Github :
+#Author:
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github:
 #   https://github.com/The-Repo-Club/
 #
 # Created:
 #   Thu 20 January 2022, 04:40:04 PM [GMT]
-# Last edited:
-#   Thu 20 January 2022, 04:40:07 PM [GMT]
+# Modified:
+#   Fri 21 January 2022, 02:29:56 PM [GMT]
 #
 # Description:
 #   <Todo>
