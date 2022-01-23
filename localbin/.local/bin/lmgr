@@ -1,0 +1,175 @@
+#!/usr/bin/env sh
+#-*-coding:utf-8 -*-
+#Auto updated?
+#   Yes
+#File :
+#   lmgr
+#Author :
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github :
+#   https://github.com/The-Repo-Club/
+#
+#Created:
+#   Sun 23 January 2022, 08:37:12 PM [GMT]
+#Modified:
+#   Sun 23 January 2022, 09:02:29 PM [GMT]
+#
+#Description:
+#   Manager for controlling licences
+#
+#Dependencies:
+#   bash
+#
+
+set -e
+
+VERSION='0.2'
+
+usage() {
+    echo " License manager v$VERSION"
+    echo ' manage, switch and template licenses'
+    echo ''
+    echo " $(basename "$0") <flag | @license>"
+    echo ''
+    echo '  -help --help     -h                     show usage'
+    echo '  -list-licenses   -l                     list awailable licenses'
+    echo '  -current-license -c                     show current active project license'
+    echo '  -pick-license    -p                     pick a license in a FZF menu'
+    echo '  -preview-license -P @license_name       preview a license template'
+    echo '  -remove-license  -r                     remove all licenses from the current project'
+    echo "  -search-license  -s '<query | patten>'  search for license"
+}
+
+error() {
+    if ! [ "$2" -eq "$2" ] 2>/dev/null; then
+        echo 'error(): argument 2 was expected to be an intager.'
+        exit 3
+    fi
+
+    echo " * ERROR: $1" 1>&2
+    exit "$2"
+}
+
+warn() {
+    echo " * WARNING: $1" 1>&2
+}
+
+list_licenses() {
+    if ! [ -d "${HOME}"/.config/licenses ]; then
+        warn "${HOME}/.config/licenses does not exist. Creating it."
+        mkdir -p "${HOME}"/.config/licenses
+    fi
+
+    find -L "${HOME}"/.config/licenses -maxdepth 1 -type f -printf " * @%f\n"
+}
+
+make_new_config() {
+    mkdir -p "${HOME}"/.config
+
+    {
+        echo '#!/usr/bin/env sh'
+        echo "export AUTHOR_FULL_NAME='$(git config user.name || echo "${USER}")'"
+        echo "export AUTHOR_EMAIL='$(git config user.email || echo "${USER}@gmail.com")'"
+    } >"${HOME}"/.config/license.conf
+}
+
+show_license() {
+    l_name='LICENSE'
+    if [ -f UNLICENSE ]; then
+        l_name='UNLICENSE'
+    fi
+
+    if [ -f "$l_name" ]; then
+        head -n1 "$l_name" | sed 's/^\s*//; s/\s*$//'
+    else
+        echo 'Strong copyright (no license)'
+    fi
+}
+
+get_license() {
+    if ! [ -f "${HOME}"/.config/licenses/"$1" ]; then
+        echo " * No licence by the name of $1" 1>&2
+        list_licenses
+        echo ' * Use of of the above'
+
+        exit 5
+    elif [ -f ./LICENSE ] || [ -f ./UNLICENSE ]; then
+        echo " * Found license: $(show_license)"
+
+        printf '   Switch licenses? [y/n] '
+        read -r yn
+
+        if ! [ "$yn" = "y" ]; then
+            exit
+        fi
+    fi
+
+    l_name='LICENSE'
+    if [ "$(head -n1 "${HOME}"/.config/licenses/"$1")" = 'UNLICENSE' ]; then
+        l_name='UNLICENSE'
+    fi
+
+    cp -fiL "${HOME}"/.config/licenses/"$1" "$l_name"
+
+    sed -i "$l_name" \
+        -e "s/{{PROJECT_NAME}}/$(basename "$PWD")/g" \
+        -e "s/{{CURRENT_YEAR}}/$(date '+%Y')/g" \
+        -e "s/{{AUTHOR_NAME}}/${AUTHOR_FULL_NAME}/g" \
+        -e "s/{{AUTHOR_EMAIL}}/$AUTHOR_EMAIL/g"
+
+    echo " * Current license now is set to $(show_license)"
+}
+
+license_picker() {
+    license="$(list_licenses | awk '{ print $2 }' | sed 's/^@//' | FZF_DEFAULT_OPTS='' fzf --layout=reverse --height=20 --no-mouse -i --preview "cat ${HOME}/.config/licenses/{}" || echo '')"
+
+    if ! [ "$license" ]; then
+        license_picker
+    fi
+
+    get_license "$license"
+}
+
+search_license() {
+    for lic in $(list_licenses | awk '{ print $2 }' | sed 's/^@//'); do
+        if echo "$lic $(head -n5 "${HOME}"/.config/licenses/"$lic")" | grep -iq "$1"; then
+            echo " * @$lic"
+        fi
+    done
+}
+
+remove_license() {
+    rm -f UNLICENSE LICENSE 2>/dev/null || true
+    echo " * Current license now is set to $(show_license)"
+}
+
+main() {
+    if [ -f "${HOME}/.config/license.conf" ]; then
+        # shellcheck disable=1091
+        . "${HOME}/.config/license.conf"
+    else
+        warn 'No configuration file found. Creating it.'
+        make_new_config
+        exit 4
+    fi
+
+    if [ ! "$1" ]; then
+        usage
+        exit 1
+    fi
+
+    case "$1" in
+    -help | --help | -h) usage ;;
+    -list-licenses | -l) list_licenses ;;
+    -current-license | -c) echo " * $(show_license)" ;;
+    -pick-license | -p) license_picker ;;
+    -preview-license | -P) less -NrIMJ --use-color --incsearch --line-num-width=2 "${HOME}"/.config/licenses/"$(echo "$2" | sed 's/^@//')" 2>/dev/null || echo "* License $2 not found" ;;
+    -remove-license | -r) remove_license ;;
+    -search-license | -s) search_license "$2" ;;
+
+    @*) get_license "$(echo "$1" | sed 's/^@//')" ;;
+    *) error "Flag $1 is not known." 2 ;;
+    esac
+}
+
+main "$@"
