@@ -12,13 +12,13 @@
 #Created:
 #   Sun 23 January 2022, 08:37:12 PM [GMT]
 #Modified:
-#   Sun 23 January 2022, 09:02:29 PM [GMT]
+#   Sun 23 January 2022, 09:11:04 PM [GMT]
 #
 #Description:
 #   Manager for controlling licences
 #
 #Dependencies:
-#   bash
+#   <None>
 #
 
 set -e
