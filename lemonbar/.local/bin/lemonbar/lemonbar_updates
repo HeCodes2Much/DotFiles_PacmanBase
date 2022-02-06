@@ -6,13 +6,13 @@ updates() {
     icon=" "
     [[ -f $configFile ]] && . $configFile
     if [ -z "$LastUsed" ] || [ -z "$Message" ]; then
-        updates=$(yay -Pn)
+        updates=$(checkupdates | wc -l)
         printf "%s%s\n"  "%{F#1E222A}%{B#EBD369}$icon %{F-}%{B-}" "%{F#282A36}%{B#C4C7C5}$updates Updates %{F-}%{B-}"
         newtime=`expr $timestamp + 900`
         echo -e "LastUsed=${newtime}\nMessage='${updates}'" > $configFile
     else
         if [ "$timestamp" -ge "$LastUsed" ]; then
-            updates=$(yay -Pn)
+            updates=$(checkupdates | wc -l)
             printf "%s%s\n"  "%{F#1E222A}%{B#EBD369}$icon %{F-}%{B-}" "%{F#282A36}%{B#C4C7C5}$updates Updates %{F-}%{B-}"
             newtime=`expr $timestamp + 900`
             echo -e "LastUsed=${newtime}\nMessage='${updates}'" > $configFile

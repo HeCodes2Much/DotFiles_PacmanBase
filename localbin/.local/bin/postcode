@@ -5,7 +5,7 @@
 # GitHub        - https://github.com/The-Repo-Club/
 # Author        - The-Repo-Club [wayne6324@gmail.com]
 # Start on      - Thurs 12 Aug 16:24:07 BST 2021
-# Modified On   - Sun 31 Oct 00:24:44 BST 2021
+# Modified On   - Fri 28 January 2022, 05:14:13 pm (GMT) 
 #------------------------------------------------------------------------------
 
 FILE=$@
@@ -20,5 +20,3 @@ if [ -f "$FILE" ]; then
 else
     printf "%s does not exists.\n" "$FILE"
 fi
-
-

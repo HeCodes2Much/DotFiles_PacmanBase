@@ -1,32 +1,19 @@
-#!/usr/bin/env sh
-#-*-coding:utf-8 -*-
-#Auto updated?
-#   Yes
-#File :
-#   lmgr
-#Author :
-#   The-Repo-Club [wayne6324@gmail.com]
-#Github :
-#   https://github.com/The-Repo-Club/
-#
-#Created:
-#   Sun 23 January 2022, 08:37:12 PM [GMT]
-#Modified:
-#   Sun 23 January 2022, 09:11:04 PM [GMT]
-#
-#Description:
-#   Manager for controlling licences
-#
-#Dependencies:
-#   <None>
-#
+#!/usr/bin/env bash
+# -*-coding:utf-8 -*-
+# -------------------------------------------------------------------------
+# Path          - /home/repo/.local/bin/lmgr
+# GitHub        - https://github.com/The-Repo-Club/
+# Author        - The-Repo-Club [wayne6324@gmail.com]
+# Start On      - Sun 23 January 2022, 11:51:17 am (GMT)
+# Modified On   - Sun 06 February 2022, 11:53:51 am (GMT) 
+# -------------------------------------------------------------------------
+Version=2022.02.06
+# -------------------------------------------------------------------------
 
 set -e
 
-VERSION='0.2'
-
 usage() {
-    echo " License manager v$VERSION"
+    echo " License manager v$Version"
     echo ' manage, switch and template licenses'
     echo ''
     echo " $(basename "$0") <flag | @license>"

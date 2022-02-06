@@ -34,11 +34,11 @@ if command -v autotiling &>/dev/null; then
   fi
 fi
 
-if command -v twmn_check-disk &>/dev/null; then
-  if ! pgrep -f "twmn_check-disk" >/dev/null; then
-    twmn_check-disk &
+if command -v xroot &>/dev/null; then
+  if ! pgrep -f "xroot" >/dev/null; then
+    xroot -r xmenu_desktop &
   else
-    echo "twmn_check-disk already Running"
+    echo "xroot already Running"
   fi
 fi
 

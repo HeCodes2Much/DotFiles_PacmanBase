@@ -1,5 +1,4 @@
 #i3 config file (v4)
-#### vscode-fold=1
 ####
 ####   _____ _          ____                   ____ _       _
 ####  |_   _| |__   ___|  _ \ ___ _ __   ___  / ___| |_   _| |__
@@ -15,14 +14,14 @@ workspace_auto_back_and_forth yes
 ##################################################
 
 # {{{ Variables
-    set $TerminalEmulator kitty
-    set $WebBrowserB google-chrome-stable
-    set $WebBrowserF firefox
-    set $FileManager nemo
-    set $MailReader thunderbird
-    set $TextEditor code
-    set $Hypervisor virtualbox
-    set $GitBrowser lazygit
+set $TerminalEmulator kitty
+set $WebBrowserB google-chrome-stable
+set $WebBrowserF firefox
+set $FileManager nemo
+set $MailReader thunderbird
+set $TextEditor nvim
+set $Hypervisor virtualbox
+set $GitBrowser lazygit
 # }}} Variables
 
 #####################################################################################################################
@@ -30,220 +29,219 @@ workspace_auto_back_and_forth yes
 #####################################################################################################################
 
 # {{{ Definitions
-    # Key to rule them all : Super(Windows) or Alt key?
+# Key    to rule them all : Super(Windows) or Alt key?
 
-    # Mod4 = Windows or Super key on keyboard
-    # Mod1 = Alt key on keyboard
+# Mod4 = Windows or Super key on keyboard
+# Mod1 = Alt key on keyboard
 
-    # KEY DEFINITIONS TO REMEMBER
-    set $super      Mod4
-    set $super_b    bindsym Mod4
-    set $alt        Mod1
-    set $alt_b      bindsym Mod1
-    set $control    Ctrl
-    set $control_b  bindsym Ctrl
-    set $shift      Shift
-    set $shift_b    bindsym Shift
-    set $exe        exec --no-startup-id
-    set $exe_always exec_always --no-startup-id
-    set $print_b    bindsym Print
+# KEY DEFINITIONS TO REMEMBER
+set $super      Mod4
+set $super_b    bindsym Mod4
+set $alt        Mod1
+set $alt_b      bindsym Mod1
+set $control    Ctrl
+set $control_b  bindsym Ctrl
+set $shift      Shift
+set $shift_b    bindsym Shift
+set $exe        exec --no-startup-id
+set $exe_always exec_always --no-startup-id
+set $print_b    bindsym Print
 
+#####################################################################################################################
+#################                          Define the movements keys - variables                    #################
+#####################################################################################################################
 
-    #####################################################################################################################
-    #################                          Define the movements keys - variables                    #################
-    #####################################################################################################################
+#This is setup for qwerty
+set $left h
+set $down j
+set $up k
+set $right l
 
-    #This is setup for qwerty
-    set $left h
-    set $down j
-    set $up k
-    set $right l
+#####################################################################################################################
+#################                          Single and Dual screen                                   #################
+#####################################################################################################################
 
-    #####################################################################################################################
-    #################                          Single and Dual screen                                   #################
-    #####################################################################################################################
+# my current setup
+set $firstMonitor eDP-1
+set $secondMonitor HDMI-1-0
 
-    # my current setup
-    set $firstMonitor eDP-1
-    set $secondMonitor HDMI-1-0
-
-    set $ws1 "1: Terminal"
-    set $ws2 "2: Editor"
-    set $ws3 "3: Files"
-    set $ws4 "4: Graphics"
-    set $ws5 "5: Music"
-    set $ws6 "6: WebBrowser"
-    set $ws7 "7: Mail"
-    set $ws8 "8: Games"
-    set $ws9 "9: Chat"
-    set $ws0 "10: Settings"
+set $ws1 "1: Terminal"
+set $ws2 "2: Editor"
+set $ws3 "3: Files"
+set $ws4 "4: Graphics"
+set $ws5 "5: Music"
+set $ws6 "6: WebBrowser"
+set $ws7 "7: Mail"
+set $ws8 "8: Games"
+set $ws9 "9: Chat"
+set $ws0 "10: Settings"
 
 # }}} Definitions
 
 # {{{ Workspaces
-    workspace $ws1 output $firstMonitor
-    workspace $ws2 output $firstMonitor
-    workspace $ws3 output $firstMonitor
-    workspace $ws4 output $firstMonitor
-    workspace $ws5 output $firstMonitor
-    workspace $ws6 output $secondMonitor
-    workspace $ws7 output $secondMonitor
-    workspace $ws8 output $secondMonitor
-    workspace $ws9 output $secondMonitor
-    workspace $ws0 output $secondMonitor
+workspace $ws1 output $firstMonitor
+workspace $ws2 output $firstMonitor
+workspace $ws3 output $firstMonitor
+workspace $ws4 output $firstMonitor
+workspace $ws5 output $firstMonitor
+workspace $ws6 output $secondMonitor
+workspace $ws7 output $secondMonitor
+workspace $ws8 output $secondMonitor
+workspace $ws9 output $secondMonitor
+workspace $ws0 output $secondMonitor
 
-    # switch to workspace
-    ## Category: i3-Workspaces;
-    # Description: workspace 1;
-    $super_b+1 \
-        workspace $ws1
+# switch to workspace
+## Category: i3-Workspaces;
+# Description: workspace 1;
+$super_b+1 \
+    workspace $ws1
 
-    ## Category: i3-Workspaces;
-    # Description: workspace 2;
-    $super_b+2 \
-        workspace $ws2
+## Category: i3-Workspaces;
+# Description: workspace 2;
+$super_b+2 \
+    workspace $ws2
 
-    ## Category: i3-Workspaces;
-    # Description: workspace 3;
-    $super_b+3 \
-        workspace $ws3
+## Category: i3-Workspaces;
+# Description: workspace 3;
+$super_b+3 \
+    workspace $ws3
 
-    ## Category: i3-Workspaces;
-    # Description: workspace 4;
-    $super_b+4 \
-        workspace $ws4
+## Category: i3-Workspaces;
+# Description: workspace 4;
+$super_b+4 \
+    workspace $ws4
 
-    ## Category: i3-Workspaces;
-    # Description: workspace 5;
-    $super_b+5 \
-        workspace $ws5
+## Category: i3-Workspaces;
+# Description: workspace 5;
+$super_b+5 \
+    workspace $ws5
 
-    ## Category: i3-Workspaces;
-    # Description: workspace 6;
-    $super_b+6 \
-        workspace $ws6
+## Category: i3-Workspaces;
+# Description: workspace 6;
+$super_b+6 \
+    workspace $ws6
 
-    ## Category: i3-Workspaces;
-    # Description: workspace 7;
-    $super_b+7 \
-        workspace $ws7
+## Category: i3-Workspaces;
+# Description: workspace 7;
+$super_b+7 \
+    workspace $ws7
 
-    ## Category: i3-Workspaces;
-    # Description: workspace 8;
-    $super_b+8 \
-        workspace $ws8
+## Category: i3-Workspaces;
+# Description: workspace 8;
+$super_b+8 \
+    workspace $ws8
 
-    ## Category: i3-Workspaces;
-    # Description: workspace 9;
-    $super_b+9 \
-        workspace $ws9
+## Category: i3-Workspaces;
+# Description: workspace 9;
+$super_b+9 \
+    workspace $ws9
 
-    ## Category: i3-Workspaces;
-    # Description: workspace 10;
-    $super_b+0 \
-        workspace $ws0
+## Category: i3-Workspaces;
+# Description: workspace 10;
+$super_b+0 \
+    workspace $ws0
 
-    # Move focused container to workspace
-    ## Category: i3-Workspaces;
-    # Description: Move focused container to workspace 1;
-    $super_b+$control+1 \
-        move container to workspace $ws1
+# Move focused container to workspace
+## Category: i3-Workspaces;
+# Description: Move focused container to workspace 1;
+$super_b+$control+1 \
+    move container to workspace $ws1
 
-    ## Category: i3-Workspaces;
-    # Description: Move focused container to workspace 2;
-    $super_b+$control+2 \
-        move container to workspace $ws2
+## Category: i3-Workspaces;
+# Description: Move focused container to workspace 2;
+$super_b+$control+2 \
+    move container to workspace $ws2
 
-    ## Category: i3-Workspaces;
-    # Description: Move focused container to workspace 3;
-    $super_b+$control+3 \
-        move container to workspace $ws3
+## Category: i3-Workspaces;
+# Description: Move focused container to workspace 3;
+$super_b+$control+3 \
+    move container to workspace $ws3
 
-    ## Category: i3-Workspaces;
-    # Description: Move focused container to workspace 4;
-    $super_b+$control+4 \
-        move container to workspace $ws4
+## Category: i3-Workspaces;
+# Description: Move focused container to workspace 4;
+$super_b+$control+4 \
+    move container to workspace $ws4
 
-    ## Category: i3-Workspaces;
-    # Description: Move focused container to workspace 5;
-    $super_b+$control+5 \
-        move container to workspace $ws5
+## Category: i3-Workspaces;
+# Description: Move focused container to workspace 5;
+$super_b+$control+5 \
+    move container to workspace $ws5
 
-    ## Category: i3-Workspaces;
-    # Description: Move focused container to workspace 6;
-    $super_b+$control+6 \
-        move container to workspace $ws6
+## Category: i3-Workspaces;
+# Description: Move focused container to workspace 6;
+$super_b+$control+6 \
+    move container to workspace $ws6
 
-    ## Category: i3-Workspaces;
-    # Description: Move focused container to workspace 7;
-    $super_b+$control+7 \
-        move container to workspace $ws7
+## Category: i3-Workspaces;
+# Description: Move focused container to workspace 7;
+$super_b+$control+7 \
+    move container to workspace $ws7
 
-    ## Category: i3-Workspaces;
-    # Description: Move focused container to workspace 8;
-    $super_b+$control+8 \
-        move container to workspace $ws8
+## Category: i3-Workspaces;
+# Description: Move focused container to workspace 8;
+$super_b+$control+8 \
+    move container to workspace $ws8
 
-    ## Category: i3-Workspaces;
-    # Description: Move focused container to workspace 9;
-    $super_b+$control+9 \
-        move container to workspace $ws9
+## Category: i3-Workspaces;
+# Description: Move focused container to workspace 9;
+$super_b+$control+9 \
+    move container to workspace $ws9
 
-    ## Category: i3-Workspaces;
-    # Description: Move focused container to workspace 10;
-    $super_b+$control+0 \
-        move container to workspace $ws0
+## Category: i3-Workspaces;
+# Description: Move focused container to workspace 10;
+$super_b+$control+0 \
+    move container to workspace $ws0
 
-    # Move to workspace with focused container
-    ## Category: i3-Workspaces;
-    # Description: Move to workspace with focused container 1;
-    $super_b+$shift+1 \
-        move container to workspace $ws1; workspace $ws1
+# Move to workspace with focused container
+## Category: i3-Workspaces;
+# Description: Move to workspace with focused container 1;
+$super_b+$shift+1 \
+    move container to workspace $ws1; workspace $ws1
 
-    ## Category: i3-Workspaces;
-    # Description: Move to workspace with focused container 2;
-    $super_b+$shift+2 \
-        move container to workspace $ws2; workspace $ws2
+## Category: i3-Workspaces;
+# Description: Move to workspace with focused container 2;
+$super_b+$shift+2 \
+    move container to workspace $ws2; workspace $ws2
 
-    ## Category: i3-Workspaces;
-    # Description: Move to workspace with focused container 3;
-    $super_b+$shift+3 \
-        move container to workspace $ws3; workspace $ws3
+## Category: i3-Workspaces;
+# Description: Move to workspace with focused container 3;
+$super_b+$shift+3 \
+    move container to workspace $ws3; workspace $ws3
 
-    ## Category: i3-Workspaces;
-    # Description: Move to workspace with focused container 4;
-    $super_b+$shift+4 \
-        move container to workspace $ws4; workspace $ws4
+## Category: i3-Workspaces;
+# Description: Move to workspace with focused container 4;
+$super_b+$shift+4 \
+    move container to workspace $ws4; workspace $ws4
 
-    ## Category: i3-Workspaces;
-    # Description: Move to workspace with focused container 5;
-    $super_b+$shift+5 \
-        move container to workspace $ws5; workspace $ws5
+## Category: i3-Workspaces;
+# Description: Move to workspace with focused container 5;
+$super_b+$shift+5 \
+    move container to workspace $ws5; workspace $ws5
 
-    ## Category: i3-Workspaces;
-    # Description: Move to workspace with focused container 6;
-    $super_b+$shift+6 \
-        move container to workspace $ws6; workspace $ws6
+## Category: i3-Workspaces;
+# Description: Move to workspace with focused container 6;
+$super_b+$shift+6 \
+    move container to workspace $ws6; workspace $ws6
 
-    ## Category: i3-Workspaces;
-    # Description: Move to workspace with focused container 7;
-    $super_b+$shift+7 \
-        move container to workspace $ws7; workspace $ws7
+## Category: i3-Workspaces;
+# Description: Move to workspace with focused container 7;
+$super_b+$shift+7 \
+    move container to workspace $ws7; workspace $ws7
 
-    ## Category: i3-Workspaces;
-    # Description: Move to workspace with focused container 8;
-    $super_b+$shift+8 \
-        move container to workspace $ws8; workspace $ws8
+## Category: i3-Workspaces;
+# Description: Move to workspace with focused container 8;
+$super_b+$shift+8 \
+    move container to workspace $ws8; workspace $ws8
 
-    ## Category: i3-Workspaces;
-    # Description: Move to workspace with focused container 9;
-    $super_b+$shift+9 \
-        move container to workspace $ws9; workspace $ws9
+## Category: i3-Workspaces;
+# Description: Move to workspace with focused container 9;
+$super_b+$shift+9 \
+    move container to workspace $ws9; workspace $ws9
 
-    ## Category: i3-Workspaces;
-    # Description: Move to workspace with focused container 10;
-    $super_b+$shift+0 \
-        move container to workspace $ws0; workspace $ws0
+## Category: i3-Workspaces;
+# Description: Move to workspace with focused container 10;
+$super_b+$shift+0 \
+    move container to workspace $ws0; workspace $ws0
 
 # }}} Workspaces
 
@@ -252,11 +250,11 @@ workspace_auto_back_and_forth yes
 #####################################################################################################################
 
 # {{{ Cheat
-    ## Category: Main Keybinds;
-    # Description: Show Keybinds;
-    $super_b+F1 \
-        $exe i3-cheat
-        #$exe ~/.config/i3/scripts/keybinds.sh
+## Category: Main Keybinds;
+# Description: Show Keybinds;
+$super_b+F1 \
+    $exe i3-cheat
+    #$exe ~/.config/i3/scripts/keybinds.sh
 
 # }}} Cheat
 
@@ -266,74 +264,74 @@ workspace_auto_back_and_forth yes
 
 # {{{ Menus
 
-    ## Category: Menus;
-    # Description: Edit Configs;
-    $super_b+F2 \
-        $exe ~/.config/repomenu/scripts/repomenu-edit-configs.sh
+## Category: Menus;
+# Description: Edit Configs;
+$super_b+F2 \
+    $exe ~/.config/repomenu/scripts/repomenu-edit-configs.sh
 
-    ## Category: Menus;
-    # Description: Layout Switcher;
-    $super_b+F3 \
-        $exe ~/.config/repomenu/scripts/repomenu-i3-layout-switcher.sh
+## Category: Menus;
+# Description: Layout Switcher;
+$super_b+F3 \
+    $exe ~/.config/repomenu/scripts/repomenu-i3-layout-switcher.sh
 
-    ## Category: Menus;
-    # Description: Select a Program;
-    $super_b+F4 \
-        $exe ~/.config/repomenu/scripts/repomenu-open-program.sh
+## Category: Menus;
+# Description: Select a Program;
+$super_b+F4 \
+    $exe ~/.config/repomenu/scripts/repomenu-open-program.sh
 
-    ## Category: Menus;
-    # Description: Select a workspace;
-    $super_b+F5 \
-        $exe ~/.config/repomenu/scripts/repomenu-i3-switch-workspaces.sh
+## Category: Menus;
+# Description: Select a workspace;
+$super_b+F5 \
+    $exe ~/.config/repomenu/scripts/repomenu-i3-switch-workspaces.sh
 
-    ## Category: Menus;
-    # Description: Create a workspace;
-    $super_b+F6 \
-        $exe ~/.config/repomenu/scripts/repomenu-i3-empty-workspace.sh
+## Category: Menus;
+# Description: Create a workspace;
+$super_b+F6 \
+    $exe ~/.config/repomenu/scripts/repomenu-i3-empty-workspace.sh
 
-    ## Category: Menus;
-    # Description: Start GMrun;
-    $super_b+F7 \
-        $exe gmrun
+## Category: Menus;
+# Description: Start GMrun;
+$super_b+F7 \
+    $exe gmrun
 
-    ## Category: Menus;
-    # Description: Start SmartRun;
-    $super_b+F8 \
-        $exe repomenue_smartrun
+## Category: Menus;
+# Description: Start SmartRun;
+$super_b+F8 \
+    $exe repomenue_smartrun
 
-    ## Category: Menus;
-    # Description: Start ClipMenu;
-    $super_b+F11 \
-        $exe ~/.config/repomenu/scripts/repomenu-clip-menu.sh
+## Category: Menus;
+# Description: Start ClipMenu;
+$super_b+F11 \
+    $exe ~/.config/repomenu/scripts/repomenu-clip-menu.sh
 
-    ## Category: Menus;
-    # Description: Start RepoMenu;
-    $super_b+F12 \
-        $exe repomenu_run -i -l 10 -w 600 -c -p "Launcher" -q "Launch a app"
+## Category: Menus;
+# Description: Start RepoMenu;
+$super_b+F12 \
+    $exe repomenu_run -i -l 10 -w 600 -c -p "Launcher" -q "Launch a app"
 
-    ## Category: Main Keybinds;
-    # Description: Layout mainCenter;
-    $super_b+Escape \
-        $exe ~/.config/repomenu/scripts/repomenu-i3-layout-switcher.sh mainCenter
+## Category: Main Keybinds;
+# Description: Layout mainCenter;
+$super_b+Escape \
+    $exe ~/.config/repomenu/scripts/repomenu-i3-layout-switcher.sh mainCenter
 
-    ###############################
-    ####### RepoMenu Menu's #######
-    ###############################
+###############################
+####### RepoMenu Menu's #######
+###############################
 
-    ## Category: RepoMenu;
-    # Description: Start RepoMenu;
-    $super_b+m \
-        $exe repomenu_run -i -l 10 -w 600 -c -p "Launcher" -q "Launch a app"
+## Category: RepoMenu;
+# Description: Start RepoMenu;
+$super_b+m \
+    $exe repomenu_run -i -l 10 -w 600 -c -p "Launcher" -q "Launch a app"
 
-    ## Category: RepoMenu;
-    # Description: Start RepoPass;
-    $super_b+p \
-        $exe repomenue_pass
+## Category: RepoMenu;
+# Description: Start RepoPass;
+$super_b+p \
+    $exe repomenue_pass
 
-    ## Category: RepoMenu;
-    # Description: Start SmartRun;
-    $super_b+s \
-        $exe repomenue_smartrun
+## Category: RepoMenu;
+# Description: Start SmartRun;
+$super_b+s \
+    $exe repomenue_smartrun
 
 # }}} Menus
 
@@ -343,20 +341,20 @@ workspace_auto_back_and_forth yes
 
 # {{{ Power
 
-    ## Category:  Main Keybinds;
-    # Description: Exit / Quit / Restart;
-    $super_b+$shift+e \
-        $exe repomenue_powermenu
+## Category:  Main Keybinds;
+# Description: Exit / Quit / Restart;
+$super_b+$shift+e \
+    $exe repomenue_powermenu
 
-    ## Category:  Main Keybinds;
-    # Description: Exit / Quit / Restart;
-    $super_b+$shift+x \
-        $exe repomenue_powermenu
+## Category:  Main Keybinds;
+# Description: Exit / Quit / Restart;
+$super_b+$shift+x \
+    $exe repomenue_powermenu
 
-    ## Category:  Main Keybinds;
-    # Description: Exit / Quit / Restart;
-    $super_b+x \
-        $exe repomenue_powermenu
+## Category:  Main Keybinds;
+# Description: Exit / Quit / Restart;
+$super_b+x \
+    $exe repomenue_powermenu
 
 # }}} Power
 
@@ -366,18 +364,18 @@ workspace_auto_back_and_forth yes
 
 # {{{ Reload
 
-    ## Category: i3-Config;
-    # Description: Restart i3 (preserves your layout/session);
-    $super_b+$shift+r \
-        restart
+## Category: i3-Config;
+# Description: Restart i3 (preserves your layout/session);
+$super_b+$shift+r \
+    restart
 
-    $super_b+$controlr+r \
-        $exec autostart
+$super_b+$controlr+r \
+    $exec autostart
 
-    ## Category: i3-Config;
-    # Description: Reload the configuration file;
-    $super_b+$shift+c \
-        reload
+## Category: i3-Config;
+# Description: Reload the configuration file;
+$super_b+$shift+c \
+    reload
 
 # }}} Reload
 
@@ -401,134 +399,134 @@ $super_b+$shift+q \
 
 # {{{ Moving Around
 
-    # Use Mouse+$super to drag floating windows to their wanted position
-    floating_modifier $super
+# Use Mouse+$super to drag floating windows to their wanted position
+floating_modifier $super
 
-    ## Category: i3-Windows;
-    # Description: Toggle tiling / floating windows;
-    $super_b+$shift+space \
-        floating toggle
+## Category: i3-Windows;
+# Description: Toggle tiling / floating windows;
+$super_b+$shift+space \
+    floating toggle
 
-    ## Category: i3-Windows;
-    # Description: Change focus: left;
-    $super_b+$left \
-        focus left
+## Category: i3-Windows;
+# Description: Change focus: left;
+$super_b+$left \
+    focus left
 
-    ## Category: i3-Windows;
-    # Description: Change focus: down;
-    $super_b+$down \
-        focus down
+## Category: i3-Windows;
+# Description: Change focus: down;
+$super_b+$down \
+    focus down
 
-    ## Category: i3-Windows;
-    # Description: Change focus: up;
-    $super_b+$up \
-        focus up
+## Category: i3-Windows;
+# Description: Change focus: up;
+$super_b+$up \
+    focus up
 
-    ## Category: i3-Windows;
-    # Description: Change focus: right;
-    $super_b+$right \
-        focus right
+## Category: i3-Windows;
+# Description: Change focus: right;
+$super_b+$right \
+    focus right
 
-    ## Category: i3-Windows;
-    # Description: Move focused window: left;
-    $super_b+$shift+$left \
-        move left
+## Category: i3-Windows;
+# Description: Move focused window: left;
+$super_b+$shift+$left \
+    move left
 
-    ## Category: i3-Windows;
-    # Description: Move focused window: down;
-    $super_b+$shift+$down \
-        move down
+## Category: i3-Windows;
+# Description: Move focused window: down;
+$super_b+$shift+$down \
+    move down
 
-    ## Category: i3-Windows;
-    # Description: Move focused window: up;
-    $super_b+$shift+$up \
-        move up
+## Category: i3-Windows;
+# Description: Move focused window: up;
+$super_b+$shift+$up \
+    move up
 
-    ## Category: i3-Windows;
-    # Description: Move focused window: right;
-    $super_b+$shift+$right \
-        move right
+## Category: i3-Windows;
+# Description: Move focused window: right;
+$super_b+$shift+$right \
+    move right
 
-    #####################################################################################################################
-    #################                          moving around workspaces                                 #################
-    #####################################################################################################################
+#####################################################################################################################
+#################                          moving around workspaces                                 #################
+#####################################################################################################################
 
-    # next/previous workspace
-    ## Category: i3-Windows;
-    # Description: Move to next workspace;
-    $alt_b+Tab \
-        workspace next
+# next/previous workspace
+## Category: i3-Windows;
+# Description: Move to next workspace;
+$alt_b+Tab \
+    workspace next
 
-    ## Category: i3-Windows;
-    # Description: Move to prev workspace;
-    $alt_b+$shift+Tab \
-        workspace prev
+## Category: i3-Windows;
+# Description: Move to prev workspace;
+$alt_b+$shift+Tab \
+    workspace prev
 
-    ## Category: i3-Windows;
-    # Description: Scroll though workspaces;
-    $super_b+Tab \
-        workspace back_and_forth
+## Category: i3-Windows;
+# Description: Scroll though workspaces;
+$super_b+Tab \
+    workspace back_and_forth
 
-    # switch to workspace with urgent window automatically
-    for_window [urgent=latest] focus
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
 
-    #####################################################################################################################
-    #################                          Tiling parameters                                        #################
-    #####################################################################################################################
+#####################################################################################################################
+#################                          Tiling parameters                                        #################
+#####################################################################################################################
 
-    # orientation for new workspaces
-    default_orientation auto
+# orientation for new workspaces
+default_orientation auto
 
-    ## Category: i3-Windows;
-    # Description: Toggle split;
-    $alt_b+t \
-        split toggle;exec notify-send 'tile toggled' -a 'i3-wm'
+## Category: i3-Windows;
+# Description: Toggle split;
+$alt_b+t \
+    split toggle;exec notify-send 'tile toggled' -a 'i3-wm'
 
-    ## Category: i3-Windows;
-    # Description: Split in horizontal orientation;
-    $super_b+$alt+h \
-        split h;exec notify-send 'tile horizontally' -a 'i3-wm'
+## Category: i3-Windows;
+# Description: Split in horizontal orientation;
+$super_b+$alt+h \
+    split h;exec notify-send 'tile horizontally' -a 'i3-wm'
 
-    ## Category: i3-Windows;
-    # Description: Split in vertical orientation;
-    $super_b+$alt+v \
-        split v;exec notify-send 'tile vertically' -a 'i3-wm'
+## Category: i3-Windows;
+# Description: Split in vertical orientation;
+$super_b+$alt+v \
+    split v;exec notify-send 'tile vertically' -a 'i3-wm'
 
-    ## Category: i3-Windows;
-    # Description: Enter fullscreen mode for the focused container;
-    $alt_b+f \
-        fullscreen toggle
+## Category: i3-Windows;
+# Description: Enter fullscreen mode for the focused container;
+$alt_b+f \
+    fullscreen toggle
 
-    # change container layout (stacked, tabbed, toggle split)
-    ## Category: i3-Windows;
-    # Description: Change container layout: stacked;
-    $alt_b+s \
-        layout stacking
+# change container layout (stacked, tabbed, toggle split)
+## Category: i3-Windows;
+# Description: Change container layout: stacked;
+$alt_b+s \
+    layout stacking
 
-    ## Category: i3-Windows;
-    # Description: Change container layout: tabbed;
-    $alt_b+z \
-        layout tabbed
+## Category: i3-Windows;
+# Description: Change container layout: tabbed;
+$alt_b+z \
+    layout tabbed
 
-    ## Category: i3-Windows;
-    # Description: Change container layout: toggle split;
-    $alt_b+e \
-        layout toggle split
+## Category: i3-Windows;
+# Description: Change container layout: toggle split;
+$alt_b+e \
+    layout toggle split
 
-    ## Category: i3-Windows;
-    # Description: Change focus between tiling / floating windows;
-    $alt_b+space \
-        focus mode_toggle
+## Category: i3-Windows;
+# Description: Change focus between tiling / floating windows;
+$alt_b+space \
+    focus mode_toggle
 
-    ## Category: i3-Windows;
-    # Description: Focus the parent container;
-    $alt_b+a \
-        focus parent
+## Category: i3-Windows;
+# Description: Focus the parent container;
+$alt_b+a \
+    focus parent
 
-    ## Category: i3-Windows;
-    # Description: Focus the child container;
-    $alt_b+d \
-        focus child
+## Category: i3-Windows;
+# Description: Focus the child container;
+$alt_b+d \
+    focus child
 
 # }}} Moving Around
 
@@ -538,34 +536,34 @@ $super_b+$shift+q \
 
 # {{{ Resize
 
-    ## Category: i3-Windows;
-    # Description: Resize window (you can also use the mouse for that);
-    $super_b+r \
-        mode "$resize"
+## Category: i3-Windows;
+# Description: Resize window (you can also use the mouse for that);
+$super_b+r \
+    mode "$resize"
 
-    set $resize Resize: [U]p [D]own [L]eft [R]ight
-    mode "$resize" {
-        # These bindings trigger as soon as you enter the resize mode
+set $resize Resize: [U]p [D]own [L]eft [R]ight
+mode "$resize" {
+    # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym --release $left       resize shrink width 10 px or 10 ppt
-        bindsym --release $down       resize grow height 10 px or 10 ppt
-        bindsym --release $up         resize shrink height 10 px or 10 ppt
-        bindsym --release $right      resize grow width 10 px or 10 ppt
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym --release $left       resize shrink width 10 px or 10 ppt
+    bindsym --release $down       resize grow height 10 px or 10 ppt
+    bindsym --release $up         resize shrink height 10 px or 10 ppt
+    bindsym --release $right      resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym --release Left        resize shrink width 10 px or 10 ppt
-        bindsym --release Down        resize grow height 10 px or 10 ppt
-        bindsym --release Up          resize shrink height 10 px or 10 ppt
-        bindsym --release Right       resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym --release Left        resize shrink width 10 px or 10 ppt
+    bindsym --release Down        resize grow height 10 px or 10 ppt
+    bindsym --release Up          resize shrink height 10 px or 10 ppt
+    bindsym --release Right       resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-    }
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 # }}} Resize
 
@@ -584,45 +582,45 @@ font pango:Noto Mono Regular 13
 
 # {{{ Assign Applications
 
-    # Assign application to start on a specific workspace
-    # you can find the class with the program xprop
+# Assign application to start on a specific workspace
+# you can find the class with the program xprop
 
-    # sign via class
-    # Workspace $ws1 Terminal
-    assign [class="(?i)Alacritty|Kitty"]                                            → $ws1
+# sign via class
+# Workspace $ws1 Terminal
+assign [class="(?i)Alacritty|Kitty"]                                            → $ws1
 
-    # Workspace $ws2 Text Editor
-    assign [class="(?i)Code|Jetbrains"]                                             → $ws2
+# Workspace $ws2 Text Editor
+assign [class="(?i)Nvim|Jetbrains"]                                             → $ws2
 
-    # Workspace $ws3 Files
-    assign [class="(?i)Nemo"]                                                       → $ws3
+# Workspace $ws3 Files
+assign [class="(?i)Nemo"]                                                       → $ws3
 
-    # Workspace $ws4 Graphics
-    assign [class="(?i)Aseprite|Krita"]                                             → $ws4
+# Workspace $ws4 Graphics
+assign [class="(?i)Aseprite|Krita"]                                             → $ws4
 
-    # Workspace $ws5 Music
-    assign [class="(?i)Xephyr"]                                                     → $ws5
-    assign [class="(?i)CmusImage"]                                                  → $ws5
+# Workspace $ws5 Music
+assign [class="(?i)Xephyr"]                                                     → $ws5
+assign [class="(?i)CmusImage"]                                                  → $ws5
 
-    # Workspace $ws6 WebBrowser
-    assign [class="(?i)Firefox|Google-Chrome"]                                      → $ws6
+# Workspace $ws6 WebBrowser
+assign [class="(?i)Firefox|Google-Chrome"]                                      → $ws6
 
-    # Workspace $ws7 Other Stuf
-    assign [class="(?i)Mail|Thunderbird"]                                           → $ws7
-    assign [class="(?i)Keybase"]                                                    → $ws7
+# Workspace $ws7 Other Stuf
+assign [class="(?i)Mail|Thunderbird"]                                           → $ws7
+assign [class="(?i)Keybase"]                                                    → $ws7
 
-    # Workspace $ws8 file GitAhea
-    assign [class="(?i)Minecraft*|Steam*"]                                          → $ws8
-    assign [class="(?i)0ad*|Minetest"]                                              → $ws8
+# Workspace $ws8 file GitAhea
+assign [class="(?i)Minecraft*|Steam*"]                                          → $ws8
+assign [class="(?i)0ad*|Minetest"]                                              → $ws8
 
-    # Workspace $ws9 Cha
-    assign [class="(?i)Telegram|Element"]                                           → $ws9
+# Workspace $ws9 Cha
+assign [class="(?i)Telegram|Element"]                                           → $ws9
 
-    # Workspace $ws0 Setting
-    assign [class="(?i)Virt*|LazyGit"]                                              → $ws0
-    assign [class="(?i)Dconf-editor|Piper*"]                                        → $ws0
-    assign [class="(?i)Actions|Btop"]                                               → $ws0
-    assign [class="(?i)PkgBrowser"]                                                 → $ws0
+# Workspace $ws0 Setting
+assign [class="(?i)Virt*|LazyGit"]                                              → $ws0
+assign [class="(?i)Dconf-editor|Piper*"]                                        → $ws0
+assign [class="(?i)Actions|Btop"]                                               → $ws0
+assign [class="(?i)PkgBrowser"]                                                 → $ws0
 
 # }}} Assign Applications
 
@@ -632,25 +630,25 @@ font pango:Noto Mono Regular 13
 
 # {{{ System Applications
 
-    ## Category: Applications;
-    # Description: Change Hosts;
-    $super_b+g \
-        mode "$hosts_launcher"
+## Category: Applications;
+# Description: Change Hosts;
+$super_b+g \
+    mode "$hosts_launcher"
 
-    set $hosts_launcher Hosts: [d]efault [g]oogle d[e]google
-    mode "$hosts_launcher" {
-        bindsym --release d \
-            $exe hostswitcher --default; mode "default"
+set $hosts_launcher Hosts: [d]efault [g]oogle d[e]google
+mode "$hosts_launcher" {
+    bindsym --release d \
+        $exe hostswitcher --default; mode "default"
 
-        bindsym --release g \
-            $exe hostswitcher --google; mode "default"
+    bindsym --release g \
+        $exe hostswitcher --google; mode "default"
 
-        bindsym --release e \
-            $exe hostswitcher --degoogle; mode "default"
+    bindsym --release e \
+        $exe hostswitcher --degoogle; mode "default"
 
-        bindsym Escape mode "default"
-        bindsym Return mode "default"
-    }
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
 
 # }}} System Applications
 
@@ -660,148 +658,148 @@ font pango:Noto Mono Regular 13
 
 # {{{ Applications Keyboard Shortcuts
 
-    #workspace related
+# workspace related
 
-    #workspace 1 related
+# workspace 1 related
 
-    ## Category: Applications;
-    # Description: Launch $TerminalEmulator;
-    $super_b+Return \
-        $exe $TerminalEmulator;focus
-    $super_b+KP_Enter \
-        $exe $TerminalEmulator;focus
+## Category: Applications;
+# Description: Launch $TerminalEmulator;
+$super_b+Return \
+    $exe $TerminalEmulator;focus
+$super_b+KP_Enter \
+    $exe $TerminalEmulator;focus
 
-    #workspace 2 related
+# workspace 2 related
 
-    ## Category: Applications;
-    # Description: Launch $TextEditor;
-    $super_b+$control+c \
-        $exe $TextEditor;focus
+## Category: Applications;
+# Description: Launch $TextEditor;
+$super_b+$control+c \
+    $exe $TextEditor;focus
 
-    ## Category: Applications;
-    # Description: Launch Intellij Idea;
-    $super_b+$control+i \
-        $exe idea;focus
+## Category: Applications;
+# Description: Launch Intellij Idea;
+$super_b+$control+i \
+    $exe idea;focus
 
-    #workspace 3 related
+# workspace 3 related
 
-    ## Category: Applications;
-    # Description: Launch $FileManager;
-    $super_b+$shift+Return \
-        $exe $FileManager;focus
+## Category: Applications;
+# Description: Launch $FileManager;
+$super_b+$shift+Return \
+    $exe $FileManager;focus
 
-    $super_b+$shift+KP_Enter \
-        $exe $FileManager;focus
+$super_b+$shift+KP_Enter \
+    $exe $FileManager;focus
 
-    #workspace 4 related
+# workspace 4 related
 
-    ## Category: Applications;
-    # Description: Launch Krita;
-    $super_b+$control+k \
-        $exe krita;focus
+## Category: Applications;
+# Description: Launch Krita;
+$super_b+$control+k \
+    $exe krita;focus
 
-    #workspace 5 related
+# workspace 5 related
 
-    ## Category: Applications;
-    # Description: Launch VLC;
-    $super_b+$control+v \
-        $exe vlc;focus
+## Category: Applications;
+# Description: Launch VLC;
+$super_b+$control+v \
+    $exe vlc;focus
 
-    #workspace 6 related
+# workspace 6 related
 
-    ## Category: Applications;
-    # Description: Launch $WebBrowserB;
-    $super_b+$control+b \
-        $exe $WebBrowserB;focus
+## Category: Applications;
+# Description: Launch $WebBrowserB;
+$super_b+$control+b \
+    $exe $WebBrowserB;focus
 
-    ## Category: Applications;
-    # Description: Launch $WebBrowserF;
-    $super_b+$control+f \
-        $exe $WebBrowserF;focus
+## Category: Applications;
+# Description: Launch $WebBrowserF;
+$super_b+$control+f \
+    $exe $WebBrowserF;focus
 
-    #workspace 7 related
+# workspace 7 related
 
-    ## Category: Applications;
-    # Description: Launch $MailReader;
-    $super_b+$control+m \
-        $exe $MailReader;focus
+## Category: Applications;
+# Description: Launch $MailReader;
+$super_b+$control+m \
+    $exe $MailReader;focus
 
-    #workspace 8 related
+# workspace 8 related
 
-    #workspace 8 related
+# workspace 8 related
 
-    #workspace 0 related
+# workspace 0 related
 
-    ## Category: Applications;
-    # Description: Launch btop;
-    $super_b+o \
-        $exe $TerminalEmulator --title=btop --class=btop -e btop;focus
+## Category: Applications;
+# Description: Launch btop;
+$super_b+o \
+    $exe $TerminalEmulator --title=btop --class=btop -e btop;focus
 
-    ########################################
-    #############    Games     #############
-    ########################################
+########################################
+#############    Games     #############
+########################################
 
-    ## Category: Applications;
-    # Description: Launch Games;
-    $super_b+$control+g \
-        mode "$game_launcher"
+## Category: Applications;
+# Description: Launch Games;
+$super_b+$control+g \
+    mode "$game_launcher"
 
-    set $game_launcher Launch: [0]ad [s]eam [m]inecraft mine[t]est
-    mode "$game_launcher" {
-        bindsym --release 0 \
-            $exe prime-run 0ad;focus; mode "default"
+set $game_launcher Launch: [0]ad [s]eam [m]inecraft mine[t]est
+mode "$game_launcher" {
+    bindsym --release 0 \
+        $exe prime-run 0ad;focus; mode "default"
 
-        bindsym --release s \
-            $exe prime-run steam;focus; mode "default"
+    bindsym --release s \
+        $exe prime-run steam;focus; mode "default"
 
-        bindsym --release m \
-            $exe prime-run multimc;focus; mode "default"
+    bindsym --release m \
+        $exe prime-run multimc;focus; mode "default"
 
-        bindsym --release t \
-            $exe prime-run minetest;focus; mode "default"
+    bindsym --release t \
+        $exe prime-run minetest;focus; mode "default"
 
-        bindsym Escape mode "default"
-        bindsym Return mode "default"
-    }
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
 
-    #workspace 9 related
+# workspace 9 related
 
-    ## Category: Applications;
-    # Description: Launch telegram-desktop;
-    $super_b+$control+t \
-        $exe telegram-desktop;focus
+## Category: Applications;
+# Description: Launch telegram-desktop;
+$super_b+$control+t \
+    $exe telegram-desktop;focus
 
-    ## Category: Applications;
-    # Description: Launch Element;
-    $super_b+$control+e \
-        $exe element-desktop;focus
+## Category: Applications;
+# Description: Launch Element;
+$super_b+$control+e \
+    $exe element-desktop;focus
 
-    #workspace 10 related
+# workspace 10 related
 
-    ## Category: Applications;
-    # Description: Launch Piper;
-    $super_b+$control+p \
-        $exe piper;focus
+## Category: Applications;
+# Description: Launch Piper;
+$super_b+$control+p \
+    $exe piper;focus
 
-    ## Category: Applications;
-    # Description: Change MultiMonitorLock;
-    $super_b+$shift+z \
-        $exe multimonitorlock-gui;focus
+## Category: Applications;
+# Description: Change MultiMonitorLock;
+$super_b+$shift+z \
+    $exe multimonitorlock-gui;focus
 
-    ## Category: Applications;
-    # Description: Launch Pavucontrol;
-    $control_b+$alt+u \
-        $exe pavucontrol;focus
+## Category: Applications;
+# Description: Launch Pavucontrol;
+$control_b+$alt+u \
+    $exe pavucontrol;focus
 
-    ## Category: Applications;
-    # Description: Launch pkgbrowser;
-    $control_b+$alt+p \
-        $exe pkgbrowser;focus
+## Category: Applications;
+# Description: Launch pkgbrowser;
+$control_b+$alt+p \
+    $exe pkgbrowser;focus
 
-    ## Category: Applications;
-    # Description: Launch $Hypervisor;
-    $super_b+$control+h \
-        $exe $Hypervisor;focus
+## Category: Applications;
+# Description: Launch $Hypervisor;
+$super_b+$control+h \
+    $exe $Hypervisor;focus
 
 # }}} Applications Keyboard Shortcuts
 
@@ -811,26 +809,26 @@ font pango:Noto Mono Regular 13
 
 # {{{ Screenshots
 
-    ## Category: Screenshots;
-    # Description: Screen Shot Mode;
-    $super_b+Print \
-        mode "$screenshot"
+## Category: Screenshots;
+# Description: Screen Shot Mode;
+$super_b+Print \
+    mode "$screenshot"
 
-    set $screenshot Screenshot: [w]indow [s]election [f]ullscreen
-    mode "$screenshot" {
-        bindsym --release w \
-            $exe win-shot -w; mode "default"
+set $screenshot Screenshot: [w]indow [s]election [f]ullscreen
+mode "$screenshot" {
+    bindsym --release w \
+        $exe win-shot -w; mode "default"
 
-        bindsym --release s \
-            $exe win-shot -s; mode "default"
+    bindsym --release s \
+        $exe win-shot -s; mode "default"
 
-        bindsym --release f \
-            $exe win-shot -f; mode "default"
+    bindsym --release f \
+        $exe win-shot -f; mode "default"
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-    }
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 # }}} Screenshots
 
@@ -840,20 +838,20 @@ font pango:Noto Mono Regular 13
 
 # {{{ Floating/Tiled
 
-    #floating enabled from some programs - find with xprop
+#floating enabled from some programs - find with xprop
 
-    for_window [class="(?i)Imagewriter"] floating enable
-    for_window [class="(?i)Font-manager"] floating enable
-    for_window [class="(?i)Yad*"] floating enable
-    for_window [class="(?i)Pavucontrol"] floating enable, resize set 640 480, move position center
-    for_window [class="(?i)wm-cheat.py"] floating enable, resize set 720 720, move position center
-    for_window [class="(?i)MultiMonitorLock-GUI"] floating enable
-    for_window [class="(?i)Polybar-updates"] floating enable, resize set 1280 720, move position center
-    for_window [class="(?i)floatmenu"] floating enable
+for_window [class="(?i)Imagewriter"] floating enable
+for_window [class="(?i)Font-manager"] floating enable
+for_window [class="(?i)Yad*"] floating enable
+for_window [class="(?i)Pavucontrol"] floating enable, resize set 640 480, move position center
+for_window [class="(?i)wm-cheat.py"] floating enable, resize set 720 720, move position center
+for_window [class="(?i)MultiMonitorLock-GUI"] floating enable
+for_window [class="(?i)Polybar-updates"] floating enable, resize set 1280 720, move position center
+for_window [class="(?i)floatmenu"] floating enable
 
-    for_window [title="Copying"] floating enable
-    for_window [title="Deleting"] floating enable
-    for_window [title="Moving"] floating enable
+for_window [title="Copying"] floating enable
+for_window [title="Deleting"] floating enable
+for_window [title="Moving"] floating enable
 
 # }}} Floating/Tiled
 
@@ -863,14 +861,14 @@ font pango:Noto Mono Regular 13
 
 # {{{ Audio Settings
 
-    bindsym XF86AudioRaiseVolume $exe "amixer -D pulse sset Master '5%+'"
-    bindsym XF86AudioLowerVolume $exe "amixer -D pulse sset Master '5%-'"
-    bindsym XF86AudioMute $exe "amixer -D pulse set Master toggle"
-    #https://github.com/acrisci/playerctl/
-    bindsym XF86AudioPlay $exe playerctl play-pause
-    bindsym XF86AudioNext $exe playerctl next
-    bindsym XF86AudioPrev $exe playerctl previous
-    bindsym XF86AudioStop $exe playerctl stop
+bindsym XF86AudioRaiseVolume $exe "amixer -D pulse sset Master '5%+'"
+bindsym XF86AudioLowerVolume $exe "amixer -D pulse sset Master '5%-'"
+bindsym XF86AudioMute $exe "amixer -D pulse set Master toggle"
+#https://github.com/acrisci/playerctl/
+bindsym XF86AudioPlay $exe playerctl play-pause
+bindsym XF86AudioNext $exe playerctl next
+bindsym XF86AudioPrev $exe playerctl previous
+bindsym XF86AudioStop $exe playerctl stop
 
 # }}} Audio Settings
 
@@ -880,8 +878,8 @@ font pango:Noto Mono Regular 13
 
 # {{{ xbacklight
 
-    bindsym XF86MonBrightnessUp $exe xbacklight -inc 10 # increase screen brightness
-    bindsym XF86MonBrightnessDown $exe xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp $exe xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown $exe xbacklight -dec 10 # decrease screen brightness
 
 # }}} xbacklight
 
@@ -900,36 +898,36 @@ $super_b+b \
 
 # {{{ Border Control
 
-    # Border control
-    hide_edge_borders none
+# Border control
+hide_edge_borders none
 
-    ## Category: i3-Windows;
-    # Description: i3 border toggle;
-    $super_b+$shift+b \
-        $exe i3-msg border toggle
+## Category: i3-Windows;
+# Description: i3 border toggle;
+$super_b+$shift+b \
+    $exe i3-msg border toggle
 
-    ## Category: i3-Windows;
-    # Description: i3 border normal;
-    $super_b+n \
-        border normal
+## Category: i3-Windows;
+# Description: i3 border normal;
+$super_b+n \
+    border normal
 
-    ## Category: i3-Windows;
-    # Description: i3 border 1pixel;
-    $super_b+y \
-        border 1pixel
+## Category: i3-Windows;
+# Description: i3 border 1pixel;
+$super_b+y \
+    border 1pixel
 
-    ## Category: i3-Windows;
-    # Description: i3 border none;
-    $super_b+u \
-        border none
+## Category: i3-Windows;
+# Description: i3 border none;
+$super_b+u \
+    border none
 
-    new_window pixel 1
-    #new_window normal
-    #new_window none
+new_window pixel 1
+#new_window normal
+#new_window none
 
-    new_float pixel 1
-    #new_float normal
-    #new_float none
+new_float pixel 1
+#new_float normal
+#new_float none
 
 # }}} Border Control
 
@@ -961,45 +959,45 @@ gaps outer 2
 
 # {{{ Gaps Change
 
-    set $mode_gaps Gaps: (o) outer, (i) inner
-    set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift++|-|0 (global)
-    set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift++|-|0 (global)
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift++|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift++|-|0 (global)
 
-    # Description: i3 mode: Gaps;
-    $super_b+$shift+g \
-        mode "$mode_gaps"
+# Description: i3 mode: Gaps;
+$super_b+$shift+g \
+    mode "$mode_gaps"
 
-    mode "$mode_gaps" {
-        bindsym --release  o      mode "$mode_gaps_outer"
-        bindsym --release  i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-    }
+mode "$mode_gaps" {
+    bindsym --release  o      mode "$mode_gaps_outer"
+    bindsym --release  i      mode "$mode_gaps_inner"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
-    mode "$mode_gaps_inner" {
-        bindsym --release  plus  gaps inner current plus 5
-        bindsym --release  minus gaps inner current minus 5
-        bindsym --release  0     gaps inner current set 0
+mode "$mode_gaps_inner" {
+    bindsym --release  plus  gaps inner current plus 5
+    bindsym --release  minus gaps inner current minus 5
+    bindsym --release  0     gaps inner current set 0
 
-        $shift_b+plus  gaps inner all plus 5
-        $shift_b+minus gaps inner all minus 5
-        $shift_b+0     gaps inner all set 0
+    $shift_b+plus  gaps inner all plus 5
+    $shift_b+minus gaps inner all minus 5
+    $shift_b+0     gaps inner all set 0
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-    }
-    mode "$mode_gaps_outer" {
-        bindsym --release  plus  gaps outer current plus 5
-        bindsym --release  minus gaps outer current minus 5
-        bindsym --release  0     gaps outer current set 0
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+    bindsym --release  plus  gaps outer current plus 5
+    bindsym --release  minus gaps outer current minus 5
+    bindsym --release  0     gaps outer current set 0
 
-        $shift_b+plus  gaps outer all plus 5
-        $shift_b+minus gaps outer all minus 5
-        $shift_b+0     gaps outer all set 0
+    $shift_b+plus  gaps outer all plus 5
+    $shift_b+minus gaps outer all minus 5
+    $shift_b+0     gaps outer all set 0
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-    }
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 # }}} Gaps Change
 
@@ -1015,22 +1013,22 @@ gaps outer 2
 
 # {{{ Autostart
 
-    # USER APPLICATIONS TO START AT BOOT
+# USER APPLICATIONS TO START AT BOOT
 
-    # start autostart
-    $exe autostart
+# start autostart
+$exe autostart
 
 # }}} Autostart
 
 # {{{ Settings
 
-    exec --no-startup-id setxkbmap -option caps:super
-    exec --no-startup-id repomenue_youtube_subs -d
+exec --no-startup-id setxkbmap -option caps:super
+exec --no-startup-id repomenue_youtube_subs -d
 
-    # setting variables for later use
-    # use xrandr and/or arandr to know the names of your monitors
-    # use this line to tell which monitor is on the right
-    exec --no-startup-id autorandr --force --load i3
+# setting variables for later use
+# use xrandr and/or arandr to know the names of your monitors
+# use this line to tell which monitor is on the right
+exec --no-startup-id autorandr --force --load i3
 
 # }}} Settings
 
@@ -1053,34 +1051,34 @@ $control_b+$alt+o \
 
 # {{{ Scratchpad
 
-    # move the currently focused window to the scratchpad
+# move the currently focused window to the scratchpad
 
-    ## Category: Scratchpad;
-    # Description: Move focused window to scratchpad;
-    $super_b+$shift+minus \
-        move scratchpad
+## Category: Scratchpad;
+# Description: Move focused window to scratchpad;
+$super_b+$shift+minus \
+    move scratchpad
 
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
 
-    ## Category: Scratchpad;
-    # Description: Show the next scratchpad window;
-    $super_b+minus \
-        scratchpad show
+## Category: Scratchpad;
+# Description: Show the next scratchpad window;
+$super_b+minus \
+    scratchpad show
 
-    #######################################################################
-    #################          active scratchpad          #################
-    #######################################################################
+#######################################################################
+#################          active scratchpad          #################
+#######################################################################
 
-    for_window [class="(?i)dropdown-terminal"] floating enable
-    for_window [class="(?i)dropdown-terminal"] resize set 800 600
-    for_window [class="(?i)dropdown-terminal"] move scratchpad
-    $exe $TerminalEmulator --title="Dropdown-Terminal" --class="Dropdown-Terminal" --name="Dropdown-Terminal"
+for_window [class="(?i)dropdown-terminal"] floating enable
+for_window [class="(?i)dropdown-terminal"] resize set 800 600
+for_window [class="(?i)dropdown-terminal"] move scratchpad
+$exe $TerminalEmulator --title="Dropdown-Terminal" --class="Dropdown-Terminal" --name="Dropdown-Terminal"
 
-    ## Category: Scratchpad;
-    # Description: Toggle $TerminalEmulator;
-    $control_b+Return \
-        [class="(?i)dropdown-terminal"] scratchpad show, move position center
+## Category: Scratchpad;
+# Description: Toggle $TerminalEmulator;
+$control_b+Return \
+    [class="(?i)dropdown-terminal"] scratchpad show, move position center
 
 # }}} Scratchpad
 
@@ -1094,16 +1092,16 @@ $control_b+$alt+o \
 
 # {{{ Colors
 
-    # Theme colors
-    # class                 border  bground text    indicator child_border
-    client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #FF79C6
-    client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #6272A4
-    client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #6272A4
-    client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #44475A
-    client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+# Theme colors
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #FF79C6
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #6272A4
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #6272A4
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #44475A
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
-    client.background       #F8F8F2
-    ##STOP THEMING
+client.background       #F8F8F2
+##STOP THEMING
 
 # }}} Colors
 

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+USER="The-Repo-Club"
+TOKEN="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"
+
+repositories=$(echo "user = \"$USER:$TOKEN\"" | curl -sf -K- "https://api.github.com/users/$USER/repos?per_page=100&type=all" | jq ".[].id" | wc -l)
+
+echo "$repositories Repositories"

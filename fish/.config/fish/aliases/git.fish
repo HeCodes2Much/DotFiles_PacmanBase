@@ -98,3 +98,7 @@ end
 function gall
     gpull && gadd . && gcommit -s && gpush
 end
+
+function config
+	git --git-dir=/mnt/500GB/.gitlabs/newDotFiles --work-tree=$HOME $argv
+end

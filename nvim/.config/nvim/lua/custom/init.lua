@@ -86,6 +86,9 @@ hooks.add("install_plugins", function(use)
         "mboughaba/i3config.vim",
     }
     use {
-        "The-Repo-Club/VimPugins"
+        "The-Repo-Club/Vim_Headers"
+    }
+    use {
+        "The-Repo-Club/Vim_Keys"
     }
 end)

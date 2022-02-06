@@ -27,7 +27,8 @@ M.options = {
 
     autoindent = true,
     cindent = true,
-    expandtab = true,
+    noexpandtab = true,
+    expandtab = false,
     shiftwidth = 4,
     smartindent = true,
     smarttab = true,

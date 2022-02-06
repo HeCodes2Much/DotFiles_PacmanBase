@@ -1,0 +1,31 @@
+                    TRC GENERAL PUBLIC LICENSE
+                    Version 3, 31 JANUARY 2022
+
+This license is an open source license with restrictions for commercial and corporate use.
+    Any project under this license ...
+        CANNOT be used commercially
+        CANNOT be redistributed with any sort of fee
+        CANNOT be redistributed in any proprietary form (binary, obfuscated, etc.)
+        CANNOT be patented
+        CANNOT change to any more proprietary license
+        CANNOT depend on any proprietary code/code blobs/software
+        CANNOT be used by any corporate individual, company or organisation
+
+        DOESN'T have any warranty
+
+        CAN be modified
+        CAN be redistributed in an open source form
+        CAN be used privately
+
+    This license is non-corporate, individual use only.
+
+    The owner of this project holds NO LIABILITY if any unstable, redistributed or modified
+    versions of this project harms you in any way.
+
+    Redistributed or modified versions of this project...
+        MUST have the same license as the original project
+        MUST disclose the project's source
+
+    OWNER:          {{AUTHOR_NAME}} <{{AUTHOR_EMAIL}}>
+    PROJECT NAME:   {{PROJECT_NAME}}
+    YEAR:           {{CURRENT_YEAR}}

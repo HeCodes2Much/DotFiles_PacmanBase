@@ -1,0 +1,125 @@
+Accessories
+	Archive Manager	file-roller
+	DB Browser for SQLite	sqlitebrowser
+	compton (X compositor)	compton
+	Galculator	galculator
+	GPG-Crypter	gpg-crypter
+	MultiMonitorLock GUI (MultiMonitorLock)	/usr/bin/multimonitorlock-gui
+	HP Device Manager (Printer Management Application)	hp-toolbox
+	LXQt File Archiver (File Archiver)	lxqt-archiver
+	Nemo	nemo
+	Neovim (Text Editor)	xterm -e nvim
+	nitrogen (Wallpaper Setter)	nitrogen
+	Passwords and Keys	seahorse
+	Piper	piper
+	anymeal (Recipe Manager)	anymeal
+	Screenkey	screenkey
+	Software Token (small) (Software Token)	stoken-gui --small
+	Software Token (Software Token)	stoken-gui
+	Stacer	stacer
+	SUSE Studio Imagewriter (USB key writer)	imagewriter
+	Text Editor	xed
+	Touchpad Indicator (Touchpad Indicator)	/usr/bin/touchpad-indicator
+	Winetricks	winetricks --gui
+	picom (X compositor)	picom
+	YubiKey Personalization Tool (YubiKey Personalization Tool)	yubikey-personalization-gui
+Development
+	DB Browser for SQLite	sqlitebrowser
+	CMake	cmake-gui
+	Qt Designer (Interface Designer)	designer
+	Electron 13	electron13
+	Electron	electron
+	Godot Engine (Libre game engine)	godot
+	Icon Browser	yad-icon-browser
+	IntelliJ IDEA Community Edition	/usr/bin/idea
+	Meld (Diff Viewer)	meld
+	Qt Assistant	assistant
+	Qt Linguist	linguist
+	Qt QDBusViewer  (D-Bus Debugger)	qdbusviewer
+Games
+	0 A.D.	0ad
+	Left 4 Dead 2	steam steam://rungameid/550
+	Dosbox	dosbox
+	Minetest (Minetest)	minetest
+	NBTEditor	/usr/bin/nbteditor
+	RuneScape (RuneScape)	/usr/bin/runescape-launcher
+	Steam (Runtime)	/usr/bin/steam-runtime
+	TERA	steam steam://rungameid/212740
+	Creativerse	steam steam://rungameid/280790
+	CaesarIA	steam steam://rungameid/327640
+	Aseprite	steam steam://rungameid/431730
+	Grand Theft Auto V	steam steam://rungameid/271590
+	Euro Truck Simulator 2	steam steam://rungameid/227300
+Graphics
+	Blender (3D modeler)	blender
+	Document Scanner	simple-scan
+	FontForge (Font Editor)	fontforge
+	GNU Image Manipulation Program (Image Editor)	gimp-2.10
+	gThumb (Image Viewer)	gthumb
+	Inkscape (Vector Graphics Editor)	inkscape
+	Krita (Digital Painting)	krita
+	Peek (Animated GIF recorder)	peek
+	Tiled (Map Editor)	tiled
+Internet
+	Avahi SSH Server Browser	/usr/bin/bssh
+	Avahi VNC Server Browser	/usr/bin/bvnc
+	Discord (Internet Messenger)	/usr/bin/discord
+	Element	/usr/bin/element-desktop
+	Firefox (Web Browser)	/usr/lib/firefox/firefox
+	Google Chrome (Web Browser)	/usr/bin/google-chrome-stable
+	qBittorrent (BitTorrent client)	qbittorrent
+	Steam (Runtime)	/usr/bin/steam-runtime
+	Telegram Desktop	telegram-desktop --
+Multimedia
+	Volume Icon	volumeicon
+	mpv Media Player (Multimedia player)	mpv --player-operation-mode=pseudo-gui --
+	Peek (Animated GIF recorder)	peek
+	PulseAudio System Tray	pasystray
+	Qt V4L2 test Utility	qv4l2
+	Qt V4L2 video capture utility	qvidcap
+	PulseAudio Volume Control (Volume Control)	pavucontrol
+Settings
+	Advanced Network Configuration	nm-connection-editor
+	ARandR (Screen Settings)	arandr
+	Bluetooth Manager	blueman-manager
+	ckb-next	/usr/bin/ckb-next
+	Grub Customizer	grub-customizer
+	MultiMonitorLock GUI (MultiMonitorLock)	/usr/bin/multimonitorlock-gui
+	NVIDIA X Server Settings	/usr/bin/nvidia-settings
+	Print Settings (Print Settings)	system-config-printer
+	PulseAudio Preferences (Sound Server Preferences)	paprefs
+	Qt5 Settings	qt5ct
+	Qt6 Settings	qt6ct
+	Themix/Oomox theme designer (Themix)	oomox-gui
+	PulseAudio Volume Control (Volume Control)	pavucontrol
+	YAD settings	yad-settings
+System
+	akm	akm
+	Alacritty (Terminal)	alacritty
+	Avahi Zeroconf Browser	/usr/bin/avahi-discover
+	ckb-next	/usr/bin/ckb-next
+	Configure EOS Update Notifier	eos-update-notifier-configure
+	dconf Editor (Configuration editor for dconf)	dconf-editor
+	EndeavourOS apps info	eos-apps-info
+	EndeavourOS log tool	/usr/bin/eos-log-tool
+	fish	xterm -e fish
+	GParted (Partition Editor)	/usr/bin/gparted
+	Grub Customizer	grub-customizer
+	OpenJDK Java 17 Console	/usr/lib/jvm/java-17-openjdk/bin/jconsole
+	OpenJDK Java 17 Shell	xterm -e /usr/lib/jvm/java-17-openjdk/bin/jshell
+	kitty (Terminal emulator)	kitty
+	Hardware Locality lstopo	lstopo
+	Manage Printing	/usr/bin/xdg-open http://localhost:631/
+	OpenJDK Java 11 Console	/usr/lib/jvm/java-11-openjdk/bin/jconsole
+	OpenJDK Java 11 Shell	xterm -e /usr/lib/jvm/java-11-openjdk/bin/jshell
+	Oracle VM VirtualBox (Virtual Machine)	VirtualBox
+	Pacman Log Viewer	plv
+	PkgBrowser (Package Browser)	pkgbrowser
+	Print Settings (Print Settings)	system-config-printer
+	Reflector Simple	/usr/bin/reflector-simple
+	SUSE Studio Imagewriter (USB key writer)	imagewriter
+	UpdateInTerminal	UpdateInTerminal --nt
+	xplr	xterm -e xplr
+Others
+	gmrun (gmrun)	gmrun
+	hp-uiscan	/usr/bin/hp-uiscan
