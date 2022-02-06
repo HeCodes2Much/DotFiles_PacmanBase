@@ -1,8 +1,0 @@
-#!/bin/sh
-
-USER="The-Repo-Club"
-TOKEN="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"
-
-notifications=$(echo "user = \"$USER:$TOKEN\"" | curl -sf -K- "https://api.github.com/notifications?per_page=100" | jq ".[].unread" | grep -c true)
-
-echo "$notifications Notifications"
