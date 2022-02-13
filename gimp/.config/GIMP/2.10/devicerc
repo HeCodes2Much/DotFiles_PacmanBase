@@ -3,16 +3,19 @@
 (GimpDeviceInfo "Core Pointer"
     (icon-name "gimp-cursor")
     (name "Core Pointer")
-    (tool-options "GimpTransformGridOptions"
-        (tool "gimp-scale-tool")
-        (interpolation linear))
+    (tool-options "GimpBucketFillOptions"
+        (tool "gimp-bucket-fill-tool")
+        (foreground (color-rgb 0.1803921568627451 0.20392156862745098 0.25098039215686274))
+        (pattern "Pine")
+        (brush-size 51)
+        (brush-hardness 0.5))
     (use-fg-bg yes)
     (use-opacity-paint-mode no)
     (use-brush no)
     (use-dynamics no)
     (use-mypaint-brush no)
     (use-gradient no)
-    (use-pattern no)
+    (use-pattern yes)
     (use-palette no)
     (use-font no)
     (mode screen)

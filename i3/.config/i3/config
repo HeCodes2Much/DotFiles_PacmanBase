@@ -591,6 +591,7 @@ assign [class="(?i)Alacritty|Kitty"]                                            
 
 # Workspace $ws2 Text Editor
 assign [class="(?i)Nvim|Jetbrains"]                                             → $ws2
+assign [class="(?i)Code|Atom"]                                                  → $ws2
 
 # Workspace $ws3 Files
 assign [class="(?i)Nemo"]                                                       → $ws3

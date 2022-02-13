@@ -1,5 +1,6 @@
-gtk-theme-name="themix-Dracula"
-gtk-icon-theme-name="themix-Dracula"
+include "/home/repo/.gtkrc-2.0.mine"
+gtk-theme-name="Minimal-Mistakes"
+gtk-icon-theme-name="Papirus-Minimal-Mistakes"
 gtk-font-name="SauceCodePro Nerd Font 10"
 gtk-cursor-theme-name="capitaine-cursors-light"
 gtk-cursor-theme-size=0
@@ -11,6 +12,6 @@ gtk-enable-event-sounds=1
 gtk-enable-input-feedback-sounds=1
 gtk-xft-antialias=1
 gtk-xft-hinting=1
-gtk-xft-hintstyle="hintslight"
+gtk-xft-hintstyle="hintmedium"
 gtk-xft-rgba="rgb"
 gtk-modules="gail:atk-bridge"

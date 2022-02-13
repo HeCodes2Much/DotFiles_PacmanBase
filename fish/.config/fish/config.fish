@@ -48,6 +48,10 @@ for file in "$HOME/.config/fish/aliases/"*
     source $file
 end
 
+for file in "$HOME/.config/fish/plugins/"*
+    source $file
+end
+
 # Keybinding
 bind \ec __history_previous_command
 bind \e\e __sudope

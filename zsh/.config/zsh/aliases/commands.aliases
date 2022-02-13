@@ -52,6 +52,26 @@ alias ports='sudo netstat -tulanp'
 alias setperm='sudo chown dt:dt'
 alias ulock='faillock --reset'
 
+function pakman () {
+	num=1
+	while [ -f "/var/lib/pacman/db.lck" ]; do
+		if [ "$num" -eq "1" ]; then
+			printf "$Red❯❯ Error$Reset: %s\n" "pacman is in use, will continue after operation."
+			num=2
+		fi
+		sleep 2
+	done
+
+	if [ "$1" != "-c" ]; then
+        sudo pacman --color auto $@
+    else
+        if pacman -Qtdq; then
+            pacman -Qtdq | sudo pacman -Rns -
+		fi
+	fi
+
+}
+
 ### Update
 alias pacman='sudo pacman --color auto'
 alias yay='yay --color auto'
@@ -60,10 +80,10 @@ alias aurupdate='mkdir -p ~/.cache/pkgs && auracle update -C ~/.cache/pkgs'
 alias checkarch='pacman -Qqen >~/package_list.txt'
 alias checkaur='pacman -Qqem >~/package_list_aur.txt'
 #Cleanup orphaned packages
-alias cleanup='yay -c'
+alias cleanup='pakman -c'
 
 # yay as aur helper - updates everything
-alias upall="yay -Fy && yay -Syu --noconfirm"
+alias upall="pacman -Fy && pacman -Syu --noconfirm && aurupdate"
 
 #add new fonts
 alias update-fc='sudo fc-cache -fv'

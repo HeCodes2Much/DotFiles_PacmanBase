@@ -2,7 +2,7 @@ local ok, err = pcall(require, "core")
 
 vim.g.dracula_show_end_of_buffer = true  -- default false, Turn on or off EndOfBuffer symbol
 vim.g.dracula_transparent_bg = true -- default false, enables transparent background
-vim.cmd[[colorscheme dracula]]
+vim.cmd[[colorscheme minimalmistakes]]
 vim.cmd("hi! link DashboardHeader Error")
 
 if not ok then

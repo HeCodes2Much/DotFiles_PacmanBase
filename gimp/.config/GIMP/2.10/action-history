@@ -1,6 +1,6 @@
 # GIMP action-history
 
-(history-item "file-quit" 1)
+(history-item "file-quit" 2)
 (history-item "select-none" 3)
 (history-item "layers-new" 0)
 (history-item "tools-scale" 3)

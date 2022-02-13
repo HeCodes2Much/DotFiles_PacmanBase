@@ -46,7 +46,7 @@ hooks.add("install_plugins", function(use)
     }
 
     use {
-        "dracula/vim",
+        "Minimal-Mistakes/vim",
     }
     use {
         "ap/vim-css-color",

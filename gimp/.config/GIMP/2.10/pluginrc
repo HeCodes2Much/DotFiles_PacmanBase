@@ -4313,7 +4313,7 @@
         (proc-arg 13 "image" "Input image")
         (proc-arg 16 "drawable" "Input drawable (unused)")
         (proc-arg 13 "result" "Resulting image")))
-(plug-in-def "${gimp_plug_in_dir}/plug-ins/file-jxl/file-jxl" 1640434877
+(plug-in-def "${gimp_plug_in_dir}/plug-ins/file-jxl/file-jxl" 1643504923
     (proc-def "file-jxl-load" 1
          "Loads JPEG XL image files"
          "Loads JPEG XL image files"

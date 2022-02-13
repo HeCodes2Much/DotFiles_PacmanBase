@@ -87,7 +87,8 @@
     (size 671 476))
 (session-info "toplevel"
     (factory-entry "gimp-toolbox-color-dialog")
-    (position 1294 17))
+    (position 1293 16)
+    (monitor 1))
 (session-info "toplevel"
     (factory-entry "gimp-operation-tool-dialog")
     (position 1518 93))
@@ -107,6 +108,10 @@
     (factory-entry "gimp-levels-tool-dialog")
     (position 1635 99)
     (size 462 593))
+(session-info "toplevel"
+    (factory-entry "gimp-scale-tool-dialog")
+    (position 1024 445)
+    (monitor 1))
 
 (hide-docks no)
 (single-window-mode yes)

@@ -35,8 +35,8 @@ Krita/Ocio/OcioConfigPath=
 Krita/Ocio/OcioLockColorVisualRepresentation=false
 Krita/Ocio/OcioLutPath=
 Krita/Ocio/UseOcio=false
-LastBackGroundColor=<!DOCTYPE LastBackGroundColor>\n<LastBackGroundColor>\n <RGB b="0.211764708161354" g="0.164705887436867" space="sRGB-elle-V2-g10.icc" r="0.156862750649452"/>\n</LastBackGroundColor>\n
-LastForeGroundColor=<!DOCTYPE LastForeGroundColor>\n<LastForeGroundColor>\n <RGB b="0.160784319043159" g="0.121568627655506" space="sRGB built-in" r="0.117647059261799"/>\n</LastForeGroundColor>\n
+LastBackGroundColor=<!DOCTYPE LastBackGroundColor>\n<LastBackGroundColor>\n <RGB r="0.156862750649452" g="0.164705887436867" space="sRGB-elle-V2-g10.icc" b="0.211764708161354"/>\n</LastBackGroundColor>\n
+LastForeGroundColor=<!DOCTYPE LastForeGroundColor>\n<LastForeGroundColor>\n <RGB r="0.117647059261799" g="0.121568627655506" space="sRGB built-in" b="0.160784319043159"/>\n</LastForeGroundColor>\n
 LastPreset=b) Basic-5 Size
 LastPreset_-1=b) Basic-5 Size
 LineSmoothingDelayDistance=50
@@ -507,12 +507,14 @@ File3[$e]=$HOME/Documents/Declaration-Against-Discrimination.pdf
 File4[$e]=$HOME/Pictures/endeavour-logo-sans-logotype.svg
 File5[$e]=$HOME/Pictures/screenie/1640362006.png
 File6[$e]=/mnt/500GB/.gitlabs/Arch.TheRepo.Club/favicon.ico
+File7[$e]=/mnt/500GB/.gitlabs/minimal-mistakes/website/static/img/favicon.ico
 Name1[$e]=Letter.png
 Name2[$e]=colors.png
 Name3[$e]=Declaration-Against-Discrimination.pdf
 Name4[$e]=endeavour-logo-sans-logotype.svg
 Name5[$e]=1640362006.png
 Name6[$e]=favicon.ico
+Name7[$e]=favicon.ico
 
 [SelectedTags]
 brushes=All

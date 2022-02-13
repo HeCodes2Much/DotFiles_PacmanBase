@@ -203,8 +203,8 @@
        usepressure="1"
        usetilt="0"
        keep_selected="1"
-       abs_width="1"
-       unit="mm">
+       abs_width="0"
+       unit="px">
       <group
          id="preset">
         <group
@@ -1026,11 +1026,11 @@
   <group
      id="theme"
      defaultPreferDarkTheme="1"
-     defaultGtkTheme="themix-Dracula"
+     defaultGtkTheme="gtk"
      defaultIconTheme="themix-Dracula"
      symbolicIcons="0"
      menuIcons_canvas="0"
      menuIcons_layers="0"
      menuIcons_objects="0"
-     darkTheme="1" />
+     darkTheme="0" />
 </inkscape>
