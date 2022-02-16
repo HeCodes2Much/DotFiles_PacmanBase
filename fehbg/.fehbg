@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+feh --no-fehbg --bg-scale "$HOME/.config/feh/backgrounds/Endeavouros_Wallpaper-MM.png"

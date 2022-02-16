@@ -35,7 +35,7 @@ if [ "$TERM" = "linux" ]; then
     clear
 fi
 
-bfetch --source ~/.config/bfetch/ascii.art --ascii_colors 7 1 2 3 5 8 --birthday 16/06
+shellfetch
 
 autoload -U compinit
 compinit
