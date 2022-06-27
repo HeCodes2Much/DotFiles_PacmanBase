@@ -1,4 +1,5 @@
 #i3 config file (v4)
+# -*- mode: i3wm-config -*-
 ####
 ####   _____ _          ____                   ____ _       _
 ####  |_   _| |__   ___|  _ \ ___ _ __   ___  / ___| |_   _| |__
@@ -19,7 +20,7 @@ set $WebBrowserB google-chrome-stable
 set $WebBrowserF firefox
 set $FileManager nemo
 set $MailReader thunderbird
-set $TextEditor nvim
+set $TextEditor code
 set $Hypervisor virtualbox
 set $GitBrowser lazygit
 # }}} Variables
@@ -89,6 +90,7 @@ workspace $ws7 output $secondMonitor
 workspace $ws8 output $secondMonitor
 workspace $ws9 output $secondMonitor
 workspace $ws0 output $secondMonitor
+
 
 # switch to workspace
 ## Category: i3-Workspaces;
@@ -242,6 +244,11 @@ $super_b+$shift+9 \
 # Description: Move to workspace with focused container 10;
 $super_b+$shift+0 \
     move container to workspace $ws0; workspace $ws0
+
+## Category: i3-Workspaces;
+# Description: Move workspace to next monitor;
+$super_b+$shift+m \
+    move workspace to output next
 
 # }}} Workspaces
 
@@ -590,8 +597,8 @@ font pango:Noto Mono Regular 13
 assign [class="(?i)Alacritty|Kitty"]                                            → $ws1
 
 # Workspace $ws2 Text Editor
-assign [class="(?i)Nvim|Jetbrains"]                                             → $ws2
-assign [class="(?i)Code|Atom"]                                                  → $ws2
+assign [class="(?i)Emacs|Jetbrains"]                                            → $ws2
+assign [class="(?i)Code|Nvim"]                                                  → $ws2
 
 # Workspace $ws3 Files
 assign [class="(?i)Nemo"]                                                       → $ws3
@@ -615,7 +622,7 @@ assign [class="(?i)Minecraft*|Steam*"]                                          
 assign [class="(?i)0ad*|Minetest"]                                              → $ws8
 
 # Workspace $ws9 Cha
-assign [class="(?i)Telegram|Element"]                                           → $ws9
+assign [class="(?i)Discord|Element"]                                            → $ws9
 
 # Workspace $ws0 Setting
 assign [class="(?i)Virt*|LazyGit"]                                              → $ws0
@@ -668,7 +675,7 @@ mode "$hosts_launcher" {
 $super_b+Return \
     $exe $TerminalEmulator;focus
 $super_b+KP_Enter \
-    $exe $TerminalEmulator;focus
+    $exe $TerminalEmulator -e fish;focus
 
 # workspace 2 related
 
@@ -766,9 +773,9 @@ mode "$game_launcher" {
 # workspace 9 related
 
 ## Category: Applications;
-# Description: Launch telegram-desktop;
-$super_b+$control+t \
-    $exe telegram-desktop;focus
+# Description: Launch discord;
+$super_b+$control+d \
+    $exe discord;focus
 
 ## Category: Applications;
 # Description: Launch Element;

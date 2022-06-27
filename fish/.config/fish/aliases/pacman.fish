@@ -4,7 +4,7 @@ function pacman
     set end "\033[0m"
 
     set num 1
-    while test -f /var/lib/pacman/db.lck;
+    while test -f /var/lib/pacman/db.lck
         if test $num -eq 1
             printf "$red❯❯ Error$end: %s\n" "pacman is in use, will continue after operation."
             set num 2
@@ -13,7 +13,7 @@ function pacman
         wait $last_pid
     end
 
-    if [ "$argv" != "-c" ]
+    if [ "$argv" != -c ]
         command sudo pacman --color auto $argv
     else
         if pacman -Qttdq
@@ -28,7 +28,7 @@ function update
 end
 
 function aurupdate
-    auracle update -C ~/.cache/pkg/
+    auracle update -C ~/.cache/pkgs/
 end
 
 function upall

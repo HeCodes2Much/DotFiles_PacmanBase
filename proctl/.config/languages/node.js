@@ -1,0 +1,8 @@
+// -*-coding:utf-8 -*-
+// -------------------------------------------------------------------------
+// Path          - /usr/bin/{{PROJECT_NAME}}
+// Git           - {{AUTHOR_GIT}}
+// Author        - {{AUTHOR_NAME}} [{{AUTHOR_EMAIL}}]
+// Start On      - {{CURRENT_DATE}}
+// Modified On   - {{CURRENT_DATE}}
+// -------------------------------------------------------------------------

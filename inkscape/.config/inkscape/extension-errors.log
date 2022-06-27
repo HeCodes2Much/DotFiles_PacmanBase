@@ -4,7 +4,7 @@ Dependency:
 	location: path
 	string: fig2dev
 
-Extension "LaTeX (pdflatex)" failed to load because a dependency was not met.
+Extension "Formula (pdflatex)" failed to load because a dependency was not met.
 Dependency:
 	type: executable
 	location: path

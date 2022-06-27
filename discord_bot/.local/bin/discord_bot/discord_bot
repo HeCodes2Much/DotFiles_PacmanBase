@@ -32,7 +32,7 @@ from datetime import datetime
 
 # for all params, see https://discordapp.com/developers/docs/resources/webhook#execute-webhook
 # Discord webhook url:
-url = "https://discord.com/api/webhooks/932406481704349766/TJV5m3oprNRQYM1k4_ar8TsokMLuHxoupvsTe9UJlD8Bk7GAcB8xAgxGeLac-U2EZ879"
+url = "https://discord.com/api/webhooks/948360001288830997/DBtzzT3sxoFyxjhOmgsbGToaH1k9iDI23Q_QTCy9SltQXkiC3YN87fByd2pUvk8torp4"
 avatar_url = "https://cdn.discordapp.com/icons/895523133975572510/6511420be1ad5c7e9cfba0e2214281c1.webp?size=96"
 username = "LinkNSync Update"
 path = os.path.dirname(os.path.realpath(__file__))

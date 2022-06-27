@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+EDITOR='code'
+
 ## Reset Colors
 Reset='\e[0m'
 ### Custom colors
@@ -27,15 +29,16 @@ function package_count () {
     if [ "$(pacman -Qqm | wc -l)" -gt "0" ]; then
         printf "${Blue}❯❯ AUR${Reset}: %s\n" "$(pacman -Qm | wc -l)"
     fi
-    if command -v basher &> /dev/null; then
+    if command -v npm &> /dev/null; then
         num=0
         while read -r ; do
             num=$(( num + 1))
-        done <<< $( basher list )
+        done <<< $( npm list -g )
         if [ "$num" -gt "0" ]; then
-            printf "${Yellow}❯❯ Basher${Reset}: %s\n" "${num}"
+            printf "${Yellow}❯❯ NPM${Reset}: %s\n" "$(( num - 1))"
         fi
     fi
+
     if command -v pip &> /dev/null; then
         num=0
         while read -r ; do

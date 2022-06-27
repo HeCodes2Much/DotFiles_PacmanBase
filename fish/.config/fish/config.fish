@@ -4,11 +4,6 @@ end
 
 set PATH "$HOME/.local/bin:$PATH"
 
-if test -d "$HOME/.basher/bin"
-    set PATH "$HOME/.basher/bin:$PATH"
-    status --is-interactive; and source (basher init - fish|psub)
-end
-
 # Adds `~/.config/composer/vendor/bin` to $PATH
 # set PATH so it includes user's private bin if it exists
 if test -d "$HOME/.config/composer/vendor/bin"
@@ -40,7 +35,8 @@ if test -d "$HOME/.local/bin/clipmenu"
 end
 
 function fish_greeting
-    bfetch --source ~/.config/bfetch/ascii.art --ascii_colors 7 1 2 3 5 8 --birthday 16/06
+    # bfetch --source ~/.config/bfetch/ascii.art --ascii_colors 7 1 2 3 5 8 --birthday 16/06
+    shellfetch
 end
 
 # Get all the files inside folder

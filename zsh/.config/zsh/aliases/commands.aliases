@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-EDITOR='nvim'
+EDITOR='code'
 
 ## Reset Colors
 Reset='\e[0m'
@@ -12,8 +12,10 @@ Cyan='\e[1;36m'
 Red='\e[1;31m'
 ### Custom colors
 
+alias sf='shellfetch'
+
 stats() {
-    fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n25
+  fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n25
 }
 
 #clear
@@ -47,26 +49,27 @@ alias updatereadme='updatereadme'
 alias ports='sudo netstat -tulanp'
 
 ### Permissions
-alias setperm='sudo chown dt:dt'
+alias setperm='sudo chown repo:repo'
 alias ulock='faillock --reset'
 
-function pakman () {
-	num=1
-	while [ -f "/var/lib/pacman/db.lck" ]; do
-		if [ "$num" -eq "1" ]; then
-			printf "$Red❯❯ Error$Reset: %s\n" "pacman is in use, will continue after operation."
-			num=2
-		fi
-		sleep 2
-	done
+function pakman() {
+  num=1
+  while [ -f "/var/lib/pacman/db.lck" ]; do
+    if [ "$num" -eq "1" ]; then
+      printf "$Red❯❯ Error$Reset: %s\n" "/var/lib/pacman/db.lck is present."
+      printf "$Red❯❯ Error$Reset: %s\n" "There may be another Pacman instance running. Waiting..."
+      num=2
+    fi
+    sleep 2
+  done
 
-	if [ "$1" != "-c" ]; then
-        sudo pacman --color auto $@
-    else
-        if pacman -Qtdq; then
-            pacman -Qtdq | sudo pacman -Rns -
-		fi
-	fi
+  if [ "$1" != "-c" ]; then
+    sudo pacman --color auto $@
+  else
+    if pacman -Qtdq; then
+      pacman -Qtdq | sudo pacman -Rns -
+    fi
+  fi
 
 }
 
@@ -77,41 +80,39 @@ alias update='sudo pacman -Syu'
 alias aurupdate='mkdir -p ~/.cache/pkgs && auracle update -C ~/.cache/pkgs'
 alias checkarch='pacman -Qqen >~/package_list.txt'
 alias checkaur='pacman -Qqem >~/package_list_aur.txt'
-#Cleanup orphaned packages
-alias cleanup='pakman -c'
 
 # yay as aur helper - updates everything
-alias upall="pacman -Fy && pacman -Syu --noconfirm && aurupdate"
+alias upall="pakman -Fy && pakman -Syu --noconfirm && aurupdate"
 
 #add new fonts
 alias update-fc='sudo fc-cache -fv'
 
 ###Function for commands!
-function updaterepo () {
-    read -r "response?Are you sure you want to update TheRepoClub repo? [Y/n] "
-    response=${response:l} #tolower
-    if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
-        sudo echo -e "${Purple}$(whoami) ${Reset}has used the ${Cyan}updaterepo ${Reset}alias."
-        cd /mnt/500GB/.gitlabs/Arch.TheRepo.Club/
-        ./git-v1.sh $argv
-        cd "$OLDPWD"
-        echo -e "${Green} ✔ ${Yellow}TheRepoClub repo has been updated.${Green} ✔ ${Reset}"
-    fi
-    return
+function updaterepo() {
+  read -r "response?Are you sure you want to update TheRepoClub repo? [Y/n] "
+  response=${response:l} #tolower
+  if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
+    sudo echo -e "${Purple}$(whoami) ${Reset}has used the ${Cyan}updaterepo ${Reset}alias."
+    cd /mnt/500GB/.gitlabs/Arch.TheRepo.Club/
+    ./x86_64/updaterepo.sh $argv
+    cd "$OLDPWD"
+    echo -e "${Green} ✔ ${Yellow}TheRepoClub repo has been updated.${Green} ✔ ${Reset}"
+  fi
+  return
 }
 
-function updatereadme () {
-    read -r "response?Are you sure you want to update TheRepoClub repo readme? [Y/n] "
-    response=${response:l} #tolower
-    if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
-        sudo echo -e "${Purple}$(whoami) ${Reset}has used the ${Cyan}updatereadme ${Reset}alias."
-        cd /mnt/500GB/.gitlabs/Arch.TheRepo.Club/docs/
-        python updatereadme.py
-        cd "$OLDPWD"
-        cd /mnt/500GB/.gitlabs/Arch.TheRepo.Club/x86_64/
-        python updatereadme.py
-        cd "$OLDPWD"
-        echo -e "${Green} ✔ ${Yellow}TheRepoClub repo readme has been updated.${Green} ✔ ${Reset}"
-    fi
-    return
+function updatereadme() {
+  read -r "response?Are you sure you want to update TheRepoClub repo readme? [Y/n] "
+  response=${response:l} #tolower
+  if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
+    sudo echo -e "${Purple}$(whoami) ${Reset}has used the ${Cyan}updatereadme ${Reset}alias."
+    cd /mnt/500GB/.gitlabs/Arch.TheRepo.Club/scripts/
+    python updatereadme.py
+    cd "$OLDPWD"
+    cd /mnt/500GB/.gitlabs/Arch.TheRepo.Club/x86_64/
+    python updatereadme.py
+    cd "$OLDPWD"
+    echo -e "${Green} ✔ ${Yellow}TheRepoClub repo readme has been updated.${Green} ✔ ${Reset}"
+  fi
+  return
 }

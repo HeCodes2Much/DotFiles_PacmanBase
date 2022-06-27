@@ -4,6 +4,7 @@ vim.g.dracula_show_end_of_buffer = true  -- default false, Turn on or off EndOfB
 vim.g.dracula_transparent_bg = true -- default false, enables transparent background
 vim.cmd[[colorscheme minimalmistakes]]
 vim.cmd("hi! link DashboardHeader Error")
+vim.cmd("set colorcolumn=90")
 
 if not ok then
    error("Error loading core" .. "\n\n" .. err)

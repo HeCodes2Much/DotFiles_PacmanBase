@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-EDITOR='nvim-qt'
+EDITOR='code'
 
 ## Reset Colors
 Reset='\e[0m'

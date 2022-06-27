@@ -1,5 +1,3 @@
-adwaita-qt
-adwaita-qt6
 ansiweather
 anymeal
 aura
@@ -23,7 +21,6 @@ dracula-qt6-theme
 fish-nvm
 fm6000
 gamehub
-gdlauncher
 gotop
 humanity-icon-theme
 i3-cheat
@@ -35,6 +32,7 @@ imagewriter
 lib32-libxft-bgra
 libart-lgpl
 libxft-bgra
+lovesay
 minecraft-launcher
 multimonitorlock
 multimonitorlock-gui
@@ -51,6 +49,7 @@ pacmanity
 perl-checkupdates-aur
 perl-www-aur
 pkgbrowser
+proctl
 protonup-git
 python-gputil
 python-kivymd

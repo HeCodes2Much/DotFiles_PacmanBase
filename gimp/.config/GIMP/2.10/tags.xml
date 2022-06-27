@@ -5914,7 +5914,7 @@
   <resource identifier="Noto Nastaliq Urdu" checksum="(null)">
   </resource>
 
-  <resource identifier="Noto Nastaliq Urdu" checksum="(null)">
+  <resource identifier="Noto Nastaliq Urdu Bold" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Rashi Hebrew" checksum="(null)">
@@ -5933,6 +5933,9 @@
   </resource>
 
   <resource identifier="Noto Rashi Hebrew Thin" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Sans" checksum="(null)">
@@ -6031,6 +6034,12 @@
   <resource identifier="Noto Sans Bassa Vah" checksum="(null)">
   </resource>
 
+  <resource identifier="Noto Sans Bassa Vah Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Bassa Vah Medium" checksum="(null)">
+  </resource>
+
   <resource identifier="Noto Sans Batak" checksum="(null)">
   </resource>
 
@@ -6074,6 +6083,12 @@
   </resource>
 
   <resource identifier="Noto Sans Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Bold Italic" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Sans Bold Italic" checksum="(null)">
@@ -6151,6 +6166,9 @@
   <resource identifier="Noto Sans Cherokee Thin" checksum="(null)">
   </resource>
 
+  <resource identifier="Noto Sans Chorasmian" checksum="(null)">
+  </resource>
+
   <resource identifier="Noto Sans Coptic" checksum="(null)">
   </resource>
 
@@ -6158,6 +6176,9 @@
   </resource>
 
   <resource identifier="Noto Sans Cypriot" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Cypro Minoan" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Sans Deseret" checksum="(null)">
@@ -6197,42 +6218,6 @@
   </resource>
 
   <resource identifier="Noto Sans Devanagari UI Thin" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Display" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Display Bold" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Display Bold Italic" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Display Heavy" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Display Heavy Italic" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Display Italic" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Display Light" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Display Light Italic" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Display Medium" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Display Medium Italic" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Display Thin" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Display Thin Italic" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Sans Duployan" checksum="(null)">
@@ -6331,6 +6316,15 @@
   <resource identifier="Noto Sans Gunjala Gondi" checksum="(null)">
   </resource>
 
+  <resource identifier="Noto Sans Gunjala Gondi Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Gunjala Gondi Medium" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Gunjala Gondi Semi-Bold" checksum="(null)">
+  </resource>
+
   <resource identifier="Noto Sans Gurmukhi" checksum="(null)">
   </resource>
 
@@ -6385,6 +6379,12 @@
   <resource identifier="Noto Sans Heavy" checksum="(null)">
   </resource>
 
+  <resource identifier="Noto Sans Heavy" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Heavy Italic" checksum="(null)">
+  </resource>
+
   <resource identifier="Noto Sans Heavy Italic" checksum="(null)">
   </resource>
 
@@ -6394,6 +6394,15 @@
   <resource identifier="Noto Sans Hebrew Bold" checksum="(null)">
   </resource>
 
+  <resource identifier="Noto Sans Hebrew Droid" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Hebrew Droid Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Hebrew Droid Medium" checksum="(null)">
+  </resource>
+
   <resource identifier="Noto Sans Hebrew Heavy" checksum="(null)">
   </resource>
 
@@ -6401,6 +6410,24 @@
   </resource>
 
   <resource identifier="Noto Sans Hebrew Medium" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Hebrew New" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Hebrew New Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Hebrew New Heavy" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Hebrew New Light" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Hebrew New Medium" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Hebrew New Thin" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Sans Hebrew Thin" checksum="(null)">
@@ -6416,6 +6443,9 @@
   </resource>
 
   <resource identifier="Noto Sans Inscriptional Parthian" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Italic" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Sans Italic" checksum="(null)">
@@ -6562,6 +6592,12 @@
   <resource identifier="Noto Sans Light" checksum="(null)">
   </resource>
 
+  <resource identifier="Noto Sans Light" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Light Italic" checksum="(null)">
+  </resource>
+
   <resource identifier="Noto Sans Light Italic" checksum="(null)">
   </resource>
 
@@ -6656,6 +6692,12 @@
   </resource>
 
   <resource identifier="Noto Sans Medium" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Medium" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Medium Italic" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Sans Medium Italic" checksum="(null)">
@@ -6755,6 +6797,9 @@
   </resource>
 
   <resource identifier="Noto Sans Nabataean" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Nandinagari" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Sans Newa" checksum="(null)">
@@ -7033,6 +7078,15 @@
   <resource identifier="Noto Sans Tamil UI Thin" checksum="(null)">
   </resource>
 
+  <resource identifier="Noto Sans Tangsa" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Tangsa Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Tangsa Medium" checksum="(null)">
+  </resource>
+
   <resource identifier="Noto Sans Telugu" checksum="(null)">
   </resource>
 
@@ -7126,6 +7180,12 @@
   <resource identifier="Noto Sans Thin" checksum="(null)">
   </resource>
 
+  <resource identifier="Noto Sans Thin" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Thin Italic" checksum="(null)">
+  </resource>
+
   <resource identifier="Noto Sans Thin Italic" checksum="(null)">
   </resource>
 
@@ -7174,6 +7234,15 @@
   <resource identifier="Noto Sans Vai" checksum="(null)">
   </resource>
 
+  <resource identifier="Noto Sans Vithkuqi" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Vithkuqi Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Sans Vithkuqi Medium" checksum="(null)">
+  </resource>
+
   <resource identifier="Noto Sans Wancho" checksum="(null)">
   </resource>
 
@@ -7184,6 +7253,9 @@
   </resource>
 
   <resource identifier="Noto Sans Zanabazar Square" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Serif" checksum="(null)">
@@ -7234,6 +7306,9 @@
   <resource identifier="Noto Serif Bold" checksum="(null)">
   </resource>
 
+  <resource identifier="Noto Serif Bold" checksum="(null)">
+  </resource>
+
   <resource identifier="Noto Serif Bold Italic" checksum="(null)">
   </resource>
 
@@ -7255,16 +7330,7 @@
   <resource identifier="Noto Serif Devanagari Thin" checksum="(null)">
   </resource>
 
-  <resource identifier="Noto Serif Display" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Serif Display Bold" checksum="(null)">
-  </resource>
-
   <resource identifier="Noto Serif Display Bold Italic" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Serif Display Heavy" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Serif Display Heavy Italic" checksum="(null)">
@@ -7273,25 +7339,28 @@
   <resource identifier="Noto Serif Display Italic" checksum="(null)">
   </resource>
 
-  <resource identifier="Noto Serif Display Light" checksum="(null)">
-  </resource>
-
   <resource identifier="Noto Serif Display Light Italic" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Serif Display Medium" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Serif Display Medium Italic" checksum="(null)">
   </resource>
 
-  <resource identifier="Noto Serif Display Thin" checksum="(null)">
-  </resource>
-
   <resource identifier="Noto Serif Display Thin Italic" checksum="(null)">
   </resource>
 
+  <resource identifier="Noto Serif Dives Akuru" checksum="(null)">
+  </resource>
+
   <resource identifier="Noto Serif Dogra" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif Dogra Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif Dogra Medium" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif Dogra Semi-Bold" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Serif Ethiopic" checksum="(null)">
@@ -7367,6 +7436,9 @@
   </resource>
 
   <resource identifier="Noto Serif Gurmukhi Thin" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif Heavy" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Serif Heavy" checksum="(null)">
@@ -7468,7 +7540,13 @@
   <resource identifier="Noto Serif Light" checksum="(null)">
   </resource>
 
+  <resource identifier="Noto Serif Light" checksum="(null)">
+  </resource>
+
   <resource identifier="Noto Serif Light Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif Makasar" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Serif Malayalam" checksum="(null)">
@@ -7487,6 +7565,9 @@
   </resource>
 
   <resource identifier="Noto Serif Malayalam Thin" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif Medium" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Serif Medium" checksum="(null)">
@@ -7511,6 +7592,18 @@
   </resource>
 
   <resource identifier="Noto Serif Myanmar Thin" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif Old Uyghur" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif Oriya" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif Oriya Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif Oriya Medium" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Serif Sinhala" checksum="(null)">
@@ -7609,6 +7702,9 @@
   <resource identifier="Noto Serif Thin" checksum="(null)">
   </resource>
 
+  <resource identifier="Noto Serif Thin" checksum="(null)">
+  </resource>
+
   <resource identifier="Noto Serif Thin Italic" checksum="(null)">
   </resource>
 
@@ -7630,6 +7726,24 @@
   <resource identifier="Noto Serif Tibetan Thin" checksum="(null)">
   </resource>
 
+  <resource identifier="Noto Serif Toto" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif Toto Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif Toto Medium" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif Vithkuqi" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif Vithkuqi Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif Vithkuqi Medium" checksum="(null)">
+  </resource>
+
   <resource identifier="Noto Serif Yezidi" checksum="(null)">
   </resource>
 
@@ -7640,6 +7754,12 @@
   </resource>
 
   <resource identifier="Noto Traditional Nushu" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Traditional Nushu Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Traditional Nushu Light" checksum="(null)">
   </resource>
 
   <resource identifier="Not Quite Right BRK" checksum="(null)">
