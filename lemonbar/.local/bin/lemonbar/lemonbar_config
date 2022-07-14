@@ -5,45 +5,45 @@
 # GitHub       - https://github.com/The-Repo-Club/
 # Author       - The-Repo-Club [wayne6324@gmail.com]
 # Start On     - Tue 07 Dec 14:36:45 GMT 2021
-# Modified On  - Mon 31 January 2022, 07:26:11 pm (GMT) 
+# Modified On  - Mon 31 January 2022, 07:26:11 pm (GMT)
 #------------------------------------------------------------------------------
 
 topleft() {
-    echo -e "%{l}$(lemonbar_workspaces '0,0')%{r}$(lemonbar_keyboard)$(lemonbar_sep)$(lemonbar_updates)$(lemonbar_sep)$(lemonbar_volume)$(lemonbar_sep)$(lemonbar_battery)$(lemonbar_sep)$(lemonbar_network)$(lemonbar_sep)$(lemonbar_clock)"
+  echo -e "%{l}$(lemonbar_workspaces '0,0')%{r}$(lemonbar_keyboard)$(lemonbar_sep)$(lemonbar_updates)$(lemonbar_sep)$(lemonbar_volume)$(lemonbar_sep)$(lemonbar_battery)$(lemonbar_sep)$(lemonbar_network)$(lemonbar_sep)$(lemonbar_clock)"
 }
 
 bottomleft() {
-    echo -e "%{l}$(lemonbar_cpu)$(lemonbar_sep)$(lemonbar_ram)$(lemonbar_sep)$(lemonbar_kernel)%{c}$(lemonbar_window) %{r}$(lemonbar_disk)"
+  echo -e "%{l}$(lemonbar_cpu)$(lemonbar_sep)$(lemonbar_ram)$(lemonbar_sep)$(lemonbar_kernel)%{c}$(lemonbar_window) %{r}$(lemonbar_disk)"
 }
 
 topright() {
-    echo -e "%{l}$(lemonbar_workspaces '1920,0')%{r}$(lemonbar_keyboard)$(lemonbar_sep)$(lemonbar_updates)$(lemonbar_sep)$(lemonbar_volume)$(lemonbar_sep)$(lemonbar_battery)$(lemonbar_sep)$(lemonbar_network)$(lemonbar_sep)$(lemonbar_clock)"
+  echo -e "%{l}$(lemonbar_workspaces '1920,0')%{r}$(lemonbar_keyboard)$(lemonbar_sep)$(lemonbar_updates)$(lemonbar_sep)$(lemonbar_volume)$(lemonbar_sep)$(lemonbar_battery)$(lemonbar_sep)$(lemonbar_network)$(lemonbar_sep)$(lemonbar_clock)"
 }
 
 bottomright() {
-    echo -e "%{l}$(lemonbar_cpu)$(lemonbar_sep)$(lemonbar_ram)$(lemonbar_sep)$(lemonbar_kernel)%{c}$(lemonbar_window) %{r}$(lemonbar_disk)"
+  echo -e "%{l}$(lemonbar_cpu)$(lemonbar_sep)$(lemonbar_ram)$(lemonbar_sep)$(lemonbar_kernel)%{c}$(lemonbar_window) %{r}$(lemonbar_disk)"
 }
 
 while true; do
-    case $1 in
-        -tl|--topleft)
-            topleft
-            wait
-            ;;
-        -bl|--bottomleft)
-            bottomleft
-            wait
-            ;;
-        -tr|--topright)
-            topright
-            wait
-            ;;
-        -br|--bottomright)
-            bottomright
-            wait
-            ;;
-        *)
-            break
-            ;;
-    esac
+  case $1 in
+  -tl | --topleft)
+    topleft
+    wait
+    ;;
+  -bl | --bottomleft)
+    bottomleft
+    wait
+    ;;
+  -tr | --topright)
+    topright
+    wait
+    ;;
+  -br | --bottomright)
+    bottomright
+    wait
+    ;;
+  *)
+    break
+    ;;
+  esac
 done

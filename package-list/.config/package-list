@@ -1,3 +1,4 @@
+aic94xx-firmware
 ansiweather
 anymeal
 aura
@@ -21,6 +22,7 @@ dracula-qt6-theme
 fish-nvm
 fm6000
 gamehub
+gnome-icon-theme
 gotop
 humanity-icon-theme
 i3-cheat
@@ -34,6 +36,7 @@ libart-lgpl
 libxft-bgra
 lovesay
 minecraft-launcher
+mkinitcpio-firmware
 multimonitorlock
 multimonitorlock-gui
 nbteditor
@@ -87,7 +90,9 @@ ttf-material-design-icons
 ttf-remixicon
 tty-clock
 ufw-icon-bar
+upd72020x-fw
 w3m-imgcat
+wd719x-firmware
 win-shot
 woeusb-gui
 xcursor-breeze

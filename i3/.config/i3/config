@@ -1030,13 +1030,13 @@ $exe autostart
 
 # {{{ Settings
 
-exec --no-startup-id setxkbmap -option caps:super
-exec --no-startup-id repomenue_youtube_subs -d
+$exe setxkbmap -option caps:super
+$exe repomenue_youtube_subs -d
 
 # setting variables for later use
 # use xrandr and/or arandr to know the names of your monitors
 # use this line to tell which monitor is on the right
-exec --no-startup-id autorandr --force --load i3
+$exe autorandr --force --load i3
 
 # }}} Settings
 

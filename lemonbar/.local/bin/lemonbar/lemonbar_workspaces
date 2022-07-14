@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
 
 if [ $1 ]; then
-    workspace_list=""
-    i3_next="i3-msg workspace next_on_output, exec echo_ws"
-    i3_prev="i3-msg workspace prev_on_output, exec echo_ws"
+  workspace_list=""
 
-    while read -r workspace; do
-        ws="${workspace/* }"
-        case "$workspace" in
-            *"*"*) workspace_list+="%{F#282A36}%{B#BD93F9} $ws %{F-}%{B-} " ;;
-            *) workspace_list+="%{A:i3-msg workspace ${ws}:}%{F#282A36}%{B#C4C7C5} $ws %{F-}%{B-}%{A} " ;;
-        esac
-    done < <(wmctrl -d | grep "VP: $1")
-    output="%{A4:${i3_next}:}%{A5:${i3_prev}:}${workspace_list}%{A}%{A}"
-    echo "$output"
+  while read -r workspace; do
+    name="${workspace/* /}"
+    case "$workspace" in
+    *"*"*) workspace_list+="%{A:bspc desktop -f ${name}:}%{F#282A36}%{B#BD93F9} $name %{F-}%{B-}%{A} " ;;
+    *) workspace_list+="%{A:bspc desktop -f ${name}:}%{F#282A36}%{B#C4C7C5} $name %{F-}%{B-}%{A} " ;;
+    esac
+  done < <(wmctrl -d | grep "VP: $1")
+  output="${workspace_list}"
+  echo "$output"
 fi

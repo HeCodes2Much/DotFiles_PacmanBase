@@ -5,59 +5,59 @@
 # GitHub       - https://github.com/The-Repo-Club/
 # Author       - The-Repo-Club [wayne6324@gmail.com]
 # Start On     - Tue 07 Dec 14:36:53 GMT 2021
-# Modified On  - Mon 31 January 2022, 10:36:09 pm (GMT) 
+# Modified On  - Mon 31 January 2022, 10:36:09 pm (GMT)
 #------------------------------------------------------------------------------
 
 killall -q lemonbar
 killall -q lemonbar_config
 
 topleft() {
-    lemonbar_config -tl | lemonbar -p -g 1920x18+0+0 -F "#C4C7C5" -B "#282A36" -U "#268bd2" -o 0 -f "SauceCodePro Nerd Font"-9 | $SHELL
-	#succade -s topleft
+  lemonbar_config -tl | lemonbar -p -g 1920x18+0+0 -F "#C4C7C5" -B "#282A36" -U "#268bd2" -o eDP1 -f "SauceCodePro Nerd Font"-9 | $SHELL
+  #succade -s topleft
 }
 
 bottomleft() {
-    lemonbar_config -bl | lemonbar -p -b -g 1920x18+0+0 -F "#C4C7C5" -B "#282A36" -U "#268bd2" -o 0 -f "SauceCodePro Nerd Font"-9 | $SHELL
-	#succade -s bottomleft
+  lemonbar_config -bl | lemonbar -p -b -g 1920x18+0+0 -F "#C4C7C5" -B "#282A36" -U "#268bd2" -o eDP1 -f "SauceCodePro Nerd Font"-9 | $SHELL
+  #succade -s bottomleft
 }
 
 topright() {
-    lemonbar_config -tr | lemonbar -p -g 1920x18+1920+0 -F "#C4C7C5" -B "#282A36" -U "#268bd2" -o 0 -f "SauceCodePro Nerd Font"-9 | $SHELL
-	#succade -s topright
+  lemonbar_config -tr | lemonbar -p -g 1920x18+1920+0 -F "#C4C7C5" -B "#282A36" -U "#268bd2" -o HDMI-1-0 -f "SauceCodePro Nerd Font"-9 | $SHELL
+  #succade -s topright
 }
 
 bottomright() {
-    lemonbar_config -br | lemonbar -p -b -g 1920x22+1920+0 -F "#C4C7C5" -B "#282A36" -U "#268bd2" -o 0 -f "SauceCodePro Nerd Font"-9 | $SHELL
-	#succade -s bottomright
+  lemonbar_config -br | lemonbar -p -b -g 1920x18+1920+0 -F "#C4C7C5" -B "#282A36" -U "#268bd2" -o HDMI-1-0 -f "SauceCodePro Nerd Font"-9 | $SHELL
+  #succade -s bottomright
 }
 
 if [ "$1" ]; then
-    case $1 in
-        -tl|--topleft)
-            topleft
-            wait
-            ;;
-        -bl|--bottomleft)
-            bottomleft
-            wait
-            ;;
-        -tr|--topright)
-            topright
-            wait
-            ;;
-        -br|--bottomright)
-            bottomright
-            wait
-            ;;
-        -all)
-            lemonbar_launch -tl &
-            lemonbar_launch -bl &
-            lemonbar_launch -tr &
-            lemonbar_launch -br &
-            wait
-            ;;
-        *)
-            break
-            ;;
-    esac
+  case $1 in
+  -tl | --topleft)
+    topleft
+    wait
+    ;;
+  -bl | --bottomleft)
+    bottomleft
+    wait
+    ;;
+  -tr | --topright)
+    topright
+    wait
+    ;;
+  -br | --bottomright)
+    bottomright
+    wait
+    ;;
+  -all)
+    lemonbar_launch -tl &
+    lemonbar_launch -bl &
+    lemonbar_launch -tr &
+    lemonbar_launch -br &
+    wait
+    ;;
+  *)
+    wait
+    ;;
+  esac
 fi

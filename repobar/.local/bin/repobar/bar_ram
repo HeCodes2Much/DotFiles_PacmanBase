@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
 ram() {
-    icon=" "
+  # load colors
+  . ~/.config/repobar/bar_themes/minimal-mistakes
 
-    ram=$(free -h | awk '/Mem:/ { print $3 }' | cut -f1 -d 'i')
-    ram=" $ram"
+  icon=" "
 
-    printf " %s %s \n" "^c#1e222a^^b#7b8047^$icon" "^c#1e222a^^b#f1fa8c^$ram"
+  ram=$(free -h | awk '/Mem:/ { print $3 }' | cut -f1 -d 'i')
+
+  printf " %s %s \n" "^c$Foreground^^b$Yellow^$icon" "^c$Foreground^^b$Yellow_Bright^ $ram"
 }
 
 ram

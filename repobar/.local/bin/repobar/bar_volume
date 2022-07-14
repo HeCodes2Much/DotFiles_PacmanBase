@@ -1,65 +1,67 @@
 #!/usr/bin/env bash
 
 volume_alsa() {
+  # load colors
+  . ~/.config/repobar/bar_themes/minimal-mistakes
 
-    analog=$(pamixer --list-sinks | grep analog | awk '{ print $2 }' | sed 's/"//g')
-    hdmi=$(pamixer --list-sinks | grep hdmi | awk '{ print $2 }' | sed 's/"//g')
+  analog=$(pamixer --list-sinks | grep analog | awk '{ print $2 }' | sed 's/"//g')
+  hdmi=$(pamixer --list-sinks | grep hdmi | awk '{ print $2 }' | sed 's/"//g')
 
-    if [ ! -z "$analog" ]; then
-        muted=$(pamixer --sink $analog --get-volume-human | grep muted)
-        vol=$(pamixer --sink $analog --get-volume | sed 's/[^0-9]*//g')
+  if [ ! -z "$analog" ]; then
+    muted=$(pamixer --sink $analog --get-volume-human | grep muted)
+    vol=$(pamixer --sink $analog --get-volume | sed 's/[^0-9]*//g')
 
-        if [ "$muted" = "muted" ]; then
-            vol_a=" ﱝ muted"
-        else
-            if [ "$vol" -ge 75 ]; then
-                vol_a="  $vol%"
-            elif [ "$vol" -ge 50 ]; then
-                vol_a=" 墳 $vol%"
-            elif [ "$vol" -ge 25 ]; then
-                vol_a=" 奔 $vol%"
-            elif [ "$vol" -ge 0 ]; then
-                vol_a=" 奄 $vol%"
-            fi
-        fi
-    fi
-
-    if [ ! -z "$hdmi" ]; then
-        muted=$(pamixer --sink $hdmi --get-volume-human | grep muted)
-        vol=$(pamixer --sink $hdmi --get-volume | sed 's/[^0-9]*//g')
-
-        if [ "$muted" = "muted" ]; then
-            vol_a=" ﱝ muted"
-        else
-            if [ "$vol" -ge 75 ]; then
-                vol_h="  $vol%"
-            elif [ "$vol" -ge 50 ]; then
-                vol_h=" 墳 $vol%"
-            elif [ "$vol" -ge 25 ]; then
-                vol_h=" 奔 $vol%"
-            elif [ "$vol" -ge 0 ]; then
-                vol_h=" 奄 $vol%"
-            fi
-        fi
-    fi
-    if [ ! -z "$vol_a" ] && [ ! -z "$vol_h" ]; then
-        icon_a="  "
-        icon_h="  "
-
-        printf " %s %s  %s %s \n" "^c#1e222a^^b#616580^$icon_a" "^c#1e222a^^b#c2caff^$vol_a" "^c#1e222a^^b#616580^$icon_h" "^c#1e222a^^b#c2caff^$vol_h"
-    elif [ ! -z "$vol_h" ]; then
-        icon_h="  "
-
-        printf " %s %s \n" "^c#1e222a^^b#616580^$icon_h" "^c#1e222a^^b#c2caff^$vol_h"
-    elif [ ! -z "$vol_a" ]; then
-        icon_a="  "
-
-        printf " %s %s \n" "^c#1e222a^^b#616580^$icon_a" "^c#1e222a^^b#c2caff^$vol_a"
+    if [ "$muted" = "muted" ]; then
+      vol_a=" ﱝ muted"
     else
-        icon=" ﱝ "
-        text=" Auido Disconnected"
-        printf " %s %s %s \n" "^c#1e222a^^b#616580^$icon" "^c#1e222a^^b#c2caff^$text" "^c#1e222a^^b#616580^$icon"
+      if [ "$vol" -ge 75 ]; then
+        vol_a="  $vol%"
+      elif [ "$vol" -ge 50 ]; then
+        vol_a=" 墳 $vol%"
+      elif [ "$vol" -ge 25 ]; then
+        vol_a=" 奔 $vol%"
+      elif [ "$vol" -ge 0 ]; then
+        vol_a=" 奄 $vol%"
+      fi
     fi
+  fi
+
+  if [ ! -z "$hdmi" ]; then
+    muted=$(pamixer --sink $hdmi --get-volume-human | grep muted)
+    vol=$(pamixer --sink $hdmi --get-volume | sed 's/[^0-9]*//g')
+
+    if [ "$muted" = "muted" ]; then
+      vol_a=" ﱝ muted"
+    else
+      if [ "$vol" -ge 75 ]; then
+        vol_h="  $vol%"
+      elif [ "$vol" -ge 50 ]; then
+        vol_h=" 墳 $vol%"
+      elif [ "$vol" -ge 25 ]; then
+        vol_h=" 奔 $vol%"
+      elif [ "$vol" -ge 0 ]; then
+        vol_h=" 奄 $vol%"
+      fi
+    fi
+  fi
+  if [ ! -z "$vol_a" ] && [ ! -z "$vol_h" ]; then
+    icon_a="  "
+    icon_h="  "
+
+    printf " %s %s %s %s \n" "^c$Foreground^^b$Cyan^$icon_a" "^c$Foreground^^b$Cyan_Bright^ $vol_a" "^c$Foreground^^b$Cyan^$icon_h" "^c$Foreground^^b$Cyan_Bright^ $vol_h"
+  elif [ ! -z "$vol_h" ]; then
+    icon_h="  "
+
+    printf " %s %s \n" "^c$Foreground^^b$Cyan^$icon_h" "^c$Foreground^^b$Cyan_Bright^ $vol_h"
+  elif [ ! -z "$vol_a" ]; then
+    icon_a="  "
+
+    printf " %s %s \n" "^c$Foreground^^b$Cyan^$icon_a" "^c$Foreground^^b$Cyan_Bright^ $vol_a"
+  else
+    icon=" ﱝ "
+    text=" Auido Disconnected"
+    printf " %s %s %s \n" "^c$Foreground^^b$Cyan^$icon" "^c$Foreground^^b$Cyan_Bright^ $text" "^c$Foreground^^b$Cyan^$icon"
+  fi
 }
 
 volume_alsa

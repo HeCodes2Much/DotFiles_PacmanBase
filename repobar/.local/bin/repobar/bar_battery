@@ -1,48 +1,51 @@
 #!/usr/bin/env bash
 
 # Change this depending on your battery in /sys/class/power_supply/
-battery="BAT0";
+battery="BAT0"
 
 has_battery() {
-    if [ -d /sys/class/power_supply/$battery ]; then
-        return 0;
-    fi
-    return 1;
+  if [ -d /sys/class/power_supply/$battery ]; then
+    return 0
+  fi
+  return 1
 }
 
 get_charge() {
-    cat "/sys/class/power_supply/$battery/capacity"
+  cat "/sys/class/power_supply/$battery/capacity"
 }
 
 is_charging() {
-    status=$(cat "/sys/class/power_supply/$battery/status")
-    if [ ! $status = "Discharging" ]; then
-        return 0;
-    fi
-    return 1;
+  status=$(cat "/sys/class/power_supply/$battery/status")
+  if [ ! $status = "Discharging" ]; then
+    return 0
+  fi
+  return 1
 }
 
 battery() {
-    battery_status="";
-    if $(is_charging); then
-        icon=" "
-        if $(has_battery); then
-            battery_status=" $(get_charge)%";
-        fi
-    else
-        if $(has_battery); then
-            if [[ $(get_charge) -ge 66 ]]; then
-                icon=" "
-            elif [[ $(get_charge) -ge 33 ]]; then
-                icon=" "
-            else
-                icon=" "
-            fi
-            battery_status=" $(get_charge)%";
-        fi
-    fi
+  # load colors
+  . ~/.config/repobar/bar_themes/minimal-mistakes
 
-    printf " %s %s \n" "^c#1e222a^^b#12993f^$icon" "^c#1e222a^^b#50fa7b^$battery_status"
+  battery_status=""
+  if $(is_charging); then
+    icon=" "
+    if $(has_battery); then
+      battery_status="$(get_charge)%"
+    fi
+  else
+    if $(has_battery); then
+      if [[ $(get_charge) -ge 66 ]]; then
+        icon=" "
+      elif [[ $(get_charge) -ge 33 ]]; then
+        icon=" "
+      else
+        icon=" "
+      fi
+      battery_status="$(get_charge)%"
+    fi
+  fi
+
+  printf " %s %s \n" "^c$Foreground^^b$Green^$icon" "^c$Foreground^^b$Green_Bright^ $battery_status"
 }
 
 battery

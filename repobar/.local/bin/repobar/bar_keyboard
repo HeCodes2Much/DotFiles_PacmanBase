@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
-keyboard () {
-    icon=" ⌨"
+keyboard() {
+  # load colors
+  . ~/.config/repobar/bar_themes/minimal-mistakes
 
-    keyboard="$(setxkbmap -query | awk '/layout/{print $2}')"
-    keyboard=" $keyboard"
+  icon="  "
 
-    printf " %s %s \n" "^c#1e222a^^b#803c62^$icon" "^c#1e222a^^b#ff79c6^${keyboard^^}"
+  keyboard="$(setxkbmap -query | awk '/layout/{print $2}')"
+  keyboard="${keyboard^^}"
+
+  printf " %s %s \n" "^c$Foreground^^b$Pink^$icon" "^c$Foreground^^b$Pink_Bright^ $keyboard"
 }
 
 keyboard

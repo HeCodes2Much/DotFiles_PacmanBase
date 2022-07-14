@@ -1423,7 +1423,7 @@
   <resource identifier="${gimp_data_dir}/gradients/Yellow_Orange.ggr" checksum="428584726006e23e260baa2a7d79f295">
   </resource>
 
-  <resource identifier="gimp-palette-color-history" checksum="b54d32ffeb1b9eeaa84ac1b81f7c06aa">
+  <resource identifier="gimp-palette-color-history" checksum="ac8fa681c54a685419dfd9e64d350e5c">
   </resource>
 
   <resource identifier="${gimp_data_dir}/palettes/Bears.gpl" checksum="e82e818c20ac12bdd21049924ea2d1e7">
@@ -4010,6 +4010,15 @@
   </resource>
 
   <resource identifier="FontAwesome" checksum="(null)">
+  </resource>
+
+  <resource identifier="Font Awesome 6 Brands" checksum="(null)">
+  </resource>
+
+  <resource identifier="Font Awesome 6 Free" checksum="(null)">
+  </resource>
+
+  <resource identifier="Font Awesome 6 Free Heavy" checksum="(null)">
   </resource>
 
   <resource identifier="Fontcop II" checksum="(null)">

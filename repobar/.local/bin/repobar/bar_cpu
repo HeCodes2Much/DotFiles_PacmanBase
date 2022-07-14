@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
 
 cpu() {
-    icon=" "
+  # load colors
+  . ~/.config/repobar/bar_themes/minimal-mistakes
 
-    read -r cpu a b c previdle rest < /proc/stat
-    prevtotal=$((a+b+c+previdle))
-    sleep 0.5
-    read -r cpu a b c idle rest < /proc/stat
-    total=$((a+b+c+idle))
-    cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))
-    cpu=" $cpu%"
-    printf " %s %s \n" "^c#1e222a^^b#745737^$icon" "^c#1e222a^^b#ffb86c^$cpu"
+  icon=" "
+
+  read -r cpu a b c previdle rest </proc/stat
+  prevtotal=$((a + b + c + previdle))
+  sleep 0.5
+  read -r cpu a b c idle rest </proc/stat
+  total=$((a + b + c + idle))
+  cpu=$((100 * ((total - prevtotal) - (idle - previdle)) / (total - prevtotal)))
+
+  printf " %s %s \n" "^c$Foreground^^b$Orange^$icon" "^c$Foreground^^b$Orange_Bright^ $cpu%"
 }
 
 cpu

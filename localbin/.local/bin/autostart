@@ -1,21 +1,24 @@
 #!/usr/bin/env bash
-# -*-coding:utf-8 -*-
-# Auto updated?
+#-*-coding:utf-8 -*-
+#Auto updated?
 #   Yes
 #File :
 #   autostart
-#Author:
+#Author :
 #   The-Repo-Club [wayne6324@gmail.com]
-#Github:
+#Github :
 #   https://github.com/The-Repo-Club/
 #
-# Created:
-#   Mon 22 November 2021, 03:15:54 PM [GMT]
-# Modified:
-#   Sat 22 January 2022, 11:56:31 AM [GMT]
+#Created:
+#   Mon 22 November 2021, 03:15:54 PM [GMT+1]
+#Last edited:
+#   Wed 06 July 2022, 08:02:16 AM [GMT+1]
 #
-# Description:
+#Description:
 #   <Todo>
+#
+#Dependencies:
+#   <None>
 #
 
 if command -v /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/null; then
@@ -57,16 +60,6 @@ else
     picom -CGb --experimental-backend --config "$HOME"/.config/i3/picom.conf &
   else
     echo "picom already Running"
-  fi
-fi
-
-if ! command -v feh &>/dev/null; then
-  echo "feh could not be found"
-else
-  if ! test -f "$HOME/.fehbg"; then
-    echo "$HOME/.fehbg could not be found"
-  else
-    sh "$HOME/.fehbg"
   fi
 fi
 
@@ -120,6 +113,22 @@ if command -v volumeicon &>/dev/null; then
   fi
 fi
 
+####################
+## Fix Background ##
+####################
+
+if ! command -v feh &>/dev/null; then
+  echo "feh could not be found"
+else
+  if ! test -f "$HOME/.fehbg"; then
+    echo "$HOME/.fehbg could not be found"
+  else
+    sh "$HOME/.fehbg" &
+    sleep 2s
+    sh "$HOME/.fehbg" &
+  fi
+fi
+
 ###############
 ## Auto Lock ##
 ###############
@@ -139,7 +148,7 @@ if command -v xidlehook &>/dev/null; then
       "" \
       --timer 3600 \
       "systemctl suspend" \
-      ""
+      "" &
   else
     echo "xidlehook already Running"
   fi

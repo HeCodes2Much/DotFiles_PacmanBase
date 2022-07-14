@@ -1,40 +1,16 @@
 #!/usr/bin/env bash
 updates() {
-    configFile=$HOME/.config/repowm/repobar/bar_updates.ini
+  # load colors
+  . ~/.config/repobar/bar_themes/minimal-mistakes
 
-    timestamp=$(date +%s)
-    icon=" "
-    [[ -f $configFile ]] && . $configFile
-    if [ -z "$LastUsed" ] || [ -z "$Message" ]; then
-        updates=$(yay -Pn)
-        if [ "$updates" -eq "0" ]; then
-            updatecount="No Updates"
-        elif [ "$updates" -ge "1" ]; then
-            updatecount="$updates Update"
-        else
-            updatecount="$updates Updates"
-        fi
-        printf " %s %s \n"  "^c#1e222a^^b#802a2a^$icon" "^c#1e222a^^b#ff5555^$updatecount"
-        newtime=`expr $timestamp + 900`
-        echo -e "LastUsed=${newtime}\nMessage='${updatecount}'" > $configFile
-    else
-        if [ "$timestamp" -ge "$LastUsed" ]; then
-            updates=$(yay -Pn)
-            if [ "$updates" -eq "0" ]; then
-                updatecount="No Updates"
-            elif [ "$updates" -ge "1" ]; then
-                updatecount="$updates Update"
-            else
-                updatecount="$updates Updates"
-            fi
-            printf " %s %s \n"  "^c#1e222a^^b#802a2a^$icon" "^c#1e222a^^b#ff5555^$updatecount"
-            newtime=`expr $timestamp + 900`
-            echo -e "LastUsed=${newtime}\nMessage='${updatecount}'" > $configFile
-        else
-            updates=" $Message"
-            printf " %s %s \n"  "^c#1e222a^^b#802a2a^$icon" "^c#1e222a^^b#ff5555^$updates"
-        fi
-    fi
+  updates=$(yay -Pn)
+  icon=" "
+
+  if [ -z "$updates" ]; then
+    printf " %s %s \n" "^c$Foreground^^b$Red^$icon" "^c$Foreground^^b$Red_Bright^ Fully Updated"
+  else
+    printf " %s %s \n" "^c$Foreground^^b$Red^$icon" "^c$Foreground^^b$Red_Bright^ $updates Updates"
+  fi
 }
 
 updates
