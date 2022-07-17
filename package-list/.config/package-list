@@ -58,12 +58,10 @@ python-gputil
 python-kivymd
 qt-logout
 recycle-cli
+repo-exec
 repomenu
 repomenu-extra
-repomenu-schemas
-repomenu-schemas
 repowm
-repowm-schemas
 resvg
 runescape-launcher
 sdbus-cpp

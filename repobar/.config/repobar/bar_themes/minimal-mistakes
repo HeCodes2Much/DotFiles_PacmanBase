@@ -1,0 +1,20 @@
+#!/bin/dash
+
+# colors
+Foreground=#283036
+
+Cyan=#59fff9
+Green=#59ff59
+Yellow=#ffff59
+Orange=#ff9c59
+Pink=#ff59f9
+Red=#ff5959
+Purple=#9059ff
+
+Cyan_Bright=#a6fffc
+Green_Bright=#a6ffa6
+Yellow_Bright=#ffffa6
+Orange_Bright=#ffc9a6
+Pink_Bright=#ffa6fc
+Red_Bright=#ffa6a6
+Purple_Bright=#c5a6ff
