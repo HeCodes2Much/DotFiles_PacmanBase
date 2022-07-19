@@ -6,6 +6,7 @@ get_updates() {
   . ~/.config/repobar/bar_themes/minimal-mistakes
 
   updates=$(yay -Pn)
+  timestamp=$(date +%s)
   icon=" "
 
   if [ "$updates" -eq "0" ]; then
@@ -21,7 +22,7 @@ get_updates() {
     newtime=$(expr $timestamp + 900)
     echo -e "LastUsed=${newtime}\nMessage='${updatecount}'" >$configFile
   else
-    if [ "$timestamp" -ge "$LastUsed" ]; then
+    if [[ "$timestamp" -ge "$LastUsed" ]]; then
       printf " %s %s \n" "^c$Foreground^^b$Red^$icon" "^c$Foreground^^b$Red_Bright^ $updatecount"
       newtime=$(expr $timestamp + 900)
       echo -e "LastUsed=${newtime}\nMessage='${updatecount}'" >$configFile

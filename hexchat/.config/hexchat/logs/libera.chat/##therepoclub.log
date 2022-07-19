@@ -1,0 +1,141 @@
+**** BEGIN LOGGING AT Sat Jul 16 18:27:26 2022
+
+Jul 16 18:27:26 *	Now talking on ##TheRepoClub
+Jul 16 18:27:26 *	ChanServ (ChanServ@services.libera.chat) has left
+Jul 16 18:28:07 *	therepoclub has quit ()
+**** ENDING LOGGING AT Sat Jul 16 18:29:50 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 18:30:01 2022
+
+Jul 16 18:30:01 *	Now talking on ##TheRepoClub
+Jul 16 18:30:01 *	zinc.libera.chat sets mode +C on ##TheRepoClub
+Jul 16 18:30:01 *	zinc.libera.chat sets mode +n on ##TheRepoClub
+Jul 16 18:30:01 *	zinc.libera.chat sets mode +s on ##TheRepoClub
+Jul 16 18:30:01 *	zinc.libera.chat sets mode +t on ##TheRepoClub
+Jul 16 18:30:01 *	services. removes channel operator status from TheRepoClub
+Jul 16 18:30:01 *	*** Notice -- TS for ##TheRepoClub changed from 1657992601 to 1657387096
+Jul 16 18:30:01 *	services. sets mode -C on ##TheRepoClub
+Jul 16 18:30:01 *	services. sets mode -s on ##TheRepoClub
+Jul 16 18:30:01 *	ChanServ (ChanServ@services.libera.chat) has joined
+Jul 16 18:30:01 *	services. gives channel operator status to ChanServ
+Jul 16 18:30:01 *	ChanServ gives channel operator status to TheRepoClub
+Jul 16 18:35:48 Sysinfo	hexchat_command called without a valid context.
+Jul 16 18:35:48 Sysinfo	hexchat_print called without a valid context.
+Jul 16 18:35:48 Perl	hexchat_print called without a valid context.
+Jul 16 18:35:48 FiSHLiM plugin unloaded
+Jul 16 18:35:48 Checksum	hexchat_print called without a valid context.
+**** ENDING LOGGING AT Sat Jul 16 18:35:48 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 18:36:10 2022
+
+Jul 16 18:36:10 *	Now talking on ##TheRepoClub
+Jul 16 18:36:10 *	ChanServ gives channel operator status to TheRepoClub
+Jul 16 20:26:30 *	Disconnected ()
+**** ENDING LOGGING AT Sat Jul 16 20:26:30 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 20:26:55 2022
+
+Jul 16 20:26:55 *	Now talking on ##TheRepoClub
+Jul 16 20:26:55 *	erbium.libera.chat sets mode +C on ##TheRepoClub
+Jul 16 20:26:55 *	erbium.libera.chat sets mode +n on ##TheRepoClub
+Jul 16 20:26:55 *	erbium.libera.chat sets mode +s on ##TheRepoClub
+Jul 16 20:26:55 *	erbium.libera.chat sets mode +t on ##TheRepoClub
+Jul 16 20:26:55 *	services. removes channel operator status from TheRepoClub
+Jul 16 20:26:55 *	*** Notice -- TS for ##TheRepoClub changed from 1657999615 to 1657387096
+Jul 16 20:26:55 *	services. sets mode -C on ##TheRepoClub
+Jul 16 20:26:55 *	services. sets mode -s on ##TheRepoClub
+Jul 16 20:26:55 *	ChanServ (ChanServ@services.libera.chat) has joined
+Jul 16 20:26:55 *	services. gives channel operator status to ChanServ
+Jul 16 20:26:55 *	ChanServ gives channel operator status to TheRepoClub
+Jul 16 21:34:30 *	TheRepoClub sets mode +m on ##TheRepoClub
+Jul 16 21:34:50 *	##TheRepoClub k ntlk :MODE cannot be set due to channel having an active MLOCK restriction policy
+Jul 16 21:34:58 *	##TheRepoClub l ntlk :MODE cannot be set due to channel having an active MLOCK restriction policy
+Jul 16 21:34:58 *	Channel ##TheRepoClub modes: +mnt
+Jul 16 21:34:58 *	Channel ##TheRepoClub created on Sat Jul  9 18:18:16 2022
+Jul 16 21:35:09 *	TheRepoClub sets mode +c on ##TheRepoClub
+Jul 16 21:35:12 *	TheRepoClub sets mode +i on ##TheRepoClub
+Jul 16 21:35:14 *	TheRepoClub sets mode -i on ##TheRepoClub
+Jul 16 21:35:27 *	##TheRepoClub l ntlk :MODE cannot be set due to channel having an active MLOCK restriction policy
+Jul 16 21:35:28 *	Channel ##TheRepoClub modes: +cmnt
+Jul 16 21:35:28 *	Channel ##TheRepoClub created on Sat Jul  9 18:18:16 2022
+Jul 16 21:35:35 *	##TheRepoClub l ntlk :MODE cannot be set due to channel having an active MLOCK restriction policy
+Jul 16 21:35:35 *	Channel ##TheRepoClub modes: +cmnt
+Jul 16 21:35:35 *	Channel ##TheRepoClub created on Sat Jul  9 18:18:16 2022
+Jul 16 21:35:45 *	##TheRepoClub l ntlk :MODE cannot be set due to channel having an active MLOCK restriction policy
+Jul 16 21:35:45 *	Channel ##TheRepoClub modes: +cmnt
+Jul 16 21:35:45 *	Channel ##TheRepoClub created on Sat Jul  9 18:18:16 2022
+Jul 16 21:36:40 Usage: QUERY [-nofocus] <nick> [message], opens up a new privmsg window to someone and optionally sends a message
+Jul 16 21:37:15 *	TheRepoClub removes channel operator status from TheRepoClub
+Jul 16 21:37:18 *	##TheRepoClub :You're not a channel operator
+Jul 16 21:37:47 >ChanServ<	OP ##TheRepoClub
+Jul 16 21:37:47 *	ChanServ gives channel operator status to TheRepoClub
+Jul 16 21:38:11 *	You have been kicked from ##TheRepoClub by TheRepoClub (bye)
+**** ENDING LOGGING AT Sat Jul 16 21:38:11 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 21:38:49 2022
+
+Jul 16 21:38:49 *	Now talking on ##TheRepoClub
+Jul 16 21:38:49 *	ChanServ gives channel operator status to TheRepoClub
+Jul 16 21:40:10 *	##TheRepoClub :End of Channel Invite List
+Jul 16 21:40:11 *	##TheRepoClub q :End of Channel Quiet List
+Jul 16 21:40:13 *	##TheRepoClub :End of Channel Ban List
+Jul 16 21:40:24 *	##TheRepoClub :End of Channel Exception List
+Jul 16 21:40:25 *	##TheRepoClub :End of Channel Invite List
+Jul 16 21:40:25 *	##TheRepoClub q :End of Channel Quiet List
+**** ENDING LOGGING AT Sat Jul 16 21:40:51 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 21:40:51 2022
+
+**** BEGIN LOGGING AT Sun Jul 17 12:08:00 2022
+
+Jul 17 12:08:00 *	Now talking on ##TheRepoClub
+Jul 17 12:08:00 *	mercury.libera.chat sets mode +C on ##TheRepoClub
+Jul 17 12:08:00 *	mercury.libera.chat sets mode +n on ##TheRepoClub
+Jul 17 12:08:00 *	mercury.libera.chat sets mode +s on ##TheRepoClub
+Jul 17 12:08:00 *	mercury.libera.chat sets mode +t on ##TheRepoClub
+Jul 17 12:08:01 *	services. removes channel operator status from TheRepoClub
+Jul 17 12:08:01 *	*** Notice -- TS for ##TheRepoClub changed from 1658056080 to 1657387096
+Jul 17 12:08:01 *	services. sets mode -C on ##TheRepoClub
+Jul 17 12:08:01 *	services. sets mode -s on ##TheRepoClub
+Jul 17 12:08:01 *	ChanServ (ChanServ@services.libera.chat) has joined
+Jul 17 12:08:01 *	services. gives channel operator status to ChanServ
+Jul 17 12:08:01 *	ChanServ gives channel operator status to TheRepoClub
+**** ENDING LOGGING AT Sun Jul 17 12:12:42 2022
+
+**** BEGIN LOGGING AT Sun Jul 17 12:13:28 2022
+
+Jul 17 12:13:28 *	Now talking on ##TheRepoClub
+**** ENDING LOGGING AT Sun Jul 17 12:14:29 2022
+
+**** BEGIN LOGGING AT Sun Jul 17 12:14:44 2022
+
+Jul 17 12:14:44 *	Now talking on ##TheRepoClub
+Jul 17 12:14:45 *	ChanServ gives channel operator status to TheRepoClub
+**** BEGIN LOGGING AT Sun Jul 17 18:17:35 2022
+
+Jul 17 18:17:35 *	Now talking on ##TheRepoClub
+Jul 17 18:17:35 *	zinc.libera.chat sets mode +C on ##TheRepoClub
+Jul 17 18:17:35 *	zinc.libera.chat sets mode +n on ##TheRepoClub
+Jul 17 18:17:35 *	zinc.libera.chat sets mode +s on ##TheRepoClub
+Jul 17 18:17:35 *	zinc.libera.chat sets mode +t on ##TheRepoClub
+Jul 17 18:17:35 *	services. removes channel operator status from TheRepoClub
+Jul 17 18:17:35 *	*** Notice -- TS for ##TheRepoClub changed from 1658078255 to 1657387096
+Jul 17 18:17:35 *	services. sets mode -C on ##TheRepoClub
+Jul 17 18:17:35 *	services. sets mode -s on ##TheRepoClub
+Jul 17 18:17:35 *	ChanServ (ChanServ@services.libera.chat) has joined
+Jul 17 18:17:35 *	services. gives channel operator status to ChanServ
+Jul 17 18:17:35 *	ChanServ gives channel operator status to TheRepoClub
+**** BEGIN LOGGING AT Sun Jul 17 21:27:17 2022
+
+Jul 17 21:27:17 *	Now talking on ##TheRepoClub
+Jul 17 21:27:17 *	mercury.libera.chat sets mode +C on ##TheRepoClub
+Jul 17 21:27:17 *	mercury.libera.chat sets mode +n on ##TheRepoClub
+Jul 17 21:27:17 *	mercury.libera.chat sets mode +s on ##TheRepoClub
+Jul 17 21:27:17 *	mercury.libera.chat sets mode +t on ##TheRepoClub
+Jul 17 21:27:17 *	services. removes channel operator status from TheRepoClub
+Jul 17 21:27:17 *	*** Notice -- TS for ##TheRepoClub changed from 1658089638 to 1657387096
+Jul 17 21:27:17 *	services. sets mode -C on ##TheRepoClub
+Jul 17 21:27:17 *	services. sets mode -s on ##TheRepoClub
+Jul 17 21:27:17 *	ChanServ (ChanServ@services.libera.chat) has joined
+Jul 17 21:27:17 *	services. gives channel operator status to ChanServ
+Jul 17 21:27:17 *	ChanServ gives channel operator status to TheRepoClub

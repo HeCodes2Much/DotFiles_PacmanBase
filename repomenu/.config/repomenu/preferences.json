@@ -1,0 +1,11 @@
+{
+	"filemanager": "nemo",
+	"gitbrowser": "lazygit",
+	"hypervisor": "virtualbox",
+	"mailreader": "thunderbird",
+	"musicplayer": "ffplay -nodisp",
+	"videoplayer": "mpv --volume=50",
+	"terminal": "kitty",
+	"texteditor": "code",
+	"webbrowser": "firefox"
+}

@@ -1,0 +1,904 @@
+**** BEGIN LOGGING AT Sat Jul 16 18:18:36 2022
+
+Jul 16 18:18:36 *	*** Checking Ident
+Jul 16 18:18:36 *	*** Looking up your hostname...
+Jul 16 18:18:36 *	*** Found your hostname: 92.40.202.234.threembb.co.uk
+Jul 16 18:18:41 *	*** No Ident response
+Jul 16 18:18:41 *	Capabilities supported: account-notify away-notify chghost extended-join multi-prefix sasl=PLAIN,ECDSA-NIST256P-CHALLENGE,EXTERNAL tls account-tag cap-notify echo-message solanum.chat/identify-msg solanum.chat/oper solanum.chat/realhost
+Jul 16 18:18:41 *	Capabilities requested: account-notify away-notify chghost extended-join multi-prefix account-tag cap-notify solanum.chat/identify-msg 
+Jul 16 18:18:41 *	repo is already in use. Retrying with repo_...
+Jul 16 18:18:41 *	Capabilities acknowledged: account-notify away-notify chghost extended-join multi-prefix account-tag cap-notify solanum.chat/identify-msg
+**** ENDING LOGGING AT Sat Jul 16 18:18:42 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 18:18:42 2022
+
+Jul 16 18:18:42 *	Welcome to the Libera.Chat Internet Relay Chat Network repo_
+Jul 16 18:18:42 *	Your host is copper.libera.chat[130.185.232.126/6697], running version solanum-1.0-dev
+Jul 16 18:18:42 *	This server was created Mon May 9 2022 at 03:09:58 UTC
+Jul 16 18:18:42 *	copper.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 16 18:18:42 *	ETRACE FNC WHOX KNOCK CALLERID=g MONITOR=100 SAFELIST ELIST=CMNTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 16 18:18:42 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 16 18:18:42 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 16 18:18:42 *	There are 73 users and 46199 invisible on 28 servers
+Jul 16 18:18:42 *	43 :IRC Operators online
+Jul 16 18:18:42 *	6 :unknown connection(s)
+Jul 16 18:18:42 *	22602 :channels formed
+Jul 16 18:18:42 *	I have 2755 clients and 1 servers
+Jul 16 18:18:42 *	2755 3325 :Current local users 2755, max 3325
+Jul 16 18:18:42 *	46272 50432 :Current global users 46272, max 50432
+Jul 16 18:18:42 *	Highest connection count: 3326 (3325 clients) (180311 connections received)
+Jul 16 18:18:42 *	- copper.libera.chat Message of the Day - 
+Jul 16 18:18:42 *	- Welcome to Libera Chat, the IRC network for
+Jul 16 18:18:42 *	- free & open-source software and peer directed projects.
+Jul 16 18:18:42 *	-  
+Jul 16 18:18:42 *	- Use of Libera Chat is governed by our network policies.
+Jul 16 18:18:42 *	-  
+Jul 16 18:18:42 *	- To reduce network abuses we perform open proxy checks
+Jul 16 18:18:42 *	- on hosts at connection time.
+Jul 16 18:18:42 *	-  
+Jul 16 18:18:42 *	- Please visit us in #libera for questions and support.
+Jul 16 18:18:42 *	-  
+Jul 16 18:18:42 *	- Website and documentation:  https://libera.chat
+Jul 16 18:18:42 *	- Webchat:                    https://web.libera.chat
+Jul 16 18:18:42 *	- Network policies:           https://libera.chat/policies
+Jul 16 18:18:42 *	- Email:                      support@libera.chat
+Jul 16 18:18:42 *	End of /MOTD command.
+Jul 16 18:18:42 *	repo_ sets mode +Z on repo_
+Jul 16 18:18:42 *	repo_ sets mode +i on repo_
+Jul 16 18:18:42 *	repo_ sets mode +w on repo_
+Jul 16 18:19:51 No channel joined. Try /join #<channel>
+**** BEGIN LOGGING AT Sat Jul 16 18:20:41 2022
+
+Jul 16 18:20:41 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub_
+Jul 16 18:20:41 *	Your host is lithium.libera.chat[176.58.122.119/6697], running version solanum-1.0-dev
+Jul 16 18:20:41 *	This server was created Mon Jul 4 2022 at 03:49:38 UTC
+Jul 16 18:20:41 *	lithium.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 16 18:20:41 *	SAFELIST ELIST=CMNTU KNOCK MONITOR=100 CALLERID=g ETRACE FNC WHOX CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 16 18:20:41 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 16 18:20:41 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 16 18:20:41 *	There are 73 users and 46205 invisible on 28 servers
+Jul 16 18:20:41 *	43 :IRC Operators online
+Jul 16 18:20:41 *	11 :unknown connection(s)
+Jul 16 18:20:41 *	22602 :channels formed
+Jul 16 18:20:41 *	I have 2765 clients and 1 servers
+Jul 16 18:20:41 *	2765 2951 :Current local users 2765, max 2951
+Jul 16 18:20:41 *	46278 49931 :Current global users 46278, max 49931
+Jul 16 18:20:41 *	Highest connection count: 2952 (2951 clients) (45357 connections received)
+Jul 16 18:20:41 *	- lithium.libera.chat Message of the Day - 
+Jul 16 18:20:41 *	- Welcome to Libera Chat, the IRC network for
+Jul 16 18:20:41 *	- free & open-source software and peer directed projects.
+Jul 16 18:20:41 *	-  
+Jul 16 18:20:41 *	- Use of Libera Chat is governed by our network policies.
+Jul 16 18:20:41 *	-  
+Jul 16 18:20:41 *	- To reduce network abuses we perform open proxy checks
+Jul 16 18:20:41 *	- on hosts at connection time.
+Jul 16 18:20:41 *	-  
+Jul 16 18:20:41 *	- Please visit us in #libera for questions and support.
+Jul 16 18:20:41 *	-  
+Jul 16 18:20:41 *	- Website and documentation:  https://libera.chat
+Jul 16 18:20:41 *	- Webchat:                    https://web.libera.chat
+Jul 16 18:20:41 *	- Network policies:           https://libera.chat/policies
+Jul 16 18:20:41 *	- Email:                      support@libera.chat
+Jul 16 18:20:41 *	End of /MOTD command.
+Jul 16 18:20:41 *	TheRepoClub_ sets mode +Z on TheRepoClub_
+Jul 16 18:20:41 *	TheRepoClub_ sets mode +i on TheRepoClub_
+Jul 16 18:20:41 *	TheRepoClub_ sets mode +w on TheRepoClub_
+**** ENDING LOGGING AT Sat Jul 16 18:20:44 2022
+
+Jul 16 18:21:00 *	Disconnected ()
+Jul 16 18:21:00 *	Looking up irc.libera.chat
+Jul 16 18:21:00 *	Connecting to irc.libera.chat (130.185.232.126:6697)
+Jul 16 18:21:01 *	* Subject: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:21:01 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:21:01 *	* Subject: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 18:21:01 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:21:01 *	* Subject: /CN=copper.libera.chat
+Jul 16 18:21:01 *	* Issuer: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 18:21:01 *	* Certification info:
+Jul 16 18:21:01 *	  Subject:
+Jul 16 18:21:01 *	    CN=copper.libera.chat
+Jul 16 18:21:01 *	  Issuer:
+Jul 16 18:21:01 *	    C=US
+Jul 16 18:21:01 *	    O=Let's Encrypt
+Jul 16 18:21:01 *	    CN=R3
+Jul 16 18:21:01 *	  Public key algorithm: id-ecPublicKey (384 bits)
+Jul 16 18:21:01 *	  Sign algorithm sha256WithRSAEncryption
+Jul 16 18:21:01 *	  Valid since Jun 20 05:03:00 2022 GM to Sep 18 05:02:59 2022 GM
+Jul 16 18:21:01 *	* Cipher info:
+Jul 16 18:21:01 *	  Version: TLSv1.3, cipher TLS_AES_256_GCM_SHA384 (256 bits)
+Jul 16 18:21:01 *	Connected. Now logging in.
+Jul 16 18:21:01 *	*** Checking Ident
+Jul 16 18:21:01 *	*** Looking up your hostname...
+Jul 16 18:21:01 *	*** Found your hostname: 92.40.202.234.threembb.co.uk
+Jul 16 18:21:07 *	*** No Ident response
+Jul 16 18:21:07 *	Capabilities supported: account-notify away-notify chghost extended-join multi-prefix sasl=PLAIN,ECDSA-NIST256P-CHALLENGE,EXTERNAL tls account-tag cap-notify echo-message solanum.chat/identify-msg solanum.chat/oper solanum.chat/realhost
+Jul 16 18:21:07 *	Capabilities requested: account-notify away-notify chghost extended-join multi-prefix account-tag cap-notify solanum.chat/identify-msg 
+Jul 16 18:21:07 *	Capabilities acknowledged: account-notify away-notify chghost extended-join multi-prefix account-tag cap-notify solanum.chat/identify-msg
+**** ENDING LOGGING AT Sat Jul 16 18:21:07 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 18:21:07 2022
+
+Jul 16 18:21:07 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub_
+Jul 16 18:21:07 *	Your host is copper.libera.chat[130.185.232.126/6697], running version solanum-1.0-dev
+Jul 16 18:21:07 *	This server was created Mon May 9 2022 at 03:09:58 UTC
+Jul 16 18:21:07 *	copper.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 16 18:21:07 *	ETRACE FNC WHOX KNOCK CALLERID=g MONITOR=100 SAFELIST ELIST=CMNTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 16 18:21:07 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 16 18:21:07 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 16 18:21:07 *	There are 73 users and 46204 invisible on 28 servers
+Jul 16 18:21:07 *	43 :IRC Operators online
+Jul 16 18:21:07 *	10 :unknown connection(s)
+Jul 16 18:21:07 *	22603 :channels formed
+Jul 16 18:21:07 *	I have 2757 clients and 1 servers
+Jul 16 18:21:07 *	2757 3325 :Current local users 2757, max 3325
+Jul 16 18:21:07 *	46277 50432 :Current global users 46277, max 50432
+Jul 16 18:21:07 *	Highest connection count: 3326 (3325 clients) (180322 connections received)
+Jul 16 18:21:07 *	- copper.libera.chat Message of the Day - 
+Jul 16 18:21:07 *	- Welcome to Libera Chat, the IRC network for
+Jul 16 18:21:07 *	- free & open-source software and peer directed projects.
+Jul 16 18:21:07 *	-  
+Jul 16 18:21:07 *	- Use of Libera Chat is governed by our network policies.
+Jul 16 18:21:07 *	-  
+Jul 16 18:21:07 *	- To reduce network abuses we perform open proxy checks
+Jul 16 18:21:07 *	- on hosts at connection time.
+Jul 16 18:21:07 *	-  
+Jul 16 18:21:07 *	- Please visit us in #libera for questions and support.
+Jul 16 18:21:07 *	-  
+Jul 16 18:21:07 *	- Website and documentation:  https://libera.chat
+Jul 16 18:21:07 *	- Webchat:                    https://web.libera.chat
+Jul 16 18:21:07 *	- Network policies:           https://libera.chat/policies
+Jul 16 18:21:07 *	- Email:                      support@libera.chat
+Jul 16 18:21:07 *	End of /MOTD command.
+Jul 16 18:21:07 *	TheRepoClub_ sets mode +Z on TheRepoClub_
+Jul 16 18:21:07 *	TheRepoClub_ sets mode +i on TheRepoClub_
+Jul 16 18:21:07 *	TheRepoClub_ sets mode +w on TheRepoClub_
+**** ENDING LOGGING AT Sat Jul 16 18:22:01 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 18:22:05 2022
+
+Jul 16 18:22:05 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub_
+Jul 16 18:22:05 *	Your host is lithium.libera.chat[176.58.122.119/6697], running version solanum-1.0-dev
+Jul 16 18:22:05 *	This server was created Mon Jul 4 2022 at 03:49:38 UTC
+Jul 16 18:22:05 *	lithium.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 16 18:22:05 *	SAFELIST ELIST=CMNTU KNOCK MONITOR=100 CALLERID=g ETRACE FNC WHOX CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 16 18:22:05 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 16 18:22:05 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 16 18:22:05 *	There are 73 users and 46206 invisible on 28 servers
+Jul 16 18:22:05 *	43 :IRC Operators online
+Jul 16 18:22:05 *	13 :unknown connection(s)
+Jul 16 18:22:05 *	22602 :channels formed
+Jul 16 18:22:05 *	I have 2767 clients and 1 servers
+Jul 16 18:22:05 *	2767 2951 :Current local users 2767, max 2951
+Jul 16 18:22:05 *	46279 49931 :Current global users 46279, max 49931
+Jul 16 18:22:05 *	Highest connection count: 2952 (2951 clients) (45361 connections received)
+Jul 16 18:22:05 *	- lithium.libera.chat Message of the Day - 
+Jul 16 18:22:05 *	- Welcome to Libera Chat, the IRC network for
+Jul 16 18:22:05 *	- free & open-source software and peer directed projects.
+Jul 16 18:22:05 *	-  
+Jul 16 18:22:05 *	- Use of Libera Chat is governed by our network policies.
+Jul 16 18:22:05 *	-  
+Jul 16 18:22:05 *	- To reduce network abuses we perform open proxy checks
+Jul 16 18:22:05 *	- on hosts at connection time.
+Jul 16 18:22:05 *	-  
+Jul 16 18:22:05 *	- Please visit us in #libera for questions and support.
+Jul 16 18:22:05 *	-  
+Jul 16 18:22:05 *	- Website and documentation:  https://libera.chat
+Jul 16 18:22:05 *	- Webchat:                    https://web.libera.chat
+Jul 16 18:22:05 *	- Network policies:           https://libera.chat/policies
+Jul 16 18:22:05 *	- Email:                      support@libera.chat
+Jul 16 18:22:05 *	End of /MOTD command.
+Jul 16 18:22:05 *	TheRepoClub_ sets mode +Z on TheRepoClub_
+Jul 16 18:22:05 *	TheRepoClub_ sets mode +i on TheRepoClub_
+Jul 16 18:22:05 *	TheRepoClub_ sets mode +w on TheRepoClub_
+Jul 16 18:22:05 -SaslServ-	Last login from: uid561064@id-561064.tinside.irccloud.com on Jul 16 17:04:57 2022 +0000.
+Jul 16 18:22:53 *	TheRepoClub :Nickname is already in use.
+Jul 16 18:23:02 Sysinfo	hexchat_command called without a valid context.
+Jul 16 18:23:02 Sysinfo	hexchat_print called without a valid context.
+Jul 16 18:23:02 Perl	hexchat_print called without a valid context.
+Jul 16 18:23:02 FiSHLiM plugin unloaded
+Jul 16 18:23:02 Checksum	hexchat_print called without a valid context.
+**** ENDING LOGGING AT Sat Jul 16 18:23:02 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 18:23:21 2022
+
+Jul 16 18:23:21 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub_
+Jul 16 18:23:21 *	Your host is zinc.libera.chat[195.148.124.80/6697], running version solanum-1.0-dev
+Jul 16 18:23:21 *	This server was created Mon May 16 2022 at 05:45:21 UTC
+Jul 16 18:23:21 *	zinc.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 16 18:23:21 *	WHOX CALLERID=g SAFELIST ELIST=CMNTU MONITOR=100 ETRACE FNC KNOCK CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 16 18:23:21 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 16 18:23:21 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 16 18:23:21 *	There are 73 users and 46219 invisible on 28 servers
+Jul 16 18:23:21 *	43 :IRC Operators online
+Jul 16 18:23:21 *	16 :unknown connection(s)
+Jul 16 18:23:21 *	22607 :channels formed
+Jul 16 18:23:21 *	I have 2779 clients and 1 servers
+Jul 16 18:23:21 *	2779 3958 :Current local users 2779, max 3958
+Jul 16 18:23:21 *	46292 50432 :Current global users 46292, max 50432
+Jul 16 18:23:21 *	Highest connection count: 3959 (3958 clients) (118724 connections received)
+Jul 16 18:23:21 *	- zinc.libera.chat Message of the Day - 
+Jul 16 18:23:21 *	- Welcome to Libera Chat, the IRC network for
+Jul 16 18:23:21 *	- free & open-source software and peer directed projects.
+Jul 16 18:23:21 *	-  
+Jul 16 18:23:21 *	- Use of Libera Chat is governed by our network policies.
+Jul 16 18:23:21 *	-  
+Jul 16 18:23:21 *	- To reduce network abuses we perform open proxy checks
+Jul 16 18:23:21 *	- on hosts at connection time.
+Jul 16 18:23:21 *	-  
+Jul 16 18:23:21 *	- Please visit us in #libera for questions and support.
+Jul 16 18:23:21 *	-  
+Jul 16 18:23:21 *	- Website and documentation:  https://libera.chat
+Jul 16 18:23:21 *	- Webchat:                    https://web.libera.chat
+Jul 16 18:23:21 *	- Network policies:           https://libera.chat/policies
+Jul 16 18:23:21 *	- Email:                      support@libera.chat
+Jul 16 18:23:21 *	End of /MOTD command.
+Jul 16 18:23:21 *	TheRepoClub_ sets mode +Z on TheRepoClub_
+Jul 16 18:23:21 *	TheRepoClub_ sets mode +i on TheRepoClub_
+Jul 16 18:23:21 *	TheRepoClub_ sets mode +w on TheRepoClub_
+Jul 16 18:23:21 -SaslServ-	Last login from: ~TheRepoCl@92.40.202.234.threembb.co.uk on Jul 16 17:23:02 2022 +0000.
+**** BEGIN LOGGING AT Sat Jul 16 18:23:25 2022
+
+Jul 16 18:23:25 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub__
+Jul 16 18:23:25 *	Your host is copper.libera.chat[130.185.232.126/6697], running version solanum-1.0-dev
+Jul 16 18:23:25 *	This server was created Mon May 9 2022 at 03:09:58 UTC
+Jul 16 18:23:25 *	copper.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 16 18:23:25 *	ETRACE FNC WHOX KNOCK CALLERID=g MONITOR=100 SAFELIST ELIST=CMNTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 16 18:23:25 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 16 18:23:25 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 16 18:23:25 *	There are 73 users and 46220 invisible on 28 servers
+Jul 16 18:23:25 *	43 :IRC Operators online
+Jul 16 18:23:25 *	18 :unknown connection(s)
+Jul 16 18:23:25 *	22607 :channels formed
+Jul 16 18:23:25 *	I have 2766 clients and 1 servers
+Jul 16 18:23:25 *	2766 3325 :Current local users 2766, max 3325
+Jul 16 18:23:25 *	46293 50432 :Current global users 46293, max 50432
+Jul 16 18:23:25 *	Highest connection count: 3326 (3325 clients) (180336 connections received)
+Jul 16 18:23:25 *	- copper.libera.chat Message of the Day - 
+Jul 16 18:23:25 *	- Welcome to Libera Chat, the IRC network for
+Jul 16 18:23:25 *	- free & open-source software and peer directed projects.
+Jul 16 18:23:25 -SaslServ-	TheRepoClub__!~TheRepoCl@92.40.202.234.threembb.co.uk has just authenticated as you (TheRepoClub)
+Jul 16 18:23:25 *	-  
+Jul 16 18:23:25 *	- Use of Libera Chat is governed by our network policies.
+Jul 16 18:23:25 *	-  
+Jul 16 18:23:25 *	- To reduce network abuses we perform open proxy checks
+Jul 16 18:23:25 *	- on hosts at connection time.
+Jul 16 18:23:25 *	-  
+Jul 16 18:23:25 *	- Please visit us in #libera for questions and support.
+Jul 16 18:23:25 *	-  
+Jul 16 18:23:25 *	- Website and documentation:  https://libera.chat
+Jul 16 18:23:25 *	- Webchat:                    https://web.libera.chat
+Jul 16 18:23:25 *	- Network policies:           https://libera.chat/policies
+Jul 16 18:23:25 *	- Email:                      support@libera.chat
+Jul 16 18:23:25 *	End of /MOTD command.
+Jul 16 18:23:25 *	TheRepoClub__ sets mode +Z on TheRepoClub__
+Jul 16 18:23:25 *	TheRepoClub__ sets mode +i on TheRepoClub__
+Jul 16 18:23:25 *	TheRepoClub__ sets mode +w on TheRepoClub__
+Jul 16 18:23:25 -SaslServ-	Last login from: ~TheRepoCl@92.40.202.234.threembb.co.uk on Jul 16 17:23:21 2022 +0000.
+**** ENDING LOGGING AT Sat Jul 16 18:23:38 2022
+
+Jul 16 18:23:43 Sysinfo	hexchat_command called without a valid context.
+Jul 16 18:23:43 Sysinfo	hexchat_print called without a valid context.
+Jul 16 18:23:43 Perl	hexchat_print called without a valid context.
+Jul 16 18:23:43 FiSHLiM plugin unloaded
+Jul 16 18:23:43 Checksum	hexchat_print called without a valid context.
+**** ENDING LOGGING AT Sat Jul 16 18:23:43 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 18:23:58 2022
+
+Jul 16 18:23:58 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub_
+Jul 16 18:23:58 *	Your host is zinc.libera.chat[195.148.124.80/6697], running version solanum-1.0-dev
+Jul 16 18:23:58 *	This server was created Mon May 16 2022 at 05:45:21 UTC
+Jul 16 18:23:58 *	zinc.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 16 18:23:58 *	WHOX CALLERID=g SAFELIST ELIST=CMNTU MONITOR=100 ETRACE FNC KNOCK CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 16 18:23:58 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 16 18:23:58 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 16 18:23:58 *	There are 73 users and 46218 invisible on 28 servers
+Jul 16 18:23:58 *	43 :IRC Operators online
+Jul 16 18:23:58 *	16 :unknown connection(s)
+Jul 16 18:23:58 *	22608 :channels formed
+Jul 16 18:23:58 *	I have 2780 clients and 1 servers
+Jul 16 18:23:58 *	2780 3958 :Current local users 2780, max 3958
+Jul 16 18:23:58 *	46291 50432 :Current global users 46291, max 50432
+Jul 16 18:23:58 *	Highest connection count: 3959 (3958 clients) (118727 connections received)
+Jul 16 18:23:58 *	- zinc.libera.chat Message of the Day - 
+Jul 16 18:23:58 *	- Welcome to Libera Chat, the IRC network for
+Jul 16 18:23:58 *	- free & open-source software and peer directed projects.
+Jul 16 18:23:58 *	-  
+Jul 16 18:23:58 *	- Use of Libera Chat is governed by our network policies.
+Jul 16 18:23:58 *	-  
+Jul 16 18:23:58 *	- To reduce network abuses we perform open proxy checks
+Jul 16 18:23:58 *	- on hosts at connection time.
+Jul 16 18:23:58 *	-  
+Jul 16 18:23:58 *	- Please visit us in #libera for questions and support.
+Jul 16 18:23:58 *	-  
+Jul 16 18:23:58 *	- Website and documentation:  https://libera.chat
+Jul 16 18:23:58 *	- Webchat:                    https://web.libera.chat
+Jul 16 18:23:58 *	- Network policies:           https://libera.chat/policies
+Jul 16 18:23:58 *	- Email:                      support@libera.chat
+Jul 16 18:23:58 *	End of /MOTD command.
+Jul 16 18:23:58 *	TheRepoClub_ sets mode +Z on TheRepoClub_
+Jul 16 18:23:58 *	TheRepoClub_ sets mode +i on TheRepoClub_
+Jul 16 18:23:58 *	TheRepoClub_ sets mode +w on TheRepoClub_
+Jul 16 18:23:58 -SaslServ-	Last login from: ~TheRepoCl@92.40.202.234.threembb.co.uk on Jul 16 17:23:43 2022 +0000.
+**** ENDING LOGGING AT Sat Jul 16 18:24:32 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 18:24:32 2022
+
+Jul 16 18:24:37 Sysinfo plugin unloaded
+Jul 16 18:24:37 Perl interface unloaded
+Jul 16 18:24:37 FiSHLiM plugin unloaded
+Jul 16 18:24:37 Checksum plugin unloaded
+**** ENDING LOGGING AT Sat Jul 16 18:24:37 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 18:24:52 2022
+
+Jul 16 18:24:52 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub_
+Jul 16 18:24:52 *	Your host is lithium.libera.chat[176.58.122.119/6697], running version solanum-1.0-dev
+Jul 16 18:24:52 *	This server was created Mon Jul 4 2022 at 03:49:38 UTC
+Jul 16 18:24:52 *	lithium.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 16 18:24:52 *	SAFELIST ELIST=CMNTU KNOCK MONITOR=100 CALLERID=g ETRACE FNC WHOX CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 16 18:24:52 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 16 18:24:52 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 16 18:24:52 *	There are 73 users and 46220 invisible on 28 servers
+Jul 16 18:24:52 *	43 :IRC Operators online
+Jul 16 18:24:52 *	13 :unknown connection(s)
+Jul 16 18:24:52 *	22608 :channels formed
+Jul 16 18:24:52 *	I have 2778 clients and 1 servers
+Jul 16 18:24:52 *	2778 2951 :Current local users 2778, max 2951
+Jul 16 18:24:52 *	46293 49931 :Current global users 46293, max 49931
+Jul 16 18:24:52 *	Highest connection count: 2952 (2951 clients) (45377 connections received)
+Jul 16 18:24:52 *	- lithium.libera.chat Message of the Day - 
+Jul 16 18:24:52 *	- Welcome to Libera Chat, the IRC network for
+Jul 16 18:24:52 *	- free & open-source software and peer directed projects.
+Jul 16 18:24:52 *	-  
+Jul 16 18:24:52 *	- Use of Libera Chat is governed by our network policies.
+Jul 16 18:24:52 *	-  
+Jul 16 18:24:52 *	- To reduce network abuses we perform open proxy checks
+Jul 16 18:24:52 *	- on hosts at connection time.
+Jul 16 18:24:52 *	-  
+Jul 16 18:24:52 *	- Please visit us in #libera for questions and support.
+Jul 16 18:24:52 *	-  
+Jul 16 18:24:52 *	- Website and documentation:  https://libera.chat
+Jul 16 18:24:52 *	- Webchat:                    https://web.libera.chat
+Jul 16 18:24:52 *	- Network policies:           https://libera.chat/policies
+Jul 16 18:24:52 *	- Email:                      support@libera.chat
+Jul 16 18:24:52 *	End of /MOTD command.
+Jul 16 18:24:52 *	TheRepoClub_ sets mode +Z on TheRepoClub_
+Jul 16 18:24:52 *	TheRepoClub_ sets mode +i on TheRepoClub_
+Jul 16 18:24:52 *	TheRepoClub_ sets mode +w on TheRepoClub_
+Jul 16 18:24:52 -SaslServ-	Last login from: ~TheRepoCl@92.40.202.234.threembb.co.uk on Jul 16 17:24:36 2022 +0000.
+**** ENDING LOGGING AT Sat Jul 16 18:25:42 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 18:25:49 2022
+
+Jul 16 18:25:49 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub_
+Jul 16 18:25:49 *	Your host is copper.libera.chat[130.185.232.126/6697], running version solanum-1.0-dev
+Jul 16 18:25:49 *	This server was created Mon May 9 2022 at 03:09:58 UTC
+Jul 16 18:25:49 *	copper.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 16 18:25:49 *	ETRACE FNC WHOX KNOCK CALLERID=g MONITOR=100 SAFELIST ELIST=CMNTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 16 18:25:49 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 16 18:25:49 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 16 18:25:49 *	There are 73 users and 46227 invisible on 28 servers
+Jul 16 18:25:49 *	43 :IRC Operators online
+Jul 16 18:25:49 *	17 :unknown connection(s)
+Jul 16 18:25:49 *	22533 :channels formed
+Jul 16 18:25:49 *	I have 2770 clients and 1 servers
+Jul 16 18:25:49 *	2770 3325 :Current local users 2770, max 3325
+Jul 16 18:25:49 *	46300 50432 :Current global users 46300, max 50432
+Jul 16 18:25:49 *	Highest connection count: 3326 (3325 clients) (180346 connections received)
+Jul 16 18:25:49 *	- copper.libera.chat Message of the Day - 
+Jul 16 18:25:49 *	- Welcome to Libera Chat, the IRC network for
+Jul 16 18:25:49 *	- free & open-source software and peer directed projects.
+Jul 16 18:25:49 *	-  
+Jul 16 18:25:49 *	- Use of Libera Chat is governed by our network policies.
+Jul 16 18:25:49 *	-  
+Jul 16 18:25:49 *	- To reduce network abuses we perform open proxy checks
+Jul 16 18:25:49 *	- on hosts at connection time.
+Jul 16 18:25:49 *	-  
+Jul 16 18:25:49 *	- Please visit us in #libera for questions and support.
+Jul 16 18:25:49 *	-  
+Jul 16 18:25:49 *	- Website and documentation:  https://libera.chat
+Jul 16 18:25:49 *	- Webchat:                    https://web.libera.chat
+Jul 16 18:25:49 *	- Network policies:           https://libera.chat/policies
+Jul 16 18:25:49 *	- Email:                      support@libera.chat
+Jul 16 18:25:49 *	End of /MOTD command.
+Jul 16 18:25:49 *	TheRepoClub_ sets mode +Z on TheRepoClub_
+Jul 16 18:25:49 *	TheRepoClub_ sets mode +i on TheRepoClub_
+Jul 16 18:25:49 *	TheRepoClub_ sets mode +w on TheRepoClub_
+Jul 16 18:25:49 -SaslServ-	Last login from: ~TheRepoCl@92.40.202.242.threembb.co.uk on Jul 16 17:25:42 2022 +0000.
+**** ENDING LOGGING AT Sat Jul 16 18:29:50 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 18:29:55 2022
+
+Jul 16 18:29:55 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub
+Jul 16 18:29:55 *	Your host is zinc.libera.chat[195.148.124.80/6697], running version solanum-1.0-dev
+Jul 16 18:29:55 *	This server was created Mon May 16 2022 at 05:45:21 UTC
+Jul 16 18:29:55 *	zinc.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 16 18:29:55 *	WHOX CALLERID=g SAFELIST ELIST=CMNTU MONITOR=100 ETRACE FNC KNOCK CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 16 18:29:55 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 16 18:29:55 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 16 18:29:55 *	There are 73 users and 46245 invisible on 28 servers
+Jul 16 18:29:55 *	43 :IRC Operators online
+Jul 16 18:29:55 *	17 :unknown connection(s)
+Jul 16 18:29:55 *	22535 :channels formed
+Jul 16 18:29:55 *	I have 2788 clients and 1 servers
+Jul 16 18:29:55 *	2788 3958 :Current local users 2788, max 3958
+Jul 16 18:29:55 *	46318 50432 :Current global users 46318, max 50432
+Jul 16 18:29:55 *	Highest connection count: 3959 (3958 clients) (118747 connections received)
+Jul 16 18:29:55 *	- zinc.libera.chat Message of the Day - 
+Jul 16 18:29:55 *	- Welcome to Libera Chat, the IRC network for
+Jul 16 18:29:55 *	- free & open-source software and peer directed projects.
+Jul 16 18:29:55 *	-  
+Jul 16 18:29:55 *	- Use of Libera Chat is governed by our network policies.
+Jul 16 18:29:55 *	-  
+Jul 16 18:29:55 *	- To reduce network abuses we perform open proxy checks
+Jul 16 18:29:55 *	- on hosts at connection time.
+Jul 16 18:29:55 *	-  
+Jul 16 18:29:55 *	- Please visit us in #libera for questions and support.
+Jul 16 18:29:55 *	-  
+Jul 16 18:29:55 *	- Website and documentation:  https://libera.chat
+Jul 16 18:29:55 *	- Webchat:                    https://web.libera.chat
+Jul 16 18:29:55 *	- Network policies:           https://libera.chat/policies
+Jul 16 18:29:55 *	- Email:                      support@libera.chat
+Jul 16 18:29:55 >ChanServ<	OP ##TheRepoClub
+Jul 16 18:29:55 *	End of /MOTD command.
+Jul 16 18:29:55 *	TheRepoClub sets mode +Z on TheRepoClub
+Jul 16 18:29:55 *	TheRepoClub sets mode +i on TheRepoClub
+Jul 16 18:29:55 *	TheRepoClub sets mode +w on TheRepoClub
+Jul 16 18:29:55 -SaslServ-	Last login from: ~TheRepoCl@92.40.202.234.threembb.co.uk on Jul 16 17:29:50 2022 +0000.
+Jul 16 18:30:01 *	TheRepoClub sets mode +G on TheRepoClub
+Jul 16 18:30:01 *	TheRepoClub sets mode +R on TheRepoClub
+Jul 16 18:30:01 *	TheRepoClub sets mode +g on TheRepoClub
+**** ENDING LOGGING AT Sat Jul 16 18:35:48 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 18:36:04 2022
+
+Jul 16 18:36:04 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub
+Jul 16 18:36:04 *	Your host is zirconium.libera.chat[46.16.175.175/6697], running version solanum-1.0-dev
+Jul 16 18:36:04 *	This server was created Mon May 2 2022 at 03:35:55 UTC
+Jul 16 18:36:04 *	zirconium.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 16 18:36:04 *	ETRACE WHOX FNC MONITOR=100 SAFELIST ELIST=CMNTU CALLERID=g KNOCK CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 16 18:36:04 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 16 18:36:04 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 16 18:36:04 *	There are 73 users and 46249 invisible on 28 servers
+Jul 16 18:36:04 *	43 :IRC Operators online
+Jul 16 18:36:04 *	18 :unknown connection(s)
+Jul 16 18:36:04 *	22544 :channels formed
+Jul 16 18:36:04 *	I have 2774 clients and 1 servers
+Jul 16 18:36:04 *	2774 5083 :Current local users 2774, max 5083
+Jul 16 18:36:04 *	46322 50432 :Current global users 46322, max 50432
+Jul 16 18:36:04 *	Highest connection count: 5084 (5083 clients) (106740 connections received)
+Jul 16 18:36:04 *	- zirconium.libera.chat Message of the Day - 
+Jul 16 18:36:04 *	- This server provided by Seeweb <https://www.seeweb.it/>
+Jul 16 18:36:04 *	- Welcome to Libera Chat, the IRC network for
+Jul 16 18:36:04 *	- free & open-source software and peer directed projects.
+Jul 16 18:36:04 *	-  
+Jul 16 18:36:04 *	- Use of Libera Chat is governed by our network policies.
+Jul 16 18:36:04 *	-  
+Jul 16 18:36:04 *	- To reduce network abuses we perform open proxy checks
+Jul 16 18:36:04 *	- on hosts at connection time.
+Jul 16 18:36:04 *	-  
+Jul 16 18:36:04 *	- Please visit us in #libera for questions and support.
+Jul 16 18:36:04 *	-  
+Jul 16 18:36:04 *	- Website and documentation:  https://libera.chat
+Jul 16 18:36:04 *	- Webchat:                    https://web.libera.chat
+Jul 16 18:36:04 *	- Network policies:           https://libera.chat/policies
+Jul 16 18:36:04 *	- Email:                      support@libera.chat
+Jul 16 18:36:04 >ChanServ<	OP ##TheRepoClub
+Jul 16 18:36:04 *	End of /MOTD command.
+Jul 16 18:36:04 *	TheRepoClub sets mode +Z on TheRepoClub
+Jul 16 18:36:04 *	TheRepoClub sets mode +i on TheRepoClub
+Jul 16 18:36:04 *	TheRepoClub sets mode +w on TheRepoClub
+Jul 16 18:36:04 -SaslServ-	Last login from: ~TheRepoCl@92.40.202.234.threembb.co.uk on Jul 16 17:35:48 2022 +0000.
+Jul 16 18:36:10 *	TheRepoClub sets mode +G on TheRepoClub
+Jul 16 18:36:10 *	TheRepoClub sets mode +R on TheRepoClub
+Jul 16 18:36:10 *	TheRepoClub sets mode +g on TheRepoClub
+Jul 16 20:26:30 *	No ping reply for 1204 seconds, disconnecting.
+Jul 16 20:26:30 *	Disconnected ()
+Jul 16 20:26:40 *	Looking up irc.libera.chat
+Jul 16 20:26:40 *	Connecting to irc.libera.chat (82.96.96.60:6697)
+Jul 16 20:26:41 *	* Subject: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 20:26:41 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 20:26:41 *	* Subject: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 20:26:41 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 20:26:41 *	* Subject: /CN=erbium.libera.chat
+Jul 16 20:26:41 *	* Issuer: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 20:26:41 *	* Certification info:
+Jul 16 20:26:41 *	  Subject:
+Jul 16 20:26:41 *	    CN=erbium.libera.chat
+Jul 16 20:26:41 *	  Issuer:
+Jul 16 20:26:41 *	    C=US
+Jul 16 20:26:41 *	    O=Let's Encrypt
+Jul 16 20:26:41 *	    CN=R3
+Jul 16 20:26:41 *	  Public key algorithm: rsaEncryption (4096 bits)
+Jul 16 20:26:41 *	  Sign algorithm sha256WithRSAEncryption
+Jul 16 20:26:41 *	  Valid since May 30 05:56:20 2022 GM to Aug 28 05:56:19 2022 GM
+Jul 16 20:26:41 *	* Cipher info:
+Jul 16 20:26:41 *	  Version: TLSv1.3, cipher TLS_AES_256_GCM_SHA384 (256 bits)
+Jul 16 20:26:41 *	Connected. Now logging in.
+Jul 16 20:26:41 *	*** Checking Ident
+Jul 16 20:26:41 *	*** Looking up your hostname...
+Jul 16 20:26:41 *	*** Found your hostname: 92.40.203.99.threembb.co.uk
+Jul 16 20:26:47 *	*** No Ident response
+Jul 16 20:26:47 *	Capabilities supported: account-notify away-notify chghost extended-join multi-prefix sasl=PLAIN,ECDSA-NIST256P-CHALLENGE,EXTERNAL tls account-tag cap-notify echo-message solanum.chat/identify-msg solanum.chat/oper solanum.chat/realhost
+Jul 16 20:26:47 *	Capabilities requested: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify solanum.chat/identify-msg 
+Jul 16 20:26:47 *	Capabilities acknowledged: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify solanum.chat/identify-msg
+Jul 16 20:26:47 *	Authenticating via SASL as TheRepoClub (PLAIN)
+Jul 16 20:26:48 *	You are now logged in as TheRepoClub
+Jul 16 20:26:48 *	SASL authentication successful
+**** ENDING LOGGING AT Sat Jul 16 20:26:49 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 20:26:49 2022
+
+Jul 16 20:26:49 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub
+Jul 16 20:26:49 *	Your host is erbium.libera.chat[82.96.96.60/6697], running version solanum-1.0-dev
+Jul 16 20:26:49 *	This server was created Fri Jun 24 2022 at 20:22:10 UTC
+Jul 16 20:26:49 *	erbium.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 16 20:26:49 *	SAFELIST ELIST=CMNTU MONITOR=100 FNC WHOX ETRACE KNOCK CALLERID=g CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 16 20:26:49 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 16 20:26:49 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 16 20:26:49 *	There are 74 users and 46339 invisible on 28 servers
+Jul 16 20:26:49 *	43 :IRC Operators online
+Jul 16 20:26:49 *	13 :unknown connection(s)
+Jul 16 20:26:49 *	22537 :channels formed
+Jul 16 20:26:49 *	I have 2774 clients and 1 servers
+Jul 16 20:26:49 *	2774 2936 :Current local users 2774, max 2936
+Jul 16 20:26:49 *	46413 50432 :Current global users 46413, max 50432
+Jul 16 20:26:49 *	Highest connection count: 2937 (2936 clients) (57613 connections received)
+Jul 16 20:26:49 *	- erbium.libera.chat Message of the Day - 
+Jul 16 20:26:49 *	- Welcome to Libera Chat, the IRC network for
+Jul 16 20:26:49 *	- free & open-source software and peer directed projects.
+Jul 16 20:26:49 *	-  
+Jul 16 20:26:49 *	- Use of Libera Chat is governed by our network policies.
+Jul 16 20:26:49 *	-  
+Jul 16 20:26:49 *	- To reduce network abuses we perform open proxy checks
+Jul 16 20:26:49 *	- on hosts at connection time.
+Jul 16 20:26:49 *	-  
+Jul 16 20:26:49 *	- Please visit us in #libera for questions and support.
+Jul 16 20:26:49 *	-  
+Jul 16 20:26:49 *	- Website and documentation:  https://libera.chat
+Jul 16 20:26:49 *	- Webchat:                    https://web.libera.chat
+Jul 16 20:26:49 *	- Network policies:           https://libera.chat/policies
+Jul 16 20:26:49 *	- Email:                      support@libera.chat
+Jul 16 20:26:49 >ChanServ<	OP ##TheRepoClub
+Jul 16 20:26:49 *	End of /MOTD command.
+Jul 16 20:26:49 *	TheRepoClub sets mode +Z on TheRepoClub
+Jul 16 20:26:49 *	TheRepoClub sets mode +i on TheRepoClub
+Jul 16 20:26:49 *	TheRepoClub sets mode +w on TheRepoClub
+Jul 16 20:26:49 -SaslServ-	Last login from: ~TheRepoCl@92.40.202.240.threembb.co.uk on Jul 16 19:11:00 2022 +0000.
+Jul 16 20:26:55 *	TheRepoClub sets mode +G on TheRepoClub
+Jul 16 20:26:55 *	TheRepoClub sets mode +R on TheRepoClub
+Jul 16 20:26:55 *	TheRepoClub sets mode +g on TheRepoClub
+Jul 16 21:38:01 *	ChanServ ##TheRepoClub :Cannot kick or deop a network service
+Jul 16 21:38:04 *	ChanServ ##TheRepoClub :Cannot kick or deop a network service
+Jul 16 21:38:07 *	ChanServ ##TheRepoClub :Cannot kick or deop a network service
+Jul 16 21:38:30 *	Disconnected ()
+Jul 16 21:38:30 *	Looking up irc.libera.chat
+Jul 16 21:38:34 *	Connecting to irc.libera.chat (188.240.145.102:6697)
+Jul 16 21:38:37 *	* Subject: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 21:38:37 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 21:38:37 *	* Subject: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 21:38:37 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 21:38:37 *	* Subject: /CN=platinum.libera.chat
+Jul 16 21:38:37 *	* Issuer: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 21:38:37 *	* Certification info:
+Jul 16 21:38:37 *	  Subject:
+Jul 16 21:38:37 *	    CN=platinum.libera.chat
+Jul 16 21:38:37 *	  Issuer:
+Jul 16 21:38:37 *	    C=US
+Jul 16 21:38:37 *	    O=Let's Encrypt
+Jul 16 21:38:37 *	    CN=R3
+Jul 16 21:38:37 *	  Public key algorithm: rsaEncryption (4096 bits)
+Jul 16 21:38:37 *	  Sign algorithm sha256WithRSAEncryption
+Jul 16 21:38:37 *	  Valid since Jun 20 05:02:24 2022 GM to Sep 18 05:02:23 2022 GM
+Jul 16 21:38:37 *	* Cipher info:
+Jul 16 21:38:37 *	  Version: TLSv1.3, cipher TLS_AES_256_GCM_SHA384 (256 bits)
+Jul 16 21:38:37 *	Connected. Now logging in.
+Jul 16 21:38:38 *	*** Checking Ident
+Jul 16 21:38:38 *	*** Looking up your hostname...
+Jul 16 21:38:38 *	*** Found your hostname: 92.40.203.97.threembb.co.uk
+Jul 16 21:38:41 *	*** No Ident response
+Jul 16 21:38:41 *	Capabilities supported: account-notify away-notify chghost extended-join multi-prefix sasl=PLAIN,ECDSA-NIST256P-CHALLENGE,EXTERNAL tls account-tag cap-notify echo-message solanum.chat/identify-msg solanum.chat/oper solanum.chat/realhost
+Jul 16 21:38:41 *	Capabilities requested: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify solanum.chat/identify-msg 
+Jul 16 21:38:41 *	Capabilities acknowledged: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify solanum.chat/identify-msg
+Jul 16 21:38:42 *	Authenticating via SASL as TheRepoClub (PLAIN)
+Jul 16 21:38:42 *	You are now logged in as TheRepoClub
+Jul 16 21:38:42 *	SASL authentication successful
+Jul 16 21:38:43 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub
+Jul 16 21:38:43 *	Your host is platinum.libera.chat[188.240.145.102/6697], running version solanum-1.0-dev
+Jul 16 21:38:43 *	This server was created Mon Jun 20 2022 at 04:01:52 UTC
+Jul 16 21:38:43 *	platinum.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 16 21:38:43 *	SAFELIST ELIST=CMNTU FNC WHOX CALLERID=g KNOCK MONITOR=100 ETRACE CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 16 21:38:43 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 16 21:38:43 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 16 21:38:43 *	There are 74 users and 46331 invisible on 28 servers
+Jul 16 21:38:43 *	43 :IRC Operators online
+Jul 16 21:38:43 *	15 :unknown connection(s)
+Jul 16 21:38:43 *	22549 :channels formed
+Jul 16 21:38:43 *	I have 2794 clients and 1 servers
+Jul 16 21:38:43 *	2794 3115 :Current local users 2794, max 3115
+Jul 16 21:38:43 *	46405 50432 :Current global users 46405, max 50432
+Jul 16 21:38:43 *	Highest connection count: 3116 (3115 clients) (64044 connections received)
+Jul 16 21:38:43 *	- platinum.libera.chat Message of the Day - 
+Jul 16 21:38:43 *	- This server provided by NORDUnet/SUNET
+Jul 16 21:38:43 *	- Welcome to Libera Chat, the IRC network for
+Jul 16 21:38:43 *	- free & open-source software and peer directed projects.
+Jul 16 21:38:43 *	-  
+Jul 16 21:38:43 *	- Use of Libera Chat is governed by our network policies.
+Jul 16 21:38:43 *	-  
+Jul 16 21:38:43 *	- To reduce network abuses we perform open proxy checks
+Jul 16 21:38:43 *	- on hosts at connection time.
+Jul 16 21:38:43 *	-  
+Jul 16 21:38:43 *	- Please visit us in #libera for questions and support.
+Jul 16 21:38:43 *	-  
+Jul 16 21:38:43 *	- Website and documentation:  https://libera.chat
+Jul 16 21:38:43 *	- Webchat:                    https://web.libera.chat
+Jul 16 21:38:43 *	- Network policies:           https://libera.chat/policies
+Jul 16 21:38:43 *	- Email:                      support@libera.chat
+Jul 16 21:38:43 *	End of /MOTD command.
+**** ENDING LOGGING AT Sat Jul 16 21:40:51 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 21:40:51 2022
+
+**** BEGIN LOGGING AT Sun Jul 17 12:07:54 2022
+
+Jul 17 12:07:54 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub
+Jul 17 12:07:54 *	Your host is mercury.libera.chat[51.89.226.78/6697], running version solanum-1.0-dev
+Jul 17 12:07:54 *	This server was created Mon Jul 4 2022 at 03:43:12 UTC
+Jul 17 12:07:54 *	mercury.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 17 12:07:54 *	WHOX KNOCK MONITOR=100 ETRACE FNC SAFELIST ELIST=CMNTU CALLERID=g CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 17 12:07:54 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 17 12:07:54 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 17 12:07:54 *	There are 74 users and 45378 invisible on 28 servers
+Jul 17 12:07:54 *	43 :IRC Operators online
+Jul 17 12:07:54 *	13 :unknown connection(s)
+Jul 17 12:07:54 *	22456 :channels formed
+Jul 17 12:07:54 *	I have 2712 clients and 1 servers
+Jul 17 12:07:54 *	2712 3478 :Current local users 2712, max 3478
+Jul 17 12:07:54 *	45452 49931 :Current global users 45452, max 49931
+Jul 17 12:07:54 *	Highest connection count: 3479 (3478 clients) (43910 connections received)
+Jul 17 12:07:54 *	- mercury.libera.chat Message of the Day - 
+Jul 17 12:07:54 *	- -[ Mercury ]-[ Atomic number: 80 ]-[ Chemical symbol: Hg ]-
+Jul 17 12:07:54 *	-  
+Jul 17 12:07:54 *	- Known since antiquity, Mercury is a heavy, liquid metal
+Jul 17 12:07:54 *	- element at room temperature - the only such element. Despite
+Jul 17 12:07:54 *	- the wide ranging use, mercury is a relatively rare element,
+Jul 17 12:07:54 *	- though this is mitigated by its ore deposits tending to be
+Jul 17 12:07:54 *	- highly concentrated.
+Jul 17 12:07:54 *	-  
+Jul 17 12:07:54 *	- The uses of mercury include medical applications such as
+Jul 17 12:07:54 *	- dental amalgams, topical antiseptic compounds, and blood
+Jul 17 12:07:54 *	- pressure meters.  Outside of medicine, mercury can be found
+Jul 17 12:07:54 *	- in telescopes to form flat mirror surfaces, as well as
+Jul 17 12:07:54 *	- parabolic surfaces when their container is spun. Mercury has
+Jul 17 12:07:54 *	- historically and continues to be used in many other
+Jul 17 12:07:54 *	- industries and applications.
+Jul 17 12:07:54 *	-  
+Jul 17 12:07:54 *	-  
+Jul 17 12:07:54 *	- Welcome to Libera Chat, the IRC network for
+Jul 17 12:07:54 *	- free & open-source software and peer directed projects.
+Jul 17 12:07:54 *	-  
+Jul 17 12:07:54 *	- Use of Libera Chat is governed by our network policies.
+Jul 17 12:07:54 *	-  
+Jul 17 12:07:54 *	- To reduce network abuses we perform open proxy checks
+Jul 17 12:07:54 *	- on hosts at connection time.
+Jul 17 12:07:54 *	-  
+Jul 17 12:07:54 *	- Please visit us in #libera for questions and support.
+Jul 17 12:07:54 *	-  
+Jul 17 12:07:54 *	- Website and documentation:  https://libera.chat
+Jul 17 12:07:54 *	- Webchat:                    https://web.libera.chat
+Jul 17 12:07:54 *	- Network policies:           https://libera.chat/policies
+Jul 17 12:07:54 *	- Email:                      support@libera.chat
+Jul 17 12:07:54 >ChanServ<	OP ##TheRepoClub
+Jul 17 12:07:54 *	End of /MOTD command.
+Jul 17 12:07:54 *	TheRepoClub sets mode +Z on TheRepoClub
+Jul 17 12:07:54 *	TheRepoClub sets mode +i on TheRepoClub
+Jul 17 12:07:54 *	TheRepoClub sets mode +w on TheRepoClub
+Jul 17 12:07:54 -SaslServ-	Last login from: ~TheRepoCl@92.40.203.97.threembb.co.uk on Jul 16 21:16:24 2022 +0000.
+Jul 17 12:08:00 *	TheRepoClub sets mode +G on TheRepoClub
+Jul 17 12:08:00 *	TheRepoClub sets mode +R on TheRepoClub
+Jul 17 12:08:00 *	TheRepoClub sets mode +g on TheRepoClub
+Jul 17 12:08:01 *	JOIN :Not enough parameters
+**** ENDING LOGGING AT Sun Jul 17 12:12:42 2022
+
+**** BEGIN LOGGING AT Sun Jul 17 12:13:18 2022
+
+Jul 17 12:13:18 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub
+Jul 17 12:13:18 *	Your host is mercury.libera.chat[51.89.226.78/6697], running version solanum-1.0-dev
+Jul 17 12:13:18 *	This server was created Mon Jul 4 2022 at 03:43:12 UTC
+Jul 17 12:13:18 *	mercury.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 17 12:13:18 *	WHOX KNOCK MONITOR=100 ETRACE FNC SAFELIST ELIST=CMNTU CALLERID=g CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 17 12:13:18 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 17 12:13:18 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 17 12:13:18 *	There are 74 users and 45371 invisible on 28 servers
+Jul 17 12:13:18 *	43 :IRC Operators online
+Jul 17 12:13:18 *	31 :unknown connection(s)
+Jul 17 12:13:18 *	22453 :channels formed
+Jul 17 12:13:18 *	I have 2722 clients and 1 servers
+Jul 17 12:13:18 *	2722 3478 :Current local users 2722, max 3478
+Jul 17 12:13:18 *	45445 49931 :Current global users 45445, max 49931
+Jul 17 12:13:18 *	Highest connection count: 3479 (3478 clients) (43934 connections received)
+Jul 17 12:13:18 *	- mercury.libera.chat Message of the Day - 
+Jul 17 12:13:18 *	- -[ Mercury ]-[ Atomic number: 80 ]-[ Chemical symbol: Hg ]-
+Jul 17 12:13:18 *	-  
+Jul 17 12:13:18 *	- Known since antiquity, Mercury is a heavy, liquid metal
+Jul 17 12:13:18 *	- element at room temperature - the only such element. Despite
+Jul 17 12:13:18 *	- the wide ranging use, mercury is a relatively rare element,
+Jul 17 12:13:18 *	- though this is mitigated by its ore deposits tending to be
+Jul 17 12:13:18 *	- highly concentrated.
+Jul 17 12:13:18 *	-  
+Jul 17 12:13:18 *	- The uses of mercury include medical applications such as
+Jul 17 12:13:18 *	- dental amalgams, topical antiseptic compounds, and blood
+Jul 17 12:13:18 *	- pressure meters.  Outside of medicine, mercury can be found
+Jul 17 12:13:18 *	- in telescopes to form flat mirror surfaces, as well as
+Jul 17 12:13:18 *	- parabolic surfaces when their container is spun. Mercury has
+Jul 17 12:13:18 *	- historically and continues to be used in many other
+Jul 17 12:13:18 *	- industries and applications.
+Jul 17 12:13:18 *	-  
+Jul 17 12:13:18 *	-  
+Jul 17 12:13:18 *	- Welcome to Libera Chat, the IRC network for
+Jul 17 12:13:18 *	- free & open-source software and peer directed projects.
+Jul 17 12:13:18 *	-  
+Jul 17 12:13:18 *	- Use of Libera Chat is governed by our network policies.
+Jul 17 12:13:18 *	-  
+Jul 17 12:13:18 *	- To reduce network abuses we perform open proxy checks
+Jul 17 12:13:22 *	- on hosts at connection time.
+Jul 17 12:13:22 *	-  
+Jul 17 12:13:22 *	- Please visit us in #libera for questions and support.
+Jul 17 12:13:22 *	-  
+Jul 17 12:13:22 *	- Website and documentation:  https://libera.chat
+Jul 17 12:13:22 *	- Webchat:                    https://web.libera.chat
+Jul 17 12:13:22 *	- Network policies:           https://libera.chat/policies
+Jul 17 12:13:22 *	- Email:                      support@libera.chat
+Jul 17 12:13:22 >ChanServ<	OP ##TheRepoClub
+Jul 17 12:13:22 *	End of /MOTD command.
+Jul 17 12:13:22 *	TheRepoClub sets mode +Z on TheRepoClub
+Jul 17 12:13:22 *	TheRepoClub sets mode +i on TheRepoClub
+Jul 17 12:13:22 *	TheRepoClub sets mode +w on TheRepoClub
+Jul 17 12:13:22 -SaslServ-	Last login from: ~TheRepoCl@92.40.203.57.threembb.co.uk on Jul 17 11:12:41 2022 +0000.
+Jul 17 12:13:24 *	TheRepoClub sets mode +G on TheRepoClub
+Jul 17 12:13:24 *	TheRepoClub sets mode +R on TheRepoClub
+Jul 17 12:13:24 *	TheRepoClub sets mode +g on TheRepoClub
+Jul 17 12:13:26 -ChanServ-	TheRepoClub is not on ##TheRepoClub.
+**** ENDING LOGGING AT Sun Jul 17 12:14:29 2022
+
+**** BEGIN LOGGING AT Sun Jul 17 12:14:37 2022
+
+Jul 17 12:14:37 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub
+Jul 17 12:14:37 *	Your host is tungsten.libera.chat[130.239.18.120/6697], running version solanum-1.0-dev
+Jul 17 12:14:37 *	This server was created Mon Jul 11 2022 at 04:02:44 UTC
+Jul 17 12:14:37 *	tungsten.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 17 12:14:37 *	FNC MONITOR=100 KNOCK WHOX CALLERID=g ETRACE SAFELIST ELIST=CMNTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 17 12:14:37 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 17 12:14:37 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 17 12:14:37 *	There are 74 users and 45362 invisible on 28 servers
+Jul 17 12:14:37 *	43 :IRC Operators online
+Jul 17 12:14:37 *	28 :unknown connection(s)
+Jul 17 12:14:37 *	22449 :channels formed
+Jul 17 12:14:37 *	I have 2715 clients and 1 servers
+Jul 17 12:14:37 *	2715 2949 :Current local users 2715, max 2949
+Jul 17 12:14:37 *	45436 49931 :Current global users 45436, max 49931
+Jul 17 12:14:37 *	Highest connection count: 2950 (2949 clients) (32221 connections received)
+Jul 17 12:14:37 *	- tungsten.libera.chat Message of the Day - 
+Jul 17 12:14:37 *	- Welcome to Libera Chat, the IRC network for
+Jul 17 12:14:37 *	- free & open-source software and peer directed projects.
+Jul 17 12:14:37 *	-  
+Jul 17 12:14:37 *	- Use of Libera Chat is governed by our network policies.
+Jul 17 12:14:37 *	-  
+Jul 17 12:14:37 *	- To reduce network abuses we perform open proxy checks
+Jul 17 12:14:37 *	- on hosts at connection time.
+Jul 17 12:14:37 *	-  
+Jul 17 12:14:37 *	- Please visit us in #libera for questions and support.
+Jul 17 12:14:37 *	-  
+Jul 17 12:14:37 *	- Website and documentation:  https://libera.chat
+Jul 17 12:14:37 *	- Webchat:                    https://web.libera.chat
+Jul 17 12:14:38 *	- Network policies:           https://libera.chat/policies
+Jul 17 12:14:38 *	- Email:                      support@libera.chat
+Jul 17 12:14:38 >ChanServ<	OP ##TheRepoClub
+Jul 17 12:14:38 *	End of /MOTD command.
+Jul 17 12:14:38 *	TheRepoClub sets mode +Z on TheRepoClub
+Jul 17 12:14:38 *	TheRepoClub sets mode +i on TheRepoClub
+Jul 17 12:14:38 *	TheRepoClub sets mode +w on TheRepoClub
+Jul 17 12:14:38 -SaslServ-	Last login from: ~TheRepoCl@92.40.203.57.threembb.co.uk on Jul 17 11:14:28 2022 +0000.
+Jul 17 12:14:44 *	TheRepoClub sets mode +G on TheRepoClub
+Jul 17 12:14:44 *	TheRepoClub sets mode +R on TheRepoClub
+Jul 17 12:14:44 *	TheRepoClub sets mode +g on TheRepoClub
+**** BEGIN LOGGING AT Sun Jul 17 18:17:29 2022
+
+Jul 17 18:17:29 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub
+Jul 17 18:17:29 *	Your host is zinc.libera.chat[195.148.124.80/6697], running version solanum-1.0-dev
+Jul 17 18:17:29 *	This server was created Mon May 16 2022 at 05:45:21 UTC
+Jul 17 18:17:29 *	zinc.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 17 18:17:29 *	WHOX CALLERID=g SAFELIST ELIST=CMNTU MONITOR=100 ETRACE FNC KNOCK CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 17 18:17:29 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 17 18:17:29 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 17 18:17:29 *	There are 75 users and 45462 invisible on 28 servers
+Jul 17 18:17:29 *	43 :IRC Operators online
+Jul 17 18:17:29 *	10 :unknown connection(s)
+Jul 17 18:17:29 *	22572 :channels formed
+Jul 17 18:17:29 *	I have 2756 clients and 1 servers
+Jul 17 18:17:29 *	2756 3958 :Current local users 2756, max 3958
+Jul 17 18:17:29 *	45537 50432 :Current global users 45537, max 50432
+Jul 17 18:17:29 *	Highest connection count: 3959 (3958 clients) (119654 connections received)
+Jul 17 18:17:29 *	- zinc.libera.chat Message of the Day - 
+Jul 17 18:17:29 *	- Welcome to Libera Chat, the IRC network for
+Jul 17 18:17:29 *	- free & open-source software and peer directed projects.
+Jul 17 18:17:29 *	-  
+Jul 17 18:17:29 *	- Use of Libera Chat is governed by our network policies.
+Jul 17 18:17:29 *	-  
+Jul 17 18:17:29 *	- To reduce network abuses we perform open proxy checks
+Jul 17 18:17:29 *	- on hosts at connection time.
+Jul 17 18:17:29 *	-  
+Jul 17 18:17:29 *	- Please visit us in #libera for questions and support.
+Jul 17 18:17:29 *	-  
+Jul 17 18:17:29 *	- Website and documentation:  https://libera.chat
+Jul 17 18:17:29 *	- Webchat:                    https://web.libera.chat
+Jul 17 18:17:29 *	- Network policies:           https://libera.chat/policies
+Jul 17 18:17:29 *	- Email:                      support@libera.chat
+Jul 17 18:17:29 >ChanServ<	OP ##TheRepoClub
+Jul 17 18:17:29 *	End of /MOTD command.
+Jul 17 18:17:29 *	TheRepoClub sets mode +Z on TheRepoClub
+Jul 17 18:17:29 *	TheRepoClub sets mode +i on TheRepoClub
+Jul 17 18:17:29 *	TheRepoClub sets mode +w on TheRepoClub
+Jul 17 18:17:29 -SaslServ-	Last login from: ~TheRepoCl@92.40.203.59.threembb.co.uk on Jul 17 17:14:42 2022 +0000.
+Jul 17 18:17:35 *	TheRepoClub sets mode +G on TheRepoClub
+Jul 17 18:17:35 *	TheRepoClub sets mode +R on TheRepoClub
+Jul 17 18:17:35 *	TheRepoClub sets mode +g on TheRepoClub
+**** BEGIN LOGGING AT Sun Jul 17 21:27:11 2022
+
+Jul 17 21:27:11 *	Welcome to the Libera.Chat Internet Relay Chat Network TheRepoClub
+Jul 17 21:27:11 *	Your host is mercury.libera.chat[51.89.226.78/6697], running version solanum-1.0-dev
+Jul 17 21:27:11 *	This server was created Mon Jul 4 2022 at 03:43:12 UTC
+Jul 17 21:27:11 *	mercury.libera.chat solanum-1.0-dev DGMQRSZaghilopsuwz CFILMPQSTbcefgijklmnopqrstuvz bkloveqjfI
+Jul 17 21:27:11 *	WHOX KNOCK MONITOR=100 ETRACE FNC SAFELIST ELIST=CMNTU CALLERID=g CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQSTcgimnprstuz :are supported by this server
+Jul 17 21:27:11 *	CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D :are supported by this server
+Jul 17 21:27:11 *	TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz :are supported by this server
+Jul 17 21:27:11 *	There are 74 users and 45671 invisible on 28 servers
+Jul 17 21:27:11 *	43 :IRC Operators online
+Jul 17 21:27:11 *	13 :unknown connection(s)
+Jul 17 21:27:11 *	22506 :channels formed
+Jul 17 21:27:11 *	I have 2702 clients and 1 servers
+Jul 17 21:27:11 *	2702 3478 :Current local users 2702, max 3478
+Jul 17 21:27:11 *	45745 49931 :Current global users 45745, max 49931
+Jul 17 21:27:11 *	Highest connection count: 3479 (3478 clients) (45004 connections received)
+Jul 17 21:27:11 *	- mercury.libera.chat Message of the Day - 
+Jul 17 21:27:11 *	- -[ Mercury ]-[ Atomic number: 80 ]-[ Chemical symbol: Hg ]-
+Jul 17 21:27:11 *	-  
+Jul 17 21:27:11 *	- Known since antiquity, Mercury is a heavy, liquid metal
+Jul 17 21:27:11 *	- element at room temperature - the only such element. Despite
+Jul 17 21:27:11 *	- the wide ranging use, mercury is a relatively rare element,
+Jul 17 21:27:11 *	- though this is mitigated by its ore deposits tending to be
+Jul 17 21:27:11 *	- highly concentrated.
+Jul 17 21:27:11 *	-  
+Jul 17 21:27:11 *	- The uses of mercury include medical applications such as
+Jul 17 21:27:11 *	- dental amalgams, topical antiseptic compounds, and blood
+Jul 17 21:27:11 *	- pressure meters.  Outside of medicine, mercury can be found
+Jul 17 21:27:11 *	- in telescopes to form flat mirror surfaces, as well as
+Jul 17 21:27:11 *	- parabolic surfaces when their container is spun. Mercury has
+Jul 17 21:27:11 *	- historically and continues to be used in many other
+Jul 17 21:27:11 *	- industries and applications.
+Jul 17 21:27:11 *	-  
+Jul 17 21:27:11 *	-  
+Jul 17 21:27:11 *	- Welcome to Libera Chat, the IRC network for
+Jul 17 21:27:11 *	- free & open-source software and peer directed projects.
+Jul 17 21:27:11 *	-  
+Jul 17 21:27:11 *	- Use of Libera Chat is governed by our network policies.
+Jul 17 21:27:11 *	-  
+Jul 17 21:27:11 *	- To reduce network abuses we perform open proxy checks
+Jul 17 21:27:11 *	- on hosts at connection time.
+Jul 17 21:27:11 *	-  
+Jul 17 21:27:11 *	- Please visit us in #libera for questions and support.
+Jul 17 21:27:11 *	-  
+Jul 17 21:27:11 *	- Website and documentation:  https://libera.chat
+Jul 17 21:27:11 *	- Webchat:                    https://web.libera.chat
+Jul 17 21:27:11 *	- Network policies:           https://libera.chat/policies
+Jul 17 21:27:11 *	- Email:                      support@libera.chat
+Jul 17 21:27:11 >ChanServ<	OP ##TheRepoClub
+Jul 17 21:27:11 *	End of /MOTD command.
+Jul 17 21:27:11 *	TheRepoClub sets mode +Z on TheRepoClub
+Jul 17 21:27:11 *	TheRepoClub sets mode +i on TheRepoClub
+Jul 17 21:27:11 *	TheRepoClub sets mode +w on TheRepoClub
+Jul 17 21:27:11 -SaslServ-	Last login from: ~TheRepoCl@92.40.203.66.threembb.co.uk on Jul 17 18:26:47 2022 +0000.
+Jul 17 21:27:17 *	TheRepoClub sets mode +G on TheRepoClub
+Jul 17 21:27:17 *	TheRepoClub sets mode +R on TheRepoClub
+Jul 17 21:27:17 *	TheRepoClub sets mode +g on TheRepoClub

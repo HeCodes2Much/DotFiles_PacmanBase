@@ -23,6 +23,7 @@ fish-nvm
 fm6000
 gamehub
 gnome-icon-theme
+gnome-icon-theme-symbolic
 gotop
 humanity-icon-theme
 i3-cheat
@@ -40,6 +41,7 @@ mkinitcpio-firmware
 multimonitorlock
 multimonitorlock-gui
 nbteditor
+nemo-compare
 neovim-symlinks
 nerd-fonts-fira-code
 nerd-fonts-hack
@@ -49,8 +51,10 @@ nerd-fonts-roboto-mono
 nerd-fonts-source-code-pro
 nvm
 pacmanity
+pcurses
 perl-checkupdates-aur
 perl-www-aur
+php-pear
 pkgbrowser
 proctl
 protonup-git
@@ -58,11 +62,8 @@ python-gputil
 python-kivymd
 qt-logout
 recycle-cli
-repo-exec
-repomenu
-repomenu-extra
-repowm
 resvg
+robo3t-bin
 runescape-launcher
 sdbus-cpp
 sddm-endeavour

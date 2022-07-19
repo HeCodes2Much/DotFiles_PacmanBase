@@ -1,0 +1,39 @@
+**** BEGIN LOGGING AT Sat Jul 16 18:18:35 2022
+
+Jul 16 18:18:35 *	Connecting to irc.libera.chat (130.185.232.126:6697)
+Jul 16 18:18:35 *	* Subject: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:18:35 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:18:35 *	* Subject: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 18:18:35 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:18:35 *	* Subject: /CN=copper.libera.chat
+Jul 16 18:18:35 *	* Issuer: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 18:18:35 *	* Certification info:
+Jul 16 18:18:35 *	  Subject:
+Jul 16 18:18:35 *	    CN=copper.libera.chat
+Jul 16 18:18:35 *	  Issuer:
+Jul 16 18:18:35 *	    C=US
+Jul 16 18:18:35 *	    O=Let's Encrypt
+Jul 16 18:18:35 *	    CN=R3
+Jul 16 18:18:35 *	  Public key algorithm: id-ecPublicKey (384 bits)
+Jul 16 18:18:35 *	  Sign algorithm sha256WithRSAEncryption
+Jul 16 18:18:35 *	  Valid since Jun 20 05:03:00 2022 GM to Sep 18 05:02:59 2022 GM
+Jul 16 18:18:35 *	* Cipher info:
+Jul 16 18:18:35 *	  Version: TLSv1.3, cipher TLS_AES_256_GCM_SHA384 (256 bits)
+Jul 16 18:18:35 *	Connected. Now logging in.
+**** BEGIN LOGGING AT Sat Jul 16 21:38:30 2022
+
+Jul 16 21:38:30 *	Disconnected ()
+**** ENDING LOGGING AT Sat Jul 16 21:38:30 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 21:38:43 2022
+
+Jul 16 21:38:43 >ChanServ<	OP ##TheRepoClub
+Jul 16 21:38:43 *	TheRepoClub sets mode +Z on TheRepoClub
+Jul 16 21:38:43 *	TheRepoClub sets mode +i on TheRepoClub
+Jul 16 21:38:43 *	TheRepoClub sets mode +w on TheRepoClub
+Jul 16 21:38:43 -SaslServ-	Last login from: ~TheRepoCl@92.40.203.99.threembb.co.uk on Jul 16 20:38:29 2022 +0000.
+Jul 16 21:38:49 *	TheRepoClub sets mode +G on TheRepoClub
+Jul 16 21:38:49 *	TheRepoClub sets mode +R on TheRepoClub
+Jul 16 21:38:49 *	TheRepoClub sets mode +g on TheRepoClub
+**** ENDING LOGGING AT Sat Jul 16 21:38:49 2022
+

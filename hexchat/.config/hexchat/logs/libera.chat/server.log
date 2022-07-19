@@ -1,0 +1,212 @@
+**** BEGIN LOGGING AT Sat Jul 16 18:20:34 2022
+
+Jul 16 18:20:34 *	Looking up irc.libera.chat
+Jul 16 18:20:34 *	Connecting to irc.libera.chat (176.58.122.119:6697)
+Jul 16 18:20:35 *	* Subject: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:20:35 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:20:35 *	* Subject: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 18:20:35 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:20:35 *	* Subject: /CN=lithium.libera.chat
+Jul 16 18:20:35 *	* Issuer: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 18:20:35 *	* Certification info:
+Jul 16 18:20:35 *	  Subject:
+Jul 16 18:20:35 *	    CN=lithium.libera.chat
+Jul 16 18:20:35 *	  Issuer:
+Jul 16 18:20:35 *	    C=US
+Jul 16 18:20:35 *	    O=Let's Encrypt
+Jul 16 18:20:35 *	    CN=R3
+Jul 16 18:20:35 *	  Public key algorithm: rsaEncryption (4096 bits)
+Jul 16 18:20:35 *	  Sign algorithm sha256WithRSAEncryption
+Jul 16 18:20:35 *	  Valid since May 23 05:03:23 2022 GM to Aug 21 05:03:22 2022 GM
+Jul 16 18:20:35 *	* Cipher info:
+Jul 16 18:20:35 *	  Version: TLSv1.3, cipher TLS_AES_256_GCM_SHA384 (256 bits)
+Jul 16 18:20:35 *	Connected. Now logging in.
+Jul 16 18:20:35 *	*** Checking Ident
+Jul 16 18:20:35 *	*** Looking up your hostname...
+Jul 16 18:20:35 *	*** Found your hostname: 92.40.202.234.threembb.co.uk
+Jul 16 18:20:40 *	*** No Ident response
+Jul 16 18:20:40 *	Capabilities supported: account-notify away-notify chghost extended-join multi-prefix sasl=PLAIN,ECDSA-NIST256P-CHALLENGE,EXTERNAL tls account-tag cap-notify echo-message solanum.chat/identify-msg solanum.chat/oper solanum.chat/realhost
+Jul 16 18:20:40 *	Capabilities requested: account-notify away-notify chghost extended-join multi-prefix account-tag cap-notify solanum.chat/identify-msg 
+Jul 16 18:20:40 *	TheRepoClub is already in use. Retrying with TheRepoClub_...
+Jul 16 18:20:40 *	Capabilities acknowledged: account-notify away-notify chghost extended-join multi-prefix account-tag cap-notify solanum.chat/identify-msg
+**** ENDING LOGGING AT Sat Jul 16 18:20:41 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 18:21:56 2022
+
+Jul 16 18:21:56 *	Looking up irc.libera.chat
+Jul 16 18:21:56 *	Connecting to irc.libera.chat (176.58.122.119:6697)
+Jul 16 18:21:57 *	* Subject: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:21:57 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:21:57 *	* Subject: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 18:21:57 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:21:57 *	* Subject: /CN=lithium.libera.chat
+Jul 16 18:21:57 *	* Issuer: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 18:21:57 *	* Certification info:
+Jul 16 18:21:57 *	  Subject:
+Jul 16 18:21:57 *	    CN=lithium.libera.chat
+Jul 16 18:21:57 *	  Issuer:
+Jul 16 18:21:57 *	    C=US
+Jul 16 18:21:57 *	    O=Let's Encrypt
+Jul 16 18:21:57 *	    CN=R3
+Jul 16 18:21:57 *	  Public key algorithm: rsaEncryption (4096 bits)
+Jul 16 18:21:57 *	  Sign algorithm sha256WithRSAEncryption
+Jul 16 18:21:57 *	  Valid since May 23 05:03:23 2022 GM to Aug 21 05:03:22 2022 GM
+Jul 16 18:21:57 *	* Cipher info:
+Jul 16 18:21:57 *	  Version: TLSv1.3, cipher TLS_AES_256_GCM_SHA384 (256 bits)
+Jul 16 18:21:57 *	Connected. Now logging in.
+Jul 16 18:21:57 *	*** Checking Ident
+Jul 16 18:21:57 *	*** Looking up your hostname...
+Jul 16 18:21:57 *	*** Found your hostname: 92.40.202.234.threembb.co.uk
+Jul 16 18:22:02 *	*** No Ident response
+Jul 16 18:22:02 *	Capabilities supported: account-notify away-notify chghost extended-join multi-prefix sasl=PLAIN,ECDSA-NIST256P-CHALLENGE,EXTERNAL tls account-tag cap-notify echo-message solanum.chat/identify-msg solanum.chat/oper solanum.chat/realhost
+Jul 16 18:22:02 *	Capabilities requested: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify solanum.chat/identify-msg 
+Jul 16 18:22:02 *	TheRepoClub is already in use. Retrying with TheRepoClub_...
+Jul 16 18:22:02 *	Capabilities acknowledged: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify solanum.chat/identify-msg
+Jul 16 18:22:03 *	Authenticating via SASL as TheRepoClub (PLAIN)
+Jul 16 18:22:04 *	You are now logged in as TheRepoClub
+Jul 16 18:22:04 *	SASL authentication successful
+**** ENDING LOGGING AT Sat Jul 16 18:22:05 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 18:23:14 2022
+
+Jul 16 18:23:14 *	Looking up irc.libera.chat
+Jul 16 18:23:14 *	Connecting to irc.libera.chat (130.185.232.126:6697)
+Jul 16 18:23:15 *	* Subject: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:23:15 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:23:15 *	* Subject: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 18:23:15 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:23:15 *	* Subject: /CN=copper.libera.chat
+Jul 16 18:23:15 *	* Issuer: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 18:23:15 *	* Certification info:
+Jul 16 18:23:15 *	  Subject:
+Jul 16 18:23:15 *	    CN=copper.libera.chat
+Jul 16 18:23:15 *	  Issuer:
+Jul 16 18:23:15 *	    C=US
+Jul 16 18:23:15 *	    O=Let's Encrypt
+Jul 16 18:23:15 *	    CN=R3
+Jul 16 18:23:15 *	  Public key algorithm: id-ecPublicKey (384 bits)
+Jul 16 18:23:15 *	  Sign algorithm sha256WithRSAEncryption
+Jul 16 18:23:15 *	  Valid since Jun 20 05:03:00 2022 GM to Sep 18 05:02:59 2022 GM
+Jul 16 18:23:15 *	* Cipher info:
+Jul 16 18:23:15 *	  Version: TLSv1.3, cipher TLS_AES_256_GCM_SHA384 (256 bits)
+Jul 16 18:23:15 *	Connected. Now logging in.
+Jul 16 18:23:15 *	*** Checking Ident
+Jul 16 18:23:15 *	*** Looking up your hostname...
+Jul 16 18:23:15 *	*** Found your hostname: 92.40.202.234.threembb.co.uk
+Jul 16 18:23:21 *	*** No Ident response
+Jul 16 18:23:21 *	Capabilities supported: account-notify away-notify chghost extended-join multi-prefix sasl=PLAIN,ECDSA-NIST256P-CHALLENGE,EXTERNAL tls account-tag cap-notify echo-message solanum.chat/identify-msg solanum.chat/oper solanum.chat/realhost
+Jul 16 18:23:21 *	Capabilities requested: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify solanum.chat/identify-msg 
+Jul 16 18:23:21 *	TheRepoClub is already in use. Retrying with TheRepoClub_...
+Jul 16 18:23:21 *	Capabilities acknowledged: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify solanum.chat/identify-msg
+Jul 16 18:23:21 *	TheRepoClub_ is already in use. Retrying with TheRepoClub__...
+Jul 16 18:23:22 *	Authenticating via SASL as TheRepoClub (PLAIN)
+Jul 16 18:23:24 *	You are now logged in as TheRepoClub
+Jul 16 18:23:24 *	SASL authentication successful
+**** ENDING LOGGING AT Sat Jul 16 18:23:25 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 18:25:40 2022
+
+Jul 16 18:25:40 *	Looking up irc.libera.chat
+Jul 16 18:25:40 *	Connecting to irc.libera.chat (130.185.232.126:6697)
+Jul 16 18:25:41 *	* Subject: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:25:41 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:25:41 *	* Subject: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 18:25:41 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:25:41 *	* Subject: /CN=copper.libera.chat
+Jul 16 18:25:41 *	* Issuer: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 18:25:41 *	* Certification info:
+Jul 16 18:25:41 *	  Subject:
+Jul 16 18:25:41 *	    CN=copper.libera.chat
+Jul 16 18:25:41 *	  Issuer:
+Jul 16 18:25:41 *	    C=US
+Jul 16 18:25:41 *	    O=Let's Encrypt
+Jul 16 18:25:41 *	    CN=R3
+Jul 16 18:25:41 *	  Public key algorithm: id-ecPublicKey (384 bits)
+Jul 16 18:25:41 *	  Sign algorithm sha256WithRSAEncryption
+Jul 16 18:25:41 *	  Valid since Jun 20 05:03:00 2022 GM to Sep 18 05:02:59 2022 GM
+Jul 16 18:25:41 *	* Cipher info:
+Jul 16 18:25:41 *	  Version: TLSv1.3, cipher TLS_AES_256_GCM_SHA384 (256 bits)
+Jul 16 18:25:41 *	Connected. Now logging in.
+Jul 16 18:25:41 *	*** Checking Ident
+Jul 16 18:25:41 *	*** Looking up your hostname...
+Jul 16 18:25:41 *	*** Found your hostname: 92.40.202.234.threembb.co.uk
+Jul 16 18:25:46 *	*** No Ident response
+Jul 16 18:25:46 *	Capabilities supported: account-notify away-notify chghost extended-join multi-prefix sasl=PLAIN,ECDSA-NIST256P-CHALLENGE,EXTERNAL tls account-tag cap-notify echo-message solanum.chat/identify-msg solanum.chat/oper solanum.chat/realhost
+Jul 16 18:25:46 *	Capabilities requested: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify solanum.chat/identify-msg 
+Jul 16 18:25:46 *	TheRepoClub is already in use. Retrying with TheRepoClub_...
+Jul 16 18:25:46 *	Capabilities acknowledged: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify solanum.chat/identify-msg
+Jul 16 18:25:47 *	Authenticating via SASL as TheRepoClub (PLAIN)
+Jul 16 18:25:48 *	You are now logged in as TheRepoClub
+Jul 16 18:25:48 *	SASL authentication successful
+**** ENDING LOGGING AT Sat Jul 16 18:25:49 2022
+
+**** BEGIN LOGGING AT Sat Jul 16 18:29:47 2022
+
+Jul 16 18:29:47 *	Looking up irc.libera.chat
+Jul 16 18:29:47 *	Connecting to irc.libera.chat (195.148.124.80:6697)
+Jul 16 18:29:47 *	* Subject: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:29:47 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:29:47 *	* Subject: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 18:29:47 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 16 18:29:47 *	* Subject: /CN=zinc.libera.chat
+Jul 16 18:29:47 *	* Issuer: /C=US/O=Let's Encrypt/CN=R3
+Jul 16 18:29:47 *	* Certification info:
+Jul 16 18:29:47 *	  Subject:
+Jul 16 18:29:47 *	    CN=zinc.libera.chat
+Jul 16 18:29:47 *	  Issuer:
+Jul 16 18:29:47 *	    C=US
+Jul 16 18:29:47 *	    O=Let's Encrypt
+Jul 16 18:29:47 *	    CN=R3
+Jul 16 18:29:47 *	  Public key algorithm: rsaEncryption (4096 bits)
+Jul 16 18:29:47 *	  Sign algorithm sha256WithRSAEncryption
+Jul 16 18:29:47 *	  Valid since Jun 13 05:02:23 2022 GM to Sep 11 05:02:22 2022 GM
+Jul 16 18:29:47 *	* Cipher info:
+Jul 16 18:29:47 *	  Version: TLSv1.3, cipher TLS_AES_256_GCM_SHA384 (256 bits)
+Jul 16 18:29:47 *	Connected. Now logging in.
+Jul 16 18:29:48 *	*** Checking Ident
+Jul 16 18:29:48 *	*** Looking up your hostname...
+Jul 16 18:29:48 *	*** Found your hostname: 92.40.202.234.threembb.co.uk
+Jul 16 18:29:53 *	*** No Ident response
+Jul 16 18:29:53 *	Capabilities supported: account-notify away-notify chghost extended-join multi-prefix sasl=PLAIN,ECDSA-NIST256P-CHALLENGE,EXTERNAL tls account-tag cap-notify echo-message solanum.chat/identify-msg solanum.chat/oper solanum.chat/realhost
+Jul 16 18:29:53 *	Capabilities requested: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify solanum.chat/identify-msg 
+Jul 16 18:29:53 *	Capabilities acknowledged: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify solanum.chat/identify-msg
+Jul 16 18:29:54 *	Authenticating via SASL as TheRepoClub (PLAIN)
+Jul 16 18:29:54 *	You are now logged in as TheRepoClub
+Jul 16 18:29:54 *	SASL authentication successful
+**** ENDING LOGGING AT Sat Jul 16 18:29:55 2022
+
+**** BEGIN LOGGING AT Sun Jul 17 12:14:25 2022
+
+Jul 17 12:14:25 *	Looking up irc.libera.chat
+Jul 17 12:14:25 *	Connecting to irc.libera.chat (130.239.18.120:6697)
+Jul 17 12:14:27 *	* Subject: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 17 12:14:27 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 17 12:14:27 *	* Subject: /C=US/O=Let's Encrypt/CN=R3
+Jul 17 12:14:27 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jul 17 12:14:27 *	* Subject: /CN=tungsten.libera.chat
+Jul 17 12:14:27 *	* Issuer: /C=US/O=Let's Encrypt/CN=R3
+Jul 17 12:14:27 *	* Certification info:
+Jul 17 12:14:27 *	  Subject:
+Jul 17 12:14:27 *	    CN=tungsten.libera.chat
+Jul 17 12:14:27 *	  Issuer:
+Jul 17 12:14:27 *	    C=US
+Jul 17 12:14:27 *	    O=Let's Encrypt
+Jul 17 12:14:27 *	    CN=R3
+Jul 17 12:14:27 *	  Public key algorithm: rsaEncryption (4096 bits)
+Jul 17 12:14:27 *	  Sign algorithm sha256WithRSAEncryption
+Jul 17 12:14:27 *	  Valid since Jul  4 05:57:50 2022 GM to Oct  2 05:57:49 2022 GM
+Jul 17 12:14:27 *	* Cipher info:
+Jul 17 12:14:27 *	  Version: TLSv1.3, cipher TLS_AES_256_GCM_SHA384 (256 bits)
+Jul 17 12:14:27 *	Connected. Now logging in.
+Jul 17 12:14:29 *	*** Checking Ident
+Jul 17 12:14:29 *	*** Looking up your hostname...
+Jul 17 12:14:29 *	*** Found your hostname: 92.40.203.59.threembb.co.uk
+Jul 17 12:14:34 *	*** No Ident response
+Jul 17 12:14:34 *	Capabilities supported: account-notify away-notify chghost extended-join multi-prefix sasl=PLAIN,ECDSA-NIST256P-CHALLENGE,EXTERNAL tls account-tag cap-notify echo-message solanum.chat/identify-msg solanum.chat/oper solanum.chat/realhost
+Jul 17 12:14:34 *	Capabilities requested: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify solanum.chat/identify-msg 
+Jul 17 12:14:35 *	Capabilities acknowledged: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify solanum.chat/identify-msg
+Jul 17 12:14:35 *	Authenticating via SASL as TheRepoClub (PLAIN)
+Jul 17 12:14:36 *	You are now logged in as TheRepoClub
+Jul 17 12:14:36 *	SASL authentication successful
+**** ENDING LOGGING AT Sun Jul 17 12:14:37 2022
+

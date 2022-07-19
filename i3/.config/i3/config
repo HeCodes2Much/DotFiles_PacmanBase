@@ -593,38 +593,38 @@ font pango:Noto Mono Regular 13
 # you can find the class with the program xprop
 
 # sign via class
-# Workspace $ws1 Terminal
+# Workspace $ws1
 assign [class="(?i)Alacritty|Kitty"]                                            → $ws1
 
-# Workspace $ws2 Text Editor
+# Workspace $ws2
 assign [class="(?i)Emacs|Jetbrains"]                                            → $ws2
 assign [class="(?i)Code|Nvim"]                                                  → $ws2
 
-# Workspace $ws3 Files
+# Workspace $ws3
 assign [class="(?i)Nemo"]                                                       → $ws3
 
-# Workspace $ws4 Graphics
+# Workspace $ws4
 assign [class="(?i)Aseprite|Krita"]                                             → $ws4
 
-# Workspace $ws5 Music
+# Workspace $ws5
 assign [class="(?i)Xephyr"]                                                     → $ws5
 assign [class="(?i)CmusImage"]                                                  → $ws5
 
-# Workspace $ws6 WebBrowser
+# Workspace $ws6
 assign [class="(?i)Firefox|Google-Chrome"]                                      → $ws6
 
-# Workspace $ws7 Other Stuf
+# Workspace $ws7
 assign [class="(?i)Mail|Thunderbird"]                                           → $ws7
 assign [class="(?i)Keybase"]                                                    → $ws7
 
-# Workspace $ws8 file GitAhea
+# Workspace $ws8
 assign [class="(?i)Minecraft*|Steam*"]                                          → $ws8
 assign [class="(?i)0ad*|Minetest"]                                              → $ws8
 
-# Workspace $ws9 Cha
+# Workspace $ws9
 assign [class="(?i)Discord|Element"]                                            → $ws9
 
-# Workspace $ws0 Setting
+# Workspace $ws0
 assign [class="(?i)Virt*|LazyGit"]                                              → $ws0
 assign [class="(?i)Dconf-editor|Piper*"]                                        → $ws0
 assign [class="(?i)Actions|Btop"]                                               → $ws0
@@ -673,9 +673,9 @@ mode "$hosts_launcher" {
 ## Category: Applications;
 # Description: Launch $TerminalEmulator;
 $super_b+Return \
-    $exe $TerminalEmulator;focus
+    $exe $TerminalEmulator -e tmux new-session -A -s main;focus
 $super_b+KP_Enter \
-    $exe $TerminalEmulator -e fish;focus
+    $exe $TerminalEmulator -e tmux new-session -A -s master;focus
 
 # workspace 2 related
 
@@ -761,7 +761,7 @@ mode "$game_launcher" {
         $exe prime-run steam;focus; mode "default"
 
     bindsym --release m \
-        $exe prime-run multimc;focus; mode "default"
+        $exe prime-run minecraft-launcher;focus; mode "default"
 
     bindsym --release t \
         $exe prime-run minetest;focus; mode "default"
@@ -1081,7 +1081,7 @@ $super_b+minus \
 for_window [class="(?i)dropdown-terminal"] floating enable
 for_window [class="(?i)dropdown-terminal"] resize set 800 600
 for_window [class="(?i)dropdown-terminal"] move scratchpad
-$exe $TerminalEmulator --title="Dropdown-Terminal" --class="Dropdown-Terminal" --name="Dropdown-Terminal"
+$exe $TerminalEmulator --title="Dropdown-Terminal" --class="Dropdown-Terminal" --name="Dropdown-Terminal" -e tmux new-session -A -s dropdown
 
 ## Category: Scratchpad;
 # Description: Toggle $TerminalEmulator;

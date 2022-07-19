@@ -1,0 +1,114 @@
+T 1657992446 19*	Now talking on 22##TheRepoClub
+T 1657992446 24*	ChanServ (ChanServ@services.libera.chat24) has left
+T 1657992487 24*	therepoclub has quit ()
+T 1657992601 19*	Now talking on 22##TheRepoClub
+T 1657992601 22*	26zinc.libera.chat sets mode 24+C on 22##TheRepoClub
+T 1657992601 22*	26zinc.libera.chat sets mode 24+n on 22##TheRepoClub
+T 1657992601 22*	26zinc.libera.chat sets mode 24+s on 22##TheRepoClub
+T 1657992601 22*	26zinc.libera.chat sets mode 24+t on 22##TheRepoClub
+T 1657992601 22*	26services. removes channel operator status from 18TheRepoClub
+T 1657992601 29*	*** Notice -- TS for ##TheRepoClub changed from 1657992601 to 1657387096
+T 1657992601 22*	26services. sets mode 24-C on 22##TheRepoClub
+T 1657992601 22*	26services. sets mode 24-s on 22##TheRepoClub
+T 1657992601 23*	ChanServ (ChanServ@services.libera.chat23) has joined
+T 1657992601 22*	26services. gives channel operator status to 18ChanServ
+T 1657992601 22*	26ChanServ gives channel operator status to 18TheRepoClub
+T 1657992948 Sysinfo	hexchat_command called without a valid context.
+T 1657992948 Sysinfo	hexchat_print called without a valid context.
+T 1657992948 Perl	hexchat_print called without a valid context.
+T 1657992948 FiSHLiM plugin unloaded
+T 1657992948 Checksum	hexchat_print called without a valid context.
+T 1657992970 19*	Now talking on 22##TheRepoClub
+T 1657992970 22*	26ChanServ gives channel operator status to 18TheRepoClub
+T 1657999590 20*	Disconnected (20)
+T 1657999615 19*	Now talking on 22##TheRepoClub
+T 1657999615 22*	26erbium.libera.chat sets mode 24+C on 22##TheRepoClub
+T 1657999615 22*	26erbium.libera.chat sets mode 24+n on 22##TheRepoClub
+T 1657999615 22*	26erbium.libera.chat sets mode 24+s on 22##TheRepoClub
+T 1657999615 22*	26erbium.libera.chat sets mode 24+t on 22##TheRepoClub
+T 1657999615 22*	26services. removes channel operator status from 18TheRepoClub
+T 1657999615 29*	*** Notice -- TS for ##TheRepoClub changed from 1657999615 to 1657387096
+T 1657999615 22*	26services. sets mode 24-C on 22##TheRepoClub
+T 1657999615 22*	26services. sets mode 24-s on 22##TheRepoClub
+T 1657999615 23*	ChanServ (ChanServ@services.libera.chat23) has joined
+T 1657999615 22*	26services. gives channel operator status to 18ChanServ
+T 1657999615 22*	26ChanServ gives channel operator status to 18TheRepoClub
+T 1658003670 22*	26TheRepoClub sets mode 24+m on 22##TheRepoClub
+T 1658003690 29*	##TheRepoClub k ntlk :MODE cannot be set due to channel having an active MLOCK restriction policy
+T 1658003698 29*	##TheRepoClub l ntlk :MODE cannot be set due to channel having an active MLOCK restriction policy
+T 1658003698 22*	Channel 22##TheRepoClub modes: 24+mnt
+T 1658003698 22*	Channel 22##TheRepoClub created on 24Sat Jul  9 18:18:16 2022
+T 1658003709 22*	26TheRepoClub sets mode 24+c on 22##TheRepoClub
+T 1658003712 22*	26TheRepoClub sets mode 24+i on 22##TheRepoClub
+T 1658003714 22*	26TheRepoClub sets mode 24-i on 22##TheRepoClub
+T 1658003727 29*	##TheRepoClub l ntlk :MODE cannot be set due to channel having an active MLOCK restriction policy
+T 1658003728 22*	Channel 22##TheRepoClub modes: 24+cmnt
+T 1658003728 22*	Channel 22##TheRepoClub created on 24Sat Jul  9 18:18:16 2022
+T 1658003735 29*	##TheRepoClub l ntlk :MODE cannot be set due to channel having an active MLOCK restriction policy
+T 1658003735 22*	Channel 22##TheRepoClub modes: 24+cmnt
+T 1658003735 22*	Channel 22##TheRepoClub created on 24Sat Jul  9 18:18:16 2022
+T 1658003745 29*	##TheRepoClub l ntlk :MODE cannot be set due to channel having an active MLOCK restriction policy
+T 1658003745 22*	Channel 22##TheRepoClub modes: 24+cmnt
+T 1658003745 22*	Channel 22##TheRepoClub created on 24Sat Jul  9 18:18:16 2022
+T 1658003800 Usage: QUERY [-nofocus] <nick> [message], opens up a new privmsg window to someone and optionally sends a message
+T 1658003835 22*	26TheRepoClub removes channel operator status from 18TheRepoClub
+T 1658003838 29*	##TheRepoClub :You're not a channel operator
+T 1658003867 >18ChanServ<	OP ##TheRepoClub
+T 1658003867 22*	26ChanServ gives channel operator status to 18TheRepoClub
+T 1658003891 19*	You have been kicked from 22##TheRepoClub by 26TheRepoClub (20bye)
+T 1658003910 20*	Disconnected (20)
+T 1658003923 >18ChanServ<	OP ##TheRepoClub
+T 1658003923 22*	26TheRepoClub sets mode 24+Z on 22TheRepoClub
+T 1658003923 22*	26TheRepoClub sets mode 24+i on 22TheRepoClub
+T 1658003923 22*	26TheRepoClub sets mode 24+w on 22TheRepoClub
+T 1658003923 -18SaslServ-	Last login from: ~TheRepoCl@92.40.203.99.threembb.co.uk on Jul 16 20:38:29 2022 +0000.
+T 1658003929 22*	26TheRepoClub sets mode 24+G on 22TheRepoClub
+T 1658003929 22*	26TheRepoClub sets mode 24+R on 22TheRepoClub
+T 1658003929 22*	26TheRepoClub sets mode 24+g on 22TheRepoClub
+T 1658003929 19*	Now talking on 22##TheRepoClub
+T 1658003929 22*	26ChanServ gives channel operator status to 18TheRepoClub
+T 1658004010 29*	##TheRepoClub :End of Channel Invite List
+T 1658004011 29*	##TheRepoClub q :End of Channel Quiet List
+T 1658004013 29*	##TheRepoClub :End of Channel Ban List
+T 1658004024 29*	##TheRepoClub :End of Channel Exception List
+T 1658004025 29*	##TheRepoClub :End of Channel Invite List
+T 1658004025 29*	##TheRepoClub q :End of Channel Quiet List
+T 1658056080 19*	Now talking on 22##TheRepoClub
+T 1658056080 22*	26mercury.libera.chat sets mode 24+C on 22##TheRepoClub
+T 1658056080 22*	26mercury.libera.chat sets mode 24+n on 22##TheRepoClub
+T 1658056080 22*	26mercury.libera.chat sets mode 24+s on 22##TheRepoClub
+T 1658056080 22*	26mercury.libera.chat sets mode 24+t on 22##TheRepoClub
+T 1658056081 22*	26services. removes channel operator status from 18TheRepoClub
+T 1658056081 29*	*** Notice -- TS for ##TheRepoClub changed from 1658056080 to 1657387096
+T 1658056081 22*	26services. sets mode 24-C on 22##TheRepoClub
+T 1658056081 22*	26services. sets mode 24-s on 22##TheRepoClub
+T 1658056081 23*	ChanServ (ChanServ@services.libera.chat23) has joined
+T 1658056081 22*	26services. gives channel operator status to 18ChanServ
+T 1658056081 22*	26ChanServ gives channel operator status to 18TheRepoClub
+T 1658056408 19*	Now talking on 22##TheRepoClub
+T 1658056484 19*	Now talking on 22##TheRepoClub
+T 1658056485 22*	26ChanServ gives channel operator status to 18TheRepoClub
+T 1658078255 19*	Now talking on 22##TheRepoClub
+T 1658078255 22*	26zinc.libera.chat sets mode 24+C on 22##TheRepoClub
+T 1658078255 22*	26zinc.libera.chat sets mode 24+n on 22##TheRepoClub
+T 1658078255 22*	26zinc.libera.chat sets mode 24+s on 22##TheRepoClub
+T 1658078255 22*	26zinc.libera.chat sets mode 24+t on 22##TheRepoClub
+T 1658078255 22*	26services. removes channel operator status from 18TheRepoClub
+T 1658078255 29*	*** Notice -- TS for ##TheRepoClub changed from 1658078255 to 1657387096
+T 1658078255 22*	26services. sets mode 24-C on 22##TheRepoClub
+T 1658078255 22*	26services. sets mode 24-s on 22##TheRepoClub
+T 1658078255 23*	ChanServ (ChanServ@services.libera.chat23) has joined
+T 1658078255 22*	26services. gives channel operator status to 18ChanServ
+T 1658078255 22*	26ChanServ gives channel operator status to 18TheRepoClub
+T 1658089637 19*	Now talking on 22##TheRepoClub
+T 1658089637 22*	26mercury.libera.chat sets mode 24+C on 22##TheRepoClub
+T 1658089637 22*	26mercury.libera.chat sets mode 24+n on 22##TheRepoClub
+T 1658089637 22*	26mercury.libera.chat sets mode 24+s on 22##TheRepoClub
+T 1658089637 22*	26mercury.libera.chat sets mode 24+t on 22##TheRepoClub
+T 1658089637 22*	26services. removes channel operator status from 18TheRepoClub
+T 1658089637 29*	*** Notice -- TS for ##TheRepoClub changed from 1658089638 to 1657387096
+T 1658089637 22*	26services. sets mode 24-C on 22##TheRepoClub
+T 1658089637 22*	26services. sets mode 24-s on 22##TheRepoClub
+T 1658089637 23*	ChanServ (ChanServ@services.libera.chat23) has joined
+T 1658089637 22*	26services. gives channel operator status to 18ChanServ
+T 1658089637 22*	26ChanServ gives channel operator status to 18TheRepoClub
