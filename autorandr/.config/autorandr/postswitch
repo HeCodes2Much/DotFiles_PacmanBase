@@ -1,17 +1,20 @@
 #!/usr/bin/env bash
 
-if [ "$DESKTOP_SESSION" == "i3" ]; then
-  if ! command -v polybar &>/dev/null; then
-    echo "polybar could not be found"
-  else
-    if ! pgrep -x "polybar" >/dev/null; then
-      if ! test -f "$HOME/.config/polybar/launch.sh"; then
-        echo "$HOME/.config/polybar/launch.sh could not be found"
-      else
-        sh $HOME/.config/polybar/launch.sh
-      fi
+WM=$(wmctrl -m | grep Name | cut -d: -f2)
+WM=${WM//[[:space:]]/}
+
+if [ "$WM" == "i3" ]; then
+    if ! command -v polybar &>/dev/null; then
+        echo "polybar could not be found"
     else
-      echo "polybar already Running"
+        if ! pgrep -x "polybar" >/dev/null; then
+            if ! test -f "$HOME/.config/polybar/launch.sh"; then
+                echo "$HOME/.config/polybar/launch.sh could not be found"
+            else
+                sh $HOME/.config/polybar/launch.sh
+            fi
+        else
+            echo "polybar already Running"
+        fi
     fi
-  fi
 fi

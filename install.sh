@@ -24,7 +24,7 @@ syncFolders() {
 }
 
 unsyncFolders() {
-    folders=$(getfolders)
+    folders=$(./localbin/.local/bin/getfolders)
 
     for folder in $folders; do
         stow -Dt ~ $folder && echo "$folder has been synced"

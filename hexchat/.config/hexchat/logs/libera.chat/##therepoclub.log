@@ -139,3 +139,46 @@ Jul 17 21:27:17 *	services. sets mode -s on ##TheRepoClub
 Jul 17 21:27:17 *	ChanServ (ChanServ@services.libera.chat) has joined
 Jul 17 21:27:17 *	services. gives channel operator status to ChanServ
 Jul 17 21:27:17 *	ChanServ gives channel operator status to TheRepoClub
+**** BEGIN LOGGING AT Tue Jul 26 06:36:53 2022
+
+Jul 26 06:36:53 *	Now talking on ##TheRepoClub
+Jul 26 06:36:53 *	sodium.libera.chat sets mode +C on ##TheRepoClub
+Jul 26 06:36:53 *	sodium.libera.chat sets mode +n on ##TheRepoClub
+Jul 26 06:36:53 *	sodium.libera.chat sets mode +s on ##TheRepoClub
+Jul 26 06:36:53 *	sodium.libera.chat sets mode +t on ##TheRepoClub
+Jul 26 06:36:53 *	services. removes channel operator status from TheRepoClub
+Jul 26 06:36:53 *	*** Notice -- TS for ##TheRepoClub changed from 1658813811 to 1657387096
+Jul 26 06:36:53 *	services. sets mode -C on ##TheRepoClub
+Jul 26 06:36:53 *	services. sets mode -s on ##TheRepoClub
+Jul 26 06:36:53 *	ChanServ (ChanServ@services.libera.chat) has joined
+Jul 26 06:36:53 *	services. gives channel operator status to ChanServ
+Jul 26 06:36:53 *	ChanServ gives channel operator status to TheRepoClub
+**** ENDING LOGGING AT Tue Jul 26 06:36:56 2022
+
+**** BEGIN LOGGING AT Tue Jul 26 06:37:08 2022
+
+Jul 26 06:37:08 *	Now talking on ##TheRepoClub
+Jul 26 06:37:09 *	ChanServ gives channel operator status to TheRepoClub
+**** ENDING LOGGING AT Tue Jul 26 06:37:30 2022
+
+**** BEGIN LOGGING AT Tue Jul 26 06:37:44 2022
+
+Jul 26 06:37:44 *	Now talking on ##TheRepoClub
+Jul 26 06:37:44 *	ChanServ gives channel operator status to TheRepoClub
+**** BEGIN LOGGING AT Sun Jul 31 17:09:50 2022
+
+Jul 31 17:09:50 *	Now talking on ##TheRepoClub
+Jul 31 17:09:50 *	sodium.libera.chat sets mode +C on ##TheRepoClub
+Jul 31 17:09:50 *	sodium.libera.chat sets mode +n on ##TheRepoClub
+Jul 31 17:09:50 *	sodium.libera.chat sets mode +s on ##TheRepoClub
+Jul 31 17:09:50 *	sodium.libera.chat sets mode +t on ##TheRepoClub
+Jul 31 17:09:50 *	services. removes channel operator status from TheRepoClub
+Jul 31 17:09:50 *	*** Notice -- TS for ##TheRepoClub changed from 1659287386 to 1657387096
+Jul 31 17:09:50 *	services. sets mode -C on ##TheRepoClub
+Jul 31 17:09:50 *	services. sets mode -s on ##TheRepoClub
+Jul 31 17:09:50 *	ChanServ (ChanServ@services.libera.chat) has joined
+Jul 31 17:09:50 *	services. gives channel operator status to ChanServ
+Jul 31 17:09:50 *	ChanServ gives channel operator status to TheRepoClub
+Jul 31 17:10:17 FiSHLiM	hexchat_print called without a valid context.
+**** ENDING LOGGING AT Sun Jul 31 17:10:17 2022
+

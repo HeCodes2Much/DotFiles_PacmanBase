@@ -112,3 +112,32 @@ T 1658089637 22*	26services. sets mode 24-s on 22##TheRepoClub
 T 1658089637 23*	ChanServ (ChanServ@services.libera.chat23) has joined
 T 1658089637 22*	26services. gives channel operator status to 18ChanServ
 T 1658089637 22*	26ChanServ gives channel operator status to 18TheRepoClub
+T 1658813813 19*	Now talking on 22##TheRepoClub
+T 1658813813 22*	26sodium.libera.chat sets mode 24+C on 22##TheRepoClub
+T 1658813813 22*	26sodium.libera.chat sets mode 24+n on 22##TheRepoClub
+T 1658813813 22*	26sodium.libera.chat sets mode 24+s on 22##TheRepoClub
+T 1658813813 22*	26sodium.libera.chat sets mode 24+t on 22##TheRepoClub
+T 1658813813 22*	26services. removes channel operator status from 18TheRepoClub
+T 1658813813 29*	*** Notice -- TS for ##TheRepoClub changed from 1658813811 to 1657387096
+T 1658813813 22*	26services. sets mode 24-C on 22##TheRepoClub
+T 1658813813 22*	26services. sets mode 24-s on 22##TheRepoClub
+T 1658813813 23*	ChanServ (ChanServ@services.libera.chat23) has joined
+T 1658813813 22*	26services. gives channel operator status to 18ChanServ
+T 1658813813 22*	26ChanServ gives channel operator status to 18TheRepoClub
+T 1658813828 19*	Now talking on 22##TheRepoClub
+T 1658813829 22*	26ChanServ gives channel operator status to 18TheRepoClub
+T 1658813864 19*	Now talking on 22##TheRepoClub
+T 1658813864 22*	26ChanServ gives channel operator status to 18TheRepoClub
+T 1659287390 19*	Now talking on 22##TheRepoClub
+T 1659287390 22*	26sodium.libera.chat sets mode 24+C on 22##TheRepoClub
+T 1659287390 22*	26sodium.libera.chat sets mode 24+n on 22##TheRepoClub
+T 1659287390 22*	26sodium.libera.chat sets mode 24+s on 22##TheRepoClub
+T 1659287390 22*	26sodium.libera.chat sets mode 24+t on 22##TheRepoClub
+T 1659287390 22*	26services. removes channel operator status from 18TheRepoClub
+T 1659287390 29*	*** Notice -- TS for ##TheRepoClub changed from 1659287386 to 1657387096
+T 1659287390 22*	26services. sets mode 24-C on 22##TheRepoClub
+T 1659287390 22*	26services. sets mode 24-s on 22##TheRepoClub
+T 1659287390 23*	ChanServ (ChanServ@services.libera.chat23) has joined
+T 1659287390 22*	26services. gives channel operator status to 18ChanServ
+T 1659287390 22*	26ChanServ gives channel operator status to 18TheRepoClub
+T 1659287417 FiSHLiM	hexchat_print called without a valid context.

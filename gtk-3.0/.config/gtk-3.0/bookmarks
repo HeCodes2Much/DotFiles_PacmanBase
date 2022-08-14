@@ -3,4 +3,5 @@ file:///home/repo/.cache .cache
 file:///home/repo/.config .config
 file:///mnt/500GB/.gitlabs .gitlabs
 file:///home/repo/.local .local
-file:///mnt/500GB/.makpkg .makpkg
+file:///home/repo/.makpkg .makpkg
+file:///mnt/500GB/.games/Steam/steamapps/compatdata/1248130/pfx/drive_c/users/steamuser/Documents/My%20Games/FarmingSimulator2022 FarmingSimulator2022

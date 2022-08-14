@@ -7,9 +7,6 @@ check_install() {
      fi
 }
 
-check_install xdo
-check_install xprop
-
 if pgrep -x "polybar" > /dev/null
 then
 	killall polybar

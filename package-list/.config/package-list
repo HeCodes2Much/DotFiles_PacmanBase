@@ -13,6 +13,8 @@ checkupdates-aur
 ckb-next
 ckbcomp
 cmusfetcher500
+code-features
+code-marketplace
 colorgrab
 cutycapt
 dracula-gtk-theme
@@ -58,10 +60,14 @@ php-pear
 pkgbrowser
 proctl
 protonup-git
+python-buildozer
 python-gputil
 python-kivymd
 qt-logout
 recycle-cli
+repo-exec
+repomenu
+repomenu-extra
 resvg
 robo3t-bin
 runescape-launcher
