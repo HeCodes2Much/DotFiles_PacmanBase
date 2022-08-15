@@ -1,6 +1,8 @@
 lastupdatecheck: 0
 recentrepos:
-- /home/dt
-- /mnt/500GB/.gitlabs/instawm
 - /mnt/500GB/.gitlabs/Arch.TheRepo.Club
 startuppopupversion: 5
+customcommandshistory:
+- ""
+- q
+hidecommandlog: false

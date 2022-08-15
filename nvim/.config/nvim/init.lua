@@ -1,26 +1,23 @@
-local ok, err = pcall(require, "core")
-
-vim.g.dracula_show_end_of_buffer = true  -- default false, Turn on or off EndOfBuffer symbol
-vim.g.dracula_transparent_bg = true -- default false, enables transparent background
-
-vim.cmd[[colorscheme minimalmistakes]]
-vim.cmd("hi! link DashboardHeader Error")
-vim.cmd("hi! link DashboardCenter Keyword")
-vim.cmd("set colorcolumn=90")
-
-if not ok then
-   error("Error loading core" .. "\n\n" .. err)
-end
-
-vim.opt.termguicolors = true
-
-vim.opt.list = true
-vim.opt.listchars:append("space:⋅")
-vim.opt.listchars:append("eol:↴")
-
-vim.g.header_email = "wayne6324@gmail.com"
-vim.g.header_github = "The-Repo-Club"
-vim.g.header_username = "The-Repo-Club"
-
-vim.g.header_sh = "bash"
-vim.g.header_auto_update = "true"
+require "user.options"
+require "user.keymaps"
+require "user.plugins"
+require "user.colorscheme"
+require "user.cmp"
+require "user.lsp"
+require "user.telescope"
+require "user.treesitter"
+require "user.autopairs"
+require "user.comment"
+require "user.gitsigns"
+require "user.nvim-tree"
+require "user.bufferline"
+require "user.lualine"
+require "user.toggleterm"
+require "user.project"
+require "user.impatient"
+require "user.indentline"
+require "user.alpha"
+require "user.whichkey"
+require "user.autocommands"
+require "user.header"
+require "user.trim"
