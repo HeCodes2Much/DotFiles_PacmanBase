@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/home/repo/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  Vim_Headers = {
-    loaded = true,
-    path = "/home/repo/.local/share/nvim/site/pack/packer/start/Vim_Headers",
-    url = "https://github.com/The-Repo-Club/Vim_Headers"
-  },
   Vim_Keys = {
     loaded = true,
     path = "/home/repo/.local/share/nvim/site/pack/packer/start/Vim_Keys",
@@ -103,6 +98,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/repo/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/home/repo/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -129,11 +129,6 @@ _G.packer_plugins = {
     path = "/home/repo/.local/share/nvim/site/pack/packer/start/ctrlp.vim",
     url = "https://github.com/ctrlpvim/ctrlp.vim"
   },
-  ["darkplus.nvim"] = {
-    loaded = true,
-    path = "/home/repo/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
-    url = "https://github.com/lunarvim/darkplus.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/repo/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -143,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/repo/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["header.nvim"] = {
+    loaded = true,
+    path = "/home/repo/.local/share/nvim/site/pack/packer/start/header.nvim",
+    url = "https://github.com/The-Repo-Club/header.nvim"
   },
   ["i3config.vim"] = {
     loaded = true,

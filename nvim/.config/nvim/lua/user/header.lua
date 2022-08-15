@@ -1,6 +1,40 @@
-vim.g.header_email = "wayne6324@gmail.com"
-vim.g.header_github = "The-Repo-Club"
-vim.g.header_username = "The-Repo-Club"
+local header = require('header')
 
-vim.g.header_sh = "bash"
-vim.g.header_auto_update = "true"
+header.setup({
+	username = 'The-Repo-Club',
+  git = 'https://github.com/The-Repo-Club',
+	email = 'wayne6324@gmail.com',
+	-- You can also extend filetypes, e.g:
+	ft = {
+		c = {
+			start_comment = "/*",
+			end_comment = "*/",
+			fill_comment = "*",
+		},
+		cpp = {
+			start_comment = "/*",
+			end_comment = "*/",
+			fill_comment = "*",
+		},
+		make = {
+			start_comment = "##",
+			end_comment = "##",
+			fill_comment = "#",
+		},
+		python = {
+			start_comment = "##",
+			end_comment = "##",
+			fill_comment = "#",
+		},
+		lua = {
+			start_comment = "--",
+			end_comment = "--",
+			fill_comment = "-",
+		},
+		vim = {
+			start_comment = '""',
+			end_comment = '""',
+			fill_comment = "*",
+		}
+	}
+})
