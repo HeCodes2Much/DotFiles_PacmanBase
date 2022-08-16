@@ -229,6 +229,11 @@ _G.packer_plugins = {
     path = "/home/repo/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
+  ["stylua.nvim"] = {
+    loaded = true,
+    path = "/home/repo/.local/share/nvim/site/pack/packer/start/stylua.nvim",
+    url = "https://github.com/wesleimp/stylua.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/repo/.local/share/nvim/site/pack/packer/start/telescope.nvim",

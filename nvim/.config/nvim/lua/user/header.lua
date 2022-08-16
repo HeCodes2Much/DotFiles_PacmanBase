@@ -1,9 +1,9 @@
-local header = require('header')
+local header = require("header")
 
 header.setup({
-	username = 'The-Repo-Club',
-  git = 'https://github.com/The-Repo-Club',
-	email = 'wayne6324@gmail.com',
+	username = "The-Repo-Club",
+	git = "https://github.com/The-Repo-Club",
+	email = "wayne6324@gmail.com",
 	-- You can also extend filetypes, e.g:
 	ft = {
 		c = {
@@ -35,6 +35,6 @@ header.setup({
 			start_comment = '""',
 			end_comment = '""',
 			fill_comment = "*",
-		}
-	}
+		},
+	},
 })
