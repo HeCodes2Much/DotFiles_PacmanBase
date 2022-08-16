@@ -21,20 +21,26 @@ dashboard.section.buttons.val = {
 	dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
 	dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
-	dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
+	dashboard.button("c", "  Configuration", ":EditConfiguration  <CR>"),
 	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 
-local function footer()
-	-- NOTE: requires the fortune-mod package to work
-	-- local handle = io.popen("fortune")
-	-- local fortune = handle:read("*a")
-	-- handle:close()
-	-- return fortune
-	return "[ Think NeoVim   Author:The-Repo-Club ]"
-end
+local loaded = vim.fn.printf("%.3f", vim.fn.reltimefloat(vim.fn.reltime(vim.g.start_time)))
 
-dashboard.section.footer.val = footer()
+dashboard.section.footer.val = {
+	"                                                           ",
+	"    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓    ",
+	"    ┃    ╔═══════════════════════════════════════╗    ┃    ",
+	"    ┃    ║           Think NeoVim ^_^            ║    ┃    ",
+	"    ┃    ║                                       ║    ┃    ",
+	"    ┃    ║    Talk is cheap Show us the code.    ║    ┃    ",
+	"    ┃    ║                                       ║    ┃    ",
+	"    ┃    ║         Github:The-Repo-Club          ║    ┃    ",
+	"    ┃    ╚═══════════════════════════════════════╝    ┃    ",
+	"    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛    ",
+	"                                                           ",
+	"               Nvim loaded in " .. loaded .. " seconds.    ",
+}
 
 dashboard.section.footer.opts.hl = "Type"
 dashboard.section.header.opts.hl = "Include"
