@@ -56,7 +56,7 @@ Next we need to install python support (node is optional)
   ```
 ---
 
-**NOTE** make sure you have [node](https://nodejs.org/en/) installed, I recommend a node manager like [fnm](https://github.com/Schniz/fnm).
+**NOTE** make sure you have [node](https://nodejs.org/en/) installed.
 
 ### Upgrade to latest release
 
