@@ -913,21 +913,20 @@ $super_b+minus \
 #######################################################################
 #################          active scratchpad          #################
 #######################################################################
-
+$exe $TerminalEmulator --title "dropdown-terminal" --class "dropdown-terminal","dropdown-terminal"
 for_window [class="(?i)dropdown-terminal"] floating enable
 for_window [class="(?i)dropdown-terminal"] resize set 1100 800
 for_window [class="(?i)dropdown-terminal"] move scratchpad
-$exe $TerminalEmulator --title "dropdown-terminal" --class "dropdown-terminal","dropdown-terminal"
 
 ## Category: Scratchpad;
 # Description: Toggle $TerminalEmulator;
 $control_b+Return \
     [class="(?i)dropdown-terminal"] scratchpad show, move position center
 
+$exe $TerminalEmulator --title "btop-terminal" --class "btop-terminal","btop-terminal" -e btop
 for_window [class="(?i)btop-terminal"] floating enable
 for_window [class="(?i)btop-terminal"] resize set 1100 800
 for_window [class="(?i)btop-terminal"] move scratchpad
-$exe $TerminalEmulator --title "btop-terminal" --class "btop-terminal","btop-terminal" -e btop
 
 ## Category: Scratchpad;
 # Description: Toggle btop;
