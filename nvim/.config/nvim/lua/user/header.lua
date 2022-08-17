@@ -26,6 +26,11 @@ header.setup({
 			end_comment = "##",
 			fill_comment = "#",
 		},
+    sh = {
+			start_comment = "##",
+			end_comment = "##",
+			fill_comment = "#",
+		},
 		lua = {
 			start_comment = "--",
 			end_comment = "--",

@@ -97,7 +97,7 @@ M.edit_config = function()
 	elseif selected_config == 16 then
 		vim.cmd(string.format("%s %s%snvim-tree.lua", open_command, M.nvim_config_user_root, M.sep))
 	elseif selected_config == 17 then
-		vim.cmd(string.format("%s %s%aoptions.lua", open_command, M.nvim_config_user_root, M.sep))
+		vim.cmd(string.format("%s %s%soptions.lua", open_command, M.nvim_config_user_root, M.sep))
 	elseif selected_config == 18 then
 		vim.cmd(string.format("%s %s%splugins.lua", open_command, M.nvim_config_user_root, M.sep))
 	elseif selected_config == 19 then

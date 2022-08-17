@@ -13,7 +13,7 @@ dashboard.section.header.val = {
 	"  o888ooooo88   888oo88   o88o    88  o88o  o888o ",
 	"                                                  ",
 	"                                                  ",
-	"     [ Think NeoVim   Author:The-Repo-Club ]      ",
+	"     [ Think LunaVim   Author:The-Repo-Club ]     ",
 }
 dashboard.section.buttons.val = {
 	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
@@ -21,17 +21,15 @@ dashboard.section.buttons.val = {
 	dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
 	dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
-	dashboard.button("c", "  Configuration", ":EditConfiguration  <CR>"),
-	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+	dashboard.button("c", "  Configuration", ":EditConfiguration <CR>"),
+	dashboard.button("q", "  Quit LunaVim", ":qa <CR>"),
 }
-
-local loaded = vim.fn.printf("%.3f", vim.fn.reltimefloat(vim.fn.reltime(vim.g.start_time)))
 
 dashboard.section.footer.val = {
 	"                                                           ",
 	"    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓    ",
 	"    ┃    ╔═══════════════════════════════════════╗    ┃    ",
-	"    ┃    ║           Think NeoVim ^_^            ║    ┃    ",
+	"    ┃    ║           Think LunaVim ^_^           ║    ┃    ",
 	"    ┃    ║                                       ║    ┃    ",
 	"    ┃    ║    Talk is cheap Show us the code.    ║    ┃    ",
 	"    ┃    ║                                       ║    ┃    ",
@@ -39,7 +37,6 @@ dashboard.section.footer.val = {
 	"    ┃    ╚═══════════════════════════════════════╝    ┃    ",
 	"    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛    ",
 	"                                                           ",
-	"               Nvim loaded in " .. loaded .. " seconds.    ",
 }
 
 dashboard.section.footer.opts.hl = "Type"
