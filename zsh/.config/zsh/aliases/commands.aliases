@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-EDITOR='code'
-
 ## Reset Colors
 Reset='\e[0m'
 ### Custom colors
