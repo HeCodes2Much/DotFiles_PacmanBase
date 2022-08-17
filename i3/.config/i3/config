@@ -20,7 +20,7 @@ set $WebBrowserB google-chrome-stable
 set $WebBrowserF firefox
 set $FileManager nemo
 set $MailReader thunderbird
-set $TextEditor code
+set $TextEditor nvim-qt
 set $Hypervisor virtualbox
 set $GitBrowser lazygit
 # }}} Variables
@@ -440,7 +440,7 @@ assign [class="(?i)Alacritty|Kitty"]                                            
 
 # Workspace $ws2
 assign [class="(?i)Emacs|Jetbrains"]                                            → $ws2
-assign [class="(?i)Code|Nvim"]                                                  → $ws2
+assign [class="(?i)Code|Nvim-QT"]                                               → $ws2
 
 # Workspace $ws3
 assign [class="(?i)Nemo"]                                                       → $ws3
@@ -922,16 +922,6 @@ for_window [class="(?i)dropdown-terminal"] move scratchpad
 # Description: Toggle $TerminalEmulator;
 $control_b+Return \
     [class="(?i)dropdown-terminal"] scratchpad show, move position center
-
-$exe $TerminalEmulator --title "btop-terminal" --class "btop-terminal","btop-terminal" -e btop
-for_window [class="(?i)btop-terminal"] floating enable
-for_window [class="(?i)btop-terminal"] resize set 1100 800
-for_window [class="(?i)btop-terminal"] move scratchpad
-
-## Category: Scratchpad;
-# Description: Toggle btop;
-$super_b+o \
-    [class="(?i)btop-terminal"] scratchpad show, move position center
 
 # }}} Scratchpad
 

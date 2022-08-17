@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-feh --no-fehbg --bg-scale "$HOME/.config/feh/backgrounds/Endeavouros_Wallpaper-MM.png"
+feh --no-fehbg --bg-scale "$HOME/.config/feh/backgrounds/Arch_Wallpaper-MM.png"

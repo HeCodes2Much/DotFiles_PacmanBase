@@ -12,6 +12,7 @@ checkupdates+aur
 checkupdates-aur
 ckb-next
 ckbcomp
+clifm
 cmusfetcher500
 code-features
 code-marketplace
@@ -115,3 +116,4 @@ yaru-session
 yaru-sound-theme
 yaru-unity-theme
 yaru-xfwm4-theme
+yay
