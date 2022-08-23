@@ -24,7 +24,7 @@ end
 
 # Update Repo
 function update
-    command pacman -Syu
+    command sudo pacman -Syu
 end
 
 function aurupdate
@@ -32,16 +32,16 @@ function aurupdate
 end
 
 function upall
-    command pacman -Fy && pacman -Syu --noconfirm && aurupdate
+    command sudo pacman -Fy && sudo pacman -Syu --noconfirm && aurupdate
 end
 
 #check aur and arch packages
 function checkarch
-    command pacman -Qqen >~/package_list.txt
+    command sudo pacman -Qqen >~/package_list.txt
 end
 
 function checkaur
-    command pacman -Qqem >~/package_list_aur.txt
+    command sudo pacman -Qqem >~/package_list_aur.txt
 end
 
 # Pacman unlock

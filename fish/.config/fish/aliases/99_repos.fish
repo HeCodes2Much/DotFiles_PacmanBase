@@ -1,3 +1,5 @@
+# arch repo commands
+
 function updaterepo
     while true
         read -l -P "Are you sure you want to update arch repo? [y/N] " confirm
@@ -5,7 +7,7 @@ function updaterepo
         switch $confirm
             case Y y
                 cd /mnt/500GB/.gitlabs/Arch.TheRepo.Club/
-                ./git-v1.sh $argv
+                ./x86_64/updaterepo.sh $argv
                 cd $dirprev[1]
                 echoResponce "Arch repo has been updated."
                 return
@@ -21,7 +23,7 @@ function updatereadme
 
         switch $confirm
             case Y y
-                cd /mnt/500GB/.gitlabs/Arch.TheRepo.Club/docs/
+                cd /mnt/500GB/.gitlabs/Arch.TheRepo.Club/scripts/
                 python updatereadme.py
                 cd $dirprev[1]
                 cd /mnt/500GB/.gitlabs/Arch.TheRepo.Club/x86_64/
