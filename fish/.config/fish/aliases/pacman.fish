@@ -17,34 +17,34 @@ function pacman
         command sudo pacman --color auto $argv
     else
         if pacman -Qttdq
-            pacman -Qttdq | pacman -Rns -
+            command sudo pacman -Qttdq | command sudo pacman -Rns -
         end
     end
 end
 
 # Update Repo
 function update
-    pacman -Syu
+    command pacman -Syu
 end
 
 function aurupdate
-    auracle update -C ~/.cache/pkgs/
+    command auracle update -C ~/.cache/pkgs/
 end
 
 function upall
-    pacman -Fy && pacman -Syu --noconfirm && aurupdate
+    command pacman -Fy && pacman -Syu --noconfirm && aurupdate
 end
 
 #check aur and arch packages
 function checkarch
-    pacman -Qqen >~/package_list.txt
+    command pacman -Qqen >~/package_list.txt
 end
 
 function checkaur
-    pacman -Qqem >~/package_list_aur.txt
+    command pacman -Qqem >~/package_list_aur.txt
 end
 
 # Pacman unlock
 function unlock
-    sudo rm /var/lib/pacman/db.lck
+    command sudo rm /var/lib/pacman/db.lck
 end

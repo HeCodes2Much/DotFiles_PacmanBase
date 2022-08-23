@@ -58,3 +58,4 @@ fi
 
 eval "$(starship init zsh)"
 sf
+if [ -e /home/repo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/repo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

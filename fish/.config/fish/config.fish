@@ -1,5 +1,5 @@
-if test -f "$HOME/.confid/fish/fish.profile"
-    source "$HOME/.confid/fish/fish.profile"
+if test -f "$HOME/.config/fish/fish.profile"
+    source "$HOME/.config/fish/fish.profile"
 end
 
 set PATH "$HOME/.local/bin:$PATH"
@@ -35,7 +35,6 @@ if test -d "$HOME/.local/bin/clipmenu"
 end
 
 function fish_greeting
-    # bfetch --source ~/.config/bfetch/ascii.art --ascii_colors 7 1 2 3 5 8 --birthday 16/06
     shellfetch
 end
 
@@ -52,8 +51,8 @@ end
 bind \ec __history_previous_command
 bind \e\e __sudope
 
-if status is-login
-    if test (tty) = /dev/tty1
-        exec tbsm
-    end
-end
+# if status is-login
+#     if test (tty) = /dev/tty1
+#         exec tbsm
+#     end
+# end

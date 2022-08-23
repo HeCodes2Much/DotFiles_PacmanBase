@@ -1,30 +1,30 @@
 # Unlock user from passwords
 function ulock
-    faillock --reset
+    command faillock --reset
 end
 
 # Check ports for current user
 function ports
-    sudo netstat -tulanp
+    command sudo netstat -tulanp
 end
 
 # Set permissions for user
 function setperm
-    sudo chown dt:dt $argv
+    command sudo chown repo:repo $argv
 end
 
 # Stow commands
 function stowadd
-    stow -St ~ $argv
+    command stow -St ~ $argv
 end
 
 function stowremove
-    stow -Dt ~ $argv
+    command stow -Dt ~ $argv
 end
 
 # Clear command
 function clear
-    command reset && fish
+    command reset && shellfetch
 end
 
 # free
@@ -39,5 +39,14 @@ end
 
 # grub update
 function update-grub
-    sudo grub-mkconfig -o /boot/grub/grub.cfg
+    command sudo grub-mkconfig -o /boot/grub/grub.cfg
+end
+
+# add new fonts
+function update-fc
+    command fc-cache -fv
+end
+
+function reload
+    source ~/.config/fish/config.fish
 end
