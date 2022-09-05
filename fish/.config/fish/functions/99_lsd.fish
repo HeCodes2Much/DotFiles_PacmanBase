@@ -1,10 +1,10 @@
 #list comamnds
 function l
-    lsd $argv
+    exa $argv
 end
 
 function ls
-    lsd $argv
+    exa $argv
 end
 
 function la
@@ -24,5 +24,5 @@ function lt
 end
 
 function lg
-    ls -A | egrep $argv
+    ls -a | egrep $argv
 end

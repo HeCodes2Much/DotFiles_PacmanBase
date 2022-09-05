@@ -13,26 +13,25 @@ function pacman
         wait $last_pid
     end
 
-    if [ "$argv" != -c ]
-        command sudo pacman --color auto $argv
-    else
+    if [ "$argv" = -c ]
         if pacman -Qttdq
-            command sudo pacman -Qttdq | command sudo pacman -Rns -
+            command sudo pacman --color auto -Qttdq | command sudo pacman --color auto -Rns -
         end
+    else if [ "$argv" = --upall ]
+        command sudo pacman -Fy
+        command sudo pacman -Sy
+        command sudo pacman -Su --noconfirm
+        command auracle update -C ~/.cache/pkgs/
+    else if [ "$argv" = --pacsync ]
+        command pacsync
+    else
+        command sudo pacman --color auto $argv
     end
 end
 
-# Update Repo
-function update
-    command sudo pacman -Syu
-end
-
-function aurupdate
-    command auracle update -C ~/.cache/pkgs/
-end
-
+# Update all repos
 function upall
-    command sudo pacman -Fy && sudo pacman -Syu --noconfirm && aurupdate
+    pacman --upall
 end
 
 #check aur and arch packages

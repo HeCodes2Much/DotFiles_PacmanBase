@@ -1,5 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
+- /mnt/500GB/.gitlabs/LinkNSync/API
+- /home/repo/Development/LinkNSync
 - /mnt/500GB/.gitlabs/DotFiles
 - /mnt/500GB/.gitlabs/Arch.TheRepo.Club
 startuppopupversion: 5

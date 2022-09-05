@@ -20,7 +20,7 @@ set $WebBrowserB google-chrome-stable
 set $WebBrowserF firefox
 set $FileManager nemo
 set $MailReader thunderbird
-set $TextEditor nvim-qt
+set $TextEditor code
 set $Hypervisor virtualbox
 set $GitBrowser lazygit
 # }}} Variables

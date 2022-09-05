@@ -1,0 +1,63 @@
+#!/usr/bin/bash
+
+# Dependencies:
+# pacman, yay, fzf
+function go_pacman() {
+  cmd=$(pacman -Slq | fzf --prompt 'pacman> ' \
+    --header 'Install packages. CTRL+(Pacman/Aur/Installed/Quit)' \
+    --bind 'ctrl-p:change-prompt(pacman> )+reload(pacman -Slq)' \
+    --bind 'ctrl-a:change-prompt(yay> )+reload(yay -Slq)' \
+    --bind 'ctrl-i:change-prompt(inst> )+reload(yay -Qq)' \
+    --multi --height=80% --preview 'sleep 2; yay -Si {1}' \
+    --preview-window right) #| xargs -ro yay -S
+  cmd=${cmd//$'\n'/ }       # newline -> space
+  if [ -n "$cmd" ]; then
+    print -z yay -S "$cmd"
+  fi
+  exit
+}
+
+function go_yay() {
+  cmd=$(yay -Slq | fzf --prompt 'yay> ' \
+    --header 'Install packages. CTRL+(Pacman/Aur/Installed/Quit)' \
+    --bind 'ctrl-p:change-prompt(pacman> )+reload(pacman -Slq)' \
+    --bind 'ctrl-a:change-prompt(yay> )+reload(yay -Slq)' \
+    --bind 'ctrl-i:change-prompt(inst> )+reload(yay -Qq)' \
+    --multi --height=80% --preview 'sleep 2; yay -Si {1}' \
+    --preview-window right) #| xargs -ro yay -S
+  cmd=${cmd//$'\n'/ }       # newline -> space
+  if [ -n "$cmd" ]; then
+    print -z yay -S "$cmd"
+  fi
+  exit
+}
+
+function go_installed() {
+  cmd=$(yay -Qq | fzf --prompt 'installed> ' \
+    --header 'Install packages. CTRL+(Pacman/Aur/Installed/Quit)' \
+    --bind 'ctrl-p:change-prompt(pacman> )+reload(pacman -Slq)' \
+    --bind 'ctrl-a:change-prompt(yay> )+reload(yay -Slq)' \
+    --bind 'ctrl-i:change-prompt(installed> )+reload(yay -Qq)' \
+    --multi --height=80% --preview 'sleep 2; yay -Si {1}' \
+    --preview-window right) #| xargs -ro yay -S
+  cmd=${cmd//$'\n'/ }       # newline -> space
+  if [ -n "$cmd" ]; then
+    print -z yay -S "$cmd"
+  fi
+  exit
+}
+
+case $1 in
+*pacman)
+  go_pacman
+  ;;
+*yay)
+  go_yay
+  ;;
+*installed)
+  go_installed
+  ;;
+*)
+  go_pacman
+  ;;
+esac

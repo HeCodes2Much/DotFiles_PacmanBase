@@ -1,10 +1,10 @@
 # Unlock user from passwords
-function ulock
+function ulock --description 'alias ulock="faillock --reset"'
     command faillock --reset
 end
 
 # Check ports for current user
-function ports
+function ports --description 'alias ports="sudo netstat -tulanp"'
     command sudo netstat -tulanp
 end
 
