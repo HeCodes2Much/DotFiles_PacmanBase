@@ -1,0 +1,43 @@
+# Minimal Mistakes Micro Theme
+
+color-link comment "#81a1c1"
+
+color-link identifier "#59ff59"
+color-link identifier.class "#59fff9"
+color-link identifier.var "#e5e9f0"
+
+color-link constant "#9059ff"
+color-link constant.number "#e5e9f0"
+color-link constant.string "#ffff59"
+
+color-link symbol "#ff59f9"
+color-link symbol.brackets "#e5e9f0"
+color-link symbol.tag "#AE81FF"
+
+color-link type "italic #59fff9"
+color-link type.keyword "#ff59f9"
+
+color-link special "#ff59f9"
+color-link statement "#ff59f9"
+color-link preproc "#ff59f9"
+
+color-link underlined "#ff59f9"
+color-link error "bold #ff5959"
+color-link todo "bold #ff59f9"
+
+color-link diff-added "#59ff59"
+color-link diff-modified "#ff59f9"
+color-link diff-deleted "#ff5959"
+
+color-link gutter-error "#ff5959"
+color-link gutter-warning "#E6DB74"
+
+color-link statusline "#e5e9f0,#434c5e"
+color-link tabbar "#283036,#81a1c1"
+color-link indent-char "#434c5e"
+color-link line-number "#434c5e"
+color-link current-line-number "#e5e9f0"
+
+color-link cursor-line "#434c5e,#e5e9f0"
+color-link color-column "#434c5e"
+color-link type.extended "default"
