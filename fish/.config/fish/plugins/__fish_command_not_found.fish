@@ -13,11 +13,11 @@ function fish_command_not_found
         pacman -F $paths
 
         while true
-            read -l -P "Would you like to install $pkgs? [Y/n] " confirm
+            read -l -P "Would you like to install $pkgs[1]? [Y/n] " confirm
 
             switch $confirm
                 case Y y
-                    pacman -S $pkgs
+                    pacman -S $pkgs[1]
                     return
                 case N n
                     return
