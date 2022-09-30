@@ -12,7 +12,7 @@ function go_pacman() {
     --preview-window right) #| xargs -ro yay -S
   cmd=${cmd//$'\n'/ }       # newline -> space
   if [ -n "$cmd" ]; then
-    print -z yay -S "$cmd"
+    yay -S "$cmd"
   fi
   exit
 }
@@ -27,7 +27,7 @@ function go_yay() {
     --preview-window right) #| xargs -ro yay -S
   cmd=${cmd//$'\n'/ }       # newline -> space
   if [ -n "$cmd" ]; then
-    print -z yay -S "$cmd"
+    yay -S "$cmd"
   fi
   exit
 }
@@ -42,7 +42,7 @@ function go_installed() {
     --preview-window right) #| xargs -ro yay -S
   cmd=${cmd//$'\n'/ }       # newline -> space
   if [ -n "$cmd" ]; then
-    print -z yay -S "$cmd"
+    yay -S "$cmd"
   fi
   exit
 }

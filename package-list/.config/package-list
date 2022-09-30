@@ -14,8 +14,6 @@ ckb-next
 ckbcomp
 clifm
 cmusfetcher500
-code-features
-code-marketplace
 colorgrab
 cutycapt
 dracula-gtk-theme
@@ -29,6 +27,7 @@ gnome-icon-theme
 gnome-icon-theme-symbolic
 gotop
 humanity-icon-theme
+husky-hooks
 i3-cheat
 i3-gaps
 i3-session
@@ -38,6 +37,8 @@ imagewriter
 lib32-libxft-bgra
 libart-lgpl
 libxft-bgra
+linuxrepos-keyring
+linuxrepos-mirrorlist
 lovesay
 minecraft-launcher
 mkinitcpio-firmware
@@ -69,6 +70,7 @@ recycle-cli
 repo-exec
 repomenu
 repomenu-extra
+repowm
 resvg
 robo3t-bin
 runescape-launcher
@@ -87,8 +89,6 @@ themix-icons-suru-plus-git
 themix-plugin-base16-git
 themix-theme-materia-git
 themix-theme-oomox-git
-therepoclub-keyring
-therepoclub-mirrorlist
 timeshift-autosnap
 touchpad-indicator
 transset-df
