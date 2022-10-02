@@ -1,0 +1,11 @@
+#!/bin/sh -ef
+# Display all files owned by a package
+
+pkg=${1:-"${PWD##*/}"}
+
+kiss list "$pkg" >/dev/null || {
+    printf 'usage: kiss-manifest [pkg]\n' >&2
+    exit 1
+}
+
+cat "$KISS_ROOT/var/db/kiss/installed/$pkg/manifest" 2>/dev/null

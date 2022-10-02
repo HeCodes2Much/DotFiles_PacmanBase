@@ -1,0 +1,30 @@
+#!/bin/sh -ef
+# Copy a package's repository files into the current directory
+
+pkg=${1:-"${PWD##*/}"}
+num=$(printf %d "${2:-0}")
+
+dir=$(kiss search "$pkg" 2>/dev/null) || {
+    printf 'usage: [kiss-fork [pkg]] [index]\n'
+    exit 1
+}
+
+# Globbing is disabled and word splitting is intentional.
+# shellcheck disable=2086
+set -- $dir
+
+[ "$num" -ge "$#" ] && {
+    printf 'index exceeds maximum\n'
+    exit 1
+}
+
+shift "$num"
+
+[ "$1" ] || [ -d "$1" ] || {
+    printf 'failed to locate package\n'
+    exit 1
+}
+
+printf 'found  package in %s\n' "$1"
+cp -Lrf "$1" .
+printf 'forked package to %s\n' "$PWD/$pkg"
