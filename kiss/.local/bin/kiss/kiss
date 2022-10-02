@@ -162,7 +162,7 @@ resolve_path() {
     # Final resolved path.
     _rpath=${PWD#"$KISS_ROOT"}/${_rpath##*/}
 
-    cd "$OLDPWD"
+
 }
 
 run_hook() {
@@ -814,7 +814,7 @@ pkg_tar() {
         zst)  zstd -z  ;;
     esac > "$_tar_file"
 
-    cd "$OLDPWD"
+
 
     log "$1" "Successfully created tarball"
 
@@ -1320,7 +1320,7 @@ pkg_removable() {
         die "$1" "Not removable, has dependents"
 
     set -f
-    cd "$OLDPWD"
+
 }
 
 pkg_remove() {
