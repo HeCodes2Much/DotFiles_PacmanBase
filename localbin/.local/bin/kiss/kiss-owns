@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh -ef
 # Check which package owns a file
 
 # Follow symlinks to any paths.

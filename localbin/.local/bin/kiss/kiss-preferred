@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh -ef
 # Lists the owners of all files with conflicts
 
 kiss a | while read -r _ path; do
