@@ -1,8 +1,0 @@
-#!/bin/sh -ef
-# Display packages which depend on package
-
-[ "$1" ] || set -- "${PWD##*/}"
-
-cd "$KISS_ROOT/var/db/kiss/installed"
-
-grep "^$1" -- */depends

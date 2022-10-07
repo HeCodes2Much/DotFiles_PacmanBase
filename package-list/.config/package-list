@@ -28,6 +28,7 @@ gnome-icon-theme-symbolic
 gotop
 humanity-icon-theme
 husky-hooks
+husky-packagemanager
 i3-cheat
 i3-gaps
 i3-session
@@ -116,4 +117,3 @@ yaru-session
 yaru-sound-theme
 yaru-unity-theme
 yaru-xfwm4-theme
-yay
