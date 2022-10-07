@@ -20,122 +20,260 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import re
+import json
+import socket
+import locale
+import subprocess
 
-from libqtile import bar, layout, widget
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from datetime import datetime
+
+locale.setlocale(locale.LC_ALL, '')
+
+from libqtile import bar, layout, widget, hook
+from libqtile.config import Key, Click, Drag, Screen, Group, Match, Rule, KeyChord
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
+from libqtile.dgroups import simple_key_binder
 
-mod = "mod4"
-terminal = guess_terminal()
+###################
+## Color Schemes ##
+###################
+
+minimalmistakes = [
+    ["#283036", "#283036"],  # 0
+    ["#ff5959", "#ff5959"],  # 1
+    ["#59ff59", "#59ff59"],  # 2
+    ["#ffff59", "#ffff59"],  # 3
+    ["#9059ff", "#9059ff"],  # 4
+    ["#ff59f9", "#ff59f9"],  # 5
+    ["#59fff9", "#59fff9"],  # 6
+    ["#e5e9f0", "#e5e9f0"],  # 7
+    ["#43515e", "#43515e"],  # 8
+    ["#ffa6a6", "#ffa6a6"],  # 9
+    ["#a6ffa6", "#a6ffa6"],  # 10
+    ["#ffffa6", "#ffffa6"],  # 11
+    ["#c5a6ff", "#c5a6ff"],  # 12
+    ["#ffa6fc", "#ffa6fc"],  # 13
+    ["#a6fffc", "#a6fffc"],  # 14
+    ["#e5e9f0", "#e5e9f0"],  # 15
+]
+
+###########
+## Utils ##
+###########
+
+
+class Commands(object):
+    editor = 'code'
+    menu = 'repomenu_run -i -l 10 -w 600 -c -p "Launcher" -q "Launch a app"'
+    browser = 'firefox'
+    terminal = 'alacritty'
+    power = 'repomenue_powermenu'
+    vbox = 'virt-manager'
+    files = 'nemo'
+    mail = 'thunderbird'
+
+    autostart = [browser, terminal, files]
+
+
+def to_urgent(qtile):
+    cg = qtile.currentGroup
+    for group in qtile.groupMap.values():
+        if group == cg:
+            continue
+        if len([w for w in group.windows if w.urgent]) > 0:
+            qtile.currentScreen.setGroup(group)
+            return
+
+
+def switch_to(name):
+
+    def callback(qtile):
+        for window in qtile.windowMap.values():
+            if window.group and window.match(wname=name):
+                qtile.currentScreen.setGroup(window.group)
+                window.group.focus(window, False)
+                break
+
+    return callback
+
+
+##################
+## Key Bindings ##
+##################
+
+ALT = 'mod1'
+MOD = 'mod4'
+CTRL = 'control'
+SHIFT = 'shift'
 
 keys = [
-    # A list of available commands that can be bound to keys can be found
-    # at https://docs.qtile.org/en/latest/manual/config/lazy.html
+    # qtile commands
+    Key([MOD, SHIFT], "r", lazy.reload_config(), desc="Reload the config"),
+
     # Switch between windows
-    Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
-    Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
-    Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
-    Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod],
-        "space",
-        lazy.layout.next(),
-        desc="Move window focus to other window"),
-    # Move windows between left/right columns or move up/down in current stack.
-    # Moving out of range in Columns layout will create new column.
-    Key([mod, "shift"],
-        "h",
-        lazy.layout.shuffle_left(),
-        desc="Move window to the left"),
-    Key([mod, "shift"],
-        "l",
-        lazy.layout.shuffle_right(),
-        desc="Move window to the right"),
-    Key([mod, "shift"],
-        "j",
-        lazy.layout.shuffle_down(),
-        desc="Move window down"),
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
+    Key([MOD], "h", lazy.layout.left(), desc="Move focus to left"),
+    Key([MOD], "l", lazy.layout.right(), desc="Move focus to right"),
+    Key([MOD], "j", lazy.layout.down(), desc="Move focus down"),
+    Key([MOD], "k", lazy.layout.up(), desc="Move focus up"),
+
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
-    Key([mod, "control"],
-        "h",
-        lazy.layout.grow_left(),
-        desc="Grow window to the left"),
-    Key([mod, "control"],
-        "l",
-        lazy.layout.grow_right(),
-        desc="Grow window to the right"),
-    Key([mod, "control"],
-        "j",
-        lazy.layout.grow_down(),
-        desc="Grow window down"),
-    Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-    # Toggle between split and unsplit sides of stack.
-    # Split = all windows displayed
-    # Unsplit = 1 window displayed, like Max layout, but still with
-    # multiple stack panes
-    Key(
-        [mod, "shift"],
-        "Return",
-        lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack",
-    ),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    KeyChord([MOD],
+             "r", [
+                 Key([], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
+                 Key([], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
+                 Key([], "j", lazy.layout.grow_down(), desc="Grow window down"),
+                 Key([], "k", lazy.layout.grow_up(), desc="Grow window up"),
+             ],
+             mode=True,
+             name="Resize Windows"),
+    # reset all windows
+    Key([MOD], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+
     # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod],
-        "r",
-        lazy.spawncmd(),
-        desc="Spawn a command using a prompt widget"),
+    Key([MOD], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([MOD], "q", lazy.window.kill(), desc="Kill focused window"),
+
+    # Custom keybinds
+    Key([MOD], "Return", lazy.spawn(Commands.terminal), desc="Launch terminal"),
+    Key([MOD], "m", lazy.spawn(Commands.menu), desc="Launch menu"),
+    Key([MOD, CTRL], "c", lazy.spawn(Commands.editor), desc="Launch editor"),
+    Key([MOD, SHIFT], "Return", lazy.spawn(Commands.files), desc="Launch files"),
+
+    # Audio Settings
+    Key([], "XF86AudioMute", lazy.spawn("amixer -D pulse set Master toggle")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -D pulse sset Master '5%-' unmute")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -D pulse sset Master '5%+' unmute")),
+
+    # https://github.com/acrisci/playerctl/
+    Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
+    Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
+    Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
+    Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
+
+    # xBacklight
+    Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight +10")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -10")),
 ]
 
-groups = [Group(i) for i in "123456789"]
+dgroups_key_binder = simple_key_binder(MOD)
+dgroups_app_rules = []  # type: list
 
-for i in groups:
-    keys.extend([
-        # mod1 + letter of group = switch to group
-        Key(
-            [mod],
-            i.name,
-            lazy.group[i.name].toscreen(),
-            desc="Switch to group {}".format(i.name),
-        ),
-        # mod1 + shift + letter of group = switch to & move focused window to group
-        Key(
-            [mod, "shift"],
-            i.name,
-            lazy.window.togroup(i.name, switch_group=True),
-            desc="Switch to & move focused window to group {}".format(i.name),
-        ),
-        # Or, use below if you prefer not to switch to that group.
-        # # mod1 + shift + letter of group = move focused window to group
-        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-        #     desc="move focused window to group {}".format(i.name)),
-    ])
+############
+## Groups ##
+############
+
+groups = [
+    # first group that hold the terminals
+    Group('Terminal',
+          init=True,
+          exclusive=False,
+          persist=False,
+          matches=[Match(wm_class=['Alacritty', 'kitty'])],
+          position=1,
+          screen_affinity=1),
+    Group('Editor',
+          init=True,
+          exclusive=False,
+          persist=False,
+          matches=[Match(wm_class=['Code'])],
+          position=2,
+          screen_affinity=1),
+    Group('Files',
+          init=True,
+          exclusive=False,
+          persist=False,
+          matches=[Match(wm_class=['Nemo'])],
+          position=3,
+          screen_affinity=1),
+    Group('Graphics',
+          init=True,
+          exclusive=False,
+          persist=False,
+          matches=[Match(wm_class=['Nemo'])],
+          position=4,
+          screen_affinity=1),
+    Group('Music',
+          init=True,
+          exclusive=False,
+          persist=False,
+          matches=[Match(wm_class=['Nemo'])],
+          position=5,
+          screen_affinity=1),
+    Group('WebBrowser',
+          init=True,
+          persist=False,
+          exclusive=False,
+          matches=[Match(wm_class=['firefox'], role=['browser'])],
+          position=6,
+          screen_affinity=2),
+    Group(
+        'Mail',
+        init=True,
+        persist=False,
+        exclusive=False,
+        #   matches=[Match(wm_class=['firefox'])],
+        position=7,
+        screen_affinity=2),
+    Group(
+        'Games',
+        init=True,
+        persist=False,
+        exclusive=False,
+        #   matches=[Match(wm_class=['firefox'])],
+        position=8,
+        screen_affinity=2),
+    Group(
+        'Chat',
+        init=True,
+        persist=False,
+        exclusive=False,
+        #   matches=[Match(wm_class=['firefox'])],
+        position=9,
+        screen_affinity=2),
+    Group(
+        'Settings',
+        init=True,
+        persist=False,
+        exclusive=False,
+        #   matches=[Match(wm_class=['firefox'])],
+        position=10,
+        screen_affinity=2),
+]
+
+####################
+## Layouts Config ##
+####################
+
+# Layout Theme
+layout_theme = {"border_width": 2, "margin": 5, "border_focus": "#a6ffa6", "border_normal": "#434c5e"}
 
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+    layout.Tile(**layout_theme),
+    layout.Columns(**layout_theme),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
+    layout.Stack(**layout_theme, num_stacks=2),
+    # layout.Bsp(**layout_theme),
+    layout.Matrix(**layout_theme),
+    layout.MonadTall(**layout_theme),
+    layout.MonadWide(**layout_theme),
+    layout.RatioTile(**layout_theme),
+    # layout.TreeTab(**layout_theme),
+    # layout.VerticalTile(**layout_theme),
+    # layout.Zoomy(**layout_theme),
 ]
 
+floating_layout = layout.Floating(**layout_theme)
+
+###################
+## Screen Config ##
+###################
+
 widget_defaults = dict(
-    font="sans",
+    font="SauceCodePro Nerd Font",
+    foreground=minimalmistakes[15],
     fontsize=12,
     padding=3,
 )
@@ -143,48 +281,279 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
+        top=bar.Bar(
+            [
+                widget.Sep(fmt=' {}', linewidth=10, foreground=minimalmistakes[0]),
+                widget.GroupBox(hide_unused=True,
+                                borderwidth=2,
+                                active=minimalmistakes[11],
+                                inactive=minimalmistakes[1],
+                                this_screen_border=minimalmistakes[9],
+                                this_current_screen_border=minimalmistakes[6],
+                                urgent_border=minimalmistakes[12],
+                                urgent_text=minimalmistakes[12],
+                                visible_groups=["Terminal", "Editor", "Files", "Graphics", "Music"]),
+                widget.Prompt(fmt=' {}'),
+                widget.WindowName(fmt=' {}', max_chars=32),
+                widget.Notify(fmt=' {}'),
+                widget.TextBox(
+                    text='🞀',
+                    fontsize="50",
+                    foreground=minimalmistakes[1],
+                    padding=-2,
+                ),
+                widget.CurrentLayout(
+                    fmt=' {}',
+                    background=minimalmistakes[1],
+                    foreground=minimalmistakes[0],
+                ),
+                widget.TextBox(
+                    text='🞀',
+                    fontsize="50",
+                    foreground=minimalmistakes[2],
+                    background=minimalmistakes[1],
+                    padding=-2,
+                ),
+                widget.Volume(
+                    fmt=' {}',
+                    background=minimalmistakes[2],
+                    foreground=minimalmistakes[0],
+                ),
+                widget.TextBox(
+                    text='🞀',
+                    fontsize="50",
+                    foreground=minimalmistakes[3],
+                    background=minimalmistakes[2],
+                    padding=-2,
+                ),
+                widget.Battery(
+                    fmt=' {}',
+                    background=minimalmistakes[3],
+                    foreground=minimalmistakes[0],
+                    format='{char} {percent:2.0%} {hour:d}:{min:02d} {watt:.2f} W',
+                ),
+                widget.TextBox(
+                    text='🞀',
+                    fontsize="50",
+                    foreground=minimalmistakes[4],
+                    background=minimalmistakes[3],
+                    padding=-2,
+                ),
+                widget.Backlight(
+                    fmt=' {}',
+                    backlight_name="intel_backlight",
+                    background=minimalmistakes[4],
+                    foreground=minimalmistakes[0],
+                ),
+                widget.TextBox(
+                    text='🞀',
+                    fontsize="50",
+                    foreground=minimalmistakes[5],
+                    background=minimalmistakes[4],
+                    padding=-2,
+                ),
+                widget.Net(
+                    fmt=' {}',
+                    interface="wlp0s20f3",
+                    background=minimalmistakes[5],
+                    foreground=minimalmistakes[0],
+                ),
+                widget.TextBox(
+                    text='🞀',
+                    fontsize="50",
+                    foreground=minimalmistakes[6],
+                    background=minimalmistakes[5],
+                    padding=-2,
+                ),
+                widget.Clock(
+                    fmt=' {}',
+                    format='%Y-%m-%d %H:%M',
+                    background=minimalmistakes[6],
+                    foreground=minimalmistakes[0],
+                ),
+                widget.TextBox(
+                    text='🞀',
+                    fontsize="50",
+                    foreground=minimalmistakes[0],
+                    background=minimalmistakes[6],
+                    padding=-2,
+                ),
+                widget.Systray(fmt=' {}'),
+                widget.Sep(fmt=' {}', linewidth=10, foreground=minimalmistakes[0]),
+            ],
+            24,
+            background=minimalmistakes[0],
+            margin=5,
+            # border_width=[2, 2, 2, 2],  # Draw top and bottom borders
+            # border_color=["#a6ffa6", "#a6ffa6", "#a6ffa6",
+            #               "#a6ffa6"]  # Borders are green
+        ),
         bottom=bar.Bar(
             [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
+                widget.NvidiaSensors(),
+                widget.WindowName(fmt=' {}', max_chars=32),
                 widget.Chord(
+                    fmt=' {}',
                     chords_colors={
                         "launch": ("#ff0000", "#ffffff"),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn",
-                               foreground="#d75f5f"),
-                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                # widget.StatusNotifier(),
-                widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
+                # widget.SwapGraph(fmt=' {}', type='box'),
+                # widget.NetGraph(fmt=' {}', type='box'),
+                # widget.MemoryGraph(fmt=' {}', type='box'),
+                # widget.HDDGraph(fmt=' {}', type='box'),
+                # widget.CPUGraph(fmt=' {}', type='box'),
+                widget.TextBox("Press &lt;M-r&gt; to spawn", fmt=' {}', foreground="#d75f5f"),
+                widget.Clock(fmt=' {}', format="%Y-%m-%d %a %I:%M %p"),
             ],
             24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-        ), ),
+            background=minimalmistakes[0],
+            margin=5,
+            # border_width=[2, 2, 2, 2],  # Draw top and bottom borders
+            # border_color=["#a6ffa6", "#a6ffa6", "#a6ffa6",
+            #               "#a6ffa6"]  # Borders are green
+        ),
+    ),
+    Screen(
+        top=bar.Bar(
+            [
+                widget.Sep(fmt=' {}', linewidth=10, foreground=minimalmistakes[0]),
+                widget.GroupBox(fmt=' {}',
+                                hide_unused=True,
+                                borderwidth=2,
+                                active=minimalmistakes[11],
+                                inactive=minimalmistakes[0],
+                                this_screen_border=minimalmistakes[9],
+                                this_current_screen_border=minimalmistakes[6],
+                                urgent_border=minimalmistakes[12],
+                                urgent_text=minimalmistakes[12],
+                                visible_groups=["WebBrowser", "Mail", "Games", "Chat", "Settings"]),
+                widget.Prompt(fmt=' {}'),
+                widget.WindowName(fmt=' {}', max_chars=32),
+                widget.Notify(fmt=' {}'),
+                widget.TextBox(
+                    text='🞀',
+                    fontsize="50",
+                    foreground=minimalmistakes[1],
+                    padding=-2,
+                ),
+                widget.CurrentLayout(
+                    fmt=' {}',
+                    background=minimalmistakes[1],
+                    foreground=minimalmistakes[0],
+                ),
+                widget.TextBox(
+                    text='🞀',
+                    fontsize="50",
+                    foreground=minimalmistakes[2],
+                    background=minimalmistakes[1],
+                    padding=-2,
+                ),
+                widget.Volume(
+                    fmt=' {}',
+                    background=minimalmistakes[2],
+                    foreground=minimalmistakes[0],
+                ),
+                widget.TextBox(
+                    text='🞀',
+                    fontsize="50",
+                    foreground=minimalmistakes[3],
+                    background=minimalmistakes[2],
+                    padding=-2,
+                ),
+                widget.Battery(
+                    fmt=' {}',
+                    background=minimalmistakes[3],
+                    foreground=minimalmistakes[0],
+                    format='{char} {percent:2.0%} {hour:d}:{min:02d} {watt:.2f} W',
+                ),
+                widget.TextBox(
+                    text='🞀',
+                    fontsize="50",
+                    foreground=minimalmistakes[4],
+                    background=minimalmistakes[3],
+                    padding=-2,
+                ),
+                widget.Backlight(
+                    fmt=' {}',
+                    backlight_name="intel_backlight",
+                    background=minimalmistakes[4],
+                    foreground=minimalmistakes[0],
+                ),
+                widget.TextBox(
+                    text='🞀',
+                    fontsize="50",
+                    foreground=minimalmistakes[5],
+                    background=minimalmistakes[4],
+                    padding=-2,
+                ),
+                widget.Net(
+                    fmt=' {}',
+                    interface="wlp0s20f3",
+                    background=minimalmistakes[5],
+                    foreground=minimalmistakes[0],
+                ),
+                widget.TextBox(
+                    text='🞀',
+                    fontsize="50",
+                    foreground=minimalmistakes[6],
+                    background=minimalmistakes[5],
+                    padding=-2,
+                ),
+                widget.Clock(
+                    fmt=' {}',
+                    format='%Y-%m-%d %H:%M',
+                    background=minimalmistakes[6],
+                    foreground=minimalmistakes[0],
+                ),
+                widget.Sep(fmt=' {}', linewidth=10, foreground=minimalmistakes[0]),
+            ],
+            24,
+            background=minimalmistakes[0],
+            margin=5,
+            # border_width=[2, 2, 2, 2],  # Draw top and bottom borders
+            # border_color=["#a6ffa6", "#a6ffa6", "#a6ffa6",
+            #               "#a6ffa6"]  # Borders are green
+        ),
+        bottom=bar.Bar(
+            [
+                widget.Prompt(fmt=' {}'),
+                widget.WindowName(fmt=' {}', max_chars=32),
+                widget.Chord(
+                    fmt=' {}',
+                    chords_colors={
+                        "launch": ("#ff0000", "#ffffff"),
+                    },
+                    name_transform=lambda name: name.upper(),
+                ),
+                widget.TextBox("default config", fmt=' {}', name="default"),
+                widget.TextBox("Press &lt;M-r&gt; to spawn", fmt=' {}', foreground="#d75f5f"),
+                widget.Clock(fmt=' {}', format="%Y-%m-%d %a %I:%M %p"),
+            ],
+            24,
+            background=minimalmistakes[0],
+            margin=5,
+            # border_width=[2, 2, 2, 2],  # Draw top and bottom borders
+            # border_color=["#a6ffa6", "#a6ffa6", "#a6ffa6",
+            #               "#a6ffa6"]  # Borders are green
+        ),
+    ),
 ]
 
-# Drag floating layouts.
+###################
+## Floating Drag ##
+###################
 mouse = [
-    Drag([mod],
-         "Button1",
-         lazy.window.set_position_floating(),
-         start=lazy.window.get_position()),
-    Drag([mod],
-         "Button3",
-         lazy.window.set_size_floating(),
-         start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front()),
+    Drag([MOD], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
+    Drag([MOD], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Click([MOD], "Button2", lazy.window.bring_to_front()),
 ]
 
-dgroups_key_binder = None
-dgroups_app_rules = []  # type: list
+###################
+## Other Configs ##
+###################
+
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
@@ -218,3 +587,9 @@ wl_input_rules = None
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
+
+
+@hook.subscribe.startup_once
+def start_once():
+    for command in Commands.autostart:
+        subprocess.Popen([command], shell=True)
