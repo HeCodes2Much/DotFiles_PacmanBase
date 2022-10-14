@@ -2,17 +2,17 @@
 #-*-coding:utf-8 -*-
 #Auto updated?
 #   Yes
-#File :
+#File:
 #   autostart
-#Author :
+#Author:
 #   The-Repo-Club [wayne6324@gmail.com]
-#Github :
+#Github:
 #   https://github.com/The-Repo-Club/
 #
 #Created:
 #   Mon 22 November 2021, 03:15:54 PM [GMT+1]
-#Last edited:
-#   Wed 06 July 2022, 08:02:16 AM [GMT+1]
+#Modified:
+#   Thu 13 October 2022, 07:29:58 AM [GMT+1]
 #
 #Description:
 #   <Todo>
@@ -29,22 +29,29 @@ if command -v /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/n
   fi
 fi
 
-if command -v autotiling &>/dev/null; then
-  if ! pgrep -f "autotiling" >/dev/null; then
-    autotiling &
-  else
-    echo "autotiling already Running"
+if [[ $DESKTOP_SESSION != "qtile" ]]; then
+  if command -v autotiling &>/dev/null; then
+    if ! pgrep -f "autotiling" >/dev/null; then
+      autotiling &
+    else
+      echo "autotiling already Running"
+    fi
+  fi
+
+  if command -v xroot &>/dev/null; then
+    if ! pgrep -f "xroot" >/dev/null; then
+      if command -v xmenu_desktop &>/dev/null; then
+        if ! pgrep -f "xmenu_desktop" >/dev/null; then
+          xroot -r xmenu_desktop &
+        else
+          echo "xroot already Running"
+        fi
+      fi
+    else
+      echo "xroot already Running"
+    fi
   fi
 fi
-
-if command -v xroot &>/dev/null; then
-  if ! pgrep -f "xroot" >/dev/null; then
-    xroot -r xmenu_desktop &
-  else
-    echo "xroot already Running"
-  fi
-fi
-
 if command -v clipmenu-daemon &>/dev/null; then
   if ! pgrep -f "clipmenu-daemon" >/dev/null; then
     clipmenu-daemon &
@@ -116,7 +123,6 @@ fi
 ####################
 ## Fix Background ##
 ####################
-
 if ! command -v feh &>/dev/null; then
   echo "feh could not be found"
 else
