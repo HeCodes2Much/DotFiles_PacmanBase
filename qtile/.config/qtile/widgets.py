@@ -156,6 +156,7 @@ class Widgets(object):
         fmt='{}',
         padding=10,
         distro='Arch_paru',
+        no_update_string='No Updates!',
         mouse_callbacks={
             'Button1': lazy.spawn('pkgbrowser'),
         },

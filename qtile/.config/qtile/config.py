@@ -77,7 +77,7 @@ class Commands(object):
     mail = 'thunderbird'
     kill = 'repomenue_kill'
 
-    autostart = [browser, terminal, files]
+    autostart = [files, terminal, browser]
     configure = ['autorandr --load qtile', 'autostart']
 
 
@@ -379,7 +379,7 @@ wl_input_rules = None
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = "LG3D"
+wmname = "Qtile 0.22.1"
 
 
 @hook.subscribe.startup_once
@@ -389,3 +389,8 @@ def start_once():
 
     for command in Commands.autostart:
         subprocess.Popen([command], shell=True)
+
+
+@hook.subscribe.client_managed
+def auto_focus(window):
+    window.group.cmd_toscreen()
