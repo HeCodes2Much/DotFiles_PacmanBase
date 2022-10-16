@@ -25,6 +25,7 @@ import subprocess
 
 from widgets import Widgets
 from groups import Groups
+from colors import colorScheme, currentColor
 
 locale.setlocale(locale.LC_ALL, '')
 
@@ -127,12 +128,9 @@ keys = [
     Key([MOD, CTRL], "c", lazy.spawn(Commands.editor), desc="Launch editor"),
     Key([MOD, SHIFT], "e", lazy.spawn(Commands.power), desc="Launch power menu"),
     Key([MOD, SHIFT], "Return", lazy.spawn(Commands.files), desc="Launch files"),
-    KeyChord([MOD, CTRL],
-             "g", [
-                 Key([], "s", lazy.spawn('prime-run steam'), desc="Spawn steam"),
-             ],
-             mode=False,
-             name="Launch Game"),
+    KeyChord([MOD, CTRL], "g", [
+        Key([], "s", lazy.spawn('prime-run steam'), desc="Spawn steam"),
+    ], mode=False, name="Launch Game"),
 
     # Audio Settings
     Key([], "XF86AudioMute", lazy.spawn("amixer -D pulse set Master toggle")),
@@ -164,6 +162,7 @@ groups.append(
     ScratchPad("scratchpad", [
         DropDown("term", "alacritty --class=scratch", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1),
         DropDown("clifm", "alacritty --class=clifm -e clifm", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
+        DropDown("btop", "alacritty --class=btop -e btop", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
         DropDown("volume", "pavucontrol", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
     ]))
 
@@ -171,6 +170,7 @@ groups.append(
 keys.extend([
     Key([CTRL], "Return", lazy.group['scratchpad'].dropdown_toggle('term')),
     Key([ALT], "c", lazy.group['scratchpad'].dropdown_toggle('clifm')),
+    Key([ALT], "b", lazy.group['scratchpad'].dropdown_toggle('btop')),
     Key([ALT], "v", lazy.group['scratchpad'].dropdown_toggle('volume')),
 ])
 
@@ -179,22 +179,35 @@ keys.extend([
 ####################
 
 # Layout Theme
-layout_theme = {"border_width": 2, "margin": 5, "border_focus": "#a6ffa6", "border_normal": "#434c5e"}
+layout_theme = {
+    "border_width": 2,
+    "margin": 5,
+    "border_focus": colorScheme[10],
+    "border_normal": currentColor,
+}
 
 layouts = [
-    layout.Tile(**layout_theme),
-    layout.Columns(**layout_theme),
-    layout.Max(),
+    layout.Tile(
+        **layout_theme,
+        add_after_last=True,
+    ),
+    layout.Columns(**layout_theme,),
+    layout.Max(**layout_theme,),
     # Try more layouts by unleashing below layouts.
     layout.Stack(**layout_theme, num_stacks=2),
     # layout.Bsp(**layout_theme),
-    layout.Matrix(**layout_theme),
-    layout.MonadTall(**layout_theme),
-    layout.MonadWide(**layout_theme),
-    layout.RatioTile(**layout_theme),
-    # layout.TreeTab(**layout_theme),
-    # layout.VerticalTile(**layout_theme),
-    # layout.Zoomy(**layout_theme),
+    layout.MonadThreeCol(
+        **layout_theme,
+        ratio=0.4,
+        new_client_position="after_current",
+    ),
+    layout.Matrix(**layout_theme,),
+    layout.MonadTall(**layout_theme,),
+    layout.MonadWide(**layout_theme,),
+    layout.RatioTile(**layout_theme,),
+    # layout.TreeTab(**layout_theme,),
+    # layout.VerticalTile(**layout_theme,),
+    layout.Zoomy(**layout_theme,),
 ]
 
 floating_layout = layout.Floating(
@@ -234,7 +247,7 @@ screens = [
                 Widgets.sep,
                 Widgets.power1,
                 Widgets.sep,
-                Widgets.windowName,
+                Widgets.windowName1,
                 Widgets.sep,
                 Widgets.updates,
                 Widgets.sep,
@@ -288,7 +301,7 @@ screens = [
                 Widgets.sep,
                 Widgets.power2,
                 Widgets.sep,
-                Widgets.windowName,
+                Widgets.windowName2,
                 Widgets.sep,
                 Widgets.updates,
                 Widgets.sep,

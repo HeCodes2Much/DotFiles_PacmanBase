@@ -17,7 +17,9 @@ colorScheme = [
     ["e5e9f0", "e5e9f0"],  # 15
     ["e5e9f0", "e5e9f0"],  # foregroundColor
     ["283036", "283036"],  # backgroundColor
+    ["434c5e", "434c5e"],  # backgroundColor
 ]
 
 foregroundColor = colorScheme[16]
 backgroundColor = colorScheme[17]
+currentColor = colorScheme[18]

@@ -47,14 +47,14 @@ class Widgets(object):
         padding_x=6,
         borderwidth=2,
         disable_drag=True,
-        active=colorScheme[4],
+        active=colorScheme[6],
         inactive=foregroundColor,
         hide_unused=True,
         rounded=False,
         highlight_method="line",
-        highlight_color=['283036', '283036'],
-        this_current_screen_border=colorScheme[5],
-        this_screen_border=colorScheme[7],
+        highlight_color=backgroundColor,
+        this_current_screen_border=colorScheme[2],
+        this_screen_border=colorScheme[1],
         other_screen_border=colorScheme[6],
         other_current_screen_border=colorScheme[6],
         urgent_alert_method="line",
@@ -75,14 +75,14 @@ class Widgets(object):
         padding_x=6,
         borderwidth=2,
         disable_drag=True,
-        active=colorScheme[4],
+        active=colorScheme[6],
         inactive=foregroundColor,
         hide_unused=True,
         rounded=False,
         highlight_method="line",
-        highlight_color=['283036', '283036'],
-        this_current_screen_border=colorScheme[5],
-        this_screen_border=colorScheme[7],
+        highlight_color=backgroundColor,
+        this_current_screen_border=colorScheme[2],
+        this_screen_border=colorScheme[1],
         other_screen_border=colorScheme[6],
         other_current_screen_border=colorScheme[6],
         urgent_alert_method="line",
@@ -94,9 +94,16 @@ class Widgets(object):
         visible_groups=["6", "7", "8", "9", "0"],
     )
 
-    windowName = widget.WindowName(
+    windowName1 = widget.WindowName(
         font="SauceCodePro Nerd Font",
-        foreground=colorScheme[0],
+        foreground=backgroundColor,
+        background=colorScheme[10],
+        padding=10,
+    )
+
+    windowName2 = widget.WindowName(
+        font="SauceCodePro Nerd Font",
+        foreground=backgroundColor,
         background=colorScheme[10],
         padding=10,
     )
