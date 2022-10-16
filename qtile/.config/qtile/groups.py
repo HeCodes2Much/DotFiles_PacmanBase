@@ -4,7 +4,7 @@ class Groups(object):
     groups = [
         # first group that hold the terminals
         Group(
-            label=' Terminal',
+            # label='',
             init=True,
             exclusive=False,
             persist=False,
@@ -14,7 +14,7 @@ class Groups(object):
             name='1',
         ),
         Group(
-            label=' Editor',
+            # label='',
             init=True,
             exclusive=False,
             persist=False,
@@ -24,7 +24,7 @@ class Groups(object):
             name='2',
         ),
         Group(
-            label=' Files',
+            # label='',
             init=True,
             exclusive=False,
             persist=False,
@@ -34,7 +34,7 @@ class Groups(object):
             name='3',
         ),
         Group(
-            label=' Graphics',
+            # label='',
             init=True,
             exclusive=False,
             persist=False,
@@ -44,7 +44,7 @@ class Groups(object):
             name='4',
         ),
         Group(
-            label='ﱘ Music',
+            # label='ﱘ',
             init=True,
             exclusive=False,
             persist=False,
@@ -54,7 +54,7 @@ class Groups(object):
             name='5',
         ),
         Group(
-            label=' WebBrowser',
+            # label='',
             init=True,
             persist=False,
             exclusive=False,
@@ -64,7 +64,7 @@ class Groups(object):
             name='6',
         ),
         Group(
-            label=' Mail',
+            # label='',
             init=True,
             persist=False,
             exclusive=False,
@@ -74,7 +74,7 @@ class Groups(object):
             name='7',
         ),
         Group(
-            label='調 Games',
+            # label='調',
             init=True,
             persist=False,
             exclusive=False,
@@ -84,7 +84,7 @@ class Groups(object):
             name='8',
         ),
         Group(
-            label=' Chat',
+            # label='',
             init=True,
             persist=False,
             exclusive=False,
@@ -94,7 +94,7 @@ class Groups(object):
             name='9',
         ),
         Group(
-            label=' Settings',
+            # label='',
             init=True,
             persist=False,
             exclusive=False,

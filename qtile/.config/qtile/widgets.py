@@ -1,4 +1,4 @@
-from config import colorScheme, foregroundColor, backgroundColor
+from colors import colorScheme, foregroundColor, backgroundColor
 from libqtile import widget
 from libqtile.lazy import lazy
 
@@ -12,22 +12,35 @@ class Widgets(object):
         background=colorScheme[0],
     )
 
+    space = widget.Spacer()
+
     launcher = widget.Image(
         fmt='{}',
         filename='~/.config/qtile/art/Archlinux-icon.svg',
         margin=3,
-        foreground=colorScheme[2],
-        mouse_callbacks={
-            'Button1':
-                lazy.spawn(
-                    'repomenu_desktop --repomenu="repomenu -h 50 -i -l 15 -w 500 -y 32 -x 5 -p Launcher -q Search..."')
-        },
+        mouse_callbacks={'Button1': lazy.spawn('repomenu_desktop --repomenu="repomenu -h 50 -i -l 15 -w 500 -y 32 -x 5 -p Launcher -q Search..."')},
+    )
+
+    power1 = widget.LaunchBar(
+        text_only=True,
+        foreground=colorScheme[1],
+        progs=[
+            ('⏻ ', 'repomenue_powermenu', 'launch repomenu powermenu'),
+        ],
+    )
+
+    power2 = widget.LaunchBar(
+        text_only=True,
+        foreground=colorScheme[1],
+        progs=[
+            ('⏻ ', 'repomenue_powermenu', 'launch repomenu powermenu'),
+        ],
     )
 
     groupBox1 = widget.GroupBox(
         font="SauceCodePro Nerd Font",
         fontsize=16,
-        margin_y=2,
+        margin_y=4,
         margin_x=4,
         padding_y=6,
         padding_x=6,
@@ -55,7 +68,7 @@ class Widgets(object):
     groupBox2 = widget.GroupBox(
         font="SauceCodePro Nerd Font",
         fontsize=16,
-        margin_y=2,
+        margin_y=4,
         margin_x=4,
         padding_y=6,
         padding_x=6,
@@ -160,4 +173,9 @@ class Widgets(object):
         mouse_callbacks={
             'Button1': lazy.spawn('pkgbrowser'),
         },
+    )
+
+    picom = widget.Picom(
+        fmt='{}',
+        padding=10,
     )

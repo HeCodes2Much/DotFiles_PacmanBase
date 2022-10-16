@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 network() {
-    R1=`cat /sys/class/net/wlan0/statistics/rx_bytes`
-    T1=`cat /sys/class/net/wlan0/statistics/tx_bytes`
+    R1=`cat /sys/class/net/wlp0s20f3/statistics/rx_bytes`
+    T1=`cat /sys/class/net/wlp0s20f3/statistics/tx_bytes`
     sleep 1
-    R2=`cat /sys/class/net/wlan0/statistics/rx_bytes`
-    T2=`cat /sys/class/net/wlan0/statistics/tx_bytes`
+    R2=`cat /sys/class/net/wlp0s20f3/statistics/rx_bytes`
+    T2=`cat /sys/class/net/wlp0s20f3/statistics/tx_bytes`
     TBPS=`expr $T2 - $T1`
     RBPS=`expr $R2 - $R1`
     TKBPS=`echo "$TBPS / 1024"| bc`

@@ -37,29 +37,7 @@ from libqtile.dgroups import simple_key_binder
 ## Color Schemes ##
 ###################
 
-colorScheme = [
-    ["283036", "283036"],  # 0
-    ["ff5959", "ff5959"],  # 1
-    ["59ff59", "59ff59"],  # 2
-    ["ffff59", "ffff59"],  # 3
-    ["9059ff", "9059ff"],  # 4
-    ["ff59f9", "ff59f9"],  # 5
-    ["59fff9", "59fff9"],  # 6
-    ["e5e9f0", "e5e9f0"],  # 7
-    ["43515e", "43515e"],  # 8
-    ["ffa6a6", "ffa6a6"],  # 9
-    ["a6ffa6", "a6ffa6"],  # 10
-    ["ffffa6", "ffffa6"],  # 11
-    ["c5a6ff", "c5a6ff"],  # 12
-    ["ffa6fc", "ffa6fc"],  # 13
-    ["a6fffc", "a6fffc"],  # 14
-    ["e5e9f0", "e5e9f0"],  # 15
-    ["e5e9f0", "e5e9f0"],  # foregroundColor
-    ["283036", "283036"],  # backgroundColor
-]
-
-foregroundColor = colorScheme[16]
-backgroundColor = colorScheme[17]
+from colors import foregroundColor, backgroundColor
 
 ###########
 ## Utils ##
@@ -151,12 +129,9 @@ keys = [
     Key([MOD, SHIFT], "Return", lazy.spawn(Commands.files), desc="Launch files"),
     KeyChord([MOD, CTRL],
              "g", [
-                 Key([], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-                 Key([], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
-                 Key([], "j", lazy.layout.grow_down(), desc="Grow window down"),
-                 Key([], "k", lazy.layout.grow_up(), desc="Grow window up"),
+                 Key([], "s", lazy.spawn('prime-run steam'), desc="Spawn steam"),
              ],
-             mode=True,
+             mode=False,
              name="Launch Game"),
 
     # Audio Settings
@@ -257,6 +232,8 @@ screens = [
                 Widgets.sep,
                 Widgets.groupBox1,
                 Widgets.sep,
+                Widgets.power1,
+                Widgets.sep,
                 Widgets.windowName,
                 Widgets.sep,
                 Widgets.updates,
@@ -287,6 +264,9 @@ screens = [
             [
                 Widgets.weather,
                 Widgets.sep,
+                Widgets.space,
+                Widgets.picom,
+                Widgets.sep,
                 Widgets.chords,
             ],
             24,
@@ -303,6 +283,8 @@ screens = [
                 Widgets.launcher,
                 Widgets.sep,
                 Widgets.groupBox2,
+                Widgets.sep,
+                Widgets.power2,
                 Widgets.sep,
                 Widgets.windowName,
                 Widgets.sep,
