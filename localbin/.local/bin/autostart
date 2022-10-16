@@ -12,7 +12,7 @@
 #Created:
 #   Mon 22 November 2021, 03:15:54 PM [GMT+1]
 #Modified:
-#   Thu 13 October 2022, 07:29:58 AM [GMT+1]
+#   Sun 16 October 2022, 05:05:58 PM [GMT+1]
 #
 #Description:
 #   <Todo>
@@ -64,7 +64,7 @@ if ! command -v picom &>/dev/null; then
   echo "picom could not be found"
 else
   if ! pgrep -x "picom" >/dev/null; then
-    picom -CGb --experimental-backend --config "$HOME"/.config/i3/picom.conf &
+    picom -CGb --experimental-backend --config "$HOME"/.config/picom/picom.conf &
   else
     echo "picom already Running"
   fi
@@ -118,6 +118,14 @@ if command -v volumeicon &>/dev/null; then
   else
     echo "volumeicon already Running"
   fi
+fi
+
+if command -v cbatticon &>/dev/null; then
+    if ! pgrep -x "cbatticon" >/dev/null; then
+        cbatticon &
+    else
+        echo "cbatticon already Running"
+    fi
 fi
 
 ####################

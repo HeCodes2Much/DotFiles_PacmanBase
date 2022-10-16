@@ -5,7 +5,7 @@
 #The icon that would change color
 if pgrep -x "picom" > /dev/null
 then
-	echo "Loaded"
+	echo -n "Loaded"
 else
-	echo "UnLoaded"
+	echo -n "UnLoaded"
 fi
