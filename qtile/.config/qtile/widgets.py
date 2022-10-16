@@ -1,6 +1,7 @@
 from colors import colorScheme, foregroundColor, backgroundColor
 from libqtile import widget
 from libqtile.lazy import lazy
+import subprocess
 
 
 class Widgets(object):
@@ -175,7 +176,62 @@ class Widgets(object):
         },
     )
 
-    picom = widget.Picom(
+    picom = widget.GenPollText(
         fmt='{}',
+        func=lambda: subprocess.check_output("/home/repo/.config/qtile/scripts/picom.sh").decode("utf-8"),
+        mouse_callbacks={
+            'Button1': lambda: subprocess.run("/home/repo/.config/qtile/scripts/picom-toggle.sh"),
+        },
+        update_interval=1,
         padding=10,
+    )
+
+    github1 = widget.WidgetBox(
+        widgets=[
+            widget.GenPollText(
+                fmt='{}',
+                func=lambda: subprocess.check_output("/home/repo/.config/qtile/scripts/github/notifications").decode("utf-8"),
+                update_interval=10,
+                padding=10,
+            ),
+            widget.GenPollText(
+                fmt='{}',
+                func=lambda: subprocess.check_output("/home/repo/.config/qtile/scripts/github/gists").decode("utf-8"),
+                update_interval=10,
+                padding=10,
+            ),
+            widget.GenPollText(
+                fmt='{}',
+                func=lambda: subprocess.check_output("/home/repo/.config/qtile/scripts/github/repositories").decode("utf-8"),
+                update_interval=10,
+                padding=10,
+            ),
+        ],
+        text_closed='[Github <]',
+        text_open='[Github >]',
+    )
+
+    github2 = widget.WidgetBox(
+        widgets=[
+            widget.GenPollText(
+                fmt='{}',
+                func=lambda: subprocess.check_output("/home/repo/.config/qtile/scripts/github/notifications").decode("utf-8"),
+                update_interval=10,
+                padding=10,
+            ),
+            widget.GenPollText(
+                fmt='{}',
+                func=lambda: subprocess.check_output("/home/repo/.config/qtile/scripts/github/gists").decode("utf-8"),
+                update_interval=10,
+                padding=10,
+            ),
+            widget.GenPollText(
+                fmt='{}',
+                func=lambda: subprocess.check_output("/home/repo/.config/qtile/scripts/github/repositories").decode("utf-8"),
+                update_interval=10,
+                padding=10,
+            ),
+        ],
+        text_closed='[Github <]',
+        text_open='[Github >]',
     )

@@ -267,6 +267,8 @@ screens = [
                 Widgets.space,
                 Widgets.picom,
                 Widgets.sep,
+                Widgets.github1,
+                Widgets.sep,
                 Widgets.chords,
             ],
             24,
@@ -313,6 +315,11 @@ screens = [
         bottom=bar.Bar(
             [
                 Widgets.weather,
+                Widgets.sep,
+                Widgets.space,
+                Widgets.picom,
+                Widgets.sep,
+                Widgets.github2,
                 Widgets.sep,
                 Widgets.chords,
             ],

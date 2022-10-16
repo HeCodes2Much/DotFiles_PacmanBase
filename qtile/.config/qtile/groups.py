@@ -1,5 +1,6 @@
 from libqtile.config import Group, Match
 
+
 class Groups(object):
     groups = [
         # first group that hold the terminals
@@ -7,7 +8,7 @@ class Groups(object):
             # label='',
             init=True,
             exclusive=False,
-            persist=False,
+            persist=True,
             matches=[Match(wm_class=['Alacritty', 'kitty'])],
             position=1,
             screen_affinity=1,
@@ -17,7 +18,7 @@ class Groups(object):
             # label='',
             init=True,
             exclusive=False,
-            persist=False,
+            persist=True,
             matches=[Match(wm_class=['Code'])],
             position=2,
             screen_affinity=1,
@@ -27,7 +28,7 @@ class Groups(object):
             # label='',
             init=True,
             exclusive=False,
-            persist=False,
+            persist=True,
             matches=[Match(wm_class=['Nemo'])],
             position=3,
             screen_affinity=1,
@@ -37,8 +38,8 @@ class Groups(object):
             # label='',
             init=True,
             exclusive=False,
-            persist=False,
-            matches=[Match(wm_class=['Nemo'])],
+            persist=True,
+            # matches=[Match(wm_class=['Nemo'])],
             position=4,
             screen_affinity=1,
             name='4',
@@ -47,8 +48,8 @@ class Groups(object):
             # label='ﱘ',
             init=True,
             exclusive=False,
-            persist=False,
-            matches=[Match(wm_class=['Nemo'])],
+            persist=True,
+            # matches=[Match(wm_class=['Nemo'])],
             position=5,
             screen_affinity=1,
             name='5',
@@ -56,7 +57,7 @@ class Groups(object):
         Group(
             # label='',
             init=True,
-            persist=False,
+            persist=True,
             exclusive=False,
             matches=[Match(wm_class=['firefox'], role=['browser'])],
             position=6,
@@ -66,7 +67,7 @@ class Groups(object):
         Group(
             # label='',
             init=True,
-            persist=False,
+            persist=True,
             exclusive=False,
             #   matches=[Match(wm_class=['firefox'])],
             position=7,
@@ -76,9 +77,9 @@ class Groups(object):
         Group(
             # label='調',
             init=True,
-            persist=False,
+            persist=True,
             exclusive=False,
-            #   matches=[Match(wm_class=['firefox'])],
+            matches=[Match(wm_class=['Steam'])],
             position=8,
             screen_affinity=2,
             name='8',
@@ -86,9 +87,9 @@ class Groups(object):
         Group(
             # label='',
             init=True,
-            persist=False,
+            persist=True,
             exclusive=False,
-            #   matches=[Match(wm_class=['firefox'])],
+            matches=[Match(wm_class=['discord'])],
             position=9,
             screen_affinity=2,
             name='9',
@@ -96,7 +97,7 @@ class Groups(object):
         Group(
             # label='',
             init=True,
-            persist=False,
+            persist=True,
             exclusive=False,
             matches=[Match(wm_class=['PkgBrowser'])],
             position=10,
