@@ -191,7 +191,6 @@ keys = [
 dgroups_key_binder = simple_key_binder(MOD)
 dgroups_app_rules = []  # type: list
 
-
 def show_keys(keys):
     """
   print current keybindings in a pretty way for a rofi/dmenu window.
