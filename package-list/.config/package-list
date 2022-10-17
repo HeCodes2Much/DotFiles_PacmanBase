@@ -67,6 +67,7 @@ python-buildozer
 python-gputil
 python-kivymd
 qt-logout
+qtile-extras
 recycle-cli
 repo-exec
 repomenu
