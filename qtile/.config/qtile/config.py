@@ -51,6 +51,7 @@ class Commands(object):
     menu = 'repomenu_run -i -l 10 -w 600 -c -p "Launcher" -q "Launch a app"'
     browser = 'firefox'
     terminal = 'alacritty'
+    btop = 'alacritty --class=btop -e btop'
     powermenu = 'repomenue_powermenu'
     vbox = 'virt-manager'
     files = 'nemo'
@@ -123,6 +124,7 @@ keys = [
     Key([MOD, CTRL], "c", lazy.spawn(Commands.editor), desc="Launch editor", group="Launch"),
     Key([MOD, SHIFT], "e", lazy.spawn(Commands.powermenu), desc="Launch power menu", group="Launch"),
     Key([MOD, SHIFT], "Return", lazy.spawn(Commands.files), desc="Launch files", group="Launch"),
+    Key([MOD], "b", lazy.spawn(Commands.btop), desc="Launch btop", group="Utils"),
 
     # Audio Settings
     Key([], "XF86AudioMute", lazy.spawn("amixer -D pulse set Master toggle")),

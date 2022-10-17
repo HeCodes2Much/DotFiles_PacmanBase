@@ -18,6 +18,7 @@ Launch               [MOD] + [CTRL] + f             Launch Browser
 Launch               [MOD] + [CTRL] + c             Launch Editor
 Launch               [MOD] + [SHIFT] + e            Launch Power Menu
 Launch               [MOD] + [SHIFT] + Return       Launch Files
+Utils                [MOD] + b                      Launch Btop
 Keychord             [MOD] + r                      Resize Windows
 Keychord             [MOD] + [CTRL] + g             Launch Game
 Keychord             [MOD] + Print                  Take A Screenshot
