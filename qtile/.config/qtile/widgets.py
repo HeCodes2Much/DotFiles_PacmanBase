@@ -40,7 +40,7 @@ class Widgets(object):
     )
 
     groupBox1 = widget.GroupBox(
-        font="SauceCodePro Nerd Font",
+        font="Hack Nerd Font",
         fontsize=16,
         margin_y=4,
         margin_x=4,
@@ -68,7 +68,7 @@ class Widgets(object):
     )
 
     groupBox2 = widget.GroupBox(
-        font="SauceCodePro Nerd Font",
+        font="Hack Nerd Font",
         fontsize=16,
         margin_y=4,
         margin_x=4,
@@ -96,16 +96,18 @@ class Widgets(object):
     )
 
     windowName1 = widget.WindowName(
-        font="SauceCodePro Nerd Font",
+        font="Hack Nerd Font",
         foreground=backgroundColor,
         background=colorScheme[10],
+        max_chars=42,
         padding=10,
     )
 
     windowName2 = widget.WindowName(
-        font="SauceCodePro Nerd Font",
+        font="Hack Nerd Font",
         foreground=backgroundColor,
         background=colorScheme[10],
+        max_chars=42,
         padding=10,
     )
 
@@ -141,7 +143,7 @@ class Widgets(object):
         foreground=colorScheme[6],
         format='%d %B %Y',
         padding=10,
-        font="SauceCodePro Nerd Font",
+        font="Hack Nerd Font",
     )
 
     time = widget.Clock(
@@ -149,7 +151,7 @@ class Widgets(object):
         foreground=colorScheme[6],
         format='%I:%M %p',
         padding=10,
-        font="SauceCodePro Nerd Font",
+        font="Hack Nerd Font",
     )
 
     tray = widget.Systray(
@@ -168,6 +170,7 @@ class Widgets(object):
         chords_colors={
             "Resize Windows": (colorScheme[0], colorScheme[1]),
             "Launch Game": (colorScheme[0], colorScheme[2]),
+            "Take a Screenshot": (colorScheme[0], colorScheme[3]),
         },
         name_transform=lambda name: name.upper(),
     )
