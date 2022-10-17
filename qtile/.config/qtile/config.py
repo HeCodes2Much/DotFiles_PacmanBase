@@ -96,33 +96,33 @@ SHIFT = 'shift'
 
 keys = [
     # qtile commands
-    Key([MOD, SHIFT], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([MOD, CTRL], "r", lazy.restart(), desc="Restart qtile"),
+    Key([MOD, SHIFT], "r", lazy.reload_config(), desc="Reload the config", group="Qtile"),
+    Key([MOD, CTRL], "r", lazy.restart(), desc="Restart qtile", group="Qtile"),
 
     # Switch between windows
-    Key([MOD], "h", lazy.layout.left(), desc="Move focus to left"),
-    Key([MOD], "l", lazy.layout.right(), desc="Move focus to right"),
-    Key([MOD], "j", lazy.layout.down(), desc="Move focus down"),
-    Key([MOD], "k", lazy.layout.up(), desc="Move focus up"),
+    Key([MOD], "h", lazy.layout.left(), desc="Move focus to left", group="Moving"),
+    Key([MOD], "l", lazy.layout.right(), desc="Move focus to right", group="Moving"),
+    Key([MOD], "j", lazy.layout.down(), desc="Move focus down", group="Moving"),
+    Key([MOD], "k", lazy.layout.up(), desc="Move focus up", group="Moving"),
 
     # reset all windows
-    Key([MOD], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([MOD], "n", lazy.layout.normalize(), desc="Reset all window sizes", group="Reset"),
 
     # Toggle between different layouts as defined below
-    Key([MOD], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([MOD], "t", lazy.window.toggle_floating(), desc='Toggle floating'),
-    Key([MOD], "q", lazy.window.kill(), desc="Kill focused window"),
-    Key([MOD, SHIFT], "q", lazy.spawn(Commands.killmenu), desc="Launch kill menu"),
+    Key([MOD], "Tab", lazy.next_layout(), desc="Toggle between layouts", group="Toggle"),
+    Key([MOD], "t", lazy.window.toggle_floating(), desc='Toggle floating', group="Toggle"),
+    Key([MOD], "q", lazy.window.kill(), desc="Kill focused window", group="Kill"),
+    Key([MOD, SHIFT], "q", lazy.spawn(Commands.killmenu), desc="Launch kill menu", group="Kill"),
 
     # Custom keybinds
-    Key([MOD], "Return", lazy.spawn(Commands.terminal), desc="Launch terminal"),
-    Key([MOD], "m", lazy.spawn(Commands.menu), desc="Launch menu"),
-    Key([MOD], "p", lazy.spawn(Commands.passmenu), desc="Launch password menu"),
-    Key([MOD], "s", lazy.spawn(Commands.smartmenu), desc="Launch smart menu"),
-    Key([MOD, CTRL], "f", lazy.spawn(Commands.browser), desc="Launch browser"),
-    Key([MOD, CTRL], "c", lazy.spawn(Commands.editor), desc="Launch editor"),
-    Key([MOD, SHIFT], "e", lazy.spawn(Commands.powermenu), desc="Launch power menu"),
-    Key([MOD, SHIFT], "Return", lazy.spawn(Commands.files), desc="Launch files"),
+    Key([MOD], "Return", lazy.spawn(Commands.terminal), desc="Launch terminal", group="Launch"),
+    Key([MOD], "m", lazy.spawn(Commands.menu), desc="Launch menu", group="Launch"),
+    Key([MOD], "p", lazy.spawn(Commands.passmenu), desc="Launch password menu", group="Launch"),
+    Key([MOD], "s", lazy.spawn(Commands.smartmenu), desc="Launch smart menu", group="Launch"),
+    Key([MOD, CTRL], "f", lazy.spawn(Commands.browser), desc="Launch browser", group="Launch"),
+    Key([MOD, CTRL], "c", lazy.spawn(Commands.editor), desc="Launch editor", group="Launch"),
+    Key([MOD, SHIFT], "e", lazy.spawn(Commands.powermenu), desc="Launch power menu", group="Launch"),
+    Key([MOD, SHIFT], "Return", lazy.spawn(Commands.files), desc="Launch files", group="Launch"),
 
     # Audio Settings
     Key([], "XF86AudioMute", lazy.spawn("amixer -D pulse set Master toggle")),
@@ -138,6 +138,52 @@ keys = [
     # xBacklight
     Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight +10")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -10")),
+
+    ################
+    ## Key Chords ##
+    ################
+
+    # Grow windows. If current window is on the edge of screen and direction
+    # will be to screen edge - window would shrink.
+    KeyChord(
+        [MOD],
+        "r",
+        [
+            Key([], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
+            Key([], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
+            Key([], "j", lazy.layout.grow_down(), desc="Grow window down"),
+            Key([], "k", lazy.layout.grow_up(), desc="Grow window up"),
+        ],
+        mode=True,
+        name="Resize Windows",
+        desc="Resize Windows",
+        group="KeyChord",
+    ),
+    KeyChord(
+        [MOD, CTRL],
+        "g",
+        [
+            Key([], "s", lazy.spawn('prime-run steam'), desc="Spawn steam"),
+            Key([], "m", lazy.spawn('prime-run minecraft'), desc="Spawn minecraft"),
+        ],
+        mode=False,
+        name="Launch Game",
+        desc="Launch Game",
+        group="KeyChord",
+    ),
+    KeyChord(
+        [MOD],
+        "Print",
+        [
+            Key([], "w", lazy.spawn('win-shot -w'), desc="Screen Shot Window"),
+            Key([], "s", lazy.spawn('win-shot -s'), desc="Screen Shot Selected"),
+            Key([], "f", lazy.spawn('win-shot -f'), desc="Screen Shot Full"),
+        ],
+        mode=False,
+        name="Take a Screenshot",
+        desc="Take a Screenshot",
+        group="KeyChord",
+    ),
 ]
 
 dgroups_key_binder = simple_key_binder(MOD)
@@ -148,7 +194,7 @@ def show_keys(keys):
     """
   print current keybindings in a pretty way for a rofi/dmenu window.
   """
-    key_help = "{:<30} {}\n".format('Keybinds', 'Description')
+    key_help = "{:<20} {:<30} {}\n".format('Group', 'Keybinds', 'Description')
     keys_ignored = (
         "XF86AudioMute",  #
         "XF86AudioLowerVolume",  #
@@ -174,6 +220,7 @@ def show_keys(keys):
         mods = ""
         key = ""
         desc = k.desc.title()
+        group = k.group.title()
         for m in k.modifiers:
             if m in text_replaced.keys():
                 mods += text_replaced[m] + " + "
@@ -188,52 +235,21 @@ def show_keys(keys):
         else:
             key = k.key
 
-        key_line = "{:<30} {}\n".format(mods + key, desc)
+        key_line = "{:<20} {:<30} {}\n".format(group, mods + key, desc)
         key_help += key_line
+
+    with open('/home/repo/.config/qtile/packages.txt', 'w') as outfile:
+        outfile.write(key_help)
 
     return key_help
 
+
 # this must be done AFTER all the keys have been defined
+cheater = Commands.terminal + " --class='Cheater' -e sh -c 'echo \"" + show_keys(
+    keys
+) + "\" | fzf --prompt=\"Search for a keybind: \" --border=rounded --margin=1% --color=dark --height 100% --reverse --header=\"       QTILE CHEAT SHEET \" --info=hidden --header-first'"
 keys.extend([
-    Key([MOD],
-        "F1",
-        lazy.spawn(Commands.terminal + " --class='Cheater' -e sh -c 'echo \"" + show_keys(keys) + "\" | fzf --prompt=\"Search for a keybind: \" --border=rounded --margin=1% --color=dark --height 100% --reverse --header=\"       QTILE CHEAT SHEET \" --info=hidden --header-first'"),
-        desc="Print keyboard bindings")
-])
-
-################
-## Key Chords ##
-################
-
-keys.extend([
-    # Grow windows. If current window is on the edge of screen and direction
-    # will be to screen edge - window would shrink.
-    KeyChord([MOD],
-             "r", [
-                 Key([], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-                 Key([], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
-                 Key([], "j", lazy.layout.grow_down(), desc="Grow window down"),
-                 Key([], "k", lazy.layout.grow_up(), desc="Grow window up"),
-             ],
-             mode=True,
-             name="Resize Windows"),
-
-    KeyChord([MOD, CTRL],
-             "g", [
-                 Key([], "s", lazy.spawn('prime-run steam'), desc="Spawn steam"),
-                 Key([], "m", lazy.spawn('prime-run minecraft'), desc="Spawn minecraft"),
-             ],
-             mode=False,
-             name="Launch Game"),
-
-    KeyChord([MOD],
-             "Print", [
-                 Key([], "w", lazy.spawn('win-shot -w'), desc="Screen Shot Window"),
-                 Key([], "s", lazy.spawn('win-shot -s'), desc="Screen Shot Selected"),
-                 Key([], "f", lazy.spawn('win-shot -f'), desc="Screen Shot Full"),
-             ],
-             mode=False,
-             name="Take a Screenshot"),
+    Key([MOD], "F1", lazy.spawn(cheater), desc="Print keyboard bindings"),
 ])
 
 ############
@@ -246,6 +262,7 @@ groups = Groups.groups
 groups.append(
     ScratchPad("scratchpad", [
         DropDown("term", "alacritty --class=scratch", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1),
+        DropDown("cheat", cheater, width=0.4, height=0.7, x=0.3, y=0.2, opacity=0.9),
         DropDown("clifm", "alacritty --class=clifm -e clifm", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
         DropDown("btop", "alacritty --class=btop -e btop", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
         DropDown("volume", "pavucontrol", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
@@ -255,6 +272,7 @@ groups.append(
 keys.extend([
     Key([CTRL], "Return", lazy.group['scratchpad'].dropdown_toggle('term')),
     Key([ALT], "c", lazy.group['scratchpad'].dropdown_toggle('clifm')),
+    Key([ALT], "F1", lazy.group['scratchpad'].dropdown_toggle('cheat')),
     Key([ALT], "b", lazy.group['scratchpad'].dropdown_toggle('btop')),
     Key([ALT], "v", lazy.group['scratchpad'].dropdown_toggle('volume')),
 ])
