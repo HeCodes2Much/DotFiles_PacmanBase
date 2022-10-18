@@ -159,7 +159,13 @@ class Widgets(object):
         padding=5,
     )
 
-    currentLayout = widget.CurrentLayoutIcon(
+    currentLayout1 = widget.CurrentLayoutIcon(
+        fmt='{}',
+        scale=0.7,
+        padding=5,
+    )
+
+    currentLayout2 = widget.CurrentLayoutIcon(
         fmt='{}',
         scale=0.7,
         padding=5,

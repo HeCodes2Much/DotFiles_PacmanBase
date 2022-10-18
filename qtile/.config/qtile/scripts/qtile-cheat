@@ -13,15 +13,15 @@ configFile = expanduser("~/.config/qtile/keybinds.json")
 with open(f'{configFile}', mode='r') as inputfile:
     data = json.load(inputfile)
 
+
 def mode_label(mode):
     'Create a GTK label for mode' ''
     label = Gtk.Label()
     label.set_text(str(mode))
     return label
 
+
 class WMCheatWindow(Gtk.ApplicationWindow):
-
-
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -30,10 +30,8 @@ class WMCheatWindow(Gtk.ApplicationWindow):
         self.set_border_width(3)
 
         accel_group = Gtk.AccelGroup()
-        accel_group.connect(Gdk.keyval_from_name('Left'),
-                            Gdk.ModifierType.SUPER_MASK, 0, self.prev_mode)
-        accel_group.connect(Gdk.keyval_from_name('Right'),
-                            Gdk.ModifierType.SUPER_MASK, 0, self.next_mode)
+        accel_group.connect(Gdk.keyval_from_name('Left'), Gdk.ModifierType.SUPER_MASK, 0, self.prev_mode)
+        accel_group.connect(Gdk.keyval_from_name('Right'), Gdk.ModifierType.SUPER_MASK, 0, self.next_mode)
         accel_group.connect(Gdk.keyval_from_name('Escape'), 0, 0, self._quit)
         self.add_accel_group(accel_group)
 
@@ -49,29 +47,18 @@ class WMCheatWindow(Gtk.ApplicationWindow):
             for description in array:
                 keybind = array[description]['keybind']
                 command = array[description]['command']
-                store.append(
-                    [category,
-                     str(description),
-                     str(keybind),
-                     str(command)])
+                store.append([category, str(description), str(keybind), str(command)])
 
-            tree = Gtk.TreeView(model=store,
-                                headers_visible=True,
-                                enable_search=False,
-                                search_column=1)
+            tree = Gtk.TreeView(model=store, headers_visible=True, enable_search=False, search_column=1)
             tree.get_selection().set_mode(Gtk.SelectionMode.BROWSE)
             tree.set_cursor(Gtk.TreePath(0), None, False)
 
-            description_column = Gtk.TreeViewColumn("Description",
-                                                    Gtk.CellRendererText(),
-                                                    text=1)
+            description_column = Gtk.TreeViewColumn("Description", Gtk.CellRendererText(), text=1)
             description_column.set_min_width(300)
             description_column.set_max_width(500)
             tree.append_column(description_column)
 
-            keybind_column = Gtk.TreeViewColumn("Keybind",
-                                                Gtk.CellRendererText(),
-                                                text=2)
+            keybind_column = Gtk.TreeViewColumn("Keybind", Gtk.CellRendererText(), text=2)
             keybind_column.set_min_width(300)
             keybind_column.set_max_width(500)
             tree.append_column(keybind_column)
@@ -95,9 +82,7 @@ class WMCheatWindow(Gtk.ApplicationWindow):
 
         style = Gtk.CssProvider()
         style.load_from_data(WMCheat.CSS)
-        Gtk.StyleContext.add_provider_for_screen(
-            Gdk.Screen.get_default(), style,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+        Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
     def current_page(self):
         return self.notebook.get_nth_page(self.notebook.get_current_page())
@@ -136,16 +121,13 @@ class WMCheat(Gtk.Application):
     """
 
     def __init__(self):
-        super().__init__(application_id="com.github.The-Repo-Club.keybinds",
-                         flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE)
-        self.add_main_option('mode', ord('m'), 0, GLib.OptionArg.STRING,
-                             "Mode tab to open", "MODE")
+        super().__init__(application_id="com.github.The-Repo-Club.keybinds", flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE)
+        self.add_main_option('mode', ord('m'), 0, GLib.OptionArg.STRING, "Mode tab to open", "MODE")
         self._window = None
 
     def do_command_line(self, cl):
         if not self._window:
-            self._window = WMCheatWindow(application=self,
-                                         title="Window Manager Cheatsheet")
+            self._window = WMCheatWindow(application=self, title="Window Manager Cheatsheet")
             self._window.show_all()
 
         mode = cl.get_options_dict().lookup_value('mode')
