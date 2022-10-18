@@ -21,8 +21,10 @@
 # SOFTWARE.
 
 import re
+import json
 import locale
 import subprocess
+from os.path import expanduser
 
 from widgets import Widgets
 from groups import Groups
@@ -51,14 +53,13 @@ class Commands(object):
     menu = 'repomenu_run -i -l 10 -w 600 -c -p "Launcher" -q "Launch a app"'
     browser = 'firefox'
     terminal = 'alacritty'
-    btop = 'alacritty --class=btop -e btop'
-    powermenu = 'repomenue_powermenu'
+    btop = 'kitty --class=btop -e btop'
+    powermenu = 'kitty --class=powermenu -o initial_window_height=220 -e fzf_powermenu'
     vbox = 'virt-manager'
     files = 'nemo'
     mail = 'thunderbird'
     killmenu = 'repomenue_kill'
-    passmenu = 'repomenue_pass'
-    smartmenu = 'repomenue_smartrun'
+    passmenu = 'kitty --class=passmenu -o initial_window_height=650 -e fzf_pass'
 
     autostart = [files, terminal, browser]
     configure = ['autorandr --load qtile', 'autostart']
@@ -119,7 +120,6 @@ keys = [
     Key([MOD], "Return", lazy.spawn(Commands.terminal), desc="Launch terminal", group="Launch"),
     Key([MOD], "m", lazy.spawn(Commands.menu), desc="Launch menu", group="Launch"),
     Key([MOD], "p", lazy.spawn(Commands.passmenu), desc="Launch password menu", group="Launch"),
-    Key([MOD], "s", lazy.spawn(Commands.smartmenu), desc="Launch smart menu", group="Launch"),
     Key([MOD, CTRL], "f", lazy.spawn(Commands.browser), desc="Launch browser", group="Launch"),
     Key([MOD, CTRL], "c", lazy.spawn(Commands.editor), desc="Launch editor", group="Launch"),
     Key([MOD, SHIFT], "e", lazy.spawn(Commands.powermenu), desc="Launch power menu", group="Launch"),
@@ -140,7 +140,87 @@ keys = [
     # xBacklight
     Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight +10")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -10")),
+]
 
+dgroups_key_binder = simple_key_binder(MOD)
+dgroups_app_rules = []  # type: list
+
+def show_keys(keys):
+    """
+  print current keybindings in a pretty way for a rofi/dmenu window.
+  """
+    key_help = "{:<20} {:<30} {}\n".format('Group', 'Keybinds', 'Description')
+    keys_ignored = (
+        "XF86AudioMute",  #
+        "XF86AudioLowerVolume",  #
+        "XF86AudioRaiseVolume",  #
+        "XF86AudioPlay",  #
+        "XF86AudioNext",  #
+        "XF86AudioPrev",  #
+        "XF86AudioStop",
+        "XF86MonBrightnessUp",
+        "XF86MonBrightnessDown",
+    )
+    text_replaced = {
+        "mod4": "[MOD]",  #
+        "control": "[CTRL]",  #
+        "mod1": "[ALT]",  #
+        "shift": "[SHIFT]",  #
+        "Escape": "ESC",  #
+    }
+
+    data = {}
+    category={}
+    file_path = expanduser("~/.config/qtile/keybinds.json")
+    for k in keys:
+        if k.key in keys_ignored:
+            continue
+
+        mods = ""
+        key = ""
+        desc = k.desc.title()
+        group = k.group.title()
+        allargs = ", ".join([value.__name__ if callable(value) else repr(value) for value in k.commands[0].args] +
+                            ["%s = %s" % (keyword, repr(value)) for keyword, value in k.commands[0].kwargs.items()])
+        command = k.commands[0].name + " " + allargs
+        for m in k.modifiers:
+            if m in text_replaced.keys():
+                mods += text_replaced[m] + " + "
+            else:
+                mods += m.capitalize() + " + "
+
+        if len(k.key) > 1:
+            if k.key in text_replaced.keys():
+                key = text_replaced[k.key]
+            else:
+                key = k.key.title()
+        else:
+            key = k.key
+
+        key_line = "{:<20} {:<30} {}\n".format(group, mods + key, desc)
+        key_help += key_line
+
+        if group not in data:
+            data[group] = {}
+
+        category = data[group]
+        category[desc] = {}
+        category[desc]['keybind'] = mods + key
+        category[desc]['command'] = command
+
+    with open(file_path, "w") as json_data:
+        json.dump(data, json_data, indent=4)
+
+    return expanduser("~/.config/qtile/scripts/qtile-cheat")
+
+
+# this must be done AFTER all the keys have been defined
+cheater = show_keys(keys)
+keys.extend([
+    Key([MOD], "F1", lazy.spawn(cheater), desc="Print keyboard bindings"),
+])
+
+keys.extend([
     ################
     ## Key Chords ##
     ################
@@ -186,71 +266,6 @@ keys = [
         desc="Take a Screenshot",
         group="KeyChord",
     ),
-]
-
-dgroups_key_binder = simple_key_binder(MOD)
-dgroups_app_rules = []  # type: list
-
-def show_keys(keys):
-    """
-  print current keybindings in a pretty way for a rofi/dmenu window.
-  """
-    key_help = "{:<20} {:<30} {}\n".format('Group', 'Keybinds', 'Description')
-    keys_ignored = (
-        "XF86AudioMute",  #
-        "XF86AudioLowerVolume",  #
-        "XF86AudioRaiseVolume",  #
-        "XF86AudioPlay",  #
-        "XF86AudioNext",  #
-        "XF86AudioPrev",  #
-        "XF86AudioStop",
-        "XF86MonBrightnessUp",
-        "XF86MonBrightnessDown",
-    )
-    text_replaced = {
-        "mod4": "[MOD]",  #
-        "control": "[CTRL]",  #
-        "mod1": "[ALT]",  #
-        "shift": "[SHIFT]",  #
-        "Escape": "ESC",  #
-    }
-    for k in keys:
-        if k.key in keys_ignored:
-            continue
-
-        mods = ""
-        key = ""
-        desc = k.desc.title()
-        group = k.group.title()
-        for m in k.modifiers:
-            if m in text_replaced.keys():
-                mods += text_replaced[m] + " + "
-            else:
-                mods += m.capitalize() + " + "
-
-        if len(k.key) > 1:
-            if k.key in text_replaced.keys():
-                key = text_replaced[k.key]
-            else:
-                key = k.key.title()
-        else:
-            key = k.key
-
-        key_line = "{:<20} {:<30} {}\n".format(group, mods + key, desc)
-        key_help += key_line
-
-    with open('/home/repo/.config/qtile/packages.txt', 'w') as outfile:
-        outfile.write(key_help)
-
-    return key_help
-
-
-# this must be done AFTER all the keys have been defined
-cheater = Commands.terminal + " --class='Cheater' -e sh -c 'echo \"" + show_keys(
-    keys
-) + "\" | fzf --prompt=\"Search for a keybind: \" --border=rounded --margin=1% --color=dark --height 100% --reverse --header=\"       QTILE CHEAT SHEET \" --info=hidden --header-first'"
-keys.extend([
-    Key([MOD], "F1", lazy.spawn(cheater), desc="Print keyboard bindings"),
 ])
 
 ############
@@ -319,7 +334,8 @@ floating_layout = layout.Floating(
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
-        Match(wm_class=re.compile('^Cheater.*', re.IGNORECASE)),  # gitk
+        Match(wm_class=re.compile('^Cheater.*', re.IGNORECASE)),  # Cheater
+        Match(wm_class=re.compile('^PassMenu.*|^PowerMenu.*', re.IGNORECASE)),  # Menus
         Match(wm_class="confirmreset"),  # gitk
         Match(wm_class="makebranch"),  # gitk
         Match(wm_class="maketag"),  # gitk

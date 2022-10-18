@@ -6,7 +6,7 @@ class Groups(object):
     groups = [
         # first group that hold the terminals
         Group(
-            # label='',
+            label='一',
             init=True,
             exclusive=False,
             persist=True,
@@ -17,7 +17,7 @@ class Groups(object):
             name='1',
         ),
         Group(
-            # label='',
+            label='二',
             init=True,
             exclusive=False,
             persist=True,
@@ -27,7 +27,7 @@ class Groups(object):
             name='2',
         ),
         Group(
-            # label='',
+            label='三',
             init=True,
             exclusive=False,
             persist=True,
@@ -37,7 +37,7 @@ class Groups(object):
             name='3',
         ),
         Group(
-            # label='',
+            label='四',
             init=True,
             exclusive=False,
             persist=True,
@@ -47,7 +47,7 @@ class Groups(object):
             name='4',
         ),
         Group(
-            # label='ﱘ',
+            label='五',
             init=True,
             exclusive=False,
             persist=True,
@@ -57,7 +57,7 @@ class Groups(object):
             name='5',
         ),
         Group(
-            # label='',
+            label='六',
             init=True,
             persist=True,
             exclusive=False,
@@ -67,7 +67,7 @@ class Groups(object):
             name='6',
         ),
         Group(
-            # label='',
+            label='七',
             init=True,
             persist=True,
             exclusive=False,
@@ -77,7 +77,7 @@ class Groups(object):
             name='7',
         ),
         Group(
-            # label='調',
+            label='八',
             init=True,
             persist=True,
             exclusive=False,
@@ -87,7 +87,7 @@ class Groups(object):
             name='8',
         ),
         Group(
-            # label='',
+            label='九',
             init=True,
             persist=True,
             exclusive=False,
@@ -97,7 +97,7 @@ class Groups(object):
             name='9',
         ),
         Group(
-            # label='',
+            label='零',
             init=True,
             persist=True,
             exclusive=False,

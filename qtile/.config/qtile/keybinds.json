@@ -1,0 +1,92 @@
+{
+    "Qtile": {
+        "Reload The Config": {
+            "keybind": "[MOD] + [SHIFT] + r",
+            "command": "reload_config "
+        },
+        "Restart Qtile": {
+            "keybind": "[MOD] + [CTRL] + r",
+            "command": "restart "
+        }
+    },
+    "Moving": {
+        "Move Focus To Left": {
+            "keybind": "[MOD] + h",
+            "command": "left "
+        },
+        "Move Focus To Right": {
+            "keybind": "[MOD] + l",
+            "command": "right "
+        },
+        "Move Focus Down": {
+            "keybind": "[MOD] + j",
+            "command": "down "
+        },
+        "Move Focus Up": {
+            "keybind": "[MOD] + k",
+            "command": "up "
+        }
+    },
+    "Reset": {
+        "Reset All Window Sizes": {
+            "keybind": "[MOD] + n",
+            "command": "normalize "
+        }
+    },
+    "Toggle": {
+        "Toggle Between Layouts": {
+            "keybind": "[MOD] + Tab",
+            "command": "next_layout "
+        },
+        "Toggle Floating": {
+            "keybind": "[MOD] + t",
+            "command": "toggle_floating "
+        }
+    },
+    "Kill": {
+        "Kill Focused Window": {
+            "keybind": "[MOD] + q",
+            "command": "kill "
+        },
+        "Launch Kill Menu": {
+            "keybind": "[MOD] + [SHIFT] + q",
+            "command": "spawn 'repomenue_kill'"
+        }
+    },
+    "Launch": {
+        "Launch Terminal": {
+            "keybind": "[MOD] + Return",
+            "command": "spawn 'alacritty'"
+        },
+        "Launch Menu": {
+            "keybind": "[MOD] + m",
+            "command": "spawn 'repomenu_run -i -l 10 -w 600 -c -p \"Launcher\" -q \"Launch a app\"'"
+        },
+        "Launch Password Menu": {
+            "keybind": "[MOD] + p",
+            "command": "spawn 'kitty --class=passmenu -o initial_window_height=650 -e fzf_pass'"
+        },
+        "Launch Browser": {
+            "keybind": "[MOD] + [CTRL] + f",
+            "command": "spawn 'firefox'"
+        },
+        "Launch Editor": {
+            "keybind": "[MOD] + [CTRL] + c",
+            "command": "spawn 'code'"
+        },
+        "Launch Power Menu": {
+            "keybind": "[MOD] + [SHIFT] + e",
+            "command": "spawn 'kitty --class=powermenu -o initial_window_height=220 -e fzf_powermenu'"
+        },
+        "Launch Files": {
+            "keybind": "[MOD] + [SHIFT] + Return",
+            "command": "spawn 'nemo'"
+        }
+    },
+    "Utils": {
+        "Launch Btop": {
+            "keybind": "[MOD] + b",
+            "command": "spawn 'kitty --class=btop -e btop'"
+        }
+    }
+}

@@ -27,7 +27,7 @@ class Widgets(object):
         text_only=True,
         foreground=colorScheme[1],
         progs=[
-            ('⏻ ', 'repomenue_powermenu', 'launch repomenu powermenu'),
+            ('⏻ ', 'kitty --class=powermenu -o initial_window_height=220 -e fzf_powermenu', 'launch fzf powermenu'),
         ],
     )
 
@@ -35,7 +35,7 @@ class Widgets(object):
         text_only=True,
         foreground=colorScheme[1],
         progs=[
-            ('⏻ ', 'repomenue_powermenu', 'launch repomenu powermenu'),
+            ('⏻ ', 'kitty --class=powermenu -o initial_window_height=220 -e fzf_powermenu', 'launch fzf powermenu'),
         ],
     )
 
