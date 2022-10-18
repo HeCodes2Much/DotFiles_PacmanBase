@@ -66,19 +66,22 @@ class WMCheatWindow(Gtk.ApplicationWindow):
                                                     Gtk.CellRendererText(),
                                                     text=1)
             description_column.set_min_width(300)
+            description_column.set_max_width(500)
             tree.append_column(description_column)
 
             keybind_column = Gtk.TreeViewColumn("Keybind",
                                                 Gtk.CellRendererText(),
                                                 text=2)
             keybind_column.set_min_width(300)
+            keybind_column.set_max_width(500)
             tree.append_column(keybind_column)
 
-            command_column = Gtk.TreeViewColumn("Command",
-                                                Gtk.CellRendererText(),
-                                                text=3)
-            command_column.set_min_width(300)
-            tree.append_column(command_column)
+            # command_column = Gtk.TreeViewColumn("Command",
+            #                                     Gtk.CellRendererText(),
+            #                                     text=3)
+            # command_column.set_min_width(300)
+            # command_column.set_max_width(500)
+            # tree.append_column(command_column)
 
             scrolled = Gtk.ScrolledWindow()
             scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
