@@ -12,10 +12,10 @@ if test -d "$HOME/.local/bin/repobar"
     set PATH "$HOME/.local/bin/repobar:$PATH"
 end
 
-# Adds `~/.local/bin/scratch` to $PATH
+# Adds `~/.local/bin/fzf` to $PATH
 # set PATH so it includes user's private bin if it exists
-if test -d "$HOME/.local/bin/scratch"
-    set PATH "$HOME/.local/bin/scratch:$PATH"
+if test -d "$HOME/.local/bin/fzf"
+    set PATH "$HOME/.local/bin/fzf:$PATH"
 end
 
 # Adds `~/.local/bin/lemonbar` to $PATH
