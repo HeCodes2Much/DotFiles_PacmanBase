@@ -94,9 +94,14 @@ workspace $ws0 output $secondMonitor
 # }}} Workspaces
 
 #####################################################################################################################
+#################                                  Main Includes                                    #################
+#####################################################################################################################
+
+include ~/.config/i3/config.d/*.conf
+
+#####################################################################################################################
 #################                                  Main Keybinds                                    #################
 #####################################################################################################################
-include ~/.config/i3/config.d/*.conf
 
 # {{{ Cheat
 ## Category: Main Keybinds;
@@ -156,7 +161,7 @@ $super_b+F11 \
 ## Category: Menus;
 # Description: Start RepoMenu;
 $super_b+F12 \
-    $exe repomenu_run -i -l 10 -w 600 -c -p "Launcher" -q "Launch a app"
+    $exe fzf_run -c fzf_menu_run -i Menu -t alacritty
 
 ## Category: Main Keybinds;
 # Description: Layout mainCenter;
@@ -170,7 +175,7 @@ $super_b+Escape \
 ## Category: RepoMenu;
 # Description: Start RepoMenu;
 $super_b+m \
-    $exe repomenu_run -i -l 10 -w 600 -c -p "Launcher" -q "Launch a app"
+    $exe fzf_run -c fzf_menu_run -i Menu -t alacritty
 
 ## Category: RepoMenu;
 # Description: Start RepoPass;
@@ -193,17 +198,17 @@ $super_b+s \
 ## Category:  Main Keybinds;
 # Description: Exit / Quit / Restart;
 $super_b+$shift+e \
-    $exe repomenue_powermenu
+    $exe fzf_run -c fzf_powermenu -i PowerMenu -t alacritty
 
 ## Category:  Main Keybinds;
 # Description: Exit / Quit / Restart;
 $super_b+$shift+x \
-    $exe repomenue_powermenu
+    $exe fzf_run -c fzf_powermenu -i PowerMenu -t alacritty
 
 ## Category:  Main Keybinds;
 # Description: Exit / Quit / Restart;
 $super_b+x \
-    $exe repomenue_powermenu
+    $exe fzf_run -c fzf_powermenu -i PowerMenu -t alacritty
 
 # }}} Power
 
@@ -692,7 +697,10 @@ for_window [class="(?i)Pavucontrol"] floating enable, resize set 640 480, move p
 for_window [class="(?i)wm-cheat.py"] floating enable, resize set 720 720, move position center
 for_window [class="(?i)MultiMonitorLock-GUI"] floating enable
 for_window [class="(?i)Polybar-updates"] floating enable, resize set 1280 720, move position center
-for_window [class="(?i)floatmenu"] floating enable
+for_window [class="(?i)Menu"] floating enable, resize set 350 900, move position center
+for_window [class="(?i)PowerMenu"] floating enable, resize set 300 300, move position center
+for_window [class="(?i)PolybarMenu"] floating enable, resize set 350 900, move position 10 3
+
 
 for_window [title="Copying"] floating enable
 for_window [title="Deleting"] floating enable

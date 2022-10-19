@@ -1,0 +1,117 @@
+#!/usr/bin/env bash
+#-*-coding:utf-8 -*-
+#Auto updated?
+#   Yes
+#File:
+#   fzf_run
+#Author:
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github:
+#   https://github.com/The-Repo-Club/
+#
+#Created:
+#   Wed 10 March 2021, 12:34:47 PM [GMT+1]
+#Modified:
+#   Wed 19 October 2022, 08:09:58 AM [GMT+1]
+#
+#Description:
+#   <Todo>
+#
+#Dependencies:
+#   <None>
+#
+# shellcheck disable=all
+
+command=''
+width=''
+height=''
+instance=''
+term=''
+
+#=== COLORS ===================================================================
+
+## Set Colors (copied from makepkg)
+b_blk="\e[0;90m"
+b_red="\e[0;91m"
+b_grn="\e[0;92m"
+b_yel="\e[0;93m"
+b_blu="\e[0;94m"
+b_mag="\e[0;95m"
+b_cyn="\e[0;96m"
+b_wht="\e[0;97m"
+blk="\e[0;30m"
+red="\e[0;31m"
+grn="\e[0;32m"
+yel="\e[0;33m"
+blu="\e[0;34m"
+mag="\e[0;35m"
+cyn="\e[0;36m"
+wht="\e[0;37m"
+bld="\e[1;1m"
+del="\e[0;0m"
+
+readonly b_blk b_red b_grn b_yel b_blu b_mag b_cyn b_wht blk red grn yel blu mag cyn wht bld del
+
+#=== FUNCTION =================================================================
+#        Name: error
+# Description: Print message with a red pretag an ERROR
+# Parameter 1: Message to print
+#==============================================================================
+
+# copied from makepkg
+error() {
+    local mesg=$1
+    printf "${red}${bld}==> ERROR:${wht} %b${del}\n" "$mesg"
+    exit 0
+}
+
+run_program() {
+    if command -v $command &>/dev/null; then
+        cmd='kitty'
+        if [[ -n $term ]]; then
+            cmd="$term"
+        fi
+
+        if [[ -n $instance ]]; then
+            cmd+=" --class=$instance"
+        fi
+
+        if [[ -n $command ]]; then
+            cmd+=" -e $command"
+        fi
+        exec $cmd
+    fi
+}
+
+show_help() {
+    echo "HELP"
+}
+
+while [[ "$1" ]]; do
+    case $1 in
+    --command | -c)
+        shift
+        command=$1
+        ;;
+    --instance | -i)
+        shift
+        instance=$1
+        ;;
+    --term | -t)
+        shift
+        term=$1
+        ;;
+    --help | -h)
+        show_help
+        exit
+        ;;
+    -*)
+        error 'Incorrect option(s) specified.'
+        ;;
+    *)
+        error 'Incorrect option(s) specified.'
+        ;;
+    esac
+    shift
+done
+run_program

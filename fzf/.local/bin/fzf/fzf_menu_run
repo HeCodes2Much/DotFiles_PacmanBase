@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+#-*-coding:utf-8 -*-
+#Auto updated?
+#   Yes
+#File:
+#   fzf_menu_run
+#Author:
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github:
+#   https://github.com/The-Repo-Club/
+#
+#Created:
+#   Wed 10 March 2021, 12:34:47 PM [GMT+1]
+#Modified:
+#   Wed 19 October 2022, 07:29:54 AM [GMT+1]
+#
+#Description:
+#   <Todo>
+#
+#Dependencies:
+#   <None>
+#
+# shellcheck disable=all
+
+lines=$(compgen -c | sort -u | wc -l)
+programs=$(compgen -c | sort -u | tail -n +9)
+echo -e "$lines
+$programs" | fzf --prompt="Run Program: " --border=rounded --margin=1% --color=dark --height 100% --reverse --header="   PROGRAM MENU " --info=hidden --header-first
