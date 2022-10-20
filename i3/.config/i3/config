@@ -878,7 +878,7 @@ $exe autostart
 
 # {{{ Settings
 
-$exe repomenue_youtube_subs -d
+$exe fzf_youtube_subs -d
 
 # setting variables for later use
 # use xrandr and/or arandr to know the names of your monitors
