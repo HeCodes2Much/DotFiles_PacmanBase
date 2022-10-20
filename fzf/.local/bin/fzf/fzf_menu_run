@@ -12,15 +12,16 @@
 #Created:
 #   Wed 10 March 2021, 12:34:47 PM [GMT+1]
 #Modified:
-#   Wed 19 October 2022, 08:19:44 PM [GMT+1]
+#   Thu 20 October 2022, 05:48:00 AM [GMT+1]
 #
 #Description:
 #   <Todo>
 #
 #Dependencies:
-#   <None>
+#   devour, fzf
 #
 # shellcheck disable=all
 
 programs=$(compgen -c | sort -u | tail -n +9)
-echo -e "$programs" | fzf --prompt="Run Program: " --border=rounded --margin=1% --color=dark --height 100% --reverse --header="   PROGRAM MENU " --info=hidden --header-first
+cmd=$(echo -e "$programs" | fzf --prompt="Run Program: " --border=rounded --margin=1% --color=dark --height 100% --reverse --header="   PROGRAM MENU " --info=hidden --header-first)
+exec devour $cmd

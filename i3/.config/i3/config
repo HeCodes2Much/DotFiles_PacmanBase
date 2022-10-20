@@ -180,7 +180,7 @@ $super_b+m \
 ## Category: RepoMenu;
 # Description: Start RepoPass;
 $super_b+p \
-    $exe repomenue_pass
+    $exe fzf_run -c 'fzf_pass' -i PassMenu -t alacritty
 
 ## Category: RepoMenu;
 # Description: Start SmartRun;
@@ -188,6 +188,8 @@ $super_b+s \
     $exe repomenue_smartrun
 
 # }}} Menus
+
+
 
 #####################################################################################################################
 #################                          how to exit, logoff, suspend, ...                        #################
@@ -700,6 +702,7 @@ for_window [class="(?i)Polybar-updates"] floating enable, resize set 1280 720, m
 for_window [class="(?i)Menu"] floating enable, resize set 350 900, move position center
 for_window [class="(?i)PowerMenu"] floating enable, resize set 300 300, move position center
 for_window [class="(?i)PolybarMenu"] floating enable, resize set 350 900, move position 10 3
+for_window [class="(?i)PassMenu"] floating enable, resize set 350 700, move position center
 
 
 for_window [title="Copying"] floating enable

@@ -12,10 +12,10 @@
 # Created:
 #   Wed 10 March 2021, 12:34:47 PM [GMT]
 # Modified:
-#   Tue 18 October 2022, 07:25:03 AM [GMT+1]
+#   Thu 20 October 2022, 06:02:31 AM [GMT+1]
 #
 # Description:
-#   <Todo>
+#   fzf
 #
 # shellcheck disable=all
 
@@ -26,7 +26,7 @@ if [[ $1 == "--type" ]]; then
     typeit=1
     shift
 fi
-xdotool="xclip -sel clip"
+xdotool="xsel -b"
 
 
 STARTDIR=${PASSWORD_STORE_DIR-~/.password-store}
@@ -86,54 +86,17 @@ while [ "$DONE" -eq 0 ] ; do
             ENTRY_FIELD=$(echo -e "$FIELDS" | sed '/^$/d' | fzf --prompt="Password Settings: " --border=rounded --margin=1% --color=dark --height 100% --reverse --header="   PASSWORD MENU " --info=hidden --header-first)
             if [[ $ENTRY_FIELD = *'Password' ]]; then
                 PASSWORD=$(pass show "$SELECTION" | sed "s/^[ \t]*//" | head -1 | sed '/^$/d')
-                clipmenu-ctl disable
-                if [ $(clipmenu-ctl status) == "enabled" ]; then
-                    clipmenu-ctl disable
-                else
-                    echo -e "$PASSWORD" | $xdotool
-                    echo -e "$PASSWORD"
-                fi
-                clipmenu-ctl enable
-                if [ $(clipmenu-ctl status) == "disabled" ]; then
-                    clipmenu-ctl enable
-                fi
+                echo -n "$PASSWORD" | $xdotool
             elif [[ $ENTRY_FIELD = *'URL' ]]; then
                 URL=$(pass show "$SELECTION" | grep "${URL_FIELD}" | awk '{sub(/:/,"")}{print $2}1' | sed "s/^[ \t]*//" | head -1 | sed '/^$/d')
-                clipmenu-ctl disable
-                if [ $(clipmenu-ctl status) == "enabled" ]; then
-                    clipmenu-ctl disable
-                else
-                    echo -e "$URL" | $xdotool
-                fi
-                clipmenu-ctl enable
-                if [ $(clipmenu-ctl status) == "disabled" ]; then
-                    clipmenu-ctl enable
-                fi
+                echo -n "$URL" | $xdotool
             elif [[ $ENTRY_FIELD = *'Login' ]]; then
                 LOGIN=$(pass show "$SELECTION" | grep "${LOGIN_FIELD}" | awk '{sub(/:/,"")}{print $2}1' | sed "s/^[ \t]*//" | head -1 | sed '/^$/d')
-                clipmenu-ctl disable
-                if [ $(clipmenu-ctl status) == "enabled" ]; then
-                    clipmenu-ctl disable
-                else
-                    echo -e "$LOGIN" | $xdotool
-                fi
-                clipmenu-ctl enable
-                if [ $(clipmenu-ctl status) == "disabled" ]; then
-                    clipmenu-ctl enable
-                fi
+                echo -n "$LOGIN" | $xdotool
             else
                 CUSTOM_FIELD=$(echo -e "$ENTRY_FIELD" | awk 'NF>1 {sub("^[^A-Z]*","")} {print}')
                 CUSTOM_FIELD=$(pass show "$SELECTION" | grep "${CUSTOM_FIELD,,}" | awk '{sub(/:/,"")}{first = $1; $1=""; print $0;}1' | sed "s/^[ \t]*//" | head -1 | sed '/^$/d')
-                clipmenu-ctl disable
-                if [ $(clipmenu-ctl status) == "enabled" ]; then
-                    clipmenu-ctl disable
-                else
-                    echo -e "$CUSTOM_FIELD" | $xdotool
-                fi
-                clipmenu-ctl enable
-                if [ $(clipmenu-ctl status) == "disabled" ]; then
-                    clipmenu-ctl enable
-                fi
+                echo -n "$CUSTOM_FIELD" | $xdotool
             fi
         else
             xdotool - <<<"type --clearmodifiers -- $(pass show "$SELECTION" | head -n 1 | sed '/^$/d')"
