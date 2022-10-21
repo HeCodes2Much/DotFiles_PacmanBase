@@ -277,10 +277,10 @@ groups = Groups.groups
 # Define scratchpads
 groups.append(
     ScratchPad("scratchpad", [
-        DropDown("term", "alacritty --class=scratch", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1),
+        DropDown("term", "kitty --class=scratch", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1),
         DropDown("cheat", cheater, width=0.4, height=0.7, x=0.3, y=0.2, opacity=0.9),
-        DropDown("clifm", "alacritty --class=clifm -e clifm", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
-        DropDown("btop", "alacritty --class=btop -e btop", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
+        DropDown("clifm", "kitty --class=clifm -e clifm", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
+        DropDown("btop", "kitty --class=btop -e btop", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
         DropDown("volume", "pavucontrol", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
     ]))
 

@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+#-*-coding:utf-8 -*-
+#Auto updated?
+#   Yes
+#File:
+#   i3_kill
+#Author:
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github:
+#   https://github.com/The-Repo-Club/
+#
+#Created:
+#   Fri 21 October 2022, 06:55:58 AM [GMT+1]
+#Modified:
+#   Fri 21 October 2022, 07:12:58 AM [GMT+1]
+#
+#Description:
+#   <Todo>
+#
+#Dependencies:
+#   <None>
+#
+
+i3_kill() {
+    do_not_kill=("dropdown-terminal")
+    app_id="$(i3-msg -t get_tree 2>/dev/null | jq -r '.. | select(.focused?).window_properties.class')"
+
+    for value in "${do_not_kill[@]}"; do
+        if [[ $value == "$app_id" ]]; then
+            exit 0
+        fi
+    done
+    i3-msg kill
+}
+
+i3_kill

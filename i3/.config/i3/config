@@ -226,7 +226,7 @@ $super_b+$shift+r \
     restart
 
 $super_b+$controlr+r \
-    $exec autostart
+    $exe autostart
 
 ## Category: i3-Config;
 # Description: Reload the configuration file;
@@ -242,12 +242,12 @@ $super_b+$shift+c \
 ## Category: i3-Config;
 # Description: Kill focused window;
 $super_b+q \
-    kill
+    $exe i3_kill
 
 ## Category: i3-Config;
 # Description: Kill focused window;
 $super_b+$shift+q \
-    kill
+    $exe i3_kill
 
 ####################################################################################################################
 #################                          Moving around in i3                                      #################
