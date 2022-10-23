@@ -442,34 +442,6 @@ assign [class="(?i)PkgBrowser"]                                                 
 # }}} Assign Applications
 
 #####################################################################################################################
-#################                                 system applications                               #################
-#####################################################################################################################
-
-# {{{ System Applications
-
-## Category: Applications;
-# Description: Change Hosts;
-$super_b+g \
-    mode "$hosts_launcher"
-
-set $hosts_launcher Hosts: [d]efault [g]oogle d[e]google
-mode "$hosts_launcher" {
-    bindsym --release d \
-        $exe hostswitcher --default; mode "default"
-
-    bindsym --release g \
-        $exe hostswitcher --google; mode "default"
-
-    bindsym --release e \
-        $exe hostswitcher --degoogle; mode "default"
-
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-}
-
-# }}} System Applications
-
-#####################################################################################################################
 #################                          applications keyboard shortcuts                          #################
 #####################################################################################################################
 
