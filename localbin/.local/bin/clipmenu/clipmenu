@@ -8,7 +8,7 @@
 # Modified On  - Sun 31 Oct 00:33:48 BST 2021
 #------------------------------------------------------------------------------
 
-: "${CM_LAUNCHER=dmenu}"
+: "${CM_LAUNCHER=fzf}"
 : "${CM_HISTLENGTH=8}"
 
 shopt -s nullglob
@@ -42,7 +42,7 @@ fi
 # Blacklist of non-dmenu launchers
 launcher_args=(-l "${CM_HISTLENGTH}")
 if [[ "$CM_LAUNCHER" == fzf ]]; then
-    launcher_args=()
+    launcher_args=(--prompt="Copy to clipboard: " --border=rounded --margin=1% --color=dark --height 100% --reverse --header="   CLIPBOARD MENU " --info=hidden --header-first)
 fi
 
 # rofi supports dmenu-like arguments through the -dmenu flag

@@ -13,6 +13,14 @@
 # application found will be used
 
 # Applications defined here are NOT desktop files, but commands (arguments
+# could be used as well). Bear in mind that these commands will be executed
+# directly without shell intervention, so that no shell goodies (like pipes,
+# conditions, loops, etc) are available. In case you need something more
+# complex than a single command (including shell capabilities) write your
+# own script and place the path to the script in place of the command.
+# For example: X:^text/.*:~/scripts/my_cool_script.sh
+
+# Applications defined here are NOT desktop files, but commands (arguments
 # could be used as well). Write you own handmade scripts to open specific
 # files if necessary. Ex: X:^text/.*:~/scripts/my_cool_script.sh
 
@@ -55,6 +63,10 @@
 # Environment variables could be used as well. Example:
 # X:text/plain=$EDITOR %f &;$VISUAL;nano;vi
 
+# Use Ranger's rifle (or whatever opener you prefer) to open all files
+#X:N:.*=rifle
+#!X:N:.*=rifle
+
 ###########################
 #  File names/extensions  #
 ###########################
@@ -71,7 +83,7 @@
 X:N:.*\.djvu$=djview;zathura;evince;atril
 X:N:.*\.epub$=mupdf;zathura;ebook-viewer
 X:N:.*\.mobi$=ebook-viewer
-X:N:.*\.(cbr|cbz)$=zathura
+X:N:.*\.(cbr|cbz)$=mcomix;YACReader;qcomicview;zathura
 X:N:(.*\.clifm$|clifmrc)=$EDITOR;$VISUAL;kak;micro;nvim;vim;vi;mg;emacs;ed;nano;mili;leafpad;mousepad;featherpad;gedit -s;kate -n;pluma --new-window
 !X:N:(.*\.clifm$|clifmrc)=$EDITOR;$VISUAL;kak;micro;nvim;vim;vi;mg;emacs;ed;nano
 
@@ -108,8 +120,9 @@ X:.*/pdf$=mupdf;sioyek;llpp;lpdf;zathura;mupdf-x11;apvlv;xpdf;evince;atril;okula
 
 # Images
 X:^image/gif$=animate;pqiv;sxiv -a;nsxiv -a
-X:^image/.*=fim;display;sxiv;nsxiv;pqiv;gpicview;qview;qimgv;inkscape;mirage;ristretto;eog;eom;xviewer;viewnior;nomacs;geeqie;gwenview;gthumb;gimp
-!X:^image/*=fim;img2txt;cacaview;fbi;fbv
+X:^image/svg=display;inkscape
+X:^image/.*=fim;sxiv;nsxiv;pqiv;gpicview;qview;qimgv;mirage;ristretto;eog;eom;xviewer;viewnior;nomacs;geeqie;gwenview;gthumb;gimp
+!X:^image/.*=fim;img2txt;cacaview;fbi;fbv
 
 # Video and audio
 X:^video/.*=ffplay;mplayer;mplayer2;mpv;vlc;gmplayer;smplayer;celluloid;qmplayer2;haruna;totem

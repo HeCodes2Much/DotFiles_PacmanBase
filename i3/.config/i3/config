@@ -119,73 +119,33 @@ $super_b+F1 \
 # {{{ Menus
 
 ## Category: Menus;
-# Description: Edit Configs;
-$super_b+F2 \
-    $exe ~/.config/repomenu/scripts/repomenu-edit-configs.sh
-
-## Category: Menus;
-# Description: Layout Switcher;
-$super_b+F3 \
-    $exe ~/.config/repomenu/scripts/repomenu-i3-layout-switcher.sh
-
-## Category: Menus;
-# Description: Select a Program;
-$super_b+F4 \
-    $exe ~/.config/repomenu/scripts/repomenu-open-program.sh
-
-## Category: Menus;
-# Description: Select a workspace;
-$super_b+F5 \
-    $exe ~/.config/repomenu/scripts/repomenu-i3-switch-workspaces.sh
-
-## Category: Menus;
-# Description: Create a workspace;
-$super_b+F6 \
-    $exe ~/.config/repomenu/scripts/repomenu-i3-empty-workspace.sh
-
-## Category: Menus;
 # Description: Start GMrun;
-$super_b+F7 \
+$super_b+F2 \
     $exe gmrun
 
 ## Category: Menus;
-# Description: Start SmartRun;
-$super_b+F8 \
-    $exe repomenue_smartrun
-
-## Category: Menus;
 # Description: Start ClipMenu;
-$super_b+F11 \
-    $exe ~/.config/repomenu/scripts/repomenu-clip-menu.sh
-
-## Category: Menus;
-# Description: Start RepoMenu;
-$super_b+F12 \
-    $exe fzf_run -c fzf_menu_run -i Menu -t alacritty
-
-## Category: Main Keybinds;
-# Description: Layout mainCenter;
-$super_b+Escape \
-    $exe ~/.config/repomenu/scripts/repomenu-i3-layout-switcher.sh mainCenter
+$super_b+F3 \
+    $exe fzf_run -c clipmenu -i ClipMenu -t $TerminalEmulator
 
 ###############################
-####### RepoMenu Menu's #######
+####### FZFMenu Menu's #######
 ###############################
 
-## Category: RepoMenu;
-# Description: Start RepoMenu;
+## Category: FZFMenu;
+# Description: Start FZFMenu;
 $super_b+m \
-    $exe fzf_run -c fzf_menu_run -i Menu -t alacritty
+    $exe fzf_run -c fzf_menu_run -i Menu -t $TerminalEmulator
 
-## Category: RepoMenu;
+## Category: FZFMenu;
 # Description: Start RepoPass;
 $super_b+p \
-    $exe fzf_run -c 'fzf_pass' -i PassMenu -t alacritty
+    $exe fzf_run -c 'fzf_pass' -i PassMenu -t $TerminalEmulator
 
-## Category: RepoMenu;
-# Description: Start SmartRun;
-$super_b+s \
-    $exe repomenue_smartrun
+## Category: FZFMenu;
+# Description: Start YoutubeMenu;
+$super_b+t \
+    $exe fzf_run -c 'fzf_youtube_subs' -i YoutubeMenu -t $TerminalEmulator
 
 # }}} Menus
 
@@ -200,17 +160,17 @@ $super_b+s \
 ## Category:  Main Keybinds;
 # Description: Exit / Quit / Restart;
 $super_b+$shift+e \
-    $exe fzf_run -c fzf_powermenu -i PowerMenu -t alacritty
+    $exe fzf_run -c fzf_powermenu -i PowerMenu -t $TerminalEmulator
 
 ## Category:  Main Keybinds;
 # Description: Exit / Quit / Restart;
 $super_b+$shift+x \
-    $exe fzf_run -c fzf_powermenu -i PowerMenu -t alacritty
+    $exe fzf_run -c fzf_powermenu -i PowerMenu -t $TerminalEmulator
 
 ## Category:  Main Keybinds;
 # Description: Exit / Quit / Restart;
 $super_b+x \
-    $exe fzf_run -c fzf_powermenu -i PowerMenu -t alacritty
+    $exe fzf_run -c fzf_powermenu -i PowerMenu -t $TerminalEmulator
 
 # }}} Power
 
@@ -703,6 +663,7 @@ for_window [class="(?i)Menu"] floating enable, resize set 350 900, move position
 for_window [class="(?i)PowerMenu"] floating enable, resize set 300 300, move position center
 for_window [class="(?i)PolybarMenu"] floating enable, resize set 350 900, move position 10 3
 for_window [class="(?i)PassMenu"] floating enable, resize set 350 700, move position center
+for_window [class="(?i)YoutubeMenu"] floating enable, resize set 700 750, move position center
 
 
 for_window [title="Copying"] floating enable

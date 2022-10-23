@@ -61,30 +61,8 @@ class Commands(object):
     killmenu = 'repomenue_kill'
     passmenu = 'kitty --class=passmenu -o initial_window_height=650 -e fzf_pass'
 
-    autostart = [files, terminal, browser]
-    configure = ['autorandr --load qtile', 'autostart']
-
-
-def to_urgent(qtile):
-    cg = qtile.currentGroup
-    for group in qtile.groupMap.values():
-        if group == cg:
-            continue
-        if len([w for w in group.windows if w.urgent]) > 0:
-            qtile.currentScreen.setGroup(group)
-            return
-
-
-def switch_to(name):
-
-    def callback(qtile):
-        for window in qtile.windowMap.values():
-            if window.group and window.match(wname=name):
-                qtile.currentScreen.setGroup(window.group)
-                window.group.focus(window, False)
-                break
-
-    return callback
+    autostart = ['autostart']
+    configure = ['autorandr --load qtile']
 
 
 ##################
