@@ -3,7 +3,7 @@
 
 include "/home/repo/.gtkrc-2.0.mine"
 gtk-theme-name="Minimal-Mistakes"
-gtk-icon-theme-name="Papirus-Minimal-Mistakes "
+gtk-icon-theme-name="Papirus-Minimal-Mistakes"
 gtk-font-name="Hack Nerd Font 10"
 gtk-cursor-theme-name="capitaine-cursors-light"
 gtk-cursor-theme-size=0
