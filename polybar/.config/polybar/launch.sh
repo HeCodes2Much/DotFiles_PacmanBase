@@ -16,16 +16,24 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
+BAR_NAME=main
+TOP_BAR_CONFIG=$HOME/.config/polybar/config_top.ini
+BOTTOM_BAR_CONFIG=$HOME/.config/polybar/config_bottom.ini
+
+PRIMARY=$(xrandr --query | grep " connected" | grep "primary" | cut -d" " -f1)
+OTHERS=$(xrandr --query | grep " connected" | grep -v "primary" | cut -d" " -f1)
+
 # Launch bar1 and bar2
 if type "xrandr" > /dev/null; then
-    while read F1 F2 _; do
-        if [[ $F1 =~ ^[[:digit:]] ]]; then
-            F2="${F2//+}"
-            F2="${F2//\*}"
-            MONITOR=$F2 polybar --reload main -c ~/.config/polybar/config_top.ini &
-            MONITOR=$F2 polybar --reload main -c ~/.config/polybar/config_bottom.ini &
-        fi
-    done <<< $( xrandr --listactivemonitors )
+    # Launch on primary monitor
+    MONITOR=$PRIMARY polybar --reload -c "$TOP_BAR_CONFIG" $BAR_NAME &
+    MONITOR=$PRIMARY polybar --reload -c "$BOTTOM_BAR_CONFIG" $BAR_NAME &
+
+    # Launch on all other monitors
+    for m in $OTHERS; do
+        MONITOR=$m polybar --reload -c "$TOP_BAR_CONFIG" $BAR_NAME &
+        MONITOR=$m polybar --reload -c "$BOTTOM_BAR_CONFIG" $BAR_NAME &
+    done
 else
     polybar --reload main -c ~/.config/polybar/config_top.ini  &
     polybar --reload main -c ~/.config/polybar/config_bottom.ini  &

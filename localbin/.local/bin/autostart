@@ -12,7 +12,7 @@
 #Created:
 #   Mon 22 November 2021, 03:15:54 PM [GMT+1]
 #Modified:
-#   Tue 25 October 2022, 06:43:21 AM [GMT+1]
+#   Tue 25 October 2022, 07:48:21 AM [GMT+1]
 #
 #Description:
 #   <Todo>
@@ -30,14 +30,14 @@ if command -v /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/n
 fi
 
 if [[ $DESKTOP_SESSION != "qtile" ]]; then
-    if command -v autotiling &>/dev/null; then
-        if ! pgrep -f "autotiling" >/dev/null; then
+    if command -v i3-autolayout &>/dev/null; then
+        if ! pgrep -f "i3-autolayout" >/dev/null; then
             (
                 sleep 2s
-                autotiling
+                i3-autolayout autolayout
             ) &
         else
-            echo "autotiling already Running"
+            echo "i3-autolayout already Running"
         fi
     fi
 

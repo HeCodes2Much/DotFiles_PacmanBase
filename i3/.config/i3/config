@@ -537,7 +537,7 @@ mode "$game_launcher" {
         $exe prime-run steam;focus; mode "default"
 
     bindsym --release m \
-        $exe prime-run minecraft-launcher;focus; mode "default"
+        $exe prime-run prismlauncher;focus; mode "default"
 
     bindsym --release t \
         $exe prime-run minetest;focus; mode "default"
@@ -679,7 +679,12 @@ bindsym XF86MonBrightnessDown $exe xbacklight -dec 10 # decrease screen brightne
 ## Category: Main Keybinds;
 # Description: Toggle Polybar;
 $super_b+b \
-    $exe ~/.config/polybar/scripts/toggle_bar.sh
+    $exe polybar-msg cmd toggle
+
+## Category: Main Keybinds;
+# Description: Toggle Polybar Tray;
+$super_b+i \
+    $exe polybar-msg action tray module_toggle
 
 #####################################################################################################################
 #################                          border control                                           #################

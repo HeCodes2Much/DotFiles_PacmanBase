@@ -6,6 +6,12 @@ if test -d "$HOME/.config/composer/vendor/bin"
     set PATH "$HOME/.config/composer/vendor/bin:$PATH"
 end
 
+# Adds `~/.cargo/bin` to $PATH
+# set PATH so it includes user's private bin if it exists
+if test -d "$HOME/.cargo/bin"
+    set PATH "$HOME/.cargo/bin:$PATH"
+end
+
 # Adds `~/.local/bin/repobar` to $PATH
 # set PATH so it includes user's private bin if it exists
 if test -d "$HOME/.local/bin/repobar"
