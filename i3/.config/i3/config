@@ -621,9 +621,9 @@ mode "$screenshot" {
 #################                          floating or tiled                                        #################
 #####################################################################################################################
 
-# {{{ Floating/Tiled
+# {{{ Floating/Tiled/Fullscreen
 
-#floating enabled from some programs - find with xprop
+# floating enabled from some programs - find with xprop
 
 for_window [class="(?i)Imagewriter"] floating enable
 for_window [class="(?i)Font-manager"] floating enable
@@ -643,7 +643,11 @@ for_window [title="Copying"] floating enable
 for_window [title="Deleting"] floating enable
 for_window [title="Moving"] floating enable
 
-# }}} Floating/Tiled
+# fullscreen enabled from some programs - find with xprop
+
+for_window [class="(?i)Minecraft*|0ad*|Minetest"] fullscreen enable
+
+# }}} Floating/Tiled/Fullscreen
 
 #####################################################################################################################
 #################                          audio settings                                           #################
