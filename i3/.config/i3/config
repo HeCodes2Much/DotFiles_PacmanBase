@@ -144,7 +144,7 @@ $super_b+p \
 
 ## Category: FZFMenu;
 # Description: Start YoutubeMenu;
-$super_b+t \
+$super_b+s \
     $exe fzf_run -c 'fzf_youtube_subs' -i YoutubeMenu -t $TerminalEmulator
 
 # }}} Menus
@@ -429,6 +429,7 @@ assign [class="(?i)Keybase"]                                                    
 # Workspace $ws8
 assign [class="(?i)Minecraft*|Steam*"]                                          → $ws8
 assign [class="(?i)0ad*|Minetest"]                                              → $ws8
+assign [class="(?i)PrismLauncher*"]                                             → $ws8
 
 # Workspace $ws9
 assign [class="(?i)Discord|Element"]                                            → $ws9
@@ -632,8 +633,8 @@ for_window [class="(?i)wm-cheat.py"] floating enable, resize set 720 720, move p
 for_window [class="(?i)MultiMonitorLock-GUI"] floating enable
 for_window [class="(?i)Polybar-updates"] floating enable, resize set 1280 720, move position center
 for_window [class="(?i)Menu"] floating enable, resize set 350 900, move position center
-for_window [class="(?i)PowerMenu"] floating enable, resize set 300 300, move position center
-for_window [class="(?i)PolybarMenu"] floating enable, resize set 350 900, move position 10 3
+for_window [class="(?i)PowerMenu"] floating enable, resize set 400 300, move position center
+for_window [class="(?i)PolybarMenu"] floating enable, resize set 350 900, move position center
 for_window [class="(?i)PassMenu"] floating enable, resize set 350 700, move position center
 for_window [class="(?i)YoutubeMenu"] floating enable, resize set 700 750, move position center
 
@@ -683,7 +684,7 @@ $super_b+b \
 
 ## Category: Main Keybinds;
 # Description: Toggle Polybar Tray;
-$super_b+i \
+$super_b+t \
     $exe polybar-msg action tray module_toggle
 
 #####################################################################################################################
