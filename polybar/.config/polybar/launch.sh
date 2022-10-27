@@ -24,8 +24,8 @@ OTHERS=$(xrandr --query | grep " connected" | grep -v "primary" | cut -d" " -f1)
 
 # Launch bar1 and bar2
 if type "xrandr" > /dev/null; then
-    TOP_BAR_CONFIG=$HOME/.config/polybar/$MC/config_top.ini
-    BOTTOM_BAR_CONFIG=$HOME/.config/polybar/$MC/config_bottom.ini
+    TOP_BAR_CONFIG=$HOME/.config/polybar/monitor_$MC/config_top.ini
+    BOTTOM_BAR_CONFIG=$HOME/.config/polybar/monitor_$MC/config_bottom.ini
 
     # Launch on primary monitor
     MONITOR=$PRIMARY polybar --reload -c "$TOP_BAR_CONFIG" $BAR_NAME &
@@ -35,8 +35,8 @@ if type "xrandr" > /dev/null; then
 
     for m in $OTHERS; do
         MC=$((MC+1))
-        TOP_BAR_CONFIG=$HOME/.config/polybar/$MC/config_top.ini
-        BOTTOM_BAR_CONFIG=$HOME/.config/polybar/$MC/config_bottom.ini
+        TOP_BAR_CONFIG=$HOME/.config/polybar/monitor_$MC/config_top.ini
+        BOTTOM_BAR_CONFIG=$HOME/.config/polybar/monitor_$MC/config_bottom.ini
 
         MONITOR=$m polybar --reload -c "$TOP_BAR_CONFIG" $BAR_NAME &
         MONITOR=$m polybar --reload -c "$BOTTOM_BAR_CONFIG" $BAR_NAME &
