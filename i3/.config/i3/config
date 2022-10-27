@@ -865,17 +865,29 @@ $super_b+minus \
     scratchpad show
 
 #######################################################################
-#################          active scratchpad          #################
+###############       active dropdown scratchpad        ###############
 #######################################################################
-$exe $TerminalEmulator --title "dropdown-terminal" --class "dropdown-terminal","dropdown-terminal"
-for_window [class="(?i)dropdown-terminal"] floating enable
-for_window [class="(?i)dropdown-terminal"] resize set 1100 800
-for_window [class="(?i)dropdown-terminal"] move scratchpad
+$exe dropdown_btop start
+$exe dropdown_terminal start
+$exe dropdown_pavucontrol start
 
-## Category: Scratchpad;
-# Description: Toggle $TerminalEmulator;
+## Category: Dropdowns;
+# Description: Toggle process dropdown;
+$control_b+b \
+   $exe dropdown_btop toggle
+
+## Category: Dropdowns;
+# Description: Toggle terminal dropdown;
 $control_b+Return \
-    [class="(?i)dropdown-terminal"] scratchpad show, move position center
+   $exe dropdown_terminal toggle
+
+$control_b+t \
+   $exe dropdown_terminal toggle
+
+## Category: Dropdowns;
+# Description: Toggle auido dropdown;
+$control_b+a \
+   $exe dropdown_pavucontrol toggle
 
 # }}} Scratchpad
 
