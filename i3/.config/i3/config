@@ -873,7 +873,7 @@ $exe dropdown_pavucontrol start
 
 ## Category: Dropdowns;
 # Description: Toggle process dropdown;
-$control_b+b \
+$alt_b+$shift+b \
    $exe dropdown_btop toggle
 
 ## Category: Dropdowns;
@@ -881,12 +881,12 @@ $control_b+b \
 $control_b+Return \
    $exe dropdown_terminal toggle
 
-$control_b+t \
+$alt_b+$shift+t \
    $exe dropdown_terminal toggle
 
 ## Category: Dropdowns;
 # Description: Toggle auido dropdown;
-$control_b+a \
+$alt_b+$shift+a \
    $exe dropdown_pavucontrol toggle
 
 # }}} Scratchpad

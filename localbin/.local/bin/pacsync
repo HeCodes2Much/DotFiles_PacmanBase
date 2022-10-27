@@ -12,13 +12,13 @@
 #Created:
 #   Tue 25 October 2022, 07:04:14 AM [GMT+1]
 #Modified:
-#   Tue 25 October 2022, 07:28:54 AM [GMT+1]
+#   Thu 27 October 2022, 10:10:40 PM [GMT+1]
 #
 #Description:
-#   FZF menu for pacman yay or paru
+#   FZF menu for pacman yay or pikaur
 #
 #Dependencies:
-#   bash, pacman, yay, paru
+#   bash, pacman, yay, pikaur
 #
 
 function go_pacman() {
@@ -26,7 +26,7 @@ function go_pacman() {
     --header 'Install packages. CTRL+[P/Y/R/I/Q] (Pacman/Yay/Paru/Installed/Quit)' \
     --bind 'ctrl-p:change-prompt(pacman> )+reload(pacman -Slq)' \
     --bind 'ctrl-y:change-prompt(yay> )+reload(yay -Slq)' \
-    --bind 'ctrl-r:change-prompt(paru> )+reload(paru -Slq)' \
+    --bind 'ctrl-r:change-prompt(pikaur> )+reload(pikaur -Slq)' \
     --bind 'ctrl-i:change-prompt(inst> )+reload(yay -Qq)' \
     --multi --height=80% --preview 'sleep 2; yay -Si {1}' \
     --preview-window 'right,wrap' \
@@ -43,7 +43,7 @@ function go_yay() {
     --header 'Install packages. CTRL+[P/Y/R/I/Q] (Pacman/Yay/Paru/Installed/Quit)' \
     --bind 'ctrl-p:change-prompt(pacman> )+reload(pacman -Slq)' \
     --bind 'ctrl-y:change-prompt(yay> )+reload(yay -Slq)' \
-    --bind 'ctrl-r:change-prompt(paru> )+reload(paru -Slq)' \
+    --bind 'ctrl-r:change-prompt(pikaur> )+reload(pikaur -Slq)' \
     --bind 'ctrl-i:change-prompt(inst> )+reload(yay -Qq)' \
     --multi --height=80% --preview 'sleep 2; yay -Si {1}' \
     --preview-window 'right,wrap' \
@@ -56,15 +56,15 @@ function go_yay() {
 }
 
 function go_paru() {
-  cmd=$(paru -Slq | fzf --prompt 'paru> ' \
+  cmd=$(pikaur -Slq | fzf --prompt 'pikaur> ' \
     --header 'Install packages. CTRL+[P/Y/R/I/Q] (Pacman/Yay/Paru/Installed/Quit)' \
     --bind 'ctrl-p:change-prompt(pacman> )+reload(pacman -Slq)' \
     --bind 'ctrl-y:change-prompt(yay> )+reload(yay -Slq)' \
-    --bind 'ctrl-r:change-prompt(paru> )+reload(paru -Slq)' \
+    --bind 'ctrl-r:change-prompt(pikaur> )+reload(pikaur -Slq)' \
     --bind 'ctrl-i:change-prompt(inst> )+reload(yay -Qq)' \
     --multi --height=80% --preview 'sleep 2; yay -Si {1}' \
     --preview-window 'right,wrap' \
-    --reverse --header-first) #| xargs -ro paru -S
+    --reverse --header-first) #| xargs -ro pikaur -S
   cmd=${cmd//$'\n'/ }       # newline -> space
   if [ -n "$cmd" ]; then
     yay -S "$cmd"
@@ -77,7 +77,7 @@ function go_installed() {
     --header 'Installed packages. CTRL+[P/Y/R/I/Q] (Pacman/Yay/Paru/Installed/Quit)' \
     --bind 'ctrl-p:change-prompt(pacman> )+reload(pacman -Slq)' \
     --bind 'ctrl-y:change-prompt(yay> )+reload(yay -Slq)' \
-    --bind 'ctrl-r:change-prompt(paru> )+reload(paru -Slq)' \
+    --bind 'ctrl-r:change-prompt(pikaur> )+reload(pikaur -Slq)' \
     --bind 'ctrl-i:change-prompt(installed> )+reload(yay -Qq)' \
     --multi --height=80% --preview 'sleep 2; yay -Si {1}' \
     --preview-window 'right,wrap' \
@@ -96,7 +96,7 @@ case $1 in
 *yay)
   go_yay
   ;;
-*paru)
+*pikaur)
   go_paru
   ;;
 *installed)

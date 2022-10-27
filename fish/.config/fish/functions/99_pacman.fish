@@ -20,7 +20,7 @@ function pacman
     else if [ "$argv" = --upall ]
         command sudo pacman -Fy
         command sudo pacman -Sy
-        command paru -Su
+        command pikaur -Su
         command auracle update -C ~/.cache/pkgs/
     else if [ "$argv" = --upkernel ]
         command sudo pacman -S linux linux-lts linux-zen linux-headers linux-lts-headers linux-zen-headers --needed --noconfirm

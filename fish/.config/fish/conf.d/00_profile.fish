@@ -6,8 +6,7 @@ setxkbmap -option caps:super
 set -gx LC_ALL "en_GB.UTF-8"
 set -gx PAGER "most"
 set -gx AUR_PAGER "most"
-set -gx EDITOR "nvim-qt"
-set -gx GIT_TOKEN "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"
+set -gx EDITOR "nano"
 #QT and GTK Variables
 set -gx QT_QPA_PLATFORMTHEME "qt5ct"
 set -gx QT_AUTO_SCREEN_SCALE_FACTOR 0
