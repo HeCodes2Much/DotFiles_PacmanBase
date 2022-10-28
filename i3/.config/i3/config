@@ -867,9 +867,6 @@ $super_b+minus \
 #######################################################################
 ###############       active dropdown scratchpad        ###############
 #######################################################################
-$exe dropdown_btop start
-$exe dropdown_terminal start
-$exe dropdown_pavucontrol start
 
 ## Category: Dropdowns;
 # Description: Toggle process dropdown;

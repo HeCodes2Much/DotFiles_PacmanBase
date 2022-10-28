@@ -6,7 +6,7 @@ setxkbmap -option caps:super
 set -gx LC_ALL "en_GB.UTF-8"
 set -gx PAGER "most"
 set -gx AUR_PAGER "most"
-set -gx EDITOR "nano"
+set -gx EDITOR "vim"
 #QT and GTK Variables
 set -gx QT_QPA_PLATFORMTHEME "qt5ct"
 set -gx QT_AUTO_SCREEN_SCALE_FACTOR 0

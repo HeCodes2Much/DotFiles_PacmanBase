@@ -12,7 +12,7 @@
 #Created:
 #   Mon 22 November 2021, 03:15:54 PM [GMT+1]
 #Modified:
-#   Tue 25 October 2022, 07:48:21 AM [GMT+1]
+#   Fri 28 October 2022, 08:37:19 AM [GMT+1]
 #
 #Description:
 #   <Todo>
@@ -29,7 +29,7 @@ if command -v /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/n
     fi
 fi
 
-if [[ $DESKTOP_SESSION != "qtile" ]]; then
+if [[ $DESKTOP_SESSION == "i3" ]]; then
     if command -v i3-autolayout &>/dev/null; then
         if ! pgrep -f "i3-autolayout" >/dev/null; then
             (
@@ -57,6 +57,16 @@ if [[ $DESKTOP_SESSION != "qtile" ]]; then
             echo "xroot already Running"
         fi
     fi
+
+    cmdList=$(i3-msg -t get_marks)
+    for cmd in $(echo "${cmdList}" | jq -r '.[]'); do
+        if command -v "${cmd}" &>/dev/null; then
+            (
+                sleep 2s
+                ${cmd} start
+            ) &
+        fi
+    done
 fi
 if command -v clipmenu-daemon &>/dev/null; then
     if ! pgrep -f "clipmenu-daemon" >/dev/null; then
