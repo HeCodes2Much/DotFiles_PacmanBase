@@ -12,7 +12,7 @@
 #Created:
 #   Thu 27 October 2022, 06:11:40 PM [GMT+1]
 #Modified:
-#   Thu 27 October 2022, 06:44:32 PM [GMT+1]
+#   Fri 28 October 2022, 04:08:44 PM [GMT+1]
 #
 #Description:
 #   <Todo>
@@ -82,11 +82,18 @@ term_close() {
 }
 
 term_toggle() {
-    case "$(cat $TERMINAL_STATE)" in
-        open) term_close ;;
-        closed) term_open ;;
-        *) ;;
-    esac
+    cmdList=$(i3-msg -t get_marks)
+    me=$(basename "$0")
+    if [[ ${cmdList[*]} =~ $me ]]; then
+        case "$(cat $TERMINAL_STATE)" in
+            open) term_close ;;
+            closed) term_open ;;
+            *) ;;
+        esac
+    else
+        $me "start"
+        $me "toggle"
+    fi
 }
 
 case $1 in

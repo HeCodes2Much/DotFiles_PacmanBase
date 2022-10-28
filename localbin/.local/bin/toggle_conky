@@ -12,7 +12,7 @@
 #Created:
 #   Fri 28 October 2022, 08:57:10 AM [GMT+1]
 #Modified:
-#   Fri 28 October 2022, 10:48:27 AM [GMT+1]
+#   Fri 28 October 2022, 04:17:57 PM [GMT+1]
 #
 #Description:
 #   Toggle the conky on and off
@@ -26,15 +26,14 @@ checkRun=$(pgrep 'conky' | wc -l)
 if command -v conky &>/dev/null; then
     if [[ ! $checkRun -ge "1" ]]; then
         (
-            conky -c ~/.config/conky/conky_left.config
-            conky -c ~/.config/conky/conky_right.config
-            # sleep 2s
             i3-msg "gaps right all set 5; gaps right all set 330"
+            sleep 2s
+            conky -c ~/.config/conky/left.conkyrc
+            conky -c ~/.config/conky/right.conkyrc
         ) &
     else
         killall -q conky
-        echo "conky has been killed."
-        # sleep 2s
+        sleep 2s
         i3-msg "gaps inner all set 5; gaps outer all set 2"
     fi
 fi

@@ -12,7 +12,7 @@
 #Created:
 #   Mon 22 November 2021, 03:15:54 PM [GMT+1]
 #Modified:
-#   Fri 28 October 2022, 09:11:49 AM [GMT+1]
+#   Fri 28 October 2022, 04:11:25 PM [GMT+1]
 #
 #Description:
 #   <Todo>
@@ -57,16 +57,6 @@ if [[ $DESKTOP_SESSION == "i3" ]]; then
             echo "xroot already Running"
         fi
     fi
-
-    cmdList=("dropdown_pavucontrol" "dropdown_btop" "dropdown_terminal")
-    for cmd in "${cmdList[@]}"; do
-        if command -v "${cmd}" &>/dev/null; then
-            (
-                sleep 2s
-                ${cmd} start
-            ) &
-        fi
-    done
 fi
 if command -v clipmenu-daemon &>/dev/null; then
     if ! pgrep -f "clipmenu-daemon" >/dev/null; then

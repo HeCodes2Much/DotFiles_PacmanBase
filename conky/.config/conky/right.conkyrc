@@ -1,9 +1,3 @@
---[[
-##################################
-##  dracula-01.conkyrc (Qtile)  ##
-##################################
-]]
-
 conky.config = {
 
 	--Various settings
@@ -22,7 +16,7 @@ conky.config = {
 
     -- Placement
 	alignment = 'top_left',		                -- top_left,top_middle,top_right,bottom_left,bottom_middle,bottom_right,
-	gap_x = 1630,							    -- pixels between right or left border
+	gap_x = 4180,							    -- pixels between right or left border
 	gap_y = 70,								    -- pixels between bottom or top border
 
     -- Size
@@ -92,39 +86,40 @@ ${color2}${goto 12}${cpubar 8,254}
 ${voffset 5}${goto 12}$font${color1}${top name 1}$alignr$color${top cpu 1}%
 ${goto 12}${color1}${top name 2}$alignr$color${top cpu 2}%
 ${goto 12}${color1}${top name 3}$alignr$color${top cpu 3}%
+${goto 12}${color1}${top name 4}$alignr$color${top cpu 4}%
+${goto 12}${color1}${top name 5}$alignr$color${top cpu 5}%
 ${voffset 14}${goto 12}${color3}RAM${goto 50}$mem/$memmax
 ${color2}${goto 12}${membar 8,254}${color}
 ${goto 12}${voffset 5}${color1}${top_mem name 1}$alignr$color${top_mem mem_res 1}
 ${goto 12}${color1}${top_mem name 2}$alignr$color${top_mem mem_res 2}
 ${goto 12}${color1}${top_mem name 3}$alignr$color${top_mem mem_res 3}
-${voffset 18}${color1}${alignc}${font4}QTILE KEYBINDINGS${font}${color}
+${goto 12}${color1}${top_mem name 4}$alignr$color${top_mem mem_res 4}
+${goto 12}${color1}${top_mem name 5}$alignr$color${top_mem mem_res 5}
 ${color1}${hr}${color}
-${color1}[S]+[RET]${alignr}${color2}open terminal${color}
-${color1}[S]+b${alignr}${color2}open qutebrowser${color}
-${color1}[S]+[SHIFT]+[RET]${alignr}${color2}run prompt${color}
-${color1}[S]+[SHIFT]+c${alignr}${color2}close window${color}
-${color1}[S]+j/k${alignr}${color2}move win focus${color}
-${color1}[S]+[SHIFT]+hjkl${alignr}${color2}move window${color}
-${color1}[S]+[1-9]${alignr}${color2}switch workspace${color}
-${color1}[S]+[SHIFT]+[1-9]${alignr}${color2}send window${color}
-${color1}[S]+h/l${alignr}${color2}shrink/expand${color}
+${voffset 18}${color1}${alignc}${font4}Key Cheat Sheet${font}${color}
 ${color1}${hr}${color}
-${color1}[S]+e, e${alignr}${color2}launch emacs${color}
-${color1}[S]+e, b${alignr}${color2}ibuffer${color}
-${color1}[S]+e, d${alignr}${color2}dired${color}
-${color1}[S]+e, n${alignr}${color2}elfeed${color}
-${color1}[S]+e, s${alignr}${color2}eshell${color}
-${color1}[S]+e, v${alignr}${color2}vterm${color}
+${color1}[M]${alignr}${color2}MOD${color}
+${color1}[A]${alignr}${color2}ALT${color}
+${color1}[C]${alignr}${color2}CTRL${color}
+${color1}[S]${alignr}${color2}SHIFT${color}
 ${color1}${hr}${color}
-${color1}[S]+p, h${alignr}${color2}dm-hub${color}
-${color1}[S]+p, b${alignr}${color2}dm-setbg${color}
-${color1}[S]+p, e${alignr}${color2}dm-confedit${color}
-${color1}[S]+p, m${alignr}${color2}dm-man${color}
-${color1}[S]+p, o${alignr}${color2}dm-bookman${color}
-${color1}[S]+p, s${alignr}${color2}dm-websearch${color}
+${voffset 18}${color1}${alignc}${font4}i3 Keybindings${font}${color}
 ${color1}${hr}${color}
-${color1}[S]+[SHIFT]+r${alignr}${color2}restart qtile${color}
-${color1}[S]+[SHIFT]+q${alignr}${color2}quit qtile${color}
-${voffset 100}
+${color1}[M]+q${alignr}${color2}close window${color}
+${color1}[M]+j/k${alignr}${color2}move win focus${color}
+${color1}[M]+[S]+hjkl${alignr}${color2}move window${color}
+${color1}[M]+[1-9]${alignr}${color2}switch workspace${color}
+${color1}[M]+[S]+[1-9]${alignr}${color2}send window${color}
+${color1}[M]+h/l${alignr}${color2}shrink/expand${color}
+${color1}${hr}${color}
+${color1}[M]+Return${alignr}${color2}open terminal${color}
+${color1}[M]+[C]+f${alignr}${color2}open firefox${color}
+${color1}[M]+[C]+c${alignr}${color2}open vscode${color}
+${color1}[A]+Return${alignr}${color2}open files${color}
+${color1}${hr}${color}
+${color1}[M]+[S]+r${alignr}${color2}restart i3${color}
+${color1}[M]+[S]+q${alignr}${color2}quit i3${color}
+${color1}${hr}${color}
+${voffset 10}
 ]];
 
