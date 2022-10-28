@@ -12,7 +12,7 @@
 #Created:
 #   Mon 22 November 2021, 03:15:54 PM [GMT+1]
 #Modified:
-#   Fri 28 October 2022, 08:37:19 AM [GMT+1]
+#   Fri 28 October 2022, 09:11:49 AM [GMT+1]
 #
 #Description:
 #   <Todo>
@@ -58,8 +58,8 @@ if [[ $DESKTOP_SESSION == "i3" ]]; then
         fi
     fi
 
-    cmdList=$(i3-msg -t get_marks)
-    for cmd in $(echo "${cmdList}" | jq -r '.[]'); do
+    cmdList=("dropdown_pavucontrol" "dropdown_btop" "dropdown_terminal")
+    for cmd in "${cmdList[@]}"; do
         if command -v "${cmd}" &>/dev/null; then
             (
                 sleep 2s

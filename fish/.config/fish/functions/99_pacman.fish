@@ -22,8 +22,6 @@ function pacman
         command sudo pacman -Sy
         command pikaur -Su
         command auracle update -C ~/.cache/pkgs/
-    else if [ "$argv" = --upkernel ]
-        command sudo pacman -S linux linux-lts linux-zen linux-headers linux-lts-headers linux-zen-headers --needed --noconfirm
     else if [ "$argv" = --pacsync ]
         command pacsync
     else
@@ -34,10 +32,6 @@ end
 # Update all packages
 function upall
     pacman --upall
-end
-
-function upkernel
-    pacman --upkernel
 end
 
 #check aur and arch packages

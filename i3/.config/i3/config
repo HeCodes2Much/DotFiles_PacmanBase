@@ -843,6 +843,11 @@ $exe_always picom -CGb --experimental-backend --config ~/.config/i3/picom.conf
 $control_b+$alt+o \
     $exe ~/.config/polybar/scripts/picom-toggle.sh
 
+## Category: Main Keybinds;
+# Description: Reload Polybar;
+$control_b+$alt+b \
+    $exe ~/.config/polybar/launch.sh
+
 #####################################################################################################################
 #################                          Scratchpad                                               #################
 #####################################################################################################################
@@ -869,24 +874,29 @@ $super_b+minus \
 #######################################################################
 
 ## Category: Dropdowns;
-# Description: Toggle process dropdown;
+# Description: Toggle btop;
 $alt_b+$shift+b \
    $exe dropdown_btop toggle
 
 ## Category: Dropdowns;
-# Description: Toggle terminal dropdown;
-$control_b+Return \
-   $exe dropdown_terminal toggle
-
+# Description: Toggle $TerminalEmulator;
 $alt_b+$shift+t \
    $exe dropdown_terminal toggle
 
+$control_b+Return \
+   $exe dropdown_terminal toggle
+
 ## Category: Dropdowns;
-# Description: Toggle auido dropdown;
+# Description: Toggle pavucontrol;
 $alt_b+$shift+a \
    $exe dropdown_pavucontrol toggle
 
 # }}} Scratchpad
+
+## Category: Dropdowns;
+# Description: Toggle conky;
+$alt_b+$shift+c \
+   $exe toggle_conky
 
 #####################################################################################################################
 #####################################################################################################################
