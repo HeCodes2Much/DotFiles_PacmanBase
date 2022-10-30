@@ -12,7 +12,7 @@
 #Created:
 #   Tue 25 October 2022, 07:04:14 AM [GMT+1]
 #Modified:
-#   Thu 27 October 2022, 10:10:40 PM [GMT+1]
+#   Sun 30 October 2022, 12:46:18 PM [GMT]
 #
 #Description:
 #   FZF menu for pacman yay or pikaur
@@ -20,89 +20,100 @@
 #Dependencies:
 #   bash, pacman, yay, pikaur
 #
+# shellcheck disable=all
+
+colorize() {
+    local string
+    string="${1//\[/\\033\[0;32m\[}"
+    string="${string//\]/\]\\033\[0m}"
+    echo -n -e "${string}"
+}
+
+CP_KEY="ctrl-p"
+CA_KEY="ctrl-a"
+CI_KEY="ctrl-i"
+CQ_KEY="ctrl-q"
+TP_KEY="ctrl-t"
+
+HEADER=$(colorize "[ENTER] Install selected [${TP_KEY^^}] Toggle preview
+[${CP_KEY^^}] Pacman [${CA_KEY^^}] AUR [${CI_KEY^^}] Installed
+[${CQ_KEY^^}] Quit")
 
 function go_pacman() {
-  cmd=$(pacman -Slq | fzf --prompt 'pacman> ' \
-    --header 'Install packages. CTRL+[P/Y/R/I/Q] (Pacman/Yay/Paru/Installed/Quit)' \
-    --bind 'ctrl-p:change-prompt(pacman> )+reload(pacman -Slq)' \
-    --bind 'ctrl-y:change-prompt(yay> )+reload(yay -Slq)' \
-    --bind 'ctrl-r:change-prompt(pikaur> )+reload(pikaur -Slq)' \
-    --bind 'ctrl-i:change-prompt(inst> )+reload(yay -Qq)' \
-    --multi --height=80% --preview 'sleep 2; yay -Si {1}' \
-    --preview-window 'right,wrap' \
-    --reverse --header-first) #| xargs -ro pacman -S
-  cmd=${cmd//$'\n'/ }       # newline -> space
-  if [ -n "$cmd" ]; then
-    yay -S "$cmd"
-  fi
-  exit
+    cmd=$(pacman -Slq | fzf --prompt '  pacman> ' \
+        --header "${HEADER}" \
+        --bind "${CP_KEY}:execute:pacsync 'pacman'" \
+        --bind "${CA_KEY}:execute:pacsync 'aur'" \
+        --bind "${CI_KEY}:execute:pacsync 'installed'" \
+        --bind "${CQ_KEY}:execute:pkill fzf" \
+        --bind "${TP_KEY}:toggle-preview" \
+        --multi --height=80% --preview 'sleep 2; yay -Si {1}' \
+        --preview-window 'right,wrap') #| xargs -ro pacman -S
+    cmd=${cmd//$'\n'/ }           # newline -> space
+    if [ -n "$cmd" ]; then
+        pikaur -S "$cmd"
+    fi
+    exit
 }
 
-function go_yay() {
-  cmd=$(yay -Slq | fzf --prompt 'yay> ' \
-    --header 'Install packages. CTRL+[P/Y/R/I/Q] (Pacman/Yay/Paru/Installed/Quit)' \
-    --bind 'ctrl-p:change-prompt(pacman> )+reload(pacman -Slq)' \
-    --bind 'ctrl-y:change-prompt(yay> )+reload(yay -Slq)' \
-    --bind 'ctrl-r:change-prompt(pikaur> )+reload(pikaur -Slq)' \
-    --bind 'ctrl-i:change-prompt(inst> )+reload(yay -Qq)' \
-    --multi --height=80% --preview 'sleep 2; yay -Si {1}' \
-    --preview-window 'right,wrap' \
-    --reverse --header-first) #| xargs -ro yay -S
-  cmd=${cmd//$'\n'/ }       # newline -> space
-  if [ -n "$cmd" ]; then
-    yay -S "$cmd"
-  fi
-  exit
-}
-
-function go_paru() {
-  cmd=$(pikaur -Slq | fzf --prompt 'pikaur> ' \
-    --header 'Install packages. CTRL+[P/Y/R/I/Q] (Pacman/Yay/Paru/Installed/Quit)' \
-    --bind 'ctrl-p:change-prompt(pacman> )+reload(pacman -Slq)' \
-    --bind 'ctrl-y:change-prompt(yay> )+reload(yay -Slq)' \
-    --bind 'ctrl-r:change-prompt(pikaur> )+reload(pikaur -Slq)' \
-    --bind 'ctrl-i:change-prompt(inst> )+reload(yay -Qq)' \
-    --multi --height=80% --preview 'sleep 2; yay -Si {1}' \
-    --preview-window 'right,wrap' \
-    --reverse --header-first) #| xargs -ro pikaur -S
-  cmd=${cmd//$'\n'/ }       # newline -> space
-  if [ -n "$cmd" ]; then
-    yay -S "$cmd"
-  fi
-  exit
+function go_aur() {
+    cmd=$(yay -Slq | fzf --prompt '  pikaur> ' \
+        --header "${HEADER}" \
+        --bind "${CP_KEY}:execute:pacsync 'pacman'" \
+        --bind "${CA_KEY}:execute:pacsync 'aur'" \
+        --bind "${CI_KEY}:execute:pacsync 'installed'" \
+        --bind "${CQ_KEY}:execute:pkill fzf" \
+        --bind "${TP_KEY}:toggle-preview" \
+        --multi --height=80% --preview 'sleep 2; yay -Si {1}' \
+        --preview-window 'right,wrap') #| xargs -ro pikaur -S
+    cmd=${cmd//$'\n'/ }           # newline -> space
+    if [ -n "$cmd" ]; then
+        pikaur -R "$cmd"
+    fi
+    exit
 }
 
 function go_installed() {
-  cmd=$(pacman -Qq | fzf --prompt 'installed> ' \
-    --header 'Installed packages. CTRL+[P/Y/R/I/Q] (Pacman/Yay/Paru/Installed/Quit)' \
-    --bind 'ctrl-p:change-prompt(pacman> )+reload(pacman -Slq)' \
-    --bind 'ctrl-y:change-prompt(yay> )+reload(yay -Slq)' \
-    --bind 'ctrl-r:change-prompt(pikaur> )+reload(pikaur -Slq)' \
-    --bind 'ctrl-i:change-prompt(installed> )+reload(yay -Qq)' \
-    --multi --height=80% --preview 'sleep 2; yay -Si {1}' \
-    --preview-window 'right,wrap' \
-    --reverse --header-first) #| xargs -ro pacman -S
-  cmd=${cmd//$'\n'/ }       # newline -> space
-  if [ -n "$cmd" ]; then
-    yay -S "$cmd"
-  fi
-  exit
+    cmd=$(pacman -Qq | fzf --prompt '  installed> ' \
+        --header "${HEADER}" \
+        --bind "${CP_KEY}:execute:pacsync 'pacman'" \
+        --bind "${CA_KEY}:execute:pacsync 'aur'" \
+        --bind "${CI_KEY}:execute:pacsync 'installed'" \
+        --bind "${CQ_KEY}:execute:pkill fzf" \
+        --bind "${TP_KEY}:toggle-preview" \
+        --multi --height=80% --preview 'sleep 2; yay -Si {1}' \
+        --preview-window 'right,wrap') #| xargs -ro pacman -S
+    cmd=${cmd//$'\n'/ }           # newline -> space
+    if [ -n "$cmd" ]; then
+        pikaur -R "$cmd"
+    fi
+    exit
 }
+
+if command -v fzf > /dev/null 2>&1; then
+    FUZZYSEL=fzf
+    fuzzy_default_options=(
+      "--inline-info" "--cycle" "--ansi" "-e"
+      "--no-sort" "--layout=reverse-list"
+      "--border=${BORDER:-sharp}"
+    )
+    export FZF_DEFAULT_OPTS="${fuzzy_default_options[*]}"
+  else
+    echo "Unable to find 'fzf' fuzzy finder"
+    exit
+  fi
 
 case $1 in
 *pacman)
-  go_pacman
-  ;;
-*yay)
-  go_yay
-  ;;
-*pikaur)
-  go_paru
-  ;;
+    go_pacman
+    ;;
+*aur)
+    go_aur
+    ;;
 *installed)
-  go_installed
-  ;;
+    go_installed
+    ;;
 *)
-  go_pacman
-  ;;
+    go_pacman
+    ;;
 esac
