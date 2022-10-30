@@ -12,7 +12,7 @@
 #Created:
 #   Fri 28 October 2022, 08:57:10 AM [GMT+1]
 #Modified:
-#   Sun 30 October 2022, 12:39:42 PM [GMT]
+#   Sun 30 October 2022, 02:50:09 PM [GMT]
 #
 #Description:
 #   Toggle the conky on and off
@@ -21,10 +21,10 @@
 #   conky
 #
 
-checkRun=$(pgrep 'conky' | wc -l)
+checkRun=$(pidof 'conky')
 
 if command -v conky &>/dev/null; then
-    if [[ ! $checkRun -ge "1" ]]; then
+    if [[ ! $checkRun ]]; then
         (
             i3-msg "gaps right all set 5; gaps right all set 330"
             conky -c ~/.config/conky/left.conkyrc
