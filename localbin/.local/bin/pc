@@ -1,4 +1,27 @@
 #!/usr/bin/env bash
+#-*-coding:utf-8 -*-
+#Auto updated?
+#   Yes
+#File:
+#   pc
+#Author:
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github:
+#   https://github.com/The-Repo-Club/
+#
+#Created:
+#   Sun 30 October 2022, 10:02:57 AM [GMT]
+#Modified:
+#   Sun 30 October 2022, 10:03:20 AM [GMT]
+#
+#Description:
+#   package list
+#
+#Dependencies:
+#   pacman
+#
+# shellcheck disable=all
+
 ## Reset Colors
 Reset='\e[0m'
 ### Custom colors
