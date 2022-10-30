@@ -33,7 +33,6 @@ husky-hooks
 husky-packagemanager
 i3-autolayout
 i3-cheat
-i3-gaps
 i3-session
 i3-swallow
 i3lock-color
@@ -65,6 +64,7 @@ pcurses
 perl-checkupdates-aur
 perl-www-aur
 php-pear
+pikaur
 pkgbrowser
 proctl
 protonup-git
