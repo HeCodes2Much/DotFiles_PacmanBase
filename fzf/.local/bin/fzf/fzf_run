@@ -12,7 +12,7 @@
 #Created:
 #   Wed 10 March 2021, 12:34:47 PM [GMT+1]
 #Modified:
-#   Sun 30 October 2022, 03:32:36 PM [GMT]
+#   Sat 05 November 2022, 04:25:20 PM [GMT]
 #
 #Description:
 #   <Todo>
@@ -21,6 +21,11 @@
 #   bash
 #
 # shellcheck disable=all
+
+## Script metadata
+SCRIPTNAME=${0##*/}
+DESCRIPTION="A bash and fzf run script for terminal."
+AUTHOR="The-Repo-Club <wayne6324@gmail.com>"
 
 command=''
 width=''
@@ -62,12 +67,11 @@ readonly b_blk b_red b_grn b_yel b_blu b_mag b_cyn b_wht blk red grn yel blu mag
 error() {
     local mesg=$1
     printf "${red}${bld}==> ERROR:${wht} %b${del}\n" "$mesg"
-    exit 0
 }
 
 run_program() {
     if command -v $command &>/dev/null; then
-        cmd='alacritty'
+        cmd="xterm"
         if [[ -n $term ]]; then
             cmd="$term"
         fi
@@ -79,12 +83,24 @@ run_program() {
         if [[ -n $command ]]; then
             cmd+=" -e $command"
         fi
-        exec nohup $cmd >&/dev/null
+        exec $cmd >&/dev/null
+        exit 0
     fi
 }
 
 show_help() {
-    echo "HELP"
+    printf "
+    %b
+    Usage:
+      %b...
+      %b [options]...
+    Options:
+      -h, --help            Display help.
+      -c, --command         Set the command to be ran..
+      -i, --instance        Set the WM_CLASS for the program thats ran.
+      -t, --term            Override the terminal you would like to use.
+      \n" "$DESCRIPTION" "$SCRIPTNAME" "$SCRIPTNAME"
+      exit 0
 }
 
 while [[ "$1" ]]; do
@@ -107,11 +123,16 @@ while [[ "$1" ]]; do
         ;;
     -*)
         error 'Incorrect option(s) specified.'
+        show_help
         ;;
     *)
         error 'Incorrect option(s) specified.'
+        show_help
         ;;
     esac
     shift
 done
 run_program
+error 'Incorrect option(s) specified.'
+show_help
+

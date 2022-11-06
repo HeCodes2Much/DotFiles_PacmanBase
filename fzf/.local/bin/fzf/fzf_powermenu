@@ -12,7 +12,7 @@
 #Created:
 #   Wed 10 March 2021, 12:34:47 PM [GMT+1]
 #Modified:
-#   Fri 28 October 2022, 05:00:50 PM [GMT+1]
+#   Tue 01 November 2022, 06:45:08 AM [GMT]
 #
 #Description:
 #   <Todo>
@@ -76,6 +76,8 @@ while [ -n "$LOOPSETTING" ]; do
     *Logout)
         if [[ "$DESKTOP_SESSION" == "i3" ]]; then
             i3-msg exit
+        elif [[ "$DESKTOP_SESSION" == "herbstluftwm" ]]; then
+            herbstclient quit
         else
             pkill -KILL -u "$USER"
         fi
