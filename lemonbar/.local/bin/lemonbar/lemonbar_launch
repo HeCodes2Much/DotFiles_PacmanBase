@@ -13,23 +13,19 @@ killall -q lemonbar
 killall -q lemonbar_config
 
 topleft() {
-  lemonbar_config -tl | lemonbar -p -g 1920x18+0+0 -F "#C4C7C5" -B "#282A36" -U "#268bd2" -o eDP-1 -f "SauceCodePro Nerd Font" | $SHELL
-  #succade -s topleft
+  lemonbar_config -tl | lemonbar -p -g 1920x18+0+0 -F "#e5e9f0" -B "#283036" -U "#434c5e" -o -3 -f "Hack Nerd Font:size=10" -o -2 -f "Noto Sans CJK JP" | $SHELL
 }
 
 bottomleft() {
-  lemonbar_config -bl | lemonbar -p -b -g 1920x18+0+0 -F "#C4C7C5" -B "#282A36" -U "#268bd2" -o eDP-1 -f "SauceCodePro Nerd Font" | $SHELL
-  #succade -s bottomleft
+  lemonbar_config -bl | lemonbar -p -b -g 1920x18+0+0 -F "#e5e9f0" -B "#283036" -U "#434c5e" -o -3 -f "Hack Nerd Font:size=10" -o -2 -f "Noto Sans CJK JP" | $SHELL
 }
 
 topright() {
-  lemonbar_config -tr | lemonbar -p -g 1920x18+1920+0 -F "#C4C7C5" -B "#282A36" -U "#268bd2" -o HDMI-1-0 -f "SauceCodePro Nerd Font" | $SHELL
-  #succade -s topright
+  lemonbar_config -tr | lemonbar -p -g 1920x18+1920+0 -F "#e5e9f0" -B "#283036" -U "#434c5e" -o -3 -f "Hack Nerd Font:size=10" -o -2 -f "Noto Sans CJK JP" | $SHELL
 }
 
 bottomright() {
-  lemonbar_config -br | lemonbar -p -b -g 1920x18+1920+0 -F "#C4C7C5" -B "#282A36" -U "#268bd2" -o HDMI-1-0 -f "SauceCodePro Nerd Font" | $SHELL
-  #succade -s bottomright
+  lemonbar_config -br | lemonbar -p -b -g 1920x18+1920+0 -F "#e5e9f0" -B "#283036" -U "#434c5e" -o -3 -f "Hack Nerd Font:size=10" -o -2 -f "Noto Sans CJK JP" | $SHELL
 }
 
 if [ "$1" ]; then
