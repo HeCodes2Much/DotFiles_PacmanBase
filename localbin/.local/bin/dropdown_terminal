@@ -12,13 +12,13 @@
 #Created:
 #   Thu 27 October 2022, 06:11:40 PM [GMT+1]
 #Modified:
-#   Fri 28 October 2022, 04:08:50 PM [GMT+1]
+#   Tue 08 November 2022, 03:33:27 PM [GMT]
 #
 #Description:
 #   <Todo>
 #
 #Dependencies:
-#   alacritty
+#   alacritty xdotools
 #
 # shellcheck disable=all
 
@@ -54,6 +54,10 @@ term_launch() {
 
 term_open() {
     if [ "$(cat $TERMINAL_STATE)" == "closed" ]; then
+        CHECK=$(xdotool getmouselocation --shell | awk -F= 'NR==1{print $2}')
+        if [ $CHECK -ge "1920" ]; then
+            DISPLAY_WIDTH=$(DISPLAY_WIDTH * 2)
+        fi
         echo "animating" >$TERMINAL_STATE
         i3-msg -q [con_mark=dropdown_terminal] scratchpad show
         i3-msg -q resize set $TERMINAL_WIDTH $TERMINAL_HEIGHT
