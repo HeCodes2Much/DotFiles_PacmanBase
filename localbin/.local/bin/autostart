@@ -12,7 +12,7 @@
 #Created:
 #   Mon 22 November 2021, 03:15:54 PM [GMT+1]
 #Modified:
-#   Fri 28 October 2022, 04:11:25 PM [GMT+1]
+#   Mon 14 November 2022, 07:02:05 AM [GMT]
 #
 #Description:
 #   <Todo>
@@ -148,6 +148,17 @@ if command -v volumeicon &>/dev/null; then
         ) &
     else
         echo "volumeicon already Running"
+    fi
+fi
+
+if command -v gufwicon &>/dev/null; then
+    if ! pgrep -x "gufwicon" >/dev/null; then
+        (
+            sleep 5s
+            gufwicon
+        ) &
+    else
+        echo "gufwicon already Running"
     fi
 fi
 
