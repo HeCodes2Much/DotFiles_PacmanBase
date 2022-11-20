@@ -1,12 +1,13 @@
 # pacman functions
 function pacman
-    set red "\033[0;31m"
+    set yellow "\033[0;33m"
     set end "\033[0m"
 
     set num 1
     while test -f /var/lib/pacman/db.lck
         if test $num -eq 1
-            printf "$red❯❯ Error$end: %s\n" "pacman is in use, will continue after operation."
+            printf "$yellow->$end %s\n" "/var/lib/pacman/db.lck is present."
+            printf "$yellow->$end %s\n" "There may be another Pacman instance running. Waiting..."
             set num 2
         end
         sleep 2 &

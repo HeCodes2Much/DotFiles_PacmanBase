@@ -16,7 +16,7 @@ conky.config = {
 
     -- Placement
 	alignment = 'top_left',		                -- top_left,top_middle,top_right,bottom_left,bottom_middle,bottom_right,
-	gap_x = 4180,							    -- pixels between right or left border
+	gap_x = 3540,							    -- pixels between right or left border
 	gap_y = 70,								    -- pixels between bottom or top border
 
     -- Size

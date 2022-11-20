@@ -12,7 +12,7 @@
 #Created:
 #   Mon 22 November 2021, 03:15:54 PM [GMT+1]
 #Modified:
-#   Mon 14 November 2022, 07:02:05 AM [GMT]
+#   Thu 17 November 2022, 03:44:58 PM [GMT]
 #
 #Description:
 #   <Todo>
@@ -73,7 +73,7 @@ if ! command -v picom &>/dev/null; then
     echo "picom could not be found"
 else
     if ! pgrep -x "picom" >/dev/null; then
-        picom -CGb --experimental-backend --config "$HOME"/.config/picom/picom.conf &
+        picom -CGb --config "$HOME"/.config/picom/picom.conf &
     else
         echo "picom already Running"
     fi
