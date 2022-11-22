@@ -133,23 +133,26 @@ $super_b+F3 \
 ###############################
 
 ## Category: FZFMenu;
-# Description: Start FZFMenu;
+# Description: Start FZF-FZFMenu;
 $super_b+m \
     $exe fzf_run -c fzf_menu_run -i Menu -t $TerminalEmulator
 
 ## Category: FZFMenu;
-# Description: Start RepoPass;
+# Description: Start FZF-MusicMenu;
+$super_b+F6 \
+    $exe fzf_run -c fzf_music -i MusicMenu -t $TerminalEmulator
+
+## Category: FZFMenu;
+# Description: Start FZF-PassMenu;
 $super_b+p \
     $exe fzf_run -c 'fzf_pass' -i PassMenu -t $TerminalEmulator
 
 ## Category: FZFMenu;
-# Description: Start YoutubeMenu;
+# Description: Start FZF-YoutubeMenu;
 $super_b+s \
     $exe fzf_run -c 'fzf_youtube_subs' -i YoutubeMenu -t $TerminalEmulator
 
 # }}} Menus
-
-
 
 #####################################################################################################################
 #################                          how to exit, logoff, suspend, ...                        #################
@@ -407,7 +410,7 @@ assign [class="(?i)Alacritty|Kitty"]                                            
 
 # Workspace $ws2
 assign [class="(?i)Emacs|Jetbrains"]                                            → $ws2
-assign [class="(?i)Code|Micro"]                                               	→ $ws2
+assign [class="(?i)Code|Nvim"]                                               	→ $ws2
 
 # Workspace $ws3
 assign [class="(?i)Nemo"]                                                       → $ws3
@@ -636,8 +639,8 @@ for_window [class="(?i)Menu"] floating enable, resize set 350 900, move position
 for_window [class="(?i)PowerMenu"] floating enable, resize set 400 300, move position center
 for_window [class="(?i)PolybarMenu"] floating enable, resize set 350 900, move position center
 for_window [class="(?i)PassMenu"] floating enable, resize set 350 700, move position center
+for_window [class="(?i)MusicMenu"] floating enable, resize set 550 500, move position center
 for_window [class="(?i)YoutubeMenu"] floating enable, resize set 700 750, move position center
-
 
 for_window [title="Copying"] floating enable
 for_window [title="Deleting"] floating enable
