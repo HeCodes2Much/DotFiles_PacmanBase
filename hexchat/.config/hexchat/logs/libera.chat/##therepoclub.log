@@ -182,3 +182,17 @@ Jul 31 17:09:50 *	ChanServ gives channel operator status to TheRepoClub
 Jul 31 17:10:17 FiSHLiM	hexchat_print called without a valid context.
 **** ENDING LOGGING AT Sun Jul 31 17:10:17 2022
 
+**** BEGIN LOGGING AT Tue Dec  6 07:15:24 2022
+
+Dec 06 07:15:24 *	Now talking on ##TheRepoClub
+Dec 06 07:15:24 *	lithium.libera.chat sets mode +C on ##TheRepoClub
+Dec 06 07:15:24 *	lithium.libera.chat sets mode +n on ##TheRepoClub
+Dec 06 07:15:24 *	lithium.libera.chat sets mode +s on ##TheRepoClub
+Dec 06 07:15:24 *	lithium.libera.chat sets mode +t on ##TheRepoClub
+Dec 06 07:15:24 *	services. removes channel operator status from TheRepoClub
+Dec 06 07:15:24 *	*** Notice -- TS for ##TheRepoClub changed from 1670310924 to 1657387096
+Dec 06 07:15:24 *	services. sets mode -C on ##TheRepoClub
+Dec 06 07:15:24 *	services. sets mode -s on ##TheRepoClub
+Dec 06 07:15:24 *	ChanServ (ChanServ@services.libera.chat) has joined
+Dec 06 07:15:24 *	services. gives channel operator status to ChanServ
+Dec 06 07:15:24 *	ChanServ gives channel operator status to TheRepoClub
