@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+#-*-coding:utf-8 -*-
+#Auto updated?
+#   Yes
+#File:
+#   bm_add
+#Author:
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github:
+#   https://github.com/The-Repo-Club/
+#
+#Created:
+#   Fri 09 December 2022, 06:43:52 AM [GMT]
+#Modified:
+#   Fri 09 December 2022, 07:33:31 AM [GMT]
+#
+#Description:
+#   <Todo>
+#
+#Dependencies:
+#   bm
+#
+
+result() {
+  echo -n | rofi -dmenu -p "${1:-Add a bookmark:...}"
+}
+
+url="$(result "URL:")"
+
+if [ -z "$url" ]; then
+  exit
+fi
+
+title="$(result "Title:")"
+tags="$(result "Tags (comma delimited):")"
+
+bm -w "$HOME/.config/rofi/bookmarks/" -a "$url" -T "$title" -t "$tags"

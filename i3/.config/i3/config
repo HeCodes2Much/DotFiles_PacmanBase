@@ -126,31 +126,31 @@ $super_b+F2 \
 ## Category: Menus;
 # Description: Start ClipMenu;
 $super_b+F3 \
-    $exe fzf_run -c clipmenu -i ClipMenu -t $TerminalEmulator
+    $exe clipmenu -p ClipMenu -mesg "Copy from clipboard."
 
 ###############################
-####### FZFMenu Menu's #######
+####### Rofi Menu's #######
 ###############################
 
-## Category: FZFMenu;
-# Description: Start FZF-FZFMenu;
+## Category: Menus;
+# Description: Start Main Menu;
 $super_b+m \
-    $exe fzf_run -c fzf_menu_run -i Menu -t $TerminalEmulator
+    $exe menu
 
-## Category: FZFMenu;
-# Description: Start FZF-MusicMenu;
+## Category: Menus;
+# Description: Start Music Menu;
 $super_b+F6 \
-    $exe fzf_run -c fzf_music -i MusicMenu -t $TerminalEmulator
+    $exe music
 
-## Category: FZFMenu;
-# Description: Start FZF-PassMenu;
+## Category: Menus;
+# Description: Start Pass Menu;
 $super_b+p \
-    $exe fzf_run -c 'fzf_pass' -i PassMenu -t $TerminalEmulator
+    $exe passmenu
 
-## Category: FZFMenu;
-# Description: Start FZF-YoutubeMenu;
+## Category: Menus;
+# Description: Start Youtube Menu;
 $super_b+s \
-    $exe fzf_run -c 'fzf_youtube_subs' -i YoutubeMenu -t $TerminalEmulator
+    $exe youtube_subs
 
 # }}} Menus
 
@@ -163,17 +163,17 @@ $super_b+s \
 ## Category:  Main Keybinds;
 # Description: Exit / Quit / Restart;
 $super_b+$shift+e \
-    $exe fzf_run -c fzf_powermenu -i PowerMenu -t $TerminalEmulator
+    $exe rofi -show powermenu -config ~/.config/rofi/powermenu.rasi
 
 ## Category:  Main Keybinds;
 # Description: Exit / Quit / Restart;
 $super_b+$shift+x \
-    $exe fzf_run -c fzf_powermenu -i PowerMenu -t $TerminalEmulator
+    $exe rofi -show powermenu -config ~/.config/rofi/powermenu.rasi
 
 ## Category:  Main Keybinds;
 # Description: Exit / Quit / Restart;
 $super_b+x \
-    $exe fzf_run -c fzf_powermenu -i PowerMenu -t $TerminalEmulator
+    $exe rofi -show powermenu -config ~/.config/rofi/powermenu.rasi
 
 # }}} Power
 
@@ -824,7 +824,7 @@ $exe autostart
 
 # {{{ Settings
 
-$exe fzf_youtube_subs -d
+$exe youtube_subs -d
 
 # setting variables for later use
 # use xrandr and/or arandr to know the names of your monitors

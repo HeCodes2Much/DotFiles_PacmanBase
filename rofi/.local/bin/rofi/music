@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+# -*-coding:utf-8 -*-
+# Auto updated?
+#   Yes
+#File :
+#   repomenue_music
+#Author:
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github:
+#   https://github.com/The-Repo-Club/
+#
+# Created:
+#   Wed 10 March 2021, 12:34:47 PM [GMT]
+# Modified:
+#   Wed 07 December 2022, 11:01:08 PM [GMT]
+#
+# Description:
+#   <Todo>
+#
+# shellcheck disable=all
+
+MUSICPLAYER="ffplay -nodisp"
+PLAYING_MSG="           Currently Playing :: "
+
+for Song in "$HOME/Music/"*; do
+    if [ -f "$Song" ]; then
+        Name=${Song##*/}
+        case $Name in
+        *.mp3 | *.flac | *.wav | .ogg)
+            options+=${Song##*/}$'\n'
+            ;;
+        esac
+    fi
+done
+CHOICE=$(rofi -dmenu -no-custom -p "Muisc Player" -kb-custom-1 "Alt+Return" -mesg "${PLAYING_MSG}" "$@" <<ENDOPTS
+${options::-1}
+ENDOPTS
+)
+
+ret=$?
+
+if [[ $ret -eq 0 ]]; then
+    case $CHOICE in
+        *.mp3 | *.flac | *.wav | *.ogg)
+            folder=$HOME/Music
+            $MUSICPLAYER "$folder/$CHOICE" &
+            ;;
+        *)
+            echo "Program terminated." && exit
+            ;;
+    esac
+elif [[ $ret -gt 1 ]]; then
+    if [[ $ret -eq 10 ]]; then
+        echo "Option selected (stdout): $CHOICE"
+        echo "Return code: $ret"
+    elif [[ $ret -eq 11 ]]; then
+        echo "Option selected (stdout): $CHOICE"
+        echo "Return code: $ret"
+    fi
+    exit $ret
+fi

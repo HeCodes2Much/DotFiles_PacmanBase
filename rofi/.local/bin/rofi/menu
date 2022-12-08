@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#-*-coding:utf-8 -*-
+#Auto updated?
+#   Yes
+#File:
+#   menu
+#Author:
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github:
+#   https://github.com/The-Repo-Club/
+#
+#Created:
+#   Wed 10 March 2021, 12:34:47 PM [GMT+1]
+#Modified:
+#   Thu 08 December 2022, 07:37:35 AM [GMT]
+#
+#Description:
+#   <Todo>
+#
+#Dependencies:
+#   rofi
+#
+# shellcheck disable=all
+
+programs=$(compgen -c | sort -u | tail -n +9)
+cmd=$(echo -e "$programs" | rofi -dmenu -p "Programs" -mesg "Select a program.")
+exec $cmd

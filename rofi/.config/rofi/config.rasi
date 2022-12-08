@@ -1,0 +1,10 @@
+configuration {
+    modi: "combi,drun,filebrowser,keys,window,run,ssh";
+    font: "Hack Nerd Font 12";
+    combi-modi: "window,ssh";
+}
+@theme "repomenu"
+listview {
+	lines: 20;
+	columns: 1;
+}

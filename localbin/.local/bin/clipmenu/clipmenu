@@ -8,8 +8,8 @@
 # Modified On  - Sun 31 Oct 00:33:48 BST 2021
 #------------------------------------------------------------------------------
 
-: "${CM_LAUNCHER=fzf}"
-: "${CM_HISTLENGTH=8}"
+: "${CM_LAUNCHER="rofi"}"
+: "${CM_HISTLENGTH=15}"
 
 shopt -s nullglob
 

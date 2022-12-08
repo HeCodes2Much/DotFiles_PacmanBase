@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+#-*-coding:utf-8 -*-
+#Auto updated?
+#   Yes
+#File:
+#   bm_remove
+#Author:
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github:
+#   https://github.com/The-Repo-Club/
+#
+#Created:
+#   Fri 09 December 2022, 06:43:41 AM [GMT]
+#Modified:
+#   Fri 09 December 2022, 07:33:33 AM [GMT]
+#
+#Description:
+#   <Todo>
+#
+#Dependencies:
+#   bm
+#
+# shellcheck disable=all
+
+bmFile="$HOME/.config/rofi/bookmarks/bm.bmf"
+
+if [[ ! -f $bmFile ]]; then
+    printf "%s\n" "No current bookmark file found.";
+    exit
+fi
+
+declare -A bmarray;
+
+while IFS=\| read -r md5 date accel url title tags;
+do
+  bookmark="$title-$url-$tags";
+  bmarray["$bookmark"]="$url";
+done < "$bmFile"
+
+function load() {
+  while IFS=\| read -r md5 date accel url title tags;
+  do
+    bookmark="$title-$url-$tags";
+    printf "%s\n" "$bookmark";
+  done < "$bmFile"
+
+}
+
+choice=$(load | rofi -dmenu i -p "${1:-Remove a bookmark:...}")
+
+LOOPSETTING="true"
+while [ -n "$LOOPSETTING" ]; do
+  [ -n "$choice" ] || exit
+  unset LOOPSETTING
+  case "$choice" in
+    *) bm -w "$HOME/.config/rofi/bookmarks/" -d "${bmarray[$choice]}" -D;;
+  esac
+done

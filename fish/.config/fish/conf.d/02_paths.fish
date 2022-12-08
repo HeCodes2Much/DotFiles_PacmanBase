@@ -18,6 +18,12 @@ if test -d "$HOME/.local/bin/repobar"
     set PATH "$HOME/.local/bin/repobar:$PATH"
 end
 
+# Adds `~/.local/bin/rofi` to $PATH
+# set PATH so it includes user's private bin if it exists
+if test -d "$HOME/.local/bin/rofi"
+    set PATH "$HOME/.local/bin/rofi:$PATH"
+end
+
 # Adds `~/.local/bin/fzf` to $PATH
 # set PATH so it includes user's private bin if it exists
 if test -d "$HOME/.local/bin/fzf"

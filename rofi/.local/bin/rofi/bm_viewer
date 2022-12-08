@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+#-*-coding:utf-8 -*-
+#Auto updated?
+#   Yes
+#File:
+#   bm_viewer
+#Author:
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github:
+#   https://github.com/The-Repo-Club/
+#
+#Created:
+#   Fri 09 December 2022, 06:43:30 AM [GMT]
+#Modified:
+#   Fri 09 December 2022, 07:36:51 AM [GMT]
+#
+#Description:
+#   <Todo>
+#
+#Dependencies:
+#   bm
+#
+# shellcheck disable=all
+
+bmFile="$HOME/.config/rofi/bookmarks/bm.bmf"
+
+if [[ ! -f $bmFile ]]; then
+    printf "%s\n" "No current bookmark file found.";
+    exit
+fi
+
+declare -A bmarray;
+
+function load() {
+  printf "Add\nRemove\n"
+  while IFS=\| read -r md5 date accel url title tags;
+  do
+    bookmark="$title-$url-$tags";
+    printf "%s\n" "$title";
+  done < "$bmFile"
+}
+
+choice=$(load | rofi -dmenu)
+
+LOOPSETTING="true"
+while [ -n "$LOOPSETTING" ]; do
+  [ -n "$choice" ] || exit
+  unset LOOPSETTING
+  case "$choice" in
+    Add) bm_add ;;
+    Remove) bm_remove ;;
+    *) bm -w "$HOME/.config/rofi/bookmarks/" -o "${bmarray[$choice]}";;
+  esac
+done

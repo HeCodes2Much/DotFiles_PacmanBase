@@ -21,6 +21,7 @@ MC=0
 
 PRIMARY=$(xrandr --query | grep " connected" | grep "primary" | cut -d" " -f1)
 OTHERS=$(xrandr --query | grep " connected" | grep -v "primary" | cut -d" " -f1)
+DEFAULT_NETWORK_INTERFACE=$(ip route | grep '^default' | awk '{print $5}' | head -n1)
 
 # Launch bar1 and bar2
 if type "xrandr" > /dev/null; then
@@ -38,8 +39,8 @@ if type "xrandr" > /dev/null; then
         TOP_BAR_CONFIG=$HOME/.config/polybar/monitor_$MC/config_top.ini
         BOTTOM_BAR_CONFIG=$HOME/.config/polybar/monitor_$MC/config_bottom.ini
 
-        MONITOR=$m polybar --reload -c "$TOP_BAR_CONFIG" $BAR_NAME &
-        MONITOR=$m polybar --reload -c "$BOTTOM_BAR_CONFIG" $BAR_NAME &
+        DEFAULT_NETWORK_INTERFACE=$DEFAULT_NETWORK_INTERFACE MONITOR=$m polybar --reload -c "$TOP_BAR_CONFIG" $BAR_NAME &
+        DEFAULT_NETWORK_INTERFACE=$DEFAULT_NETWORK_INTERFACE MONITOR=$m polybar --reload -c "$BOTTOM_BAR_CONFIG" $BAR_NAME &
     done
 else
     polybar --reload main -c ~/.config/polybar/config_top.ini  &
