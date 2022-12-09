@@ -11,7 +11,7 @@ Usage: ./bm [modifier(s)] command [option(s)]
     -H		Print help for legacy usage
     -v/-V		Print the version
     -a 'URL'	Add the URL to bookmark file
-        Options for -a
+            Options for -a
             -t "TagList"	Tags are sparated by a comma ,
             -T "Title"	Title for this URL (if empty and allowed Title
                     downloaded)
@@ -22,52 +22,52 @@ Usage: ./bm [modifier(s)] command [option(s)]
             -p		Force the screenshot to be taken
 
     -l		List all URLs (default action, same thing as calling bm without args)
-        Options for -l
+            Options for -l
             -z		Use the alternate print list
             -n		Sort the results by date
             -N		Sort the results by date  (reverse)
 
 
     -s 'object'	Search for bookmarks
-        Options for -s
+            Options for -s
             -i		Incensitive case search
             -z		Use the alternate print list
             -n		Sort the results by date
             -N		Sort the results by date  (reverse)
 
     -o 'object'	Search for bookmarks and open it (use the same argument as for -s)
-        Options for -o
+            Options for -o
             -i		Incensitive case search
             -O		If more than one answer force the first bookmark to be open
             -Y		If more than one answer force ALL bookmarks to be open
 
     -x 'object'	Search for bookmarks and copy it to clipboard (use the same argument as for -s)
-        Options for -x
+            Options for -x
             -i		Incensitive case search
             -X		If more than one answer force the first bookmark to be copied
             -Y		If more than one answer force ALL bookmarks to be copied
 
     -r 'object'	Search for bookmarks and Print the recorded associated picture (use the same argument as for -s)
-        Options for -r
+            Options for -r
             -i		Incensitive case search
             -O		If more than one answer force the first bookmark to have its picture printed
             -Y		If more than one answer force ALL bookmarks to have their picture printed
 
     -d 'URL' or	Delete the URL from bookmark file md5sum or 'URL part'
-       Options for -d
+            Options for -d
             -D		Delete first occurence only
             -F		Force the bookmark to be deleted (even if duplicate)
             -p		Delete the associated picture (no trash available)
 
     -g		Generate a HTML page with all bookmarks
             If used more than once, generate a page per tag
-        Options for -g
+            Options for -g
             -G "filename"	If g==1 then generate then use this filename to generate page
             -O		Open the file when generated
 
     -P 'object'	Generate all Non existant picture (check done for all URL in bm), if none argument.
             If an argument is given (use the same argument as for -s) only the results will have a picture.
-        Options for -P
+            Options for -P
             -F		Force the picture to be taken again (even if already exists).
 
     -L		List all tags
@@ -83,9 +83,6 @@ Usage: ./bm [modifier(s)] command [option(s)]
     -c 'file'	Use this configuration file instead of the default one
 
     -b 'file'	Use this bookmark file instead of the default one
-
-    Old Legacy usage still available :
-    Usage: bm [options] [cmd]
 
     Objects:
     ========
