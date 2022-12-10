@@ -12,7 +12,7 @@
 #Created:
 #   Fri 09 December 2022, 07:19:23 AM [GMT]
 #Modified:
-#   Fri 09 December 2022, 07:40:39 AM [GMT]
+#   Fri 09 December 2022, 08:24:49 AM [GMT]
 #
 #Description:
 #   <Todo>
@@ -102,7 +102,7 @@ config() {
     export _BM_NO_ARGS_FORCE_HELP=${_BM_NO_ARGS_FORCE_HELP:=false}
 
     # _BM_CREATE_BOOKMARK_FILE : If bm is called to list and no file exists. bm will create  a default one.
-    export _BM_CREATE_BOOKMARK_FILE=${_BM_CREATE_BOOKMARK_FILE:=true}
+    export _BM_CREATE_BOOKMARK_FILE=${_BM_CREATE_BOOKMARK_FILE:=false}
 
     # _BM_CMD_CAPTURE_CHECK : If you don't have tool installed to take screenshot, just put to false.
     #                     It will disable the _BM_GET_SCREENSHOT.
@@ -1013,10 +1013,15 @@ config "${__c}"
 # Following config, we maybe not have to check the capture tool
 [[ ${_BM_CMD_CAPTURE_CHECK} ]] && checkBinaries "${_BM_CMD_CAPTURE}"
 
-# If no bookmark file exist, create one if allowed
+# If no bookmark file exist, create one if allowed else echo
 if [ ! -f "${_BM_BOOKMARK_FILE}" -a "${_BM_CREATE_BOOKMARK_FILE,,}" = 'true' ]; then
     # Remember fields : 0=md5, 1=date, 2=accel, 3=url, 4=title, 5=tags
     echo "eef521de8df447ad392dbace16cf2edc|$(date '+%FT%TZ')|:bm|https://github.com/The-Repo-Club/repomenu-extra/|Download link for repomenu-extra|default,shell,scripts" >>"${_BM_BOOKMARK_FILE}"
+fi
+
+if [ ! -f "${_BM_BOOKMARK_FILE}" -a "${_BM_CREATE_BOOKMARK_FILE,,}" = 'false' ]; then
+    echo "No current bookmark file found.";
+    exit
 fi
 
 # Starting to work with args. If none probably list...

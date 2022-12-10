@@ -12,7 +12,7 @@
 #Created:
 #   Fri 09 December 2022, 06:43:41 AM [GMT]
 #Modified:
-#   Fri 09 December 2022, 07:33:33 AM [GMT]
+#   Fri 09 December 2022, 08:02:52 AM [GMT]
 #
 #Description:
 #   <Todo>
@@ -46,7 +46,7 @@ function load() {
 
 }
 
-choice=$(load | rofi -dmenu i -p "${1:-Remove a bookmark:...}")
+choice=$(load | rofi -dmenu i -p "${1:-Remove a bookmark:...}" -mesg "- Remove a Bookmark")
 
 LOOPSETTING="true"
 while [ -n "$LOOPSETTING" ]; do

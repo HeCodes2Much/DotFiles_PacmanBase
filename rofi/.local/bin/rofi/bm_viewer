@@ -12,7 +12,7 @@
 #Created:
 #   Fri 09 December 2022, 06:43:30 AM [GMT]
 #Modified:
-#   Fri 09 December 2022, 07:36:51 AM [GMT]
+#   Fri 09 December 2022, 08:02:26 AM [GMT]
 #
 #Description:
 #   <Todo>
@@ -32,7 +32,7 @@ fi
 declare -A bmarray;
 
 function load() {
-  printf "Add\nRemove\n"
+  printf "Add Bookmark\nRemove Bookmark\n"
   while IFS=\| read -r md5 date accel url title tags;
   do
     bookmark="$title-$url-$tags";
@@ -40,15 +40,15 @@ function load() {
   done < "$bmFile"
 }
 
-choice=$(load | rofi -dmenu)
+choice=$(load | rofi -dmenu -p "${1:-Select a bookmark:...}" -mesg "+ Add Bookmark    - Remove Bookmark      Select Bookmarks")
 
 LOOPSETTING="true"
 while [ -n "$LOOPSETTING" ]; do
   [ -n "$choice" ] || exit
   unset LOOPSETTING
   case "$choice" in
-    Add) bm_add ;;
-    Remove) bm_remove ;;
+    Add*) bm_add ;;
+    Remove*) bm_remove ;;
     *) bm -w "$HOME/.config/rofi/bookmarks/" -o "${bmarray[$choice]}";;
   esac
 done
