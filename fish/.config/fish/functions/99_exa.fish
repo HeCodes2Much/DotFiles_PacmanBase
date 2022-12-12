@@ -24,5 +24,5 @@ function lt
 end
 
 function lg
-    ls -a | egrep $argv
+    ls -a | grep -E $argv
 end

@@ -518,3 +518,44 @@ Dec 06 07:15:17 *	You are now logged in as TheRepoClub
 Dec 06 07:15:17 *	SASL authentication successful
 **** ENDING LOGGING AT Tue Dec  6 07:15:18 2022
 
+**** BEGIN LOGGING AT Sun Dec 11 21:21:40 2022
+
+Dec 11 21:21:40 Checksum plugin loaded
+Dec 11 21:21:40 FiSHLiM plugin loaded
+Dec 11 21:21:40 Lua version 1.3/5.4 loaded.
+Dec 11 21:21:40 Perl interface loaded
+Dec 11 21:21:40 Python interface loaded
+Dec 11 21:21:40 Sysinfo plugin loaded
+Dec 11 21:21:40 *	Looking up irc.libera.chat
+Dec 11 21:21:40 *	Connecting to irc.libera.chat (2001:470:1:dea::95:6697)
+Dec 11 21:21:41 *	* Subject: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Dec 11 21:21:41 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Dec 11 21:21:41 *	* Subject: /C=US/O=Let's Encrypt/CN=R3
+Dec 11 21:21:41 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Dec 11 21:21:41 *	* Subject: /CN=cadmium.libera.chat
+Dec 11 21:21:41 *	* Issuer: /C=US/O=Let's Encrypt/CN=R3
+Dec 11 21:21:41 *	* Certification info:
+Dec 11 21:21:41 *	  Subject:
+Dec 11 21:21:41 *	    CN=cadmium.libera.chat
+Dec 11 21:21:41 *	  Issuer:
+Dec 11 21:21:41 *	    C=US
+Dec 11 21:21:41 *	    O=Let's Encrypt
+Dec 11 21:21:41 *	    CN=R3
+Dec 11 21:21:41 *	  Public key algorithm: rsaEncryption (4096 bits)
+Dec 11 21:21:41 *	  Sign algorithm sha256WithRSAEncryption
+Dec 11 21:21:41 *	  Valid since Nov  2 19:35:57 2022 GM to Jan 31 19:35:56 2023 GM
+Dec 11 21:21:41 *	* Cipher info:
+Dec 11 21:21:41 *	  Version: TLSv1.3, cipher TLS_AES_256_GCM_SHA384 (256 bits)
+Dec 11 21:21:41 *	Connected. Now logging in.
+Dec 11 21:21:42 *	*** Checking Ident
+Dec 11 21:21:42 *	*** Looking up your hostname...
+Dec 11 21:21:42 *	*** Couldn't look up your hostname
+Dec 11 21:21:47 *	*** No Ident response
+Dec 11 21:21:47 *	Capabilities supported: account-notify away-notify chghost extended-join multi-prefix sasl=PLAIN,ECDSA-NIST256P-CHALLENGE,EXTERNAL tls account-tag cap-notify echo-message server-time solanum.chat/identify-msg solanum.chat/oper solanum.chat/realhost
+Dec 11 21:21:47 *	Capabilities requested: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify server-time solanum.chat/identify-msg 
+Dec 11 21:21:48 *	Capabilities acknowledged: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify server-time solanum.chat/identify-msg
+Dec 11 21:21:48 *	Authenticating via SASL as TheRepoClub (PLAIN)
+Dec 11 21:21:49 *	You are now logged in as TheRepoClub
+Dec 11 21:21:49 *	SASL authentication successful
+**** ENDING LOGGING AT Sun Dec 11 21:21:49 2022
+
