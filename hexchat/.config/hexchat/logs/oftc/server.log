@@ -1,0 +1,36 @@
+**** BEGIN LOGGING AT Tue Dec 13 07:03:03 2022
+
+Dec 13 07:03:03 *	Looking up irc.oftc.net
+**** BEGIN LOGGING AT Tue Dec 13 07:06:51 2022
+
+Dec 13 07:06:51 *	Looking up irc.oftc.net
+Dec 13 07:06:51 *	Connecting to irc.geo.oftc.net (2a01:7e00::f03c:91ff:fe96:d48a:6697)
+Dec 13 07:06:52 *	* Subject: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Dec 13 07:06:52 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Dec 13 07:06:52 *	* Subject: /C=US/O=Let's Encrypt/CN=R3
+Dec 13 07:06:52 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Dec 13 07:06:52 *	* Subject: /CN=coulomb.oftc.net
+Dec 13 07:06:52 *	* Issuer: /C=US/O=Let's Encrypt/CN=R3
+Dec 13 07:06:52 *	* Certification info:
+Dec 13 07:06:52 *	  Subject:
+Dec 13 07:06:52 *	    CN=coulomb.oftc.net
+Dec 13 07:06:52 *	  Issuer:
+Dec 13 07:06:52 *	    C=US
+Dec 13 07:06:52 *	    O=Let's Encrypt
+Dec 13 07:06:52 *	    CN=R3
+Dec 13 07:06:52 *	  Public key algorithm: rsaEncryption (2048 bits)
+Dec 13 07:06:52 *	  Sign algorithm sha256WithRSAEncryption
+Dec 13 07:06:52 *	  Valid since Oct 18 23:24:27 2022 GM to Jan 16 23:24:26 2023 GM
+Dec 13 07:06:52 *	* Cipher info:
+Dec 13 07:06:52 *	  Version: TLSv1.3, cipher TLS_AES_256_GCM_SHA384 (256 bits)
+Dec 13 07:06:52 *	Connected. Now logging in.
+Dec 13 07:06:52 *	*** Looking up your hostname...
+Dec 13 07:06:52 *	*** Checking Ident
+Dec 13 07:06:52 *	*** Couldn't look up your hostname
+Dec 13 07:07:03 *	*** No Ident response
+Dec 13 07:07:03 *	Capabilities supported: multi-prefix
+Dec 13 07:07:03 *	Capabilities requested: multi-prefix 
+Dec 13 07:07:03 *	Capabilities acknowledged: multi-prefix
+Dec 13 07:07:03 *	*** Connected securely via TLSv1.3 TLS_AES_256_GCM_SHA384-256
+**** ENDING LOGGING AT Tue Dec 13 07:07:03 2022
+

@@ -1,0 +1,16 @@
+T 1670915008 19*	Now talking on 22#fdroid
+T 1670915008 22*	Topic for 22#fdroid is: F-Droid, the free and open source app repository (official channel bridged with #fdroid:f-droid.org on Matrix) | Public logs at https://matrix.f-droid.org/alias/%23fdroid:f-droid.org | https://forum.f-droid.org | https://floss.social/@fdroidorg | Development discussion: #fdroid-dev
+T 1670915008 22*	Topic for 22#fdroid set by 26jochensp!~jochensp@00020ef4.user.oftc.net (24Thu Oct 27 19:25:54 2022)
+T 1670915008 20*	Disconnected (20Remote host closed socket)
+T 1670915043 19*	Now talking on 22#fdroid
+T 1670915043 22*	Topic for 22#fdroid is: F-Droid, the free and open source app repository (official channel bridged with #fdroid:f-droid.org on Matrix) | Public logs at https://matrix.f-droid.org/alias/%23fdroid:f-droid.org | https://forum.f-droid.org | https://floss.social/@fdroidorg | Development discussion: #fdroid-dev
+T 1670915043 22*	Topic for 22#fdroid set by 26jochensp!~jochensp@00020ef4.user.oftc.net (24Thu Oct 27 19:25:54 2022)
+T 1670915043 20*	Disconnected (20Remote host closed socket)
+T 1670915083 19*	Now talking on 22#fdroid
+T 1670915083 22*	Topic for 22#fdroid is: F-Droid, the free and open source app repository (official channel bridged with #fdroid:f-droid.org on Matrix) | Public logs at https://matrix.f-droid.org/alias/%23fdroid:f-droid.org | https://forum.f-droid.org | https://floss.social/@fdroidorg | Development discussion: #fdroid-dev
+T 1670915083 22*	Topic for 22#fdroid set by 26jochensp!~jochensp@00020ef4.user.oftc.net (24Thu Oct 27 19:25:54 2022)
+T 1670915084 20*	Disconnected (20Remote host closed socket)
+T 1670915164 19*	Now talking on 22#fdroid
+T 1670915164 22*	Topic for 22#fdroid is: F-Droid, the free and open source app repository (official channel bridged with #fdroid:f-droid.org on Matrix) | Public logs at https://matrix.f-droid.org/alias/%23fdroid:f-droid.org | https://forum.f-droid.org | https://floss.social/@fdroidorg | Development discussion: #fdroid-dev
+T 1670915164 22*	Topic for 22#fdroid set by 26jochensp!~jochensp@00020ef4.user.oftc.net (24Thu Oct 27 19:25:54 2022)
+T 1670915165 20*	Disconnected (20Remote host closed socket)

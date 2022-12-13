@@ -166,3 +166,16 @@ T 1670793715 23*	ChanServ (ChanServ@services.libera.chat23) has joined
 T 1670793715 22*	26services. gives channel operator status to 18ChanServ
 T 1670793715 22*	26ChanServ gives channel operator status to 18TheRepoClub
 T 1670793745 FiSHLiM plugin unloaded
+T 1670914932 19*	Now talking on 22##TheRepoClub
+T 1670914932 22*	26cadmium.libera.chat sets mode 24+C on 22##TheRepoClub
+T 1670914932 22*	26cadmium.libera.chat sets mode 24+n on 22##TheRepoClub
+T 1670914932 22*	26cadmium.libera.chat sets mode 24+s on 22##TheRepoClub
+T 1670914932 22*	26cadmium.libera.chat sets mode 24+t on 22##TheRepoClub
+T 1670914932 22*	26services. removes channel operator status from 18TheRepoClub
+T 1670914932 29*	*** Notice -- TS for ##TheRepoClub changed from 1670914932 to 1657387096
+T 1670914932 22*	26services. sets mode 24-C on 22##TheRepoClub
+T 1670914932 22*	26services. sets mode 24-s on 22##TheRepoClub
+T 1670914932 23*	ChanServ (ChanServ@services.libera.chat23) has joined
+T 1670914932 22*	26services. gives channel operator status to 18ChanServ
+T 1670914932 22*	26ChanServ gives channel operator status to 18TheRepoClub
+T 1670915243 FiSHLiM	hexchat_print called without a valid context.
