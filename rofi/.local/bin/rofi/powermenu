@@ -12,7 +12,7 @@
 #Created:
 #   Wed 07 December 2022, 11:01:52 PM [GMT]
 #Modified:
-#   Wed 07 December 2022, 11:02:38 PM [GMT]
+#   Mon 16 January 2023, 05:21:19 PM [GMT]
 #
 #Description:
 # This script defines just a mode for rofi instead of being a self-contained
@@ -62,7 +62,7 @@ icons[shutdown]="\uf011"
 icons[cancel]="\u00d7"
 
 declare -A actions
-actions[lockscreen]="multimonitorlock -l -- --time-str=\"%I:%M:%S %p\""
+actions[lockscreen]="loginctl lock-session"
 actions[logout]="pkill -KILL -u ${USER}"
 actions[suspend]="systemctl suspend"
 actions[hibernate]="systemctl hibernate"
@@ -243,7 +243,7 @@ if [ -z "${selection+x}" ]
 then
     getuptime
     echo -e "\0prompt\x1fPower Menu"
-    echo -en "\0message\x1f\tUptime :: ${state^}\n"
+    echo -en "\0message\x1fUptime :: ${state^}\n"
     for entry in "${show[@]}"
     do
         echo -e "${messages[$entry]}\0icon\x1f${icons[$entry]}"

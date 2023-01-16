@@ -1,18 +1,12 @@
 local fn = vim.fn
 
--- Automatically install packer
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-	})
-	print("Installing packer close and reopen Neovim...")
-	vim.cmd([[packadd packer.nvim]])
+-- Install packer
+local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+local is_bootstrap = false
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  is_bootstrap = true
+  vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+  vim.cmd [[packadd packer.nvim]]
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
@@ -45,7 +39,6 @@ return packer.startup(function(use)
 	-- My plugins here
 
 	use({ "wbthomason/packer.nvim" }) -- Have packer manage itself
-	use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
 	use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
 	use({ "numToStr/Comment.nvim" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
@@ -65,38 +58,66 @@ return packer.startup(function(use)
 	use({ "folke/tokyonight.nvim" })
 	use({ "Minimal-Mistakes/minimalmistakes-nvim" })
 
-	-- cmp plugins
-	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
-	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
-	use({ "hrsh7th/cmp-cmdline" }) -- cmdline completions
-	use({ "hrsh7th/cmp-path" }) -- path completions
-	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
-	use({ "hrsh7th/cmp-nvim-lsp" })
-	use({ "hrsh7th/cmp-nvim-lua" })
-
-	-- snippets
-	use({ "L3MON4D3/LuaSnip" }) -- snippet engine
-	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
+	-- CMP plugins
+	use { -- Autocompletion
+    'hrsh7th/nvim-cmp',
+    requires = {
+        'hrsh7th/cmp-buffer', -- buffer completions
+        'hrsh7th/cmp-cmdline', -- cmdline completions
+        'hrsh7th/cmp-path', -- path completions
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-nvim-lua',
+        'L3MON4D3/LuaSnip', -- snippet engine
+        'rafamadriz/friendly-snippets', -- a bunch of snippets to use
+        'saadparwaiz1/cmp_luasnip'
+    },
+  }
 
 	-- LSP
-	use({ "neovim/nvim-lspconfig" }) -- enable LSP
-	use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
+	use({ -- LSP Configuration & Plugins
+        "neovim/nvim-lspconfig",
+        requires = {
+        -- Automatically install LSPs to stdpath for neovim
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
+
+        -- Useful status updates for LSP
+        'j-hui/fidget.nvim',
+        },
+    }) -- enable LSP
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
 
-	-- Telescope
-	use({ "nvim-telescope/telescope.nvim" })
+	-- Telescope Fuzzy Finder (files, lsp, etc)
+	use({ "nvim-telescope/telescope.nvim",
+        requires = {
+        'nvim-lua/plenary.nvim' }
+    })
+
+    -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
 	-- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter" })
+	use { -- Highlight, edit, and navigate code
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+        pcall(require('nvim-treesitter.install').update { with_sync = true })
+        end,
+    }
+
+    use { -- Additional text objects via treesitter
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        after = 'nvim-treesitter',
+    }
 
 	-- Git
+    use({ "tpope/vim-fugitive" })
+    use({ "tpope/vim-rhubarb" })
 	use({ "lewis6991/gitsigns.nvim" })
 
 	-- Custom
 	use({ "wesleimp/stylua.nvim" })
 	use({ "cappyzawa/trim.nvim" })
 	use({ "ap/vim-css-color" })
-	use({ "tpope/vim-fugitive" })
 	use({ "airblade/vim-gitgutter" })
 	use({ "ctrlpvim/ctrlp.vim" })
 	use({ "lyuts/vim-rtags" })
@@ -106,10 +127,13 @@ return packer.startup(function(use)
 	use({ "The-Repo-Club/Vim_Keys" })
 	use({ "Thyrum/vim-stabs" })
 	use({ "mbbill/undotree" })
+    use({ "tpope/vim-sleuth" }) -- Detect tabstop and shiftwidth automatically
 
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if PACKER_BOOTSTRAP then
-		require("packer").sync()
-	end
+    -- When we are bootstrapping a configuration, it doesn't
+    -- make sense to execute the rest of the init.lua.
+
+    -- You'll need to restart nvim, and then it will work.
+    if is_bootstrap then
+        require("packer").sync()
+    end
 end)

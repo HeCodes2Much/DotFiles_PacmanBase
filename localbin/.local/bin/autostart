@@ -12,7 +12,7 @@
 #Created:
 #   Mon 22 November 2021, 03:15:54 PM [GMT+1]
 #Modified:
-#   Thu 17 November 2022, 03:44:58 PM [GMT]
+#   Mon 16 January 2023, 05:16:24 PM [GMT]
 #
 #Description:
 #   <Todo>
@@ -187,27 +187,29 @@ fi
 ## Auto Lock ##
 ###############
 
-if command -v xidlehook &>/dev/null; then
+if command -v xautolock &>/dev/null; then
     # shellcheck disable=SC2155
-    export PRIMARY_DISPLAY="$(xrandr | awk '/ primary/{print $1}')"
-    if ! pgrep -x "xidlehook" >/dev/null; then
+    if ! pgrep -x "xautolock" >/dev/null; then
         (
             sleep 2s
-            xidlehook \
-                --not-when-fullscreen \
-                --not-when-audio \
-                --timer 300 \
-                "xrandr --output $PRIMARY_DISPLAY --brightness .1" \
-                "xrandr --output $PRIMARY_DISPLAY --brightness 1" \
-                --timer 30 \
-                "xrandr --output $PRIMARY_DISPLAY --brightness 1; multimonitorlock -l -- --time-str=%I:%M:%S %p" \
-                "" \
-                --timer 3600 \
-                "systemctl suspend" \
-                ""
+            xautolock \
+                -time 15 -locker "multimonitorlock -l -- --time-str=%I:%M:%S %p" \
+                -detectsleep
         ) &
     else
-        echo "xidlehook already Running"
+        echo "xautolock already Running"
+    fi
+fi
+
+if command -v xss-lock &>/dev/null; then
+    # shellcheck disable=SC2155
+    if ! pgrep -x "xss-lock" >/dev/null; then
+        (
+            sleep 2s
+            xss-lock -- multimonitorlock -l -- --time-str="%I:%M:%S %p"
+        ) &
+    else
+        echo "xautolock already Running"
     fi
 fi
 

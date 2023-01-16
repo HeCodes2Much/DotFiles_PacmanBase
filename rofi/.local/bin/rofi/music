@@ -3,7 +3,7 @@
 # Auto updated?
 #   Yes
 #File :
-#   repomenue_music
+#   music
 #Author:
 #   The-Repo-Club [wayne6324@gmail.com]
 #Github:
@@ -12,15 +12,16 @@
 # Created:
 #   Wed 10 March 2021, 12:34:47 PM [GMT]
 # Modified:
-#   Wed 07 December 2022, 11:01:08 PM [GMT]
+#   Mon 16 January 2023, 05:51:30 PM [GMT]
 #
 # Description:
 #   <Todo>
 #
 # shellcheck disable=all
 
-MUSICPLAYER="ffplay -nodisp"
-PLAYING_MSG="           Currently Playing :: "
+MUSICPLAYER="mplayer"
+CURRENT_SONG=$(lsof -c "$MUSICPLAYER" | grep -F ".mp3" | awk -F"/" '{ print $NF; }' | cut -d'.' -f1)
+PLAYING_MSG="Currently Playing :: ${CURRENT_SONG}"
 
 for Song in "$HOME/Music/"*; do
     if [ -f "$Song" ]; then
@@ -43,6 +44,7 @@ if [[ $ret -eq 0 ]]; then
     case $CHOICE in
         *.mp3 | *.flac | *.wav | *.ogg)
             folder=$HOME/Music
+            pkill "$MUSICPLAYER"
             $MUSICPLAYER "$folder/$CHOICE" &
             ;;
         *)
@@ -51,11 +53,6 @@ if [[ $ret -eq 0 ]]; then
     esac
 elif [[ $ret -gt 1 ]]; then
     if [[ $ret -eq 10 ]]; then
-        echo "Option selected (stdout): $CHOICE"
-        echo "Return code: $ret"
-    elif [[ $ret -eq 11 ]]; then
-        echo "Option selected (stdout): $CHOICE"
-        echo "Return code: $ret"
+        pkill "$MUSICPLAYER"
     fi
-    exit $ret
 fi

@@ -6,6 +6,13 @@ if test -d "$HOME/.config/composer/vendor/bin"
     set PATH "$HOME/.config/composer/vendor/bin:$PATH"
 end
 
+# Adds `~/.local/share/gem/ruby/3.0.0/bin` to $PATH
+# set PATH so it includes user's private bin if it exists
+if test -d "$HOME/.local/share/gem/ruby/3.0.0/bin"
+    set GEM_HOME "$HOME/.local/share/gem/ruby/3.0.0"
+    set PATH "$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
+end
+
 # Adds `~/.cargo/bin` to $PATH
 # set PATH so it includes user's private bin if it exists
 if test -d "$HOME/.cargo/bin"

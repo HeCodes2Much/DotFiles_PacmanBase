@@ -83,6 +83,16 @@ function greset
     git reset -- $argv
 end
 
+function gbackup
+    git reset --soft HEAD~1
+end
+
+function gcleanup
+    git fetch --prune --prune-tags origin
+    git remote prune origin
+    git pull
+end
+
 function gshow
     git show $argv
 end

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #-*-coding:utf-8 -*-
 #Auto updated?
 #   Yes
@@ -12,7 +12,7 @@
 #Created:
 #   Wed 07 December 2022, 11:01:26 PM [GMT]
 #Modified:
-#   Wed 07 December 2022, 11:01:44 PM [GMT]
+#   Mon 16 January 2023, 05:33:28 PM [GMT]
 #
 #Description:
 #   <Todo>
@@ -46,6 +46,7 @@ function network_options() {
 		if [ -z "$connection" ]; then
 			echo "-=|> Connect to a Network"
             echo "-=|> Connect to a Hidden Network"
+            connection="N/A"
 		elif [ ! -z "$connection" ]; then
 			echo "-=|> Connect to a Network"
             echo "-=|> Connect to a Hidden Network"
@@ -62,7 +63,7 @@ function main_scrn() { # Main window to be displayed on start
 	network_status
     network_options
     echo -en "\x00prompt\x1fWifi\n"
-    echo -en "\0message\x1f\tWIFI Status :: ${state^}\t\tConnected to :: ${connection}\n"
+    echo -en "\0message\x1fWIFI Status :: ${state^}\t\tConnected to :: ${connection}\n"
 	echo -en "-=|> Delete existing connections\n"
 	echo -en "-=|> Refresh\n"
 }

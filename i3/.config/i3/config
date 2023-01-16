@@ -139,7 +139,7 @@ $super_b+m \
 
 ## Category: Menus;
 # Description: Start Music Menu;
-$super_b+F6 \
+$super_b+F4 \
     $exe music
 
 ## Category: Menus;
@@ -149,7 +149,7 @@ $super_b+p \
 
 ## Category: Menus;
 # Description: Start Youtube Menu;
-$super_b+s \
+$super_b+F5 \
     $exe youtube_subs
 
 # }}} Menus
@@ -409,7 +409,7 @@ font pango:Noto Mono Regular 13
 assign [class="(?i)Alacritty|Kitty"]                                            → $ws1
 
 # Workspace $ws2
-assign [class="(?i)Emacs|Jetbrains"]                                            → $ws2
+assign [class="(?i)Emacs"]                                                      → $ws2
 assign [class="(?i)Code|Nvim"]                                               	→ $ws2
 
 # Workspace $ws3
@@ -442,6 +442,7 @@ assign [class="(?i)Virt*|LazyGit"]                                              
 assign [class="(?i)Dconf-editor|Piper*"]                                        → $ws0
 assign [class="(?i)Actions|Btop"]                                               → $ws0
 assign [class="(?i)PkgBrowser"]                                                 → $ws0
+assign [class="(?i)Jetbrains"]                                                  → $ws0
 
 # }}} Assign Applications
 
@@ -642,9 +643,8 @@ for_window [class="(?i)PassMenu"] floating enable, resize set 350 700, move posi
 for_window [class="(?i)MusicMenu"] floating enable, resize set 550 500, move position center
 for_window [class="(?i)YoutubeMenu"] floating enable, resize set 700 750, move position center
 
-for_window [title="Copying"] floating enable
-for_window [title="Deleting"] floating enable
-for_window [title="Moving"] floating enable
+for_window [title="(?i)Copying|Deleting|Moving"] floating enable, move position center
+for_window [window_role="(?i)Organizer|Floating"] floating enable, resize set 640 480, move position center
 
 # fullscreen enabled from some programs - find with xprop
 

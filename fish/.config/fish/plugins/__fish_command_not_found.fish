@@ -12,16 +12,16 @@ function fish_command_not_found
         # Pacman only prints the path, so we still need to print the error.
         pacman -F $paths
 
-        while true
-            read -l -P "Would you like to install $pkgs[1]? [Y/n] " confirm
+        # while true
+        #     read -l -P "Would you like to install $pkgs[1]? [Y/n] " confirm
 
-            switch $confirm
-                case Y y
-                    pacman -S $pkgs[1]
-                    return
-                case N n
-                    return
-            end
-        end
+        #     switch $confirm
+        #         case Y y
+        #             pacman -S $pkgs[1]
+        #             return
+        #         case N n
+        #             return
+        #     end
+        # end
     end
 end

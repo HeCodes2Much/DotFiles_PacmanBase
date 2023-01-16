@@ -22,3 +22,13 @@ require "user.whichkey"
 require "user.autocommands"
 require "user.header"
 require "user.trim"
+
+
+if is_bootstrap then
+    print '=================================='
+    print '    Plugins are being installed'
+    print '    Wait until Packer completes,'
+    print '       then restart nvim'
+    print '=================================='
+    return
+end
