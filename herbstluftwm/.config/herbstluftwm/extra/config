@@ -12,7 +12,7 @@
 #Created:
 #   Sat 15 October 2022, 09:01:26 PM [GMT+1]
 #Modified:
-#   Thu 20 October 2022, 04:11:37 PM [GMT+1]
+#   Fri 17 February 2023, 09:49:52 PM [GMT]
 #
 #Description:
 #   Config for herbstluftwm
@@ -33,14 +33,13 @@ hc emit_hook reload
 #----------------#
 
 editor='code'
-menu='repomenu_run -i -l 10 -w 600 -c -p "Launcher" -q "Launch a app"'
+menu='menu'
 browser='firefox'
 terminal='alacritty'
-power='repomenue_powermenu'
+power='rofi -show powermenu -config ~/.config/rofi/powermenu.rasi'
 vbox='virt-manager'
 files='nemo'
 mail='thunderbird'
-kill='repomenue_kill'
 
 #---------------------------------#
 # REMOVE ALL EXISTING KEYBINDINGS #
@@ -88,7 +87,6 @@ hc keybind $MOD-$SHIFT-Return spawn $files
 
 hc keybind $MOD-m spawn $menu
 hc keybind $MOD-$SHIFT-e spawn $power
-hc keybind $MOD-$SHIFT-q spawn $kill
 
 #-------------#
 # ScratchPads #
