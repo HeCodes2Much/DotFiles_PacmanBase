@@ -649,6 +649,7 @@ for_window [window_role="(?i)Organizer|Floating"] floating enable, resize set 64
 # fullscreen enabled from some programs - find with xprop
 
 for_window [class="(?i)Minecraft*|0ad*|Minetest"] fullscreen enable
+for_window [class="(?i)steam_app_271590"] fullscreen enable
 
 # }}} Floating/Tiled/Fullscreen
 
@@ -723,11 +724,11 @@ $super_b+y \
 $super_b+u \
     border none
 
-new_window pixel 1
+new_window pixel 10
 #new_window normal
 #new_window none
 
-new_float pixel 1
+new_float pixel 10
 #new_float normal
 #new_float none
 
@@ -749,7 +750,7 @@ popup_during_fullscreen smart
 # delete or uncomment the following lines if you do not have it or do not
 # want it
 
-for_window [class="^.*"] border 1pixel
+for_window [class="^.*"] border 10pixel
 gaps inner 5
 gaps outer 2
 #smart_gaps on
