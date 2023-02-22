@@ -914,13 +914,13 @@ $alt_b+$shift+c \
 
 # Theme colors
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #FF79C6
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #6272A4
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #6272A4
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #44475A
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.focused          #81a1c1 #81a1c1 #e5e9f0 #81a1c1   #ff59f9
+client.focused_inactive #434c5e #434c5e #e5e9f0 #ff59f9   #81a1c1
+client.unfocused        #283036 #283036 #BFBFBF #283036   #81a1c1
+client.urgent           #434c5e #ff5959 #e5e9f0 #ff5959   #434c5e
+client.placeholder      #283036 #283036 #e5e9f0 #283036   #283036
 
-client.background       #F8F8F2
+client.background       #434c5e
 ##STOP THEMING
 
 # }}} Colors
