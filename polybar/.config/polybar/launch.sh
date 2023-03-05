@@ -29,8 +29,8 @@ if type "xrandr" > /dev/null; then
     BOTTOM_BAR_CONFIG=$HOME/.config/polybar/monitor_$MC/config_bottom.ini
 
     # Launch on primary monitor
-    MONITOR=$PRIMARY polybar --reload -c "$TOP_BAR_CONFIG" $BAR_NAME &
-    MONITOR=$PRIMARY polybar --reload -c "$BOTTOM_BAR_CONFIG" $BAR_NAME &
+    DEFAULT_NETWORK_INTERFACE=$DEFAULT_NETWORK_INTERFACE MONITOR=$PRIMARY polybar --reload -c "$TOP_BAR_CONFIG" $BAR_NAME &
+    DEFAULT_NETWORK_INTERFACE=$DEFAULT_NETWORK_INTERFACE MONITOR=$PRIMARY polybar --reload -c "$BOTTOM_BAR_CONFIG" $BAR_NAME &
 
     # Launch on all other monitors
 
@@ -43,6 +43,6 @@ if type "xrandr" > /dev/null; then
         DEFAULT_NETWORK_INTERFACE=$DEFAULT_NETWORK_INTERFACE MONITOR=$m polybar --reload -c "$BOTTOM_BAR_CONFIG" $BAR_NAME &
     done
 else
-    polybar --reload main -c ~/.config/polybar/config_top.ini  &
-    polybar --reload main -c ~/.config/polybar/config_bottom.ini  &
+    DEFAULT_NETWORK_INTERFACE=$DEFAULT_NETWORK_INTERFACE polybar --reload main -c ~/.config/polybar/config_top.ini  &
+    DEFAULT_NETWORK_INTERFACE=$DEFAULT_NETWORK_INTERFACE polybar --reload main -c ~/.config/polybar/config_bottom.ini  &
 fi
