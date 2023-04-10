@@ -690,10 +690,12 @@ bindsym XF86MonBrightnessDown $exe xbacklight -dec 10 # decrease screen brightne
 $super_b+b \
     $exe polybar-msg cmd toggle
 
+
+### Comming SOON
 ## Category: Main Keybinds;
 # Description: Toggle Polybar Tray;
-$super_b+t \
-    $exe polybar-msg action tray module_toggle
+# $super_b+t \
+#     $exe polybar-msg action tray module_toggle
 
 #####################################################################################################################
 #################                          border control                                           #################
