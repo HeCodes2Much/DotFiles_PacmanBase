@@ -4,6 +4,7 @@ setxkbmap -layout gb
 setxkbmap -option caps:super
 
 set -gx LC_ALL "en_GB.UTF-8"
+set -gx ANDROID_HOME "/home/repo/Android/Sdk"
 set -gx PAGER more
 set -gx AUR_PAGER more
 set -gx EDITOR vim
