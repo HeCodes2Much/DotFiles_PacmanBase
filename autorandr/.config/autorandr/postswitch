@@ -11,7 +11,7 @@ if [ "$WM" == "i3" ]; then
             if ! test -f "$HOME/.config/polybar/launch.sh"; then
                 echo "$HOME/.config/polybar/launch.sh could not be found"
             else
-                sh $HOME/.config/polybar/launch.sh
+                exec "$HOME/.config/polybar/launch.sh"
             fi
         else
             echo "polybar already Running"

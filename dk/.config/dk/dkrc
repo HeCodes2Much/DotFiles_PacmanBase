@@ -12,7 +12,7 @@
 #Created:
 #   Sun 23 April 2023, 09:31:18 PM [GMT+1]
 #Modified:
-#   Sun 23 April 2023, 10:06:38 PM [GMT+1]
+#   Mon 24 April 2023, 01:56:34 PM [GMT+1]
 #
 #Description:
 #   Config for DK Window Manager
@@ -21,14 +21,9 @@
 #   dk, bash
 #
 
-if ! command -v picom &>/dev/null; then
-    echo "picom could not be found"
-else
-    if ! pgrep -x "picom" >/dev/null; then
-        picom -CGb --config "$HOME"/.config/picom/picom.conf &
-    else
-        echo "picom already Running"
-    fi
+# Autostart stuff if its not already started
+if [[ -f "$HOME/.config/dk/scripts/autostart" ]]; then
+    exec "$HOME/.config/dk/scripts/autostart"
 fi
 
 # example dkrc to show some basic command usage and error reporting
