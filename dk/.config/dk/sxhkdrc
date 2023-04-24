@@ -1,3 +1,7 @@
+#####################################################################################################################
+#################                                  Main Keybinds                                    #################
+#####################################################################################################################
+
 ## Category: Main Keybinds;
 # Description: Show Keybinds;
 super + F1
@@ -8,12 +12,180 @@ super + F1
 super + shift + c
 	dkcmd win kill
 
+#####################################################################################################################
+#################                                  Menus Keybinds                                   #################
+#####################################################################################################################
+
+## Category: Menus;
+# Description: Start GMrun;
+super +F2
+    gmrun
+
+## Category: Menus;
+# Description: Start ClipMenu;
+super + F3
+    clipmenu -p ClipMenu -mesg "Copy from clipboard."
+
+###############################
+#######   Rofi Menu's   #######
+###############################
+
+## Category: Menus;
+# Description: Start Main Menu;
+super + m
+    menu
+
+## Category: Menus;
+# Description: Start Music Menu;
+super + F4
+    music
+
+## Category: Menus;
+# Description: Start Pass Menu;
+super + p
+    passmenu
+
+## Category: Menus;
+# Description: Start Youtube Menu;
+super + F5
+    youtube_subs
+
+#####################################################################################################################
+#################                          how to exit, logoff, suspend, ...                        #################
+#####################################################################################################################
+
+# {{{ Power
+
+## Category:  Main Keybinds;
+# Description: Exit / Quit / Restart;
+super + shift + e
+    rofi -show powermenu -config ~/.config/rofi/powermenu.rasi
+
+## Category:  Main Keybinds;
+# Description: Exit / Quit / Restart;
+super + x
+    rofi -show powermenu -config ~/.config/rofi/powermenu.rasi
+
+
+#####################################################################################################################
+#################                          reload changed configuration                             #################
+#####################################################################################################################
+
+## Category: DK-Config;
+# Description: Reload sxhkd;
+super + shift + x
+	pkill -USR1 -x sxhkd
+
+## Category: DK-Config;
+# Description: Reload dkrc;
+super + shift + r
+	$HOME/.config/dk/dkrc
+
+## Category: DK-Config;
+# Description: Restart dk;
+super + ctrl + shift + r
+	dkcmd restart
+
+
+#####################################################################################################################
+#################                          Stopping an application                                  #################
+#####################################################################################################################
+
+## Category: DK-Config;
+# Description: Kill focused window;
+super + q
+    dkcmd win kill
+
+## Category: DK-Config;
+# Description: Kill focused window;
+super + shift + q
+    dkcmd win kill
+
+#####################################################################################################################
+#################                          Moving around in DK                                      #################
+#####################################################################################################################
+
+## Category: DK-Windows;
+# Description: Toggle float mode;
+super + shift + space \
+    dkcmd win float
+
+## Category: DK-Windows;
+# Description: Change focus: next;
+super + j
+	dkcmd win focus next
+
+## Category: DK-Windows;
+# Description: Change focus: prev;
+super + k
+	dkcmd win focus prev
+
+## Category: DK-Windows;
+# Description: Move focused window: up;
+super + Up
+	dkcmd win mvstack up
+
+## Category: DK-Windows;
+# Description: Move focused window: down;
+super + Down
+	dkcmd win mvstack down
+
+## Category: DK-Windows;
+# Description: Move to next workspace;
+super + Tab
+	dkcmd ws view nextne
+
+## Category: DK-Windows;
+# Description: Move to prev workspace;
+super + shift + Tab
+	dkcmd ws view prevne
+
+## Category: DK-Layout;
+# Description: Change current layout: tile;
+super + l ; t
+	dkcmd set layout tile
+
+## Category: DK-Layout;
+# Description: Change current layout: rtile;
+super + l ; r
+	dkcmd set layout rtile
+
+## Category: DK-Layout;
+# Description: Change current layout: mono;
+super + l ; m
+	dkcmd set layout mono
+
+## Category: DK-Layout;
+# Description: Change current layout: grid;
+super + l ; g
+	dkcmd set layout grid
+
+## Category: DK-Layout;
+# Description: Change current layout: spiral;
+super + l ; s
+	dkcmd set layout spiral
+
+## Category: DK-Layout;
+# Description: Change current layout: dwindle;
+super + l ; d
+	dkcmd set layout dwindle
+
+## Category: DK-Layout;
+# Description: Change current layout: tstack;
+super + l ; f
+	dkcmd set layout tstack
+
+## Category: DK-Layout;
+# Description: Change current layout: none;
+super + l ; n
+	dkcmd set layout none
+
+
+
+
+
 # example sxhkdrc for use with dk
 #########################################################
-
-# launcher
-super + p
-	dmenu_run
 
 # terminal
 super + Return
@@ -31,25 +203,6 @@ super + Return
 {XF86MonBrightnessUp,XF86MonBrightnessDown}
 	xbacklight {+10,-10}
 
-# reload sxhkd
-super + shift + x
-	pkill -USR1 -x sxhkd
-
-# quit dk
-super + shift + q
-	dkcmd exit
-
-# reload dkrc
-super + shift + r
-	$HOME/.config/dk/dkrc
-
-# restart dk
-super + ctrl + shift + r
-	dkcmd restart
-
-# focus next or previous window
-super + {j,k}
-	dkcmd win focus {next,prev}
 
 # close window, swap tiled window in/out of master, cycle tiled windows in place
 super + {q,space,Tab}
@@ -70,10 +223,6 @@ super + shift + {h,j,k,l}
 # resize window, signed (+/-) for relative changes
 super + ctrl + {h,j,k,l}
 	dkcmd win resize {w=-20,h=+20,h=-20,w=+20}
-
-# move the active window up/down the stack
-super + {Up,Down}
-	dkcmd win mvstack {up,down}
 
 # view, send, or follow to a workspace (by number)
 super + {_,shift + ,ctrl + }{1-9,0}

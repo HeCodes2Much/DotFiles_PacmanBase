@@ -12,7 +12,7 @@
 #Created:
 #   Sun 23 April 2023, 09:31:18 PM [GMT+1]
 #Modified:
-#   Mon 24 April 2023, 01:56:34 PM [GMT+1]
+#   Mon 24 April 2023, 05:07:42 PM [GMT+1]
 #
 #Description:
 #   Config for DK Window Manager
@@ -23,7 +23,7 @@
 
 # Autostart stuff if its not already started
 if [[ -f "$HOME/.config/dk/scripts/autostart" ]]; then
-    exec "$HOME/.config/dk/scripts/autostart"
+    sh "$HOME/.config/dk/scripts/autostart"
 fi
 
 # example dkrc to show some basic command usage and error reporting
@@ -149,16 +149,63 @@ fi
 	# --------------
 
     # delete all rules
-	# dkcmd rule remove '*'
+	dkcmd rule remove '*'
 
-	# rule class, instance, and title regexes (*ALWAYS* CASE INSENSITIVE)
+    # Assign application to start on a specific workspace
+    # you can find the class with the program xprop
 
-	# open window(s) on a specific workspace (assigned monitor)
-	dkcmd rule class="^alacritty$" ws=1 focus=true
+    # sign via class
+    # Workspace ws=1
+	dkcmd rule class="^Alacritty$" ws=1 focus=true
+    dkcmd rule class="^Kitty$" ws=1 focus=true
 
-	dkcmd rule class="^nemo$" ws=3 focus=true
+    # Workspace ws=2
+    dkcmd rule class="^Emacs$" ws=2 focus=true
+    dkcmd rule class="^Code$" ws=2 focus=true
+    dkcmd rule class="^Nvim$" ws=2 focus=true
 
-    dkcmd rule class="^wm-cheat.py$" stick=true float=true w=720 h=720 x=center y=center
+    # Workspace ws=3
+	dkcmd rule class="^Nemo$" ws=3 focus=true
+
+    # Workspace ws=4
+	dkcmd rule class="^Aseprite$" ws=4 focus=true
+    dkcmd rule class="^Krita$" ws=4 focus=true
+
+    # Workspace ws=5
+	dkcmd rule class="^Xephyr$" ws=5 focus=true
+    dkcmd rule class="^CmusImage$" ws=5 focus=true
+
+    # Workspace ws=6
+	dkcmd rule class="^Firefox$" ws=6 focus=true
+    dkcmd rule class="^Google-Chrome$" ws=6 focus=true
+
+    # Workspace ws=7
+	dkcmd rule class="^Mail$" ws=7 focus=true
+    dkcmd rule class="^Thunderbird$" ws=7 focus=true
+    dkcmd rule class="^Keybase$" ws=7 focus=true
+
+    # Workspace ws=8
+	dkcmd rule class="^Minecraft$" ws=8 focus=true
+    dkcmd rule class="^Steam$" ws=8 focus=true
+    dkcmd rule class="^PrismLauncher$" ws=8 focus=true
+    dkcmd rule class="^0ad$" ws=8 focus=true
+    dkcmd rule class="^Minetest$" ws=8 focus=true
+
+    # Workspace ws=9
+	dkcmd rule class="^Discord$" ws=9 focus=true
+    dkcmd rule class="^Element$" ws=9 focus=true
+
+    # Workspace ws=10
+	dkcmd rule class="^Jetbrains$" ws=10 focus=true
+    dkcmd rule class="^PkgBrowser$" ws=10 focus=true
+    dkcmd rule class="^Actions$" ws=10 focus=true
+    dkcmd rule class="^Btop$" ws=10 focus=true
+    dkcmd rule class="^Piper$" ws=10 focus=true
+    dkcmd rule class="^LazyGit$" ws=10 focus=true
+    dkcmd rule class="^Virt$" ws=10 focus=true
+    dkcmd rule class="^Dconf-Editor$" ws=10 focus=true
+
+    dkcmd rule class="^wm-cheat.py$" stick=true float=true w=920 h=720 x=center y=center
 
 	# open window(s) and use a callback function (user defined in config.h)
 	# we also ignore=true to stop the window from being resized on it's own from events
@@ -166,16 +213,13 @@ fi
 	dkcmd rule class="^mpv$" instance="^albumart$" float=true ignore=true callback=albumart bw=0
 
 	# open window(s) in a floating state
-	dkcmd rule class="^(pavucontrol|transmission-gtk|steam|lxappearance)$" float=true
+	dkcmd rule class="^(pavucontrol|transmission-gtk|lxappearance)$" float=true
 
 	# open window(s) with a specific geometry and coordinates (floating only!)
 	dkcmd rule class="^google-chrome$" title="^open files$" float=true w=1280 h=720
 
 	# open window(s) with sticky and floating enabled to view on all workspaces.
 	dkcmd rule class="^stickyterm$" stick=true float=true w=1280 h=720
-
-	# focus window and workspace on opening
-	dkcmd rule class="^firefox$" ws=6 focus=true
 
 	# apply current rule set to all existing windows (useful for WM reload/restart)
 	dkcmd rule apply '*'

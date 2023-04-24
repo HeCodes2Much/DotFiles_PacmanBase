@@ -12,7 +12,7 @@
 #Created:
 #   Mon 24 April 2023, 01:52:19 PM [GMT+1]
 #Modified:
-#   Mon 24 April 2023, 02:07:39 PM [GMT+1]
+#   Mon 24 April 2023, 02:16:28 PM [GMT+1]
 #
 #Description:
 #   Autostart for DK Window Manager
@@ -88,7 +88,7 @@ else
         if ! test -f "$HOME/.config/polybar/launch.sh"; then
             echo "$HOME/.config/polybar/launch.sh could not be found"
         else
-            exec "$HOME/.config/polybar/launch.sh"
+            sh "$HOME/.config/polybar/launch.sh"
         fi
     else
         echo "polybar already Running"
