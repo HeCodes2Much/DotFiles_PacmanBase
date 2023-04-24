@@ -1,4 +1,35 @@
-#!/bin/sh
+#!/usr/bin/env bash
+#-*-coding:utf-8 -*-
+#Auto updated?
+#   Yes
+#File:
+#   dkrc
+#Author:
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github:
+#   https://github.com/The-Repo-Club/
+#
+#Created:
+#   Sun 23 April 2023, 09:31:18 PM [GMT+1]
+#Modified:
+#   Sun 23 April 2023, 10:06:38 PM [GMT+1]
+#
+#Description:
+#   Config for DK Window Manager
+#
+#Dependencies:
+#   dk, bash
+#
+
+if ! command -v picom &>/dev/null; then
+    echo "picom could not be found"
+else
+    if ! pgrep -x "picom" >/dev/null; then
+        picom -CGb --config "$HOME"/.config/picom/picom.conf &
+    else
+        echo "picom already Running"
+    fi
+fi
 
 # example dkrc to show some basic command usage and error reporting
 
@@ -40,23 +71,23 @@ fi
 
 	# default workspace '_' values used when allocating new workspaces
 	# can be applied to all existing workspaces when passed 'apply' after ws=_
-	dkcmd set ws=_ apply layout=tile master=1 stack=3 gap=10 msplit=0.5 ssplit=0.5
+	dkcmd set ws=_ apply layout=tile master=1 stack=3 gap=5 msplit=0.5 ssplit=0.5
 
 	# use grid layout, padding, and gaps on workspace 10
-	dkcmd set ws=10 layout=grid pad left=200 right=200 top=100 bottom=100 gap=50
+	dkcmd set ws=10 layout=grid pad left=25 right=25 top=25 bottom=25 gap=25
 
 	# change workspace names (default: number == name)
-	# dkcmd set \
-	# 	ws=1  name="edit" \
-	# 	ws=2  name="web" \
-	# 	ws=3  name="😀" \
-	# 	ws=4  name="😠" \
-	# 	ws=5  name="5" \
-	# 	ws=6  name="6" \
-	# 	ws=7  name="7" \
-	# 	ws=8  name="8" \
-	# 	ws=9  name="9" \
-	# 	ws=10 name="10"
+	dkcmd set \
+		ws=1  name="1: Terminal" \
+		ws=2  name="2: Editor" \
+		ws=3  name="3: Files" \
+		ws=4  name="4: Graphics" \
+		ws=5  name="5: Music" \
+		ws=6  name="6: WebBrowser" \
+		ws=7  name="7: Mail" \
+		ws=8  name="8: Games" \
+		ws=9  name="9: Chat" \
+		ws=10 name="10: Settings"
 
 	# enable static workspaces and assign them to monitors (only relevant for multiple monitors)
 	# aside -
@@ -64,19 +95,20 @@ fi
 	#       try embracing the default behaviour and allow access to any workspace from any monitor
 	#       you might end up liking it :)
 	#
-	# mon1='DisplayPort-0'
-	# mon2='HDMI-A-0'
-	# dkcmd set static_ws=true \
-	# 	ws=1  mon=$mon1 \
-	# 	ws=2  mon=$mon1 \
-	# 	ws=3  mon=$mon1 \
-	# 	ws=4  mon=$mon1 \
-	# 	ws=5  mon=$mon1 \
-	# 	ws=6  mon=$mon2 \
-	# 	ws=7  mon=$mon2 \
-	# 	ws=8  mon=$mon2 \
-	# 	ws=9  mon=$mon2 \
-	# 	ws=10 mon=$mon2
+	mon1=$(xrandr --query | grep " connected" | grep "primary" | cut -d" " -f1)
+	mon2=$(xrandr --query | grep " connected" | grep -v "primary" | cut -d" " -f1)
+    [ -z "$mon2" ] && mon2="$mon1"
+	dkcmd set static_ws=true \
+		ws=1  mon="$mon1" \
+		ws=2  mon="$mon1" \
+		ws=3  mon="$mon1" \
+		ws=4  mon="$mon1" \
+		ws=5  mon="$mon1" \
+		ws=6  mon="$mon2" \
+		ws=7  mon="$mon2" \
+		ws=8  mon="$mon2" \
+		ws=9  mon="$mon2" \
+		ws=10 mon="$mon2"
 
 
 	# global settings
@@ -92,7 +124,7 @@ fi
 	dkcmd set win_minwh=50 win_minxy=10
 
 	# disable gaps and borders in single window layouts
-	dkcmd set smart_gap=true smart_border=true
+	dkcmd set smart_gap=true smart_border=false
 
 	# define mouse mod and move/resize buttons
 	dkcmd set mouse mod=alt move=button1 resize=button3
@@ -121,13 +153,17 @@ fi
 	# window rules
 	# --------------
 
+    # delete all rules
+	# dkcmd rule remove '*'
+
 	# rule class, instance, and title regexes (*ALWAYS* CASE INSENSITIVE)
 
 	# open window(s) on a specific workspace (assigned monitor)
-	dkcmd rule class="^gimp$" ws=2
+	dkcmd rule class="^alacritty$" ws=1 focus=true
 
-	# open window(s) on a monitor by number or name (active workspace on monitor)
-	dkcmd rule class="^chromium$" mon="HDMI-A-0"
+	dkcmd rule class="^nemo$" ws=3 focus=true
+
+    dkcmd rule class="^wm-cheat.py$" stick=true float=true w=720 h=720 x=center y=center
 
 	# open window(s) and use a callback function (user defined in config.h)
 	# we also ignore=true to stop the window from being resized on it's own from events
@@ -144,17 +180,10 @@ fi
 	dkcmd rule class="^stickyterm$" stick=true float=true w=1280 h=720
 
 	# focus window and workspace on opening
-	dkcmd rule class="^firefox$" ws=1 focus=true
-
-	# update or remove an existing rule with the same match patterns
-	dkcmd rule class="^firefox$" mon="HDMI-A-0"
-	dkcmd rule remove class="^firefox$"
+	dkcmd rule class="^firefox$" ws=6 focus=true
 
 	# apply current rule set to all existing windows (useful for WM reload/restart)
 	dkcmd rule apply '*'
-
-	# delete all rules
-	# dkcmd rule remove '*'
 
 } >> "$logfile" 2>&1 # append responses
 

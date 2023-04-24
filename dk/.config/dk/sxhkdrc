@@ -1,3 +1,13 @@
+## Category: Main Keybinds;
+# Description: Show Keybinds;
+super + F1
+	dk-cheat
+
+## Category:  Main Keybinds;
+# Description: Kill a window;
+super + shift + c
+	dkcmd win kill
+
 # example sxhkdrc for use with dk
 #########################################################
 
@@ -20,10 +30,6 @@ super + Return
 # dedicated backlight keys
 {XF86MonBrightnessUp,XF86MonBrightnessDown}
 	xbacklight {+10,-10}
-
-# alt volume keys
-super + {Insert,Delete}
-	pamixer {-i,-d} 2
 
 # reload sxhkd
 super + shift + x
@@ -71,7 +77,7 @@ super + {Up,Down}
 
 # view, send, or follow to a workspace (by number)
 super + {_,shift + ,ctrl + }{1-9,0}
-	dkcmd ws {view,send,follow} {1-9,10}
+	dkcmd ws {view,follow,send} {1-9,10}
 
 # view, send, or follow to the next, previous, last active,
 # next non-empty, or prev non-empty workspace
