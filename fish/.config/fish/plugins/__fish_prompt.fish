@@ -35,7 +35,7 @@ function fish_prompt
             case 0
                 set -g __fish_prompt_char \u276f\u276f
             case '*'
-                set -g __fish_prompt_char $bgreen''$bmagenta''$bred''$byellow''$bblue''$bcyan''
+                set -g __fish_prompt_char $bgreen''$bmagenta''$bred''$byellow''$bblue''$bcyan''
         end
     end
 
