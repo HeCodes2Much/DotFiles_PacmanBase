@@ -31,6 +31,7 @@ i3-doubleborders
 i3-session
 i3-swallow
 i3lock-color
+ideapad-cm
 imagewriter
 jetbrains-toolbox
 lib32-libxft-bgra
@@ -60,6 +61,7 @@ proctl
 python-androguard
 python-gputil
 qt-logout
+qt5-webkit
 qtile-extras
 recycle-cli
 repo-exec
