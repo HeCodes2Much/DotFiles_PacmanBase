@@ -19,6 +19,7 @@ function pacman
             command sudo pacman --color auto -Qttdq | command sudo pacman --color auto -Rns -
         end
     else if [ "$argv" = --upall ]
+        command sudo pkgfile -u
         command sudo pacman -Fy
         command sudo pacman -Sy
         command pikaur -Su

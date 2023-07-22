@@ -12,7 +12,7 @@
 #Created:
 #   Fri 09 December 2022, 06:43:30 AM [GMT]
 #Modified:
-#   Fri 09 December 2022, 08:02:26 AM [GMT]
+#   Fri 14 July 2023, 11:04:22 PM [GMT+1]
 #
 #Description:
 #   <Todo>
@@ -22,7 +22,7 @@
 #
 # shellcheck disable=all
 
-bmFile="$HOME/.config/rofi/bookmarks/bm.bmf"
+bmFile="$HOME/.config/rofi/bookmarks/bm.bm"
 
 if [[ ! -f $bmFile ]]; then
     printf "%s\n" "No current bookmark file found.";
