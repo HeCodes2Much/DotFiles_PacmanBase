@@ -23,7 +23,6 @@ function pacman
         command sudo pacman -Sy
         command pikaur -Su
         command auracle update -C ~/.cache/pkgs/
-        command sudo pkgfile -u
     else if [ "$argv" = --pacsync ]
         command pacsync
     else
