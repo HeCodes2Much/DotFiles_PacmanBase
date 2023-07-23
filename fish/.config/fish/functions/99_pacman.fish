@@ -21,8 +21,7 @@ function pacman
     else if [ "$argv" = --upall ]
         sudo pkgfile -u
         command sudo pacman -Fy
-        command sudo pacman -Sy
-        sudo pikaur -Su
+        sudo pikaur -Syu
         auracle update -C ~/.cache/pkgs/
     else if [ "$argv" = --pacsync ]
         pacsync
