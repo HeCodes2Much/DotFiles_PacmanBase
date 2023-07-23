@@ -19,12 +19,13 @@ function pacman
             command sudo pacman --color auto -Qttdq | command sudo pacman --color auto -Rns -
         end
     else if [ "$argv" = --upall ]
+        sudo pkgfile -u
         command sudo pacman -Fy
         command sudo pacman -Sy
-        command pikaur -Su
-        command auracle update -C ~/.cache/pkgs/
+        sudo pikaur -Su
+        auracle update -C ~/.cache/pkgs/
     else if [ "$argv" = --pacsync ]
-        command pacsync
+        pacsync
     else
         command sudo pacman --color auto $argv
     end
@@ -46,5 +47,5 @@ end
 
 # Pacman unlock
 function unlock
-    command sudo rm /var/lib/pacman/db.lck
+    sudo rm /var/lib/pacman/db.lck
 end
