@@ -11,6 +11,27 @@
   <img src="https://img.shields.io/github/commit-activity/m/The-Repo-Club/DotFiles?color=red&style=flat-square">
 </p>
 
+<div align="justify">
+<div align="center">
+
+```ocaml
+The-Repo-Club's Dotfiles
+```
+
+<br>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JotaRandom/archlinux-artwork/master/logos/archlinux-grad1-light.svg" width="500px" alt="Arch logo"/>
+</p>
+
+<br>
+
+```ocaml
+Arch / Linux / AUR
+```
+
+</div>
+
 <table align="center">
   <tr>
     <th align="center">
