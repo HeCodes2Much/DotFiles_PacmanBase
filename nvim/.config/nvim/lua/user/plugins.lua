@@ -43,6 +43,7 @@ return packer.startup(function(use)
     use({"numToStr/Comment.nvim"})
     use({"JoosepAlviste/nvim-ts-context-commentstring"})
     use({"kyazdani42/nvim-web-devicons"})
+    use({"kyazdani42/nvim-tree.lua"})
     use({"akinsho/bufferline.nvim"})
     use({"moll/vim-bbye"})
     use({"nvim-lualine/lualine.nvim"})
@@ -81,10 +82,7 @@ return packer.startup(function(use)
             'j-hui/fidget.nvim'
         }
     }) -- enable LSP
-    use {
-        'j-hui/fidget.nvim',
-        tag = 'legacy',
-    }
+    use {'j-hui/fidget.nvim', tag = 'legacy'}
     use({"jose-elias-alvarez/null-ls.nvim"}) -- for formatters and linters
 
     -- Telescope Fuzzy Finder (files, lsp, etc)
