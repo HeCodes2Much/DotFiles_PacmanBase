@@ -1,6 +1,6 @@
-#+TITLE: DT's GNU Emacs Config
-#+AUTHOR: Derek Taylor (DT)
-#+DESCRIPTION: DT's personal Emacs config.
+#+TITLE: Repo's GNU Emacs Config
+#+AUTHOR: Wayne Wesley (The-Repo-Club)
+#+DESCRIPTION: Repo's Personal Emacs config.
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
 
