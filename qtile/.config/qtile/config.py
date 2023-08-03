@@ -76,33 +76,33 @@ SHIFT = 'shift'
 
 keys = [
     # qtile commands
-    Key([MOD, SHIFT], "r", lazy.reload_config(), desc="Reload the config", group="Qtile"),
-    Key([MOD, CTRL], "r", lazy.restart(), desc="Restart qtile", group="Qtile"),
+    Key([MOD, SHIFT], "r", lazy.reload_config(), desc="Reload the config"),
+    Key([MOD, CTRL], "r", lazy.restart(), desc="Restart qtile"),
 
     # Switch between windows
-    Key([MOD], "h", lazy.layout.left(), desc="Move focus to left", group="Moving"),
-    Key([MOD], "l", lazy.layout.right(), desc="Move focus to right", group="Moving"),
-    Key([MOD], "j", lazy.layout.down(), desc="Move focus down", group="Moving"),
-    Key([MOD], "k", lazy.layout.up(), desc="Move focus up", group="Moving"),
+    Key([MOD], "h", lazy.layout.left(), desc="Move focus to left"),
+    Key([MOD], "l", lazy.layout.right(), desc="Move focus to right"),
+    Key([MOD], "j", lazy.layout.down(), desc="Move focus down"),
+    Key([MOD], "k", lazy.layout.up(), desc="Move focus up"),
 
     # reset all windows
-    Key([MOD], "n", lazy.layout.normalize(), desc="Reset all window sizes", group="Reset"),
+    Key([MOD], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
 
     # Toggle between different layouts as defined below
-    Key([MOD], "Tab", lazy.next_layout(), desc="Toggle between layouts", group="Toggle"),
-    Key([MOD], "t", lazy.window.toggle_floating(), desc='Toggle floating', group="Toggle"),
-    Key([MOD], "q", lazy.window.kill(), desc="Kill focused window", group="Kill"),
-    Key([MOD, SHIFT], "q", lazy.spawn(Commands.killmenu), desc="Launch kill menu", group="Kill"),
+    Key([MOD], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([MOD], "t", lazy.window.toggle_floating(), desc='Toggle floating'),
+    Key([MOD], "q", lazy.window.kill(), desc="Kill focused window"),
+    Key([MOD, SHIFT], "q", lazy.spawn(Commands.killmenu), desc="Launch kill menu"),
 
     # Custom keybinds
-    Key([MOD], "Return", lazy.spawn(Commands.terminal), desc="Launch terminal", group="Launch"),
-    Key([MOD], "m", lazy.spawn(Commands.menu), desc="Launch menu", group="Launch"),
-    Key([MOD], "p", lazy.spawn(Commands.passmenu), desc="Launch password menu", group="Launch"),
-    Key([MOD, CTRL], "f", lazy.spawn(Commands.browser), desc="Launch browser", group="Launch"),
-    Key([MOD, CTRL], "c", lazy.spawn(Commands.editor), desc="Launch editor", group="Launch"),
-    Key([MOD, SHIFT], "e", lazy.spawn(Commands.powermenu), desc="Launch power menu", group="Launch"),
-    Key([MOD, SHIFT], "Return", lazy.spawn(Commands.files), desc="Launch files", group="Launch"),
-    Key([MOD], "b", lazy.spawn(Commands.btop), desc="Launch btop", group="Utils"),
+    Key([MOD], "Return", lazy.spawn(Commands.terminal), desc="Launch terminal"),
+    Key([MOD], "m", lazy.spawn(Commands.menu), desc="Launch menu"),
+    Key([MOD], "p", lazy.spawn(Commands.passmenu), desc="Launch password menu"),
+    Key([MOD, CTRL], "f", lazy.spawn(Commands.browser), desc="Launch browser"),
+    Key([MOD, CTRL], "c", lazy.spawn(Commands.editor), desc="Launch editor"),
+    Key([MOD, SHIFT], "e", lazy.spawn(Commands.powermenu), desc="Launch power menu"),
+    Key([MOD, SHIFT], "Return", lazy.spawn(Commands.files), desc="Launch files"),
+    Key([MOD], "b", lazy.spawn(Commands.btop), desc="Launch btop"),
 
     # Audio Settings
     Key([], "XF86AudioMute", lazy.spawn("amixer -D pulse set Master toggle")),
@@ -123,81 +123,6 @@ keys = [
 dgroups_key_binder = simple_key_binder(MOD)
 dgroups_app_rules = []  # type: list
 
-def show_keys(keys):
-    """
-  print current keybindings in a pretty way for a rofi/dmenu window.
-  """
-    key_help = "{:<20} {:<30} {}\n".format('Group', 'Keybinds', 'Description')
-    keys_ignored = (
-        "XF86AudioMute",  #
-        "XF86AudioLowerVolume",  #
-        "XF86AudioRaiseVolume",  #
-        "XF86AudioPlay",  #
-        "XF86AudioNext",  #
-        "XF86AudioPrev",  #
-        "XF86AudioStop",
-        "XF86MonBrightnessUp",
-        "XF86MonBrightnessDown",
-    )
-    text_replaced = {
-        "mod4": "[MOD]",  #
-        "control": "[CTRL]",  #
-        "mod1": "[ALT]",  #
-        "shift": "[SHIFT]",  #
-        "Escape": "ESC",  #
-    }
-
-    data = {}
-    category={}
-    file_path = expanduser("~/.config/qtile/keybinds.json")
-    for k in keys:
-        if k.key in keys_ignored:
-            continue
-
-        mods = ""
-        key = ""
-        desc = k.desc.title()
-        group = k.group.title()
-        allargs = ", ".join([value.__name__ if callable(value) else repr(value) for value in k.commands[0].args] +
-                            ["%s = %s" % (keyword, repr(value)) for keyword, value in k.commands[0].kwargs.items()])
-        command = k.commands[0].name + " " + allargs
-        for m in k.modifiers:
-            if m in text_replaced.keys():
-                mods += text_replaced[m] + " + "
-            else:
-                mods += m.capitalize() + " + "
-
-        if len(k.key) > 1:
-            if k.key in text_replaced.keys():
-                key = text_replaced[k.key]
-            else:
-                key = k.key.title()
-        else:
-            key = k.key
-
-        key_line = "{:<20} {:<30} {}\n".format(group, mods + key, desc)
-        key_help += key_line
-
-        if group not in data:
-            data[group] = {}
-
-        category = data[group]
-        category[desc] = {}
-        category[desc]['keybind'] = mods + key
-        category[desc]['command'] = command
-
-    with open(file_path, "w") as json_data:
-        json.dump(data, json_data, indent=4)
-
-    return expanduser("~/.config/qtile/scripts/qtile-cheat")
-
-
-# this must be done AFTER all the keys have been defined
-cheater = show_keys(keys)
-keys.extend([
-    Key([MOD], "F1", lazy.spawn(cheater), desc="Print keyboard bindings"),
-])
-
 keys.extend([
     ################
     ## Key Chords ##
@@ -215,9 +140,7 @@ keys.extend([
             Key([], "k", lazy.layout.grow_up(), desc="Grow window up"),
         ],
         mode=True,
-        name="Resize Windows",
-        desc="Resize Windows",
-        group="KeyChord",
+        name="Resize Windows"
     ),
     KeyChord(
         [MOD, CTRL],
@@ -227,9 +150,7 @@ keys.extend([
             Key([], "m", lazy.spawn('prime-run minecraft'), desc="Spawn minecraft"),
         ],
         mode=False,
-        name="Launch Game",
-        desc="Launch Game",
-        group="KeyChord",
+        name="Launch Game"
     ),
     KeyChord(
         [MOD],
@@ -240,9 +161,7 @@ keys.extend([
             Key([], "f", lazy.spawn('win-shot -f'), desc="Screen Shot Full"),
         ],
         mode=False,
-        name="Take a Screenshot",
-        desc="Take a Screenshot",
-        group="KeyChord",
+        name="Take a Screenshot"
     ),
 ])
 
@@ -256,17 +175,16 @@ groups = Groups.groups
 groups.append(
     ScratchPad("scratchpad", [
         DropDown("term", "kitty --class=scratch", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1),
-        DropDown("cheat", cheater, width=0.4, height=0.7, x=0.3, y=0.2, opacity=0.9),
         DropDown("clifm", "kitty --class=clifm -e clifm", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
         DropDown("btop", "kitty --class=btop -e btop", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
         DropDown("volume", "pavucontrol", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
-    ]))
+    ])
+)
 
 # Scratchpad keybindings
 keys.extend([
     Key([CTRL], "Return", lazy.group['scratchpad'].dropdown_toggle('term')),
     Key([ALT], "c", lazy.group['scratchpad'].dropdown_toggle('clifm')),
-    Key([ALT], "F1", lazy.group['scratchpad'].dropdown_toggle('cheat')),
     Key([ALT], "b", lazy.group['scratchpad'].dropdown_toggle('btop')),
     Key([ALT], "v", lazy.group['scratchpad'].dropdown_toggle('volume')),
 ])
@@ -312,8 +230,6 @@ floating_layout = layout.Floating(
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
-        Match(wm_class=re.compile('^Cheater.*', re.IGNORECASE)),  # Cheater
-        Match(wm_class=re.compile('^PassMenu.*|^PowerMenu.*', re.IGNORECASE)),  # Menus
         Match(wm_class="confirmreset"),  # gitk
         Match(wm_class="makebranch"),  # gitk
         Match(wm_class="maketag"),  # gitk

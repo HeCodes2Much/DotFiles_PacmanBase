@@ -1,4 +1,5 @@
 import re
+from libqtile import hook, qtile
 from libqtile.config import Group, Match
 
 
@@ -8,8 +9,8 @@ class Groups(object):
         Group(
             label='一',
             init=True,
-            exclusive=False,
             persist=True,
+            exclusive=False,
             matches=[Match(wm_class=re.compile('^Alacritty.*|^Kitty.*', re.IGNORECASE))],
             layout='monadthreecol',
             position=1,
@@ -19,8 +20,8 @@ class Groups(object):
         Group(
             label='二',
             init=True,
-            exclusive=False,
             persist=True,
+            exclusive=False,
             matches=[Match(wm_class=re.compile('^Code.*|^Jetbrains.*', re.IGNORECASE))],
             position=2,
             screen_affinity=1,
@@ -29,8 +30,8 @@ class Groups(object):
         Group(
             label='三',
             init=True,
-            exclusive=False,
             persist=True,
+            exclusive=False,
             matches=[Match(wm_class=re.compile('^Nemo.*', re.IGNORECASE))],
             position=3,
             screen_affinity=1,
@@ -39,8 +40,8 @@ class Groups(object):
         Group(
             label='四',
             init=True,
-            exclusive=False,
             persist=True,
+            exclusive=False,
             matches=[Match(wm_class=re.compile('^Aseprite.*|^Krita.*', re.IGNORECASE))],
             position=4,
             screen_affinity=1,
@@ -49,8 +50,8 @@ class Groups(object):
         Group(
             label='五',
             init=True,
-            exclusive=False,
             persist=True,
+            exclusive=False,
             matches=[Match(wm_class=re.compile('^CmusImage.*', re.IGNORECASE))],
             position=5,
             screen_affinity=1,
@@ -107,3 +108,20 @@ class Groups(object):
             name='0',
         ),
     ]
+
+# Store the screen_affinity for each group in a dictionary
+group_screen_affinities = {group.name: group.screen_affinity for group in Groups.groups}
+
+@hook.subscribe.client_focus
+def enforce_screen_affinity(window):
+    group_name = window.group.name
+
+    # If the group has a specified screen_affinity, enforce it
+    if group_name in group_screen_affinities:
+        desired_screen = group_screen_affinities[group_name]
+        current_screen = qtile.screens.index(qtile.current_screen)
+
+        # If the window is focused on a different screen than the desired screen,
+        # move the window back to the desired screen
+        if current_screen != desired_screen:
+            window.togroup(group_name)

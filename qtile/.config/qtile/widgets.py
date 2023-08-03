@@ -20,14 +20,14 @@ class Widgets(object):
         fmt='{}',
         filename=expanduser('~/.config/qtile/art/Archlinux-icon.svg'),
         margin=3,
-        mouse_callbacks={'Button1': lazy.spawn('repomenu_desktop --repomenu="repomenu -h 50 -i -l 15 -w 500 -y 32 -x 5 -p Launcher -q Search..."')},
+        mouse_callbacks={'Button1': lazy.spawn('menu')},
     )
 
     power1 = widget.LaunchBar(
         text_only=True,
         foreground=colorScheme[1],
         progs=[
-            ('⏻ ', 'kitty --class=powermenu -o initial_window_height=220 -e fzf_powermenu', 'launch fzf powermenu'),
+            ('⏻ ', 'rofi -show powermenu -config ~/.config/rofi/powermenu.rasi'),
         ],
     )
 
@@ -35,7 +35,7 @@ class Widgets(object):
         text_only=True,
         foreground=colorScheme[1],
         progs=[
-            ('⏻ ', 'kitty --class=powermenu -o initial_window_height=220 -e fzf_powermenu', 'launch fzf powermenu'),
+            ('⏻ ', 'rofi -show powermenu -config ~/.config/rofi/powermenu.rasi'),
         ],
     )
 
