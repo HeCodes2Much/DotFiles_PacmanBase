@@ -538,7 +538,6 @@ one, an error is signaled."
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
       doom-themes-enable-italic t)) ; if nil, italics is universally disabled
 
-
 (load-theme 'minimal-mistakes t)
 
 (add-to-list 'default-frame-alist '(alpha-background . 90)) ; For all new frames henceforth
