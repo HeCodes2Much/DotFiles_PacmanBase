@@ -24,7 +24,7 @@ is_charging() {
 
 battery() {
   # load colors
-  . ~/.config/repobar/bar_themes/minimal-mistakes
+  . $HOME/.config/repobar/bar_themes/minimal-mistakes
 
   battery_status=""
   if $(is_charging); then
@@ -35,11 +35,11 @@ battery() {
   else
     if $(has_battery); then
       if [[ $(get_charge) -ge 66 ]]; then
-        icon=" "
+        icon="  "
       elif [[ $(get_charge) -ge 33 ]]; then
-        icon=" "
+        icon="  "
       else
-        icon=" "
+        icon="  "
       fi
       battery_status="$(get_charge)%"
     fi

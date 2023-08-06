@@ -2,7 +2,7 @@
 
 network() {
   # load colors
-  . ~/.config/repobar/bar_themes/minimal-mistakes
+  . $HOME/.config/repobar/bar_themes/minimal-mistakes
 
   R1=$(cat /sys/class/net/wlan0/statistics/rx_bytes)
   T1=$(cat /sys/class/net/wlan0/statistics/tx_bytes)
@@ -13,8 +13,8 @@ network() {
   RBPS=$(expr $R2 - $R1)
   TKBPS=$(echo "$TBPS / 1024" | bc)
   RKBPS=$(echo "$RBPS / 1024" | bc)
-  icon_up=" 直 "
-  icon_down=" 睊 "
+  icon_up="  "
+  icon_down=" 󰖪 "
   if [ "$RKBPS" -gt "1024" ]; then
     RKBPS=$(echo "scale=2; $RKBPS / 1024" | bc)
     RKBPS=" $RKBPS mb"

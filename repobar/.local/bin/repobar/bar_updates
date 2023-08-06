@@ -3,13 +3,13 @@ get_updates() {
   configFile=$HOME/.config/repowm/repobar/bar_updates.ini
 
   # load colors
-  . ~/.config/repobar/bar_themes/minimal-mistakes
+  . $HOME/.config/repobar/bar_themes/minimal-mistakes
 
   updates=$(yay -Pn)
   timestamp=$(date +%s)
   icon=" "
 
-  if [ "$updates" -eq "0" ]; then
+  if [ -z "$updates" ]; then
     updatecount="Fully Updated"
   elif [ "$updates" -ge "1" ]; then
     updatecount="$updates Update"
@@ -18,17 +18,17 @@ get_updates() {
   fi
   [[ -f $configFile ]] && . $configFile
   if [ -z "$LastUsed" ] || [ -z "$Message" ]; then
-    printf " %s %s \n" "^c$Foreground^^b$Red^$icon" "^c$Foreground^^b$Red_Bright^ $updatecount"
+    printf " %s %s \n" "^c$Foreground^^b$Red^$icon" "^c$Foreground^^b$Red_Bright^$updatecount"
     newtime=$(expr $timestamp + 900)
     echo -e "LastUsed=${newtime}\nMessage='${updatecount}'" >$configFile
   else
     if [[ "$timestamp" -ge "$LastUsed" ]]; then
-      printf " %s %s \n" "^c$Foreground^^b$Red^$icon" "^c$Foreground^^b$Red_Bright^ $updatecount"
+      printf " %s %s \n" "^c$Foreground^^b$Red^$icon" "^c$Foreground^^b$Red_Bright^$updatecount"
       newtime=$(expr $timestamp + 900)
       echo -e "LastUsed=${newtime}\nMessage='${updatecount}'" >$configFile
     else
       updatecount=" $Message"
-      printf " %s %s \n" "^c$Foreground^^b$Red^$icon" "^c$Foreground^^b$Red_Bright^ $updatecount"
+      printf " %s %s \n" "^c$Foreground^^b$Red^$icon" "^c$Foreground^^b$Red_Bright^$updatecount"
     fi
   fi
 }

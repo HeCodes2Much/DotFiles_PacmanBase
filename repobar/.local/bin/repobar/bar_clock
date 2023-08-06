@@ -44,7 +44,7 @@ DaySuffix() {
 
 clock() {
   # load colors
-  . ~/.config/repobar/bar_themes/minimal-mistakes
+  . $HOME/.config/repobar/bar_themes/minimal-mistakes
 
   icon_date="  "
   icon_time=" "
@@ -52,7 +52,7 @@ clock() {
   date=$(date +" %-d$(DaySuffix) %b %Y")
   time=$(date +" %I:%M %P")
 
-  printf " %s %s %s %s \n" "^c$Foreground^^b$Green^$icon_date" "^c$Foreground^^b$Green_Bright^ $date" "^c$Foreground^^b$Green^$icon_time" "^c$Foreground^^b$Green_Bright^ $time"
+  printf " %s %s %s %s \n" "^c$Foreground^^b$Green^$icon_date" "^c$Foreground^^b$Green_Bright^$date" "^c$Foreground^^b$Green^$icon_time" "^c$Foreground^^b$Green_Bright^$time"
 }
 
 clock

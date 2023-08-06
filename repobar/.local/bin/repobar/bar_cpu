@@ -2,9 +2,9 @@
 
 cpu() {
   # load colors
-  . ~/.config/repobar/bar_themes/minimal-mistakes
+  . $HOME/.config/repobar/bar_themes/minimal-mistakes
 
-  icon=" "
+  icon="  "
 
   read -r cpu a b c previdle rest </proc/stat
   prevtotal=$((a + b + c + previdle))
