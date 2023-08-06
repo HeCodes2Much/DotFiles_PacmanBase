@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#-*-coding:utf-8 -*-
+#Auto updated?
+#   Yes
+#File:
+#   powermenu_run
+#Author:
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github:
+#   https://github.com/The-Repo-Club/
+#
+#Created:
+#   Wed 07 December 2022, 11:01:52 PM [GMT]
+#Modified:
+#   Sun 06 August 2023, 11:40:51 AM [GMT+1]
+#
+#Description:
+#   <Todo>
+#
+#Dependencies:
+#   <None>
+#
+# shellcheck disable=all
+
+rofi -show powermenu -config ~/.config/rofi/powermenu.rasi
