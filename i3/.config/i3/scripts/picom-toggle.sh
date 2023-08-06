@@ -12,7 +12,7 @@
 # Created:
 #   Thu 20 January 2022, 04:40:04 PM [GMT]
 # Modified:
-#   Thu 17 November 2022, 09:38:45 AM [GMT]
+#   Sun 06 August 2023, 10:30:21 AM [GMT+1]
 #
 # Description:
 #   <Todo>
@@ -27,5 +27,5 @@ if pgrep -x "picom" > /dev/null
 then
 	killall picom
 else
-	picom -CGb --config ~/.config/i3/picom.conf
+	picom --config ~/.config/i3/picom.conf
 fi
