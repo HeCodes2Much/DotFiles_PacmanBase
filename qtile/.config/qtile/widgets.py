@@ -64,7 +64,6 @@ class Widgets(object):
         foreground=foregroundColor,
         background=backgroundColor,
         use_mouse_wheel=False,
-        visible_groups=["1", "2", "3", "4", "5"],
     )
 
     groupBox2 = widget.GroupBox(
@@ -92,7 +91,6 @@ class Widgets(object):
         foreground=foregroundColor,
         background=backgroundColor,
         use_mouse_wheel=False,
-        visible_groups=["6", "7", "8", "9", "0"],
     )
 
     windowName1 = widget.WindowName(

@@ -12,7 +12,7 @@
 #Created:
 #   Mon 22 November 2021, 03:15:54 PM [GMT+1]
 #Modified:
-#   Sun 06 August 2023, 06:58:02 PM [GMT+1]
+#   Mon 07 August 2023, 09:45:19 PM [GMT+1]
 #
 #Description:
 #   <Todo>
@@ -60,26 +60,27 @@ if [[ $DESKTOP_SESSION == "i3" ]]; then
     else
         echo "i3-autolayout can not be found"
     fi
+fi
 
-    if command -v xroot &>/dev/null; then
-        if ! pgrep -f "xroot" >/dev/null; then
-            if command -v xmenu_desktop &>/dev/null; then
-                if ! pgrep -f "xmenu_desktop" >/dev/null; then
-                    (
-                        sleep 2s
-                        xroot -r xmenu_desktop
-                    ) &
-                else
-                    echo "xroot already Running"
-                fi
+if command -v xroot &>/dev/null; then
+    if ! pgrep -f "xroot" >/dev/null; then
+        if command -v xmenu_desktop &>/dev/null; then
+            if ! pgrep -f "xmenu_desktop" >/dev/null; then
+                (
+                    sleep 2s
+                    xroot -r xmenu_desktop
+                ) &
+            else
+                echo "xroot already Running"
             fi
-        else
-            echo "xroot already Running"
         fi
     else
-        echo "xroot can not be found"
+        echo "xroot already Running"
     fi
+else
+    echo "xroot can not be found"
 fi
+
 if command -v clipmenu-daemon &>/dev/null; then
     if ! pgrep -f "clipmenu-daemon" >/dev/null; then
         (

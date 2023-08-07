@@ -9,5 +9,5 @@ if pgrep -x "picom" > /dev/null
 then
 	killall picom
 else
-	picom -CGb --config ~/.config/picom/picom.conf
+	picom --config ~/.config/picom/picom.conf &
 fi

@@ -21,10 +21,8 @@
 # SOFTWARE.
 
 import re
-import json
 import locale
 import subprocess
-from os.path import expanduser
 
 from widgets import Widgets
 from groups import Groups
@@ -32,10 +30,11 @@ from colors import colorScheme, currentColor
 
 locale.setlocale(locale.LC_ALL, '')
 
-from libqtile import bar, layout, hook
+from libqtile import qtile, bar, layout, hook
 from libqtile.config import Key, Click, Drag, Screen, Match, KeyChord, ScratchPad, DropDown
 from libqtile.lazy import lazy
-from libqtile.dgroups import simple_key_binder
+
+from typing import Callable
 
 ###################
 ## Color Schemes ##
@@ -46,6 +45,21 @@ from colors import foregroundColor, backgroundColor
 ###########
 ## Utils ##
 ###########
+
+def go_to_group(name: str) -> Callable:
+    def _inner(qtile: qtile) -> None:
+        if len(qtile.screens) == 1:
+            qtile.groups_map[name].cmd_toscreen()
+            return
+
+        if name in '12345':
+            qtile.focus_screen(0)
+            qtile.groups_map[name].cmd_toscreen()
+        else:
+            qtile.focus_screen(1)
+            qtile.groups_map[name].cmd_toscreen()
+
+    return _inner
 
 
 class Commands(object):
@@ -120,9 +134,6 @@ keys = [
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -10")),
 ]
 
-dgroups_key_binder = simple_key_binder(MOD)
-dgroups_app_rules = []  # type: list
-
 keys.extend([
     ################
     ## Key Chords ##
@@ -173,21 +184,29 @@ groups = Groups.groups
 
 # Define scratchpads
 groups.append(
-    ScratchPad("scratchpad", [
-        DropDown("term", "kitty --class=scratch", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1),
-        DropDown("clifm", "kitty --class=clifm -e clifm", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
-        DropDown("btop", "kitty --class=btop -e btop", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
-        DropDown("volume", "pavucontrol", width=0.8, height=0.8, x=0.1, y=0.1, opacity=0.9),
+    ScratchPad("TAB",
+    [
+        DropDown("term", "kitty --name=scratch", width=0.6, height=0.6, x=0.2, y=0.1, opacity=1),
+        DropDown("clifm", "kitty --name=clifm -e clifm", width=0.6, height=0.6, x=0.2, y=0.1, opacity=0.8),
+        DropDown("btop", "kitty --name=btop -e btop", width=0.6, height=0.6, x=0.2, y=0.1, opacity=0.8),
+        DropDown("volume", "pavucontrol", width=0.6, height=0.6, x=0.2, y=0.1, opacity=0.8),
     ])
 )
 
+for i in groups:
+    keys.extend([
+        Key([MOD], i.name, lazy.function(go_to_group(i.name))),
+        Key([MOD, "shift"], i.name, lazy.window.togroup(i.name)),
+    ])
+
 # Scratchpad keybindings
 keys.extend([
-    Key([CTRL], "Return", lazy.group['scratchpad'].dropdown_toggle('term')),
-    Key([ALT], "c", lazy.group['scratchpad'].dropdown_toggle('clifm')),
-    Key([ALT], "b", lazy.group['scratchpad'].dropdown_toggle('btop')),
-    Key([ALT], "v", lazy.group['scratchpad'].dropdown_toggle('volume')),
+    Key([CTRL], "Return", lazy.group['TAB'].dropdown_toggle('term')),
+    Key([ALT], "c", lazy.group['TAB'].dropdown_toggle('clifm')),
+    Key([ALT], "b", lazy.group['TAB'].dropdown_toggle('btop')),
+    Key([ALT], "v", lazy.group['TAB'].dropdown_toggle('volume')),
 ])
+
 
 ####################
 ## Layouts Config ##
@@ -396,11 +415,25 @@ wl_input_rules = None
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = "Qtile 0.22.1"
+wmname = "Qtile"
+
+@hook.subscribe.screens_reconfigured
+async def _():
+    if len(qtile.screens) > 1:
+        Widgets.groupBox1.visible_groups = ['1', '2', '3', '4', '5']
+        Widgets.groupBox2.visible_groups = ['6', '7', '8', '9', '0']
+    else:
+        Widgets.groupBox1.visible_groups = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 
 
 @hook.subscribe.startup_once
 def start_once():
+    if len(qtile.screens) > 1:
+        Widgets.groupBox1.visible_groups = ['1', '2', '3', '4', '5']
+        Widgets.groupBox2.visible_groups = ['6', '7', '8', '9', '0']
+    else:
+        Widgets.groupBox1.visible_groups = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+
     for configure in Commands.configure:
         subprocess.Popen([configure], shell=True)
 
