@@ -61,7 +61,7 @@ class Widgets(object):
         urgent_text=colorScheme[1],
         foreground=foregroundColor,
         background=backgroundColor,
-        use_mouse_wheel=False,
+        use_mouse_wheel=True,
     )
 
     groupBox2 = widget.GroupBox(
@@ -86,7 +86,7 @@ class Widgets(object):
         urgent_text=colorScheme[1],
         foreground=foregroundColor,
         background=backgroundColor,
-        use_mouse_wheel=False,
+        use_mouse_wheel=True,
     )
 
     windowName1 = widget.WindowName(
