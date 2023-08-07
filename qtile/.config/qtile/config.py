@@ -64,16 +64,15 @@ def go_to_group(name: str) -> Callable:
 
 class Commands(object):
     editor = 'code'
-    menu = 'repomenu_run -i -l 10 -w 600 -c -p "Launcher" -q "Launch a app"'
+    menu = 'menu'
     browser = 'firefox'
     terminal = 'alacritty'
     btop = 'kitty --class=btop -e btop'
-    powermenu = 'kitty --class=powermenu -o initial_window_height=220 -e fzf_powermenu'
+    powermenu = 'rofi -show powermenu -config ~/.config/rofi/powermenu.rasi'
     vbox = 'virt-manager'
     files = 'nemo'
     mail = 'thunderbird'
-    killmenu = 'repomenue_kill'
-    passmenu = 'kitty --class=passmenu -o initial_window_height=650 -e fzf_pass'
+    passmenu = 'passmenu'
 
     autostart = ['autostart']
     configure = ['autorandr --load qtile']
@@ -106,7 +105,6 @@ keys = [
     Key([MOD], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([MOD], "t", lazy.window.toggle_floating(), desc='Toggle floating'),
     Key([MOD], "q", lazy.window.kill(), desc="Kill focused window"),
-    Key([MOD, SHIFT], "q", lazy.spawn(Commands.killmenu), desc="Launch kill menu"),
 
     # Custom keybinds
     Key([MOD], "Return", lazy.spawn(Commands.terminal), desc="Launch terminal"),
@@ -184,7 +182,7 @@ groups = Groups.groups
 
 # Define scratchpads
 groups.append(
-    ScratchPad("TAB",
+    ScratchPad("Hyper_L",
     [
         DropDown("term", "kitty --name=scratch", width=0.6, height=0.6, x=0.2, y=0.1, opacity=1),
         DropDown("clifm", "kitty --name=clifm -e clifm", width=0.6, height=0.6, x=0.2, y=0.1, opacity=0.8),
@@ -201,10 +199,10 @@ for i in groups:
 
 # Scratchpad keybindings
 keys.extend([
-    Key([CTRL], "Return", lazy.group['TAB'].dropdown_toggle('term')),
-    Key([ALT], "c", lazy.group['TAB'].dropdown_toggle('clifm')),
-    Key([ALT], "b", lazy.group['TAB'].dropdown_toggle('btop')),
-    Key([ALT], "v", lazy.group['TAB'].dropdown_toggle('volume')),
+    Key([CTRL], "Return", lazy.group['Hyper_L'].dropdown_toggle('term')),
+    Key([ALT], "c", lazy.group['Hyper_L'].dropdown_toggle('clifm')),
+    Key([ALT], "b", lazy.group['Hyper_L'].dropdown_toggle('btop')),
+    Key([ALT], "v", lazy.group['Hyper_L'].dropdown_toggle('volume')),
 ])
 
 
