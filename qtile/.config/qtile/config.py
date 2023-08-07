@@ -300,7 +300,7 @@ screens = [
                 Widgets.sep,
                 Widgets.currentLayout1,
             ],
-            24,
+            28,
             background=backgroundColor,
             margin=5,
             # border_width=[2, 2, 2, 2],  # Draw top and bottom borders
@@ -318,7 +318,7 @@ screens = [
                 Widgets.sep,
                 Widgets.chords,
             ],
-            24,
+            28,
             background=backgroundColor,
             margin=5,
             # border_width=[2, 2, 2, 2],  # Draw top and bottom borders
@@ -352,7 +352,7 @@ screens = [
                 Widgets.sep,
                 Widgets.currentLayout2,
             ],
-            24,
+            28,
             background=backgroundColor,
             margin=5,
             # border_width=[2, 2, 2, 2],  # Draw top and bottom borders
@@ -370,7 +370,7 @@ screens = [
                 Widgets.sep,
                 Widgets.chords,
             ],
-            24,
+            28,
             background=backgroundColor,
             margin=5,
             # border_width=[2, 2, 2, 2],  # Draw top and bottom borders

@@ -40,8 +40,6 @@ class Widgets(object):
     )
 
     groupBox1 = widget.GroupBox(
-        font="Hack Nerd Font",
-        fontsize=16,
         margin_y=4,
         margin_x=4,
         padding_y=6,
@@ -67,8 +65,6 @@ class Widgets(object):
     )
 
     groupBox2 = widget.GroupBox(
-        font="Hack Nerd Font",
-        fontsize=16,
         margin_y=4,
         margin_x=4,
         padding_y=6,
@@ -94,7 +90,6 @@ class Widgets(object):
     )
 
     windowName1 = widget.WindowName(
-        font="Hack Nerd Font",
         foreground=backgroundColor,
         background=colorScheme[10],
         max_chars=42,
@@ -102,7 +97,6 @@ class Widgets(object):
     )
 
     windowName2 = widget.WindowName(
-        font="Hack Nerd Font",
         foreground=backgroundColor,
         background=colorScheme[10],
         max_chars=42,
@@ -141,7 +135,6 @@ class Widgets(object):
         foreground=colorScheme[6],
         format='%d %B %Y',
         padding=10,
-        font="Hack Nerd Font",
     )
 
     time = widget.Clock(
@@ -149,7 +142,6 @@ class Widgets(object):
         foreground=colorScheme[6],
         format='%I:%M %p',
         padding=10,
-        font="Hack Nerd Font",
     )
 
     tray = widget.Systray(
@@ -191,8 +183,8 @@ class Widgets(object):
         colour_have_updates=colorScheme[2],
         colour_no_updates=colorScheme[1],
         padding=10,
-        distro='Arch_paru',
-        no_update_string='No Updates!',
+        distro='Arch_yay',
+        no_update_string='Fully Updated!',
         mouse_callbacks={
             'Button1': lazy.spawn('pkgbrowser'),
         },
