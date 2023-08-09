@@ -1,8 +1,9 @@
-from colors import colorScheme, foregroundColor, backgroundColor
 from libqtile import widget
 from libqtile.lazy import lazy
 from os.path import expanduser
 import subprocess
+
+from colors import colorScheme, foregroundColor, backgroundColor
 
 
 class Widgets(object):
@@ -183,7 +184,7 @@ class Widgets(object):
         colour_have_updates=colorScheme[2],
         colour_no_updates=colorScheme[1],
         padding=10,
-        distro='Arch_yay',
+        distro='Arch_checkupdates',
         no_update_string='Fully Updated!',
         mouse_callbacks={
             'Button1': lazy.spawn('pkgbrowser'),
