@@ -27,10 +27,19 @@ from widgets import Widgets
 from groups import Groups
 from colors import colorScheme, currentColor
 
-locale.setlocale(locale.LC_ALL, '')
+locale.setlocale(locale.LC_ALL, "")
 
 from libqtile import qtile, bar, layout, hook
-from libqtile.config import Key, Click, Drag, Screen, Match, KeyChord, ScratchPad, DropDown
+from libqtile.config import (
+    Key,
+    Click,
+    Drag,
+    Screen,
+    Match,
+    KeyChord,
+    ScratchPad,
+    DropDown,
+)
 from libqtile.lazy import lazy
 
 from typing import Callable
@@ -45,13 +54,14 @@ from colors import foregroundColor, backgroundColor
 ## Utils ##
 ###########
 
+
 def go_to_group(name: str) -> Callable:
     def _inner(qtile: qtile) -> None:
         if len(qtile.screens) == 1:
             qtile.groups_map[name].cmd_toscreen()
             return
 
-        if name in '12345':
+        if name in "12345":
             qtile.focus_screen(0)
             qtile.groups_map[name].cmd_toscreen()
         else:
@@ -62,49 +72,45 @@ def go_to_group(name: str) -> Callable:
 
 
 class Commands(object):
-    editor = 'code'
-    menu = 'menu'
-    browser = 'firefox'
-    terminal = 'alacritty'
-    btop = 'kitty --class=btop -e btop'
-    powermenu = 'rofi -show powermenu -config ~/.config/rofi/powermenu.rasi'
-    vbox = 'virt-manager'
-    files = 'nemo'
-    mail = 'thunderbird'
-    passmenu = 'passmenu'
+    editor = "code"
+    menu = "menu"
+    browser = "firefox"
+    terminal = "alacritty"
+    btop = "kitty --class=btop -e btop"
+    powermenu = "rofi -show powermenu -config ~/.config/rofi/powermenu.rasi"
+    vbox = "virt-manager"
+    files = "nemo"
+    mail = "thunderbird"
+    passmenu = "passmenu"
 
-    autostart = ['autostart']
-    configure = ['autorandr --load qtile']
+    autostart = ["autostart"]
+    # configure = ['autorandr --load qtile']
 
 
 ##################
 ## Key Bindings ##
 ##################
 
-ALT = 'mod1'
-MOD = 'mod4'
-CTRL = 'control'
-SHIFT = 'shift'
+ALT = "mod1"
+MOD = "mod4"
+CTRL = "control"
+SHIFT = "shift"
 
 keys = [
     # qtile commands
     Key([MOD, SHIFT], "r", lazy.reload_config(), desc="Reload the config"),
     Key([MOD, CTRL], "r", lazy.restart(), desc="Restart qtile"),
-
     # Switch between windows
     Key([MOD], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([MOD], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([MOD], "j", lazy.layout.down(), desc="Move focus down"),
     Key([MOD], "k", lazy.layout.up(), desc="Move focus up"),
-
     # reset all windows
     Key([MOD], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-
     # Toggle between different layouts as defined below
     Key([MOD], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([MOD], "t", lazy.window.toggle_floating(), desc='Toggle floating'),
+    Key([MOD], "t", lazy.window.toggle_floating(), desc="Toggle floating"),
     Key([MOD], "q", lazy.window.kill(), desc="Kill focused window"),
-
     # Custom keybinds
     Key([MOD], "Return", lazy.spawn(Commands.terminal), desc="Launch terminal"),
     Key([MOD], "m", lazy.spawn(Commands.menu), desc="Launch menu"),
@@ -114,64 +120,70 @@ keys = [
     Key([MOD, SHIFT], "e", lazy.spawn(Commands.powermenu), desc="Launch power menu"),
     Key([MOD, SHIFT], "Return", lazy.spawn(Commands.files), desc="Launch files"),
     Key([MOD], "b", lazy.spawn(Commands.btop), desc="Launch btop"),
-
     # Audio Settings
     Key([], "XF86AudioMute", lazy.spawn("amixer -D pulse set Master toggle")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -D pulse sset Master '5%-' unmute")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -D pulse sset Master '5%+' unmute")),
-
+    Key(
+        [],
+        "XF86AudioLowerVolume",
+        lazy.spawn("amixer -D pulse sset Master '5%-' unmute"),
+    ),
+    Key(
+        [],
+        "XF86AudioRaiseVolume",
+        lazy.spawn("amixer -D pulse sset Master '5%+' unmute"),
+    ),
     # https://github.com/acrisci/playerctl/
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
     Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
-
     # xBacklight
     Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight +10")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -10")),
 ]
 
-keys.extend([
-    ################
-    ## Key Chords ##
-    ################
-
-    # Grow windows. If current window is on the edge of screen and direction
-    # will be to screen edge - window would shrink.
-    KeyChord(
-        [MOD],
-        "r",
-        [
-            Key([], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-            Key([], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
-            Key([], "j", lazy.layout.grow_down(), desc="Grow window down"),
-            Key([], "k", lazy.layout.grow_up(), desc="Grow window up"),
-        ],
-        mode=True,
-        name="Resize Windows"
-    ),
-    KeyChord(
-        [MOD, CTRL],
-        "g",
-        [
-            Key([], "s", lazy.spawn('prime-run steam'), desc="Spawn steam"),
-            Key([], "m", lazy.spawn('prime-run minecraft'), desc="Spawn minecraft"),
-        ],
-        mode=False,
-        name="Launch Game"
-    ),
-    KeyChord(
-        [MOD],
-        "Print",
-        [
-            Key([], "w", lazy.spawn('win-shot -w'), desc="Screen Shot Window"),
-            Key([], "s", lazy.spawn('win-shot -s'), desc="Screen Shot Selected"),
-            Key([], "f", lazy.spawn('win-shot -f'), desc="Screen Shot Full"),
-        ],
-        mode=False,
-        name="Take a Screenshot"
-    ),
-])
+keys.extend(
+    [
+        ################
+        ## Key Chords ##
+        ################
+        # Grow windows. If current window is on the edge of screen and direction
+        # will be to screen edge - window would shrink.
+        KeyChord(
+            [MOD],
+            "r",
+            [
+                Key([], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
+                Key([], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
+                Key([], "j", lazy.layout.grow_down(), desc="Grow window down"),
+                Key([], "k", lazy.layout.grow_up(), desc="Grow window up"),
+            ],
+            mode=True,
+            name="Resize Windows",
+        ),
+        KeyChord(
+            [MOD, CTRL],
+            "g",
+            [
+                Key([], "s", lazy.spawn("prime-run steam"), desc="Spawn steam"),
+                Key([], "m", lazy.spawn("prime-run minecraft"), desc="Spawn minecraft"),
+            ],
+            mode=False,
+            name="Launch Game",
+        ),
+        KeyChord(
+            [MOD],
+            "Print",
+            [
+                Key([], "w", lazy.spawn("win-shot -w"), desc="Screen Shot Window"),
+                Key([], "s", lazy.spawn("win-shot -s"), desc="Screen Shot Selected"),
+                Key([], "f", lazy.spawn("win-shot -f"), desc="Screen Shot Full"),
+            ],
+            mode=False,
+            name="Take a Screenshot",
+        ),
+    ]
+)
 
 ############
 ## Groups ##
@@ -181,28 +193,66 @@ groups = Groups.groups
 
 # Define scratchpads
 groups.append(
-    ScratchPad("Hyper_L",
-    [
-        DropDown("term", "kitty --name=scratch", width=0.6, height=0.6, x=0.2, y=0.1, opacity=1),
-        DropDown("clifm", "kitty --name=clifm -e clifm", width=0.6, height=0.6, x=0.2, y=0.1, opacity=0.8),
-        DropDown("btop", "kitty --name=btop -e btop", width=0.6, height=0.6, x=0.2, y=0.1, opacity=0.8),
-        DropDown("volume", "pavucontrol", width=0.6, height=0.6, x=0.2, y=0.1, opacity=0.8),
-    ])
+    ScratchPad(
+        "Hyper_L",
+        [
+            DropDown(
+                "term",
+                "kitty --name=scratch",
+                width=0.6,
+                height=0.6,
+                x=0.2,
+                y=0.1,
+                opacity=1,
+            ),
+            DropDown(
+                "clifm",
+                "kitty --name=clifm -e clifm",
+                width=0.6,
+                height=0.6,
+                x=0.2,
+                y=0.1,
+                opacity=0.8,
+            ),
+            DropDown(
+                "btop",
+                "kitty --name=btop -e btop",
+                width=0.6,
+                height=0.6,
+                x=0.2,
+                y=0.1,
+                opacity=0.8,
+            ),
+            DropDown(
+                "volume",
+                "pavucontrol",
+                width=0.6,
+                height=0.6,
+                x=0.2,
+                y=0.1,
+                opacity=0.8,
+            ),
+        ],
+    )
 )
 
 for i in groups:
-    keys.extend([
-        Key([MOD], i.name, lazy.function(go_to_group(i.name))),
-        Key([MOD, "shift"], i.name, lazy.window.togroup(i.name)),
-    ])
+    keys.extend(
+        [
+            Key([MOD], i.name, lazy.function(go_to_group(i.name))),
+            Key([MOD, "shift"], i.name, lazy.window.togroup(i.name)),
+        ]
+    )
 
 # Scratchpad keybindings
-keys.extend([
-    Key([CTRL], "Return", lazy.group['Hyper_L'].dropdown_toggle('term')),
-    Key([ALT], "c", lazy.group['Hyper_L'].dropdown_toggle('clifm')),
-    Key([ALT], "b", lazy.group['Hyper_L'].dropdown_toggle('btop')),
-    Key([ALT], "v", lazy.group['Hyper_L'].dropdown_toggle('volume')),
-])
+keys.extend(
+    [
+        Key([CTRL], "Return", lazy.group["Hyper_L"].dropdown_toggle("term")),
+        Key([ALT], "c", lazy.group["Hyper_L"].dropdown_toggle("clifm")),
+        Key([ALT], "b", lazy.group["Hyper_L"].dropdown_toggle("btop")),
+        Key([ALT], "v", lazy.group["Hyper_L"].dropdown_toggle("volume")),
+    ]
+)
 
 
 ####################
@@ -222,8 +272,12 @@ layouts = [
         **layout_theme,
         add_after_last=True,
     ),
-    layout.Columns(**layout_theme,),
-    layout.Max(**layout_theme,),
+    layout.Columns(
+        **layout_theme,
+    ),
+    layout.Max(
+        **layout_theme,
+    ),
     # Try more layouts by unleashing below layouts.
     layout.Stack(**layout_theme, num_stacks=2),
     # layout.Bsp(**layout_theme),
@@ -232,13 +286,23 @@ layouts = [
         ratio=0.4,
         new_client_position="after_current",
     ),
-    layout.Matrix(**layout_theme,),
-    layout.MonadTall(**layout_theme,),
-    layout.MonadWide(**layout_theme,),
-    layout.RatioTile(**layout_theme,),
+    layout.Matrix(
+        **layout_theme,
+    ),
+    layout.MonadTall(
+        **layout_theme,
+    ),
+    layout.MonadWide(
+        **layout_theme,
+    ),
+    layout.RatioTile(
+        **layout_theme,
+    ),
     # layout.TreeTab(**layout_theme,),
     # layout.VerticalTile(**layout_theme,),
-    layout.Zoomy(**layout_theme,),
+    layout.Zoomy(
+        **layout_theme,
+    ),
 ]
 
 floating_layout = layout.Floating(
@@ -381,8 +445,15 @@ screens = [
 ## Floating Drag ##
 ###################
 mouse = [
-    Drag([MOD], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([MOD], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Drag(
+        [MOD],
+        "Button1",
+        lazy.window.set_position_floating(),
+        start=lazy.window.get_position(),
+    ),
+    Drag(
+        [MOD], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
+    ),
     Click([MOD], "Button2", lazy.window.bring_to_front()),
 ]
 
@@ -414,22 +485,45 @@ wl_input_rules = None
 # java that happens to be on java's whitelist.
 wmname = "Qtile"
 
+
 @hook.subscribe.screens_reconfigured
 async def _():
     if len(qtile.screens) > 1:
-        Widgets.groupBox1.visible_groups = ['1', '2', '3', '4', '5']
-        Widgets.groupBox2.visible_groups = ['6', '7', '8', '9', '0']
+        Widgets.groupBox1.visible_groups = ["1", "2", "3", "4", "5"]
+        Widgets.groupBox2.visible_groups = ["6", "7", "8", "9", "0"]
     else:
-        Widgets.groupBox1.visible_groups = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+        Widgets.groupBox1.visible_groups = [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "0",
+        ]
 
 
 @hook.subscribe.startup_once
 def start_once():
     if len(qtile.screens) > 1:
-        Widgets.groupBox1.visible_groups = ['1', '2', '3', '4', '5']
-        Widgets.groupBox2.visible_groups = ['6', '7', '8', '9', '0']
+        Widgets.groupBox1.visible_groups = ["1", "2", "3", "4", "5"]
+        Widgets.groupBox2.visible_groups = ["6", "7", "8", "9", "0"]
     else:
-        Widgets.groupBox1.visible_groups = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+        Widgets.groupBox1.visible_groups = [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "0",
+        ]
 
     for configure in Commands.configure:
         subprocess.Popen([configure], shell=True)

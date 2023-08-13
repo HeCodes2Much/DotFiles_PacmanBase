@@ -12,7 +12,7 @@
 #Created:
 #   Mon 22 November 2021, 03:15:54 PM [GMT+1]
 #Modified:
-#   Mon 07 August 2023, 09:45:19 PM [GMT+1]
+#   Sun 13 August 2023, 08:40:20 PM [GMT+1]
 #
 #Description:
 #   <Todo>
@@ -21,87 +21,87 @@
 #   <None>
 #
 
-if command -v /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/null; then
-    if ! pgrep -f "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" >/dev/null; then
-        /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-    else
-        echo "polkit-gnome already Running"
-    fi
+if command -v /usr/libexec/polkit-gnome-authentication-agent-1 &>/dev/null; then
+  if ! pgrep -f "/usr/libexec/polkit-gnome-authentication-agent-1" >/dev/null; then
+    /usr/libexec/polkit-gnome-authentication-agent-1 &
+  else
+    echo "polkit-gnome already Running"
+  fi
 fi
 
 if [[ $DESKTOP_SESSION == "i3" ]]; then
 
-    if command -v polybar &>/dev/null; then
-        if ! pgrep -f "polybar" >/dev/null; then
-            (
-                sleep 2s
-                if ! test -f "$HOME/.config/polybar/launch.sh"; then
-                    echo "$HOME/.config/polybar/launch.sh could not be found"
-                else
-                    exec "$HOME/.config/polybar/launch.sh"
-                fi
-            ) &
+  if command -v polybar &>/dev/null; then
+    if ! pgrep -f "polybar" >/dev/null; then
+      (
+        sleep 2s
+        if ! test -f "$HOME/.config/polybar/launch.sh"; then
+          echo "$HOME/.config/polybar/launch.sh could not be found"
         else
-            echo "polybar already Running"
+          exec "$HOME/.config/polybar/launch.sh"
         fi
+      ) &
     else
-        echo "polybar can not be found"
+      echo "polybar already Running"
     fi
+  else
+    echo "polybar can not be found"
+  fi
 
-    if command -v i3-autolayout &>/dev/null; then
-        if ! pgrep -f "i3-autolayout" >/dev/null; then
-            (
-                sleep 2s
-                i3-autolayout autolayout
-            ) &
-        else
-            echo "i3-autolayout already Running"
-        fi
+  if command -v i3-autolayout &>/dev/null; then
+    if ! pgrep -f "i3-autolayout" >/dev/null; then
+      (
+        sleep 2s
+        i3-autolayout autolayout
+      ) &
     else
-        echo "i3-autolayout can not be found"
+      echo "i3-autolayout already Running"
     fi
+  else
+    echo "i3-autolayout can not be found"
+  fi
 fi
 
 if command -v xroot &>/dev/null; then
-    if ! pgrep -f "xroot" >/dev/null; then
-        if command -v xmenu_desktop &>/dev/null; then
-            if ! pgrep -f "xmenu_desktop" >/dev/null; then
-                (
-                    sleep 2s
-                    xroot -r xmenu_desktop
-                ) &
-            else
-                echo "xroot already Running"
-            fi
-        fi
-    else
+  if ! pgrep -f "xroot" >/dev/null; then
+    if command -v xmenu_desktop &>/dev/null; then
+      if ! pgrep -f "xmenu_desktop" >/dev/null; then
+        (
+          sleep 2s
+          xroot -r xmenu_desktop
+        ) &
+      else
         echo "xroot already Running"
+      fi
     fi
+  else
+    echo "xroot already Running"
+  fi
 else
-    echo "xroot can not be found"
+  echo "xroot can not be found"
 fi
 
 if command -v clipmenu-daemon &>/dev/null; then
-    if ! pgrep -f "clipmenu-daemon" >/dev/null; then
-        (
-            sleep 2s
-            clipmenu-daemon
-        ) &
-    else
-        echo "clipmenu-daemon already Running"
-    fi
+  if ! pgrep -f "clipmenu-daemon" >/dev/null; then
+    (
+      sleep 2s
+      clipmenu-daemon
+    ) &
+  else
+    echo "clipmenu-daemon already Running"
+  fi
 else
-    echo "clipmenu-daemon can not be found"
+  echo "clipmenu-daemon can not be found"
 fi
 
 if command -v picom &>/dev/null; then
-    if ! pgrep -x "picom" >/dev/null; then
-        picom --config "$HOME"/.config/picom/picom.conf &
-    else
-        echo "picom already Running"
-    fi
+  if ! pgrep -x "picom" >/dev/null; then
+    picom --config "$HOME"/.config/picom/picom.conf &
+  else
+    echo "picom already Running"
+  fi
 else
-    echo "picom could not be found"
+  echo "picom could not be found"
 fi
 
 ################
@@ -109,117 +109,117 @@ fi
 ################
 
 if command -v ckb-next &>/dev/null; then
-    if ! pgrep -x "ckb-next" >/dev/null; then
-        (
-            sleep 2s
-            ckb-next --background
-        ) &
-    else
-        echo "ckb-next already Running"
-    fi
+  if ! pgrep -x "ckb-next" >/dev/null; then
+    (
+      sleep 2s
+      ckb-next --background
+    ) &
+  else
+    echo "ckb-next already Running"
+  fi
 else
-    echo "ckb-next could not be found"
+  echo "ckb-next could not be found"
 fi
 
 if command -v nm-applet &>/dev/null; then
-    if ! pgrep -x "nm-applet" >/dev/null; then
-        (
-            sleep 2s
-            nm-applet
-        ) &
-    else
-        echo "nm-applet already Running"
-    fi
+  if ! pgrep -x "nm-applet" >/dev/null; then
+    (
+      sleep 2s
+      nm-applet
+    ) &
+  else
+    echo "nm-applet already Running"
+  fi
 else
-    echo "nm-applet could not be found"
+  echo "nm-applet could not be found"
 fi
 
 if command -v blueman-applet &>/dev/null; then
-    if ! pgrep -x "blueman-applet" >/dev/null; then
-        (
-            sleep 2s
-            blueman-applet
-        ) &
-    else
-        echo "blueman-applet already Running"
-    fi
+  if ! pgrep -x "blueman-applet" >/dev/null; then
+    (
+      sleep 2s
+      blueman-applet
+    ) &
+  else
+    echo "blueman-applet already Running"
+  fi
 else
-    echo "blueman-applet could not be found"
+  echo "blueman-applet could not be found"
 fi
 
 if command -v touchpad-indicator &>/dev/null; then
-    if ! pgrep -f "touchpad-indicator" >/dev/null; then
-        (
-            sleep 2s
-            touchpad-indicator
-        ) &
-    else
-        echo "touchpad-indicator already Running"
-    fi
+  if ! pgrep -f "touchpad-indicator" >/dev/null; then
+    (
+      sleep 2s
+      touchpad-indicator
+    ) &
+  else
+    echo "touchpad-indicator already Running"
+  fi
 else
-    echo "touchpad-indicator could not be found"
+  echo "touchpad-indicator could not be found"
 fi
 
 if command -v cbatticon &>/dev/null; then
-    if ! pgrep -x "cbatticon" >/dev/null; then
-        (
-            sleep 2s
-            cbatticon
-        ) &
-    else
-        echo "cbatticon already Running"
-    fi
+  if ! pgrep -x "cbatticon" >/dev/null; then
+    (
+      sleep 2s
+      cbatticon
+    ) &
+  else
+    echo "cbatticon already Running"
+  fi
 else
-    echo "cbatticon could not be found"
+  echo "cbatticon could not be found"
 fi
 
 if command -v pasystray &>/dev/null; then
-    if ! pgrep -x "pasystray" >/dev/null; then
-        (
-            sleep 5s
-            pasystray
-        ) &
-    else
-        echo "pasystray already Running"
-    fi
+  if ! pgrep -x "pasystray" >/dev/null; then
+    (
+      sleep 5s
+      pasystray
+    ) &
+  else
+    echo "pasystray already Running"
+  fi
 else
-    echo "pasystray could not be found"
+  echo "pasystray could not be found"
 fi
 
 if command -v gufwicon &>/dev/null; then
-    if ! pgrep -x "gufwicon" >/dev/null; then
-        (
-            sleep 5s
-            gufwicon
-        ) &
-    else
-        echo "gufwicon already Running"
-    fi
+  if ! pgrep -x "gufwicon" >/dev/null; then
+    (
+      sleep 5s
+      gufwicon
+    ) &
+  else
+    echo "gufwicon already Running"
+  fi
 else
-    echo "gufwicon could not be found"
+  echo "gufwicon could not be found"
 fi
 
 if command -v numlockx &>/dev/null; then
-    numlockx on &
+  numlockx on &
 else
-    echo "numlockx could not be found"
+  echo "numlockx could not be found"
 fi
 
 ####################
 ## Fix Background ##
 ####################
 if command -v feh &>/dev/null; then
-    if ! test -f "$HOME/.fehbg"; then
-        echo "$HOME/.fehbg could not be found"
-    else
-        sh "$HOME/.fehbg"
-        (
-            sleep 2s
-            sh "$HOME/.fehbg"
-        ) &
-    fi
+  if ! test -f "$HOME/.fehbg"; then
+    echo "$HOME/.fehbg could not be found"
+  else
+    sh "$HOME/.fehbg"
+    (
+      sleep 2s
+      sh "$HOME/.fehbg"
+    ) &
+  fi
 else
-    echo "feh could not be found"
+  echo "feh could not be found"
 fi
 
 ###############
@@ -227,33 +227,33 @@ fi
 ###############
 
 if command -v xautolock &>/dev/null; then
-    # shellcheck disable=SC2155
-    if ! pgrep -x "xautolock" >/dev/null; then
-        (
-            sleep 2s
-            xautolock \
-                -time 15 -locker "multimonitorlock -l -- --time-str=%I:%M:%S %p" \
-                -detectsleep
-        ) &
-    else
-        echo "xautolock already Running"
-    fi
+  # shellcheck disable=SC2155
+  if ! pgrep -x "xautolock" >/dev/null; then
+    (
+      sleep 2s
+      xautolock \
+        -time 15 -locker "multimonitorlock -l -- --time-str=%I:%M:%S %p" \
+        -detectsleep
+    ) &
+  else
+    echo "xautolock already Running"
+  fi
 else
-    echo "xautolock could not be found"
+  echo "xautolock could not be found"
 fi
 
 if command -v xss-lock &>/dev/null; then
-    # shellcheck disable=SC2155
-    if ! pgrep -x "xss-lock" >/dev/null; then
-        (
-            sleep 2s
-            xss-lock -- multimonitorlock -l -- --time-str="%I:%M:%S %p"
-        ) &
-    else
-        echo "xss-lock already Running"
-    fi
+  # shellcheck disable=SC2155
+  if ! pgrep -x "xss-lock" >/dev/null; then
+    (
+      sleep 2s
+      xss-lock -- multimonitorlock -l -- --time-str="%I:%M:%S %p"
+    ) &
+  else
+    echo "xss-lock already Running"
+  fi
 else
-    echo "xss-lock could not be found"
+  echo "xss-lock could not be found"
 fi
 
 ################
@@ -263,7 +263,7 @@ fi
 systemctl --user import-environment DISPLAY XAUTHORITY
 
 if command -v dbus-update-activation-environment >/dev/null 2>&1; then
-    dbus-update-activation-environment DISPLAY XAUTHORITY
+  dbus-update-activation-environment DISPLAY XAUTHORITY
 fi
 
 # see https://wiki.archlinux.org/title/GNOME/Keyring#xinitrc
