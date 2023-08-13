@@ -84,7 +84,7 @@ class Commands(object):
     passmenu = "passmenu"
 
     autostart = ["autostart"]
-    # configure = ['autorandr --load qtile']
+    configure = ["youtube_subs -d"]
 
 
 ##################
