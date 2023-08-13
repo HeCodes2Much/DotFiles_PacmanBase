@@ -34,7 +34,6 @@ i3lock-color
 ideapad-cm
 imagewriter
 jetbrains-toolbox
-jetbrains-toolbox
 lib32-libxft-bgra
 libart-lgpl
 libxft-bgra
@@ -79,6 +78,7 @@ stacer
 tbsm
 touchpad-indicator
 transset-df
+ttf-adobe-source-fonts
 ttf-material-design-icons
 ttf-remixicon
 tty-clock
