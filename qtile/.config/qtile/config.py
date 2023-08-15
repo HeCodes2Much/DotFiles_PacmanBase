@@ -84,7 +84,7 @@ class Commands(object):
     passmenu = "passmenu"
 
     autostart = ["autostart"]
-    configure = ["youtube_subs -d"]
+    configure = ["youtube_subs -d", "autorandr --load qtile"]
 
 
 ##################
@@ -121,16 +121,16 @@ keys = [
     Key([MOD, SHIFT], "Return", lazy.spawn(Commands.files), desc="Launch files"),
     Key([MOD], "b", lazy.spawn(Commands.btop), desc="Launch btop"),
     # Audio Settings
-    Key([], "XF86AudioMute", lazy.spawn("amixer -D pulse set Master toggle")),
+    Key([], "XF86AudioMute", lazy.spawn("amixer set Master toggle")),
     Key(
         [],
         "XF86AudioLowerVolume",
-        lazy.spawn("amixer -D pulse sset Master '5%-' unmute"),
+        lazy.spawn("amixer set Master '5%-' unmute"),
     ),
     Key(
         [],
         "XF86AudioRaiseVolume",
-        lazy.spawn("amixer -D pulse sset Master '5%+' unmute"),
+        lazy.spawn("amixer set Master '5%+' unmute"),
     ),
     # https://github.com/acrisci/playerctl/
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
@@ -138,8 +138,8 @@ keys = [
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
     Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
     # xBacklight
-    Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight +10")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -10")),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set 5%+")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-")),
 ]
 
 keys.extend(

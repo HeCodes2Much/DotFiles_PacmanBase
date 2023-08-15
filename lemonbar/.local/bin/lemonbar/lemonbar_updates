@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
 updates() {
-    configFile=$HOME/.config/repowm/repobar/bar_updates.ini
+  configFile=$HOME/.config/repowm/flexiflow_bar/bar_updates.ini
 
-    timestamp=$(date +%s)
-    icon=" "
-    [[ -f $configFile ]] && . $configFile
-    if [ -z "$LastUsed" ] || [ -z "$Message" ]; then
-        updates=$(checkupdates | wc -l)
-        printf "%s%s\n"  "%{F#1E222A}%{B#EBD369}$icon %{F-}%{B-}" "%{F#282A36}%{B#C4C7C5}$updates Updates %{F-}%{B-}"
-        newtime=`expr $timestamp + 900`
-        echo -e "LastUsed=${newtime}\nMessage='${updates}'" > $configFile
+  timestamp=$(date +%s)
+  icon=" "
+  [[ -f $configFile ]] && . $configFile
+  if [ -z "$LastUsed" ] || [ -z "$Message" ]; then
+    updates=$(checkupdates | wc -l)
+    printf "%s%s\n" "%{F#1E222A}%{B#EBD369}$icon %{F-}%{B-}" "%{F#282A36}%{B#C4C7C5}$updates Updates %{F-}%{B-}"
+    newtime=$(expr $timestamp + 900)
+    echo -e "LastUsed=${newtime}\nMessage='${updates}'" >$configFile
+  else
+    if [ "$timestamp" -ge "$LastUsed" ]; then
+      updates=$(checkupdates | wc -l)
+      printf "%s%s\n" "%{F#1E222A}%{B#EBD369}$icon %{F-}%{B-}" "%{F#282A36}%{B#C4C7C5}$updates Updates %{F-}%{B-}"
+      newtime=$(expr $timestamp + 900)
+      echo -e "LastUsed=${newtime}\nMessage='${updates}'" >$configFile
     else
-        if [ "$timestamp" -ge "$LastUsed" ]; then
-            updates=$(checkupdates | wc -l)
-            printf "%s%s\n"  "%{F#1E222A}%{B#EBD369}$icon %{F-}%{B-}" "%{F#282A36}%{B#C4C7C5}$updates Updates %{F-}%{B-}"
-            newtime=`expr $timestamp + 900`
-            echo -e "LastUsed=${newtime}\nMessage='${updates}'" > $configFile
-        else
-            updates=" $Message"
-            printf "%s%s\n"  "%{F#1E222A}%{B#EBD369}$icon %{F-}%{B-}" "%{F#282A36}%{B#C4C7C5}$updates Updates %{F-}%{B-}"
-        fi
+      updates=" $Message"
+      printf "%s%s\n" "%{F#1E222A}%{B#EBD369}$icon %{F-}%{B-}" "%{F#282A36}%{B#C4C7C5}$updates Updates %{F-}%{B-}"
     fi
+  fi
 }
 
 updates

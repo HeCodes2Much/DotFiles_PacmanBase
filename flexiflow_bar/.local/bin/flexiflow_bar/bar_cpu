@@ -2,7 +2,7 @@
 
 cpu() {
   # load colors
-  . $HOME/.config/repobar/bar_themes/minimal-mistakes
+  . $HOME/.config/flexiflow_bar/bar_themes/minimal-mistakes
 
   icon="  "
 

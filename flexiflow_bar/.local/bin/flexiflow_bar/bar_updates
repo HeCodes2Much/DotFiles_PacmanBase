@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 get_updates() {
-  configFile=$HOME/.config/repowm/repobar/bar_updates.ini
+  configFile=$HOME/.config/repowm/flexiflow_bar/bar_updates.ini
 
   # load colors
-  . $HOME/.config/repobar/bar_themes/minimal-mistakes
+  . $HOME/.config/flexiflow_bar/bar_themes/minimal-mistakes
 
   updates=$(yay -Pn)
   timestamp=$(date +%s)

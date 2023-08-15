@@ -659,9 +659,9 @@ for_window [class="(?i)steam_app_271590"] fullscreen enable
 
 # {{{ Audio Settings
 
-bindsym XF86AudioRaiseVolume $exe "amixer -D pulse sset Master '5%+'"
-bindsym XF86AudioLowerVolume $exe "amixer -D pulse sset Master '5%-'"
-bindsym XF86AudioMute $exe "amixer -D pulse set Master toggle"
+bindsym XF86AudioRaiseVolume $exe "amixer sset Master '5%+'"
+bindsym XF86AudioLowerVolume $exe "amixer sset Master '5%-'"
+bindsym XF86AudioMute $exe "amixer set Master toggle"
 #https://github.com/acrisci/playerctl/
 bindsym XF86AudioPlay $exe playerctl play-pause
 bindsym XF86AudioNext $exe playerctl next
@@ -676,8 +676,8 @@ bindsym XF86AudioStop $exe playerctl stop
 
 # {{{ xbacklight
 
-bindsym XF86MonBrightnessUp $exe xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown $exe xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp $exe brightnessctl set 5%+ # increase screen brightness
+bindsym XF86MonBrightnessDown $exe brightnessctl set 5%- # decrease screen brightness
 
 # }}} xbacklight
 
@@ -726,11 +726,11 @@ $super_b+y \
 $super_b+u \
     border none
 
-new_window pixel 10
+new_window pixel 5
 #new_window normal
 #new_window none
 
-new_float pixel 10
+new_float pixel 5
 #new_float normal
 #new_float none
 

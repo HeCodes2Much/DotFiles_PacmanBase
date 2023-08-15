@@ -1,6 +1,6 @@
-file:///run/media/repo/500GB/.aur .aur
+file:///mnt/500GB/.aur .aur
 file:///home/repo/.cache .cache
 file:///home/repo/.config .config
 file:///home/repo/.local .local
-file:///run/media/repo/500GB/.gitlabs .gitlabs
-file:///run/media/repo/500GB/IOS IOS
+file:///mnt/500GB/.gitlabs .gitlabs
+file:///mnt/500GB/IOS IOS

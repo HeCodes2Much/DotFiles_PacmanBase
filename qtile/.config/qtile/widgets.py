@@ -7,7 +7,6 @@ from colors import colorScheme, foregroundColor, backgroundColor
 
 
 class Widgets(object):
-
     sep = widget.Sep(
         linewidth=1,
         padding=10,
@@ -18,17 +17,20 @@ class Widgets(object):
     space = widget.Spacer()
 
     launcher = widget.Image(
-        fmt='{}',
-        filename=expanduser('~/.config/qtile/art/Archlinux-icon.svg'),
+        fmt="{}",
+        filename=expanduser("~/.config/qtile/art/Archlinux-icon.svg"),
         margin=3,
-        mouse_callbacks={'Button1': lazy.spawn('menu')},
+        mouse_callbacks={
+            "Button1": lazy.spawn("menu"),
+            "Button3": lazy.spawn("rofi -show drun"),
+        },
     )
 
     power1 = widget.LaunchBar(
         text_only=True,
         foreground=colorScheme[1],
         progs=[
-            ('⏻ ', 'rofi -show powermenu -config ~/.config/rofi/powermenu.rasi'),
+            ("⏻ ", "rofi -show powermenu -config ~/.config/rofi/powermenu.rasi"),
         ],
     )
 
@@ -36,7 +38,7 @@ class Widgets(object):
         text_only=True,
         foreground=colorScheme[1],
         progs=[
-            ('⏻ ', 'rofi -show powermenu -config ~/.config/rofi/powermenu.rasi'),
+            ("⏻ ", "rofi -show powermenu -config ~/.config/rofi/powermenu.rasi"),
         ],
     )
 
@@ -105,65 +107,65 @@ class Widgets(object):
     )
 
     volume = widget.Volume(
-        fmt='Vol: {}',
+        fmt="Vol: {}",
         foreground=colorScheme[2],
         padding=10,
     )
 
     battery = widget.Battery(
-        fmt='Bat: {}',
+        fmt="Bat: {}",
         foreground=colorScheme[3],
         padding=10,
-        format='{char} {percent:2.0%} {hour:d}:{min:02d} {watt:.2f} W',
+        format="{char} {percent:2.0%} {hour:d}:{min:02d} {watt:.2f} W",
     )
 
     backlight = widget.Backlight(
-        fmt='Backlight: {}',
+        fmt="Backlight: {}",
         foreground=colorScheme[4],
         padding=10,
         backlight_name="intel_backlight",
     )
 
     net = widget.Net(
-        fmt='{}',
+        fmt="{}",
         foreground=colorScheme[5],
         padding=10,
         interface="wlp0s20f3",
     )
 
     date = widget.Clock(
-        fmt='  {}',
+        fmt="  {}",
         foreground=colorScheme[6],
-        format='%d %B %Y',
+        format="%d %B %Y",
         padding=10,
     )
 
     time = widget.Clock(
-        fmt='  {}',
+        fmt="  {}",
         foreground=colorScheme[6],
-        format='%I:%M %p',
+        format="%I:%M %p",
         padding=10,
     )
 
     tray = widget.Systray(
-        fmt='{}',
+        fmt="{}",
         padding=5,
     )
 
     currentLayout1 = widget.CurrentLayoutIcon(
-        fmt='{}',
+        fmt="{}",
         scale=0.7,
         padding=5,
     )
 
     currentLayout2 = widget.CurrentLayoutIcon(
-        fmt='{}',
+        fmt="{}",
         scale=0.7,
         padding=5,
     )
 
     chords = widget.Chord(
-        fmt='{}',
+        fmt="{}",
         chords_colors={
             "Resize Windows": (colorScheme[0], colorScheme[1]),
             "Launch Game": (colorScheme[0], colorScheme[2]),
@@ -173,30 +175,34 @@ class Widgets(object):
     )
 
     weather = widget.OpenWeather(
-        fmt='{}',
+        fmt="{}",
         foreground=colorScheme[9],
-        location='Darlington,UK',
-        format='{location_city}: {main_temp}°{units_temperature} ',
+        location="Darlington,UK",
+        format="{location_city}: {main_temp}°{units_temperature} ",
     )
 
     updates = widget.CheckUpdates(
-        fmt='{}',
+        fmt="{}",
         colour_have_updates=colorScheme[2],
         colour_no_updates=colorScheme[1],
         padding=10,
-        distro='Arch_checkupdates',
-        no_update_string='Fully Updated!',
+        distro="Fedora",
+        no_update_string="Fully Updated!",
         mouse_callbacks={
-            'Button1': lazy.spawn('pkgbrowser'),
+            "Button1": lazy.spawn("dnfdragora"),
         },
     )
 
     picom = widget.GenPollText(
-        fmt='{}',
+        fmt="{}",
         foreground=colorScheme[11],
-        func=lambda: subprocess.check_output(expanduser("~/.config/qtile/scripts/picom.sh")).decode("utf-8"),
+        func=lambda: subprocess.check_output(
+            expanduser("~/.config/qtile/scripts/picom.sh")
+        ).decode("utf-8"),
         mouse_callbacks={
-            'Button1': lambda: subprocess.run(expanduser("~/.config/qtile/scripts/picom-toggle.sh")),
+            "Button1": lambda: subprocess.run(
+                expanduser("~/.config/qtile/scripts/picom-toggle.sh")
+            ),
         },
         update_interval=1,
         padding=10,
@@ -206,55 +212,67 @@ class Widgets(object):
         foreground=colorScheme[12],
         widgets=[
             widget.GenPollText(
-                fmt='{}',
+                fmt="{}",
                 foreground=colorScheme[13],
-                func=lambda: subprocess.check_output(expanduser("~/.config/qtile/scripts/github/notifications")).decode("utf-8"),
+                func=lambda: subprocess.check_output(
+                    expanduser("~/.config/qtile/scripts/github/notifications")
+                ).decode("utf-8"),
                 update_interval=10,
                 padding=10,
             ),
             widget.GenPollText(
-                fmt='{}',
+                fmt="{}",
                 foreground=colorScheme[13],
-                func=lambda: subprocess.check_output(expanduser("~/.config/qtile/scripts/github/gists")).decode("utf-8"),
+                func=lambda: subprocess.check_output(
+                    expanduser("~/.config/qtile/scripts/github/gists")
+                ).decode("utf-8"),
                 update_interval=10,
                 padding=10,
             ),
             widget.GenPollText(
-                fmt='{}',
+                fmt="{}",
                 foreground=colorScheme[13],
-                func=lambda: subprocess.check_output(expanduser("~/.config/qtile/scripts/github/repositories")).decode("utf-8"),
+                func=lambda: subprocess.check_output(
+                    expanduser("~/.config/qtile/scripts/github/repositories")
+                ).decode("utf-8"),
                 update_interval=10,
                 padding=10,
             ),
         ],
-        text_closed='[Github <]',
-        text_open='[Github >]',
+        text_closed="[Github <]",
+        text_open="[Github >]",
     )
 
     github2 = widget.WidgetBox(
         widgets=[
             widget.GenPollText(
-                fmt='{}',
+                fmt="{}",
                 foreground=colorScheme[13],
-                func=lambda: subprocess.check_output(expanduser("~/.config/qtile/scripts/github/notifications")).decode("utf-8"),
+                func=lambda: subprocess.check_output(
+                    expanduser("~/.config/qtile/scripts/github/notifications")
+                ).decode("utf-8"),
                 update_interval=10,
                 padding=10,
             ),
             widget.GenPollText(
-                fmt='{}',
+                fmt="{}",
                 foreground=colorScheme[13],
-                func=lambda: subprocess.check_output(expanduser("~/.config/qtile/scripts/github/gists")).decode("utf-8"),
+                func=lambda: subprocess.check_output(
+                    expanduser("~/.config/qtile/scripts/github/gists")
+                ).decode("utf-8"),
                 update_interval=10,
                 padding=10,
             ),
             widget.GenPollText(
-                fmt='{}',
+                fmt="{}",
                 foreground=colorScheme[13],
-                func=lambda: subprocess.check_output(expanduser("~/.config/qtile/scripts/github/repositories")).decode("utf-8"),
+                func=lambda: subprocess.check_output(
+                    expanduser("~/.config/qtile/scripts/github/repositories")
+                ).decode("utf-8"),
                 update_interval=10,
                 padding=10,
             ),
         ],
-        text_closed='[Github <]',
-        text_open='[Github >]',
+        text_closed="[Github <]",
+        text_open="[Github >]",
     )

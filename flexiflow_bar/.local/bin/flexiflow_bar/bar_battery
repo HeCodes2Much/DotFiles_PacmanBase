@@ -24,7 +24,7 @@ is_charging() {
 
 battery() {
   # load colors
-  . $HOME/.config/repobar/bar_themes/minimal-mistakes
+  . $HOME/.config/flexiflow_bar/bar_themes/minimal-mistakes
 
   battery_status=""
   if $(is_charging); then

@@ -2,7 +2,7 @@
 
 network() {
   # load colors
-  . $HOME/.config/repobar/bar_themes/minimal-mistakes
+  . $HOME/.config/flexiflow_bar/bar_themes/minimal-mistakes
 
   R1=$(cat /sys/class/net/wlan0/statistics/rx_bytes)
   T1=$(cat /sys/class/net/wlan0/statistics/tx_bytes)

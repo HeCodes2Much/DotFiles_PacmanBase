@@ -19,10 +19,10 @@ if test -d "$HOME/.cargo/bin"
     set PATH "$HOME/.cargo/bin:$PATH"
 end
 
-# Adds `~/.local/bin/repobar` to $PATH
+# Adds `~/.local/bin/flexiflow_bar` to $PATH
 # set PATH so it includes user's private bin if it exists
-if test -d "$HOME/.local/bin/repobar"
-    set PATH "$HOME/.local/bin/repobar:$PATH"
+if test -d "$HOME/.local/bin/flexiflow_bar"
+    set PATH "$HOME/.local/bin/flexiflow_bar:$PATH"
 end
 
 # Adds `~/.local/bin/rofi` to $PATH

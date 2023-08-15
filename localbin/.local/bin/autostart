@@ -12,7 +12,7 @@
 #Created:
 #   Mon 22 November 2021, 03:15:54 PM [GMT+1]
 #Modified:
-#   Sun 13 August 2023, 08:40:20 PM [GMT+1]
+#   Mon 14 August 2023, 05:30:34 PM [GMT+1]
 #
 #Description:
 #   <Todo>
@@ -160,17 +160,17 @@ else
   echo "touchpad-indicator could not be found"
 fi
 
-if command -v cbatticon &>/dev/null; then
-  if ! pgrep -x "cbatticon" >/dev/null; then
+if command -v battray &>/dev/null; then
+  if ! pgrep -x "battray" >/dev/null; then
     (
       sleep 2s
-      cbatticon
+      battray
     ) &
   else
-    echo "cbatticon already Running"
+    echo "battray already Running"
   fi
 else
-  echo "cbatticon could not be found"
+  echo "battray could not be found"
 fi
 
 if command -v pasystray &>/dev/null; then
@@ -186,17 +186,17 @@ else
   echo "pasystray could not be found"
 fi
 
-if command -v gufwicon &>/dev/null; then
-  if ! pgrep -x "gufwicon" >/dev/null; then
+if command -v firewall-applet &>/dev/null; then
+  if ! pgrep -x "firewall-applet" >/dev/null; then
     (
       sleep 5s
-      gufwicon
+      firewall-applet
     ) &
   else
-    echo "gufwicon already Running"
+    echo "firewall-applet already Running"
   fi
 else
-  echo "gufwicon could not be found"
+  echo "firewall-applet could not be found"
 fi
 
 if command -v numlockx &>/dev/null; then

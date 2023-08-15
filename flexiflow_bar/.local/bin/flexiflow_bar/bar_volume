@@ -2,7 +2,7 @@
 
 volume_alsa() {
   # load colors
-  . $HOME/.config/repobar/bar_themes/minimal-mistakes
+  . $HOME/.config/flexiflow_bar/bar_themes/minimal-mistakes
 
   analog=$(pamixer --list-sinks | grep analog | awk '{ print $2 }' | sed 's/"//g')
   hdmi=$(pamixer --list-sinks | grep hdmi | awk '{ print $2 }' | sed 's/"//g')
