@@ -12,7 +12,7 @@
 #Created:
 #   Wed 07 December 2022, 11:01:52 PM [GMT]
 #Modified:
-#   Mon 14 August 2023, 12:26:30 AM [GMT+1]
+#   Wed 16 August 2023, 05:37:23 AM [GMT+1]
 #
 #Description:
 # This script defines just a mode for rofi instead of being a self-contained
@@ -59,12 +59,12 @@ icons[shutdown]="󰐥"
 icons[cancel]=""
 
 declare -A actions
-actions[lockscreen]="loginctl lock-session"
+actions[lockscreen]="systemctl lock-session"
 actions[logout]="pkill -KILL -u ${USER}"
-actions[suspend]="loginctl suspend"
-actions[hibernate]="loginctl hibernate"
-actions[reboot]="loginctl reboot"
-actions[shutdown]="loginctl poweroff"
+actions[suspend]="systemctl suspend"
+actions[hibernate]="systemctl hibernate"
+actions[reboot]="systemctl reboot"
+actions[shutdown]="systemctl poweroff"
 
 # By default, ask for confirmation for actions that are irreversible
 confirmations=(reboot shutdown logout)
