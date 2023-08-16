@@ -1,10 +1,12 @@
 aic94xx-firmware
+alacritty
 ansiweather
 anymeal
 ast-firmware
 aura
 auracle
 aurutils
+bat
 bspwm-cheat
 btrfs-snapshots
 checkupdates+aur
@@ -14,6 +16,7 @@ ckbcomp
 clifm
 cmusfetcher500
 cutycapt
+cxxopts
 devour
 dk
 dk-cheat
@@ -22,6 +25,7 @@ dracula-gtk-theme
 dracula-icons
 dracula-qt5-theme
 dracula-qt6-theme
+exa
 fdroidserver
 fish-nvm
 husky-hooks
@@ -36,6 +40,9 @@ imagewriter
 jetbrains-toolbox
 lib32-libxft-bgra
 libart-lgpl
+libsidplay
+libsidplayfp
+libvdpau-va-gl
 libxft-bgra
 linux-wifi-hotspot
 linuxrepos-keyring
@@ -50,6 +57,7 @@ neovim-symlinks
 nerd-fonts-iosevka
 nvm
 pacmanity
+pamixer
 paru
 pcurses
 perl-checkupdates-aur
@@ -75,6 +83,7 @@ sdbus-cpp
 shellfetch
 siji
 stacer
+stow
 tbsm
 touchpad-indicator
 transset-df

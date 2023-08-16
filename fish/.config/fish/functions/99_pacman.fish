@@ -20,9 +20,8 @@ function pacman
         end
     else if [ "$argv" = --upall ]
         sudo pkgfile -u
-        command sudo pacman -Fy
-        sudo pikaur -Syu
-        auracle update -C ~/.cache/pkgs/
+        yay -Fy
+        yay -Syu
     else if [ "$argv" = --pacsync ]
         pacsync
     else

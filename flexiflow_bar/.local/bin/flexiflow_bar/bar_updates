@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 get_updates() {
-  configFile=$HOME/.config/repowm/flexiflow_bar/bar_updates.ini
+  configFile=$HOME/.config/flexiflow/flexiflow_bar/bar_updates.ini
 
   # load colors
   . $HOME/.config/flexiflow_bar/bar_themes/minimal-mistakes
 
   updates=$(yay -Pn)
   timestamp=$(date +%s)
-  icon="  "
+  icon="  "
 
   if [ -z "$updates" ]; then
     updatecount=" Fully Updated"
@@ -17,7 +17,7 @@ get_updates() {
     updatecount=" $updates Updates"
   fi
   [[ -f $configFile ]] && . $configFile
-  if [ -z "$LastUsed" ] || [ -z "$Message" ]; then
+  if [[ -z "$LastUsed" ]] || [[ -z "$Message" ]]; then
     printf " %s %s \n" "^c$Foreground^^b$Red^$icon" "^c$Foreground^^b$Red_Bright^$updatecount"
     newtime=$(expr $timestamp + 900)
     echo -e "LastUsed=${newtime}\nMessage='${updatecount}'" >$configFile
@@ -27,7 +27,7 @@ get_updates() {
       newtime=$(expr $timestamp + 900)
       echo -e "LastUsed=${newtime}\nMessage='${updatecount}'" >$configFile
     else
-      updatecount=" $Message"
+      updatecount="$Message"
       printf " %s %s \n" "^c$Foreground^^b$Red^$icon" "^c$Foreground^^b$Red_Bright^$updatecount"
     fi
   fi

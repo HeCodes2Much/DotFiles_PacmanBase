@@ -16,7 +16,7 @@ get_charge() {
 
 is_charging() {
   status=$(cat "/sys/class/power_supply/$battery/status")
-  if [ ! $status = "Discharging" ]; then
+  if [[ ! $status = "Discharging" ]]; then
     return 0
   fi
   return 1
@@ -28,18 +28,32 @@ battery() {
 
   battery_status=""
   if $(is_charging); then
-    icon=" "
+    icon=" 󰂄"
     if $(has_battery); then
       battery_status="$(get_charge)%"
     fi
   else
     if $(has_battery); then
-      if [[ $(get_charge) -ge 66 ]]; then
-        icon="  "
-      elif [[ $(get_charge) -ge 33 ]]; then
-        icon="  "
+      if [[ $(get_charge) -gt 90 ]]; then
+        icon=" 󰁹 "
+      elif [[ $(get_charge) -gt 80 ]]; then
+        icon=" 󰂂 "
+      elif [[ $(get_charge) -gt 70 ]]; then
+        icon=" 󰂁 "
+      elif [[ $(get_charge) -gt 60 ]]; then
+        icon=" 󰂀 "
+      elif [[ $(get_charge) -gt 50 ]]; then
+        icon=" 󰁿 "
+      elif [[ $(get_charge) -gt 40 ]]; then
+        icon=" 󰁾 "
+      elif [[ $(get_charge) -gt 30 ]]; then
+        icon=" 󰁽 "
+      elif [[ $(get_charge) -gt 20 ]]; then
+        icon=" 󰁼 "
+      elif [[ $(get_charge) -gt 10 ]]; then
+        icon=" 󰁻 "
       else
-        icon="  "
+        icon=" 󰁺 "
       fi
       battery_status="$(get_charge)%"
     fi

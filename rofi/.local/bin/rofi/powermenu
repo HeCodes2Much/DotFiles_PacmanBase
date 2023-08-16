@@ -61,10 +61,10 @@ icons[cancel]=""
 declare -A actions
 actions[lockscreen]="loginctl lock-session"
 actions[logout]="pkill -KILL -u ${USER}"
-actions[suspend]="systemctl suspend"
-actions[hibernate]="systemctl hibernate"
-actions[reboot]="systemctl reboot"
-actions[shutdown]="systemctl poweroff"
+actions[suspend]="loginctl suspend"
+actions[hibernate]="loginctl hibernate"
+actions[reboot]="loginctl reboot"
+actions[shutdown]="loginctl poweroff"
 
 # By default, ask for confirmation for actions that are irreversible
 confirmations=(reboot shutdown logout)

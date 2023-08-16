@@ -15,14 +15,14 @@ network() {
   RKBPS=$(echo "$RBPS / 1024" | bc)
   icon_up="  "
   icon_down=" 󰖪 "
-  if [ "$RKBPS" -gt "1024" ]; then
+  if [[ "$RKBPS" -gt "1024" ]]; then
     RKBPS=$(echo "scale=2; $RKBPS / 1024" | bc)
     RKBPS=" $RKBPS mb"
   else
     RKBPS=" $RKBPS kb"
   fi
 
-  if [ "$TKBPS" -gt "1024" ]; then
+  if [[ "$TKBPS" -gt "1024" ]]; then
     TKBPS=$(echo "scale=2; $TKBPS / 1024" | bc)
     TKBPS=" $TKBPS mb"
   else

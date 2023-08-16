@@ -3,4 +3,5 @@ file:///home/repo/.cache .cache
 file:///home/repo/.config .config
 file:///home/repo/.local .local
 file:///mnt/500GB/.gitlabs .gitlabs
+file:///home/repo/.makpkg .makpkg
 file:///mnt/500GB/IOS IOS

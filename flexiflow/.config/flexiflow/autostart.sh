@@ -12,7 +12,7 @@
 #Created:
 #   Mon 22 November 2021, 03:15:54 PM [GMT]
 #Modified:
-#   Tue 15 August 2023, 07:29:53 PM [GMT+1]
+#   Wed 16 August 2023, 01:02:33 AM [GMT+1]
 #
 #Description:
 #   <Todo>
@@ -21,9 +21,9 @@
 #   <None>
 #
 
-if command -v /usr/libexec/polkit-gnome-authentication-agent-1 &>/dev/null; then
-  if ! pgrep -f "/usr/libexec/polkit-gnome-authentication-agent-1" >/dev/null; then
-    /usr/libexec/polkit-gnome-authentication-agent-1 &
+if command -v /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/null; then
+  if ! pgrep -f "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" >/dev/null; then
+    /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
   else
     echo "polkit-gnome already Running"
   fi
