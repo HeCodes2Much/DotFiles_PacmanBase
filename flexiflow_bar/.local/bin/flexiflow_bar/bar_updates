@@ -7,7 +7,7 @@ get_updates() {
 
   updates=$(yay -Pn)
   timestamp=$(date +%s)
-  icon="  "
+  icon="  "
 
   if [ -z "$updates" ]; then
     updatecount=" Fully Updated"

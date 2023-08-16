@@ -19,9 +19,8 @@ function pacman
             command sudo pacman --color auto -Qttdq | command sudo pacman --color auto -Rns -
         end
     else if [ "$argv" = --upall ]
-        sudo pkgfile -u
-        yay -Fy
-        yay -Syu
+        sudo pikaur -Syu
+        auracle update -C ~/.cache/pkgs/
     else if [ "$argv" = --pacsync ]
         pacsync
     else
