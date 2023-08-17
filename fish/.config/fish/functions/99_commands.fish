@@ -47,6 +47,10 @@ function update-fc
     command fc-cache -fv
 end
 
+function clear-qtile
+    echo "No errors found." >~/.local/share/qtile/qtile.log
+end
+
 function reload
     source ~/.config/fish/config.fish
 end

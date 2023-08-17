@@ -12,7 +12,7 @@
 #Created:
 #   Mon 22 November 2021, 03:15:54 PM [GMT+1]
 #Modified:
-#   Thu 17 August 2023, 05:52:27 PM [GMT+1]
+#   Thu 17 August 2023, 08:10:42 PM [GMT+1]
 #
 #Description:
 #   <Todo>
@@ -71,8 +71,10 @@ if command -v xroot &>/dev/null; then
           xroot -r xmenu_desktop
         ) &
       else
-        echo "xroot already Running"
+        echo "xmenu_desktop already Running"
       fi
+    else
+      echo "xmenu_desktop can not be found"
     fi
   else
     echo "xroot already Running"

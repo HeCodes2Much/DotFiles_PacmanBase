@@ -26,15 +26,7 @@ class Widgets(object):
         },
     )
 
-    power1 = widget.LaunchBar(
-        text_only=True,
-        foreground=colorScheme[1],
-        progs=[
-            ("⏻ ", "rofi -show powermenu -config ~/.config/rofi/powermenu.rasi"),
-        ],
-    )
-
-    power2 = widget.LaunchBar(
+    power = widget.LaunchBar(
         text_only=True,
         foreground=colorScheme[1],
         progs=[
@@ -92,14 +84,7 @@ class Widgets(object):
         use_mouse_wheel=True,
     )
 
-    windowName1 = widget.WindowName(
-        foreground=backgroundColor,
-        background=colorScheme[10],
-        max_chars=42,
-        padding=10,
-    )
-
-    windowName2 = widget.WindowName(
+    windowName = widget.WindowName(
         foreground=backgroundColor,
         background=colorScheme[10],
         max_chars=42,
@@ -110,13 +95,6 @@ class Widgets(object):
         fmt="Vol: {}",
         foreground=colorScheme[2],
         padding=10,
-    )
-
-    battery = widget.Battery(
-        fmt="Bat: {}",
-        foreground=colorScheme[3],
-        padding=10,
-        format="{char} {percent:2.0%} {hour:d}:{min:02d} {watt:.2f} W",
     )
 
     backlight = widget.Backlight(
@@ -130,7 +108,7 @@ class Widgets(object):
         fmt="{}",
         foreground=colorScheme[5],
         padding=10,
-        interface="wlp0s20f3",
+        interface="wlan0",
     )
 
     date = widget.Clock(
@@ -152,13 +130,7 @@ class Widgets(object):
         padding=5,
     )
 
-    currentLayout1 = widget.CurrentLayoutIcon(
-        fmt="{}",
-        scale=0.7,
-        padding=5,
-    )
-
-    currentLayout2 = widget.CurrentLayoutIcon(
+    currentLayout = widget.CurrentLayoutIcon(
         fmt="{}",
         scale=0.7,
         padding=5,
@@ -186,10 +158,10 @@ class Widgets(object):
         colour_have_updates=colorScheme[2],
         colour_no_updates=colorScheme[1],
         padding=10,
-        distro="Fedora",
+        distro="Arch_checkupdates",
         no_update_string="Fully Updated!",
         mouse_callbacks={
-            "Button1": lazy.spawn("dnfdragora"),
+            "Button1": lazy.spawn("pkgbrowser"),
         },
     )
 
@@ -208,42 +180,8 @@ class Widgets(object):
         padding=10,
     )
 
-    github1 = widget.WidgetBox(
+    github = widget.WidgetBox(
         foreground=colorScheme[12],
-        widgets=[
-            widget.GenPollText(
-                fmt="{}",
-                foreground=colorScheme[13],
-                func=lambda: subprocess.check_output(
-                    expanduser("~/.config/qtile/scripts/github/notifications")
-                ).decode("utf-8"),
-                update_interval=10,
-                padding=10,
-            ),
-            widget.GenPollText(
-                fmt="{}",
-                foreground=colorScheme[13],
-                func=lambda: subprocess.check_output(
-                    expanduser("~/.config/qtile/scripts/github/gists")
-                ).decode("utf-8"),
-                update_interval=10,
-                padding=10,
-            ),
-            widget.GenPollText(
-                fmt="{}",
-                foreground=colorScheme[13],
-                func=lambda: subprocess.check_output(
-                    expanduser("~/.config/qtile/scripts/github/repositories")
-                ).decode("utf-8"),
-                update_interval=10,
-                padding=10,
-            ),
-        ],
-        text_closed="[Github <]",
-        text_open="[Github >]",
-    )
-
-    github2 = widget.WidgetBox(
         widgets=[
             widget.GenPollText(
                 fmt="{}",
