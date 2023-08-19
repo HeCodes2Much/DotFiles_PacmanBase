@@ -8,7 +8,7 @@ from colors import colorScheme, foregroundColor, backgroundColor
 
 class Widgets(object):
     sep = widget.Sep(
-        linewidth=1,
+        linewidth=0,
         padding=10,
         foreground=colorScheme[15],
         background=colorScheme[0],
@@ -134,7 +134,7 @@ class Widgets(object):
 
     tray = widget.Systray(
         fmt="{}",
-        padding=5,
+        padding=7,
     )
 
     currentLayout = widget.CurrentLayoutIcon(
