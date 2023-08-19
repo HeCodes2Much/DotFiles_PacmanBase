@@ -109,6 +109,7 @@ class Widgets(object):
 
     net = widget.Net(
         fmt="{}",
+        format="{down} ↓↑ {up}",
         foreground=backgroundColor,
         background=colorScheme[5],
         padding=10,
