@@ -345,7 +345,6 @@ screens = [
                 Widgets.currentLayout,
                 Widgets.power,
                 Widgets.windowName,
-                Widgets.updates,
                 Widgets.volume,
                 Widgets.backlight,
                 Widgets.net,
@@ -363,6 +362,7 @@ screens = [
         bottom=bar.Bar(
             [
                 Widgets.weather,
+                Widgets.updates,
                 Widgets.space,
                 Widgets.picom,
                 Widgets.github,
@@ -384,7 +384,6 @@ screens = [
                 Widgets.currentLayout,
                 Widgets.power,
                 Widgets.windowName,
-                Widgets.updates,
                 Widgets.volume,
                 Widgets.backlight,
                 Widgets.net,
@@ -401,6 +400,7 @@ screens = [
         bottom=bar.Bar(
             [
                 Widgets.weather,
+                Widgets.updates,
                 Widgets.space,
                 Widgets.picom,
                 Widgets.github,
