@@ -84,7 +84,11 @@ class Commands(object):
     passmenu = "passmenu"
 
     autostart = ["autostart"]
-    configure = ["youtube_subs -d", "autorandr --load qtile"]
+    configure = [
+        "youtube_subs -d",
+        "autorandr --load qtile",
+        "setxkbmap -option caps:escape",
+    ]
 
 
 ##################
