@@ -16,21 +16,22 @@ class Widgets(object):
 
     space = widget.Spacer()
 
-    launcher = widget.Image(
-        fmt="{}",
-        filename=expanduser("~/.config/qtile/art/Archlinux-icon.svg"),
-        margin=3,
-        mouse_callbacks={
-            "Button1": lazy.spawn("menu"),
-            "Button3": lazy.spawn("rofi -show drun"),
-        },
+    launcher = widget.LaunchBar(
+        text_only=True,
+        fontsize=18,
+        foreground=colorScheme[0],
+        background=colorScheme[2],
+        progs=[
+            (" 󰣇 ", "menu"),
+        ],
     )
 
     power = widget.LaunchBar(
         text_only=True,
-        foreground=colorScheme[1],
+        foreground=colorScheme[0],
+        background=colorScheme[1],
         progs=[
-            ("⏻ ", "rofi -show powermenu -config ~/.config/rofi/powermenu.rasi"),
+            (" ⏻ ", "rofi -show powermenu -config ~/.config/rofi/powermenu.rasi"),
         ],
     )
 
@@ -93,34 +94,39 @@ class Widgets(object):
 
     volume = widget.Volume(
         fmt="Vol: {}",
-        foreground=colorScheme[2],
+        foreground=backgroundColor,
+        background=colorScheme[2],
         padding=10,
     )
 
     backlight = widget.Backlight(
         fmt="Backlight: {}",
-        foreground=colorScheme[4],
+        foreground=backgroundColor,
+        background=colorScheme[4],
         padding=10,
         backlight_name="intel_backlight",
     )
 
     net = widget.Net(
         fmt="{}",
-        foreground=colorScheme[5],
+        foreground=backgroundColor,
+        background=colorScheme[5],
         padding=10,
         interface="wlan0",
     )
 
     date = widget.Clock(
         fmt="  {}",
-        foreground=colorScheme[6],
+        foreground=backgroundColor,
+        background=colorScheme[6],
         format="%d %B %Y",
         padding=10,
     )
 
     time = widget.Clock(
         fmt="  {}",
-        foreground=colorScheme[6],
+        foreground=backgroundColor,
+        background=colorScheme[6],
         format="%I:%M %p",
         padding=10,
     )
@@ -132,23 +138,25 @@ class Widgets(object):
 
     currentLayout = widget.CurrentLayoutIcon(
         fmt="{}",
+        background=colorScheme[0],
         scale=0.7,
         padding=5,
     )
 
     chords = widget.Chord(
-        fmt="{}",
+        fmt=" {} ",
         chords_colors={
-            "Resize Windows": (colorScheme[0], colorScheme[1]),
-            "Launch Game": (colorScheme[0], colorScheme[2]),
-            "Take a Screenshot": (colorScheme[0], colorScheme[3]),
+            "Resize Windows": (colorScheme[1], backgroundColor),
+            "Launch Game": (colorScheme[2], backgroundColor),
+            "Take a Screenshot": (colorScheme[3], backgroundColor),
         },
         name_transform=lambda name: name.upper(),
     )
 
     weather = widget.OpenWeather(
-        fmt="{}",
-        foreground=colorScheme[9],
+        fmt=" {}",
+        foreground=backgroundColor,
+        background=colorScheme[9],
         location="Darlington,UK",
         format="{location_city}: {main_temp}°{units_temperature} ",
     )
@@ -167,7 +175,8 @@ class Widgets(object):
 
     picom = widget.GenPollText(
         fmt="{}",
-        foreground=colorScheme[11],
+        foreground=backgroundColor,
+        background=colorScheme[11],
         func=lambda: subprocess.check_output(
             expanduser("~/.config/qtile/scripts/picom.sh")
         ).decode("utf-8"),
@@ -181,11 +190,13 @@ class Widgets(object):
     )
 
     github = widget.WidgetBox(
-        foreground=colorScheme[12],
+        foreground=backgroundColor,
+        background=colorScheme[12],
         widgets=[
             widget.GenPollText(
                 fmt="{}",
-                foreground=colorScheme[13],
+                foreground=backgroundColor,
+                background=colorScheme[13],
                 func=lambda: subprocess.check_output(
                     expanduser("~/.config/qtile/scripts/github/notifications")
                 ).decode("utf-8"),
@@ -194,7 +205,8 @@ class Widgets(object):
             ),
             widget.GenPollText(
                 fmt="{}",
-                foreground=colorScheme[13],
+                foreground=backgroundColor,
+                background=colorScheme[13],
                 func=lambda: subprocess.check_output(
                     expanduser("~/.config/qtile/scripts/github/gists")
                 ).decode("utf-8"),
@@ -203,7 +215,8 @@ class Widgets(object):
             ),
             widget.GenPollText(
                 fmt="{}",
-                foreground=colorScheme[13],
+                foreground=backgroundColor,
+                background=colorScheme[13],
                 func=lambda: subprocess.check_output(
                     expanduser("~/.config/qtile/scripts/github/repositories")
                 ).decode("utf-8"),
@@ -211,6 +224,6 @@ class Widgets(object):
                 padding=10,
             ),
         ],
-        text_closed="[Github <]",
-        text_open="[Github >]",
+        text_closed=" [Github <] ",
+        text_open=" [Github >] ",
     )
