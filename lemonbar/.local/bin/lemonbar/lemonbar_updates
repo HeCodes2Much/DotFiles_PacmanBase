@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 updates() {
-  configFile=$HOME/.config/repowm/flexiflow_bar/bar_updates.ini
+  configFile=$HOME/.config/flexiflow/flexiflow_bar/bar_updates.ini
 
   timestamp=$(date +%s)
   icon=" "

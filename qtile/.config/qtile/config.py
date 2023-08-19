@@ -195,6 +195,14 @@ keys.extend(
 
 groups = Groups.groups
 
+for i in groups:
+    keys.extend(
+        [
+            Key([MOD], i.name, lazy.function(go_to_group(i.name))),
+            Key([MOD, "shift"], i.name, lazy.window.togroup(i.name)),
+        ]
+    )
+
 # Define scratchpads
 groups.append(
     ScratchPad(
@@ -239,14 +247,6 @@ groups.append(
         ],
     )
 )
-
-for i in groups:
-    keys.extend(
-        [
-            Key([MOD], i.name, lazy.function(go_to_group(i.name))),
-            Key([MOD, "shift"], i.name, lazy.window.togroup(i.name)),
-        ]
-    )
 
 # Scratchpad keybindings
 keys.extend(

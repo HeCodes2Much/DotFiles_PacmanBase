@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 weather() {
-  configFile=$HOME/.config/repowm/flexiflow_bar/bar_weather.ini
+  configFile=$HOME/.config/flexiflow/flexiflow_bar/bar_weather.ini
 
   timestamp=$(date +%s)
   icon=""
