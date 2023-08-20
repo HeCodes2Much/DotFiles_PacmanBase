@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
 kernel() {
-    icon=""
+  . $HOME/.config/flexiflow_bar/bar_themes/minimal-mistakes
 
-    kernel=$(uname -r | awk '{print $1}')
+  icon="  "
 
-    printf " %s %s \n" "$icon" "$kernel"
+  kernel=$(uname -r | awk '{print $1}')
+
+  printf " %s %s \n" "^c$Foreground^^b$Cyan^$icon" "^c$Foreground^^b$Cyan_Bright^ $kernel"
 }
 
 kernel
