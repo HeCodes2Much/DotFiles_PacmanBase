@@ -12,7 +12,7 @@
 #Created:
 #   Fri 28 October 2022, 08:57:10 AM [GMT+1]
 #Modified:
-#   Sun 30 October 2022, 02:50:09 PM [GMT]
+#   Sun 20 August 2023, 06:12:45 PM [GMT+1]
 #
 #Description:
 #   Toggle the conky on and off
@@ -24,15 +24,19 @@
 checkRun=$(pidof 'conky')
 
 if command -v conky &>/dev/null; then
-    if [[ ! $checkRun ]]; then
-        (
-            i3-msg "gaps right all set 5; gaps right all set 330"
-            conky -c ~/.config/conky/left.conkyrc
-            conky -c ~/.config/conky/right.conkyrc
-        ) &
-    else
-        killall -q conky
-        i3-msg "gaps inner all set 5; gaps outer all set 2"
+  if [[ ! $checkRun ]]; then
+    (
+      if [ "$XDG_CURRENT_DESKTOP" = "i3" ]; then
+        i3-msg "gaps right all set 5; gaps right all set 330"
+        conky -c ~/.config/conky/left.conkyrc
+        conky -c ~/.config/conky/right.conkyrc
+      fi
+      conky -c ~/.config/flexiflow/keybinds.conkyrc
+    ) &
+  else
+    killall -q conky
+    if [ "$XDG_CURRENT_DESKTOP" = "i3" ]; then
+      i3-msg "gaps inner all set 5; gaps outer all set 2"
     fi
+  fi
 fi
-
