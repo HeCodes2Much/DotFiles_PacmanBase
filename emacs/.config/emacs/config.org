@@ -1,18 +1,4 @@
-#+TITLE: Repo's GNU Emacs Config
-#+AUTHOR: Wayne Wesley (The-Repo-Club)
-#+DESCRIPTION: Repo's Personal Emacs config.
-#+STARTUP: showeverything
-#+OPTIONS: toc:2
 
-* TABLE OF CONTENTS :toc:
-- [[#important-programs-to-load-first][IMPORTANT PROGRAMS TO LOAD FIRST]]
-  - [[#elpaca-package-manager][Elpaca Package Manager]]
-  - [[#load-evil-mode][Load Evil Mode]]
-  - [[#general-keybindings][General Keybindings]]
-- [[#app-launchers][APP LAUNCHERS]]
-  - [[#counsel-linux-app][Counsel-Linux-App]]
-  - [[#app-launcher][App-Launcher]]
-- [[#all-the-icons][ALL THE ICONS]]
 - [[#buffer-move][BUFFER-MOVE]]
 - [[#company][COMPANY]]
 - [[#dashboard][DASHBOARD]]
@@ -474,15 +460,15 @@ Defining the various fonts that Emacs will use.
 ** Setting the Font Face
 #+begin_src emacs-lisp
 (set-face-attribute 'default nil
-  :font "JetBrains Mono"
+  :font "Hack Nerd Font Mono"
   :height 110
   :weight 'medium)
 (set-face-attribute 'variable-pitch nil
-  :font "Ubuntu"
+  :font "Hack Nerd Font Mono"
   :height 120
   :weight 'medium)
 (set-face-attribute 'fixed-pitch nil
-  :font "JetBrains Mono"
+  :font "Hack Nerd Font Mono"
   :height 110
   :weight 'medium)
 ;; Makes commented text and keywords italics.
@@ -496,7 +482,7 @@ Defining the various fonts that Emacs will use.
 ;; This sets the default font on all graphical frames created after restarting Emacs.
 ;; Does the same thing as 'set-face-attribute default' above, but emacsclient fonts
 ;; are not right unless I also add this method of setting the default font.
-(add-to-list 'default-frame-alist '(font . "JetBrains Mono-11"))
+(add-to-list 'default-frame-alist '(font . "Hack Nerd Font Mono-11"))
 
 ;; Uncomment the following line if line spacing needs adjusting.
 (setq-default line-spacing 0.12)
