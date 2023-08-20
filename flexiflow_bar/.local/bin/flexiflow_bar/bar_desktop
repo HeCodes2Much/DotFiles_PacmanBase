@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 desktop() {
-  icon=""
+  . $HOME/.config/flexiflow_bar/bar_themes/minimal-mistakes
+
+  icon="  "
 
   if [[ -n "$XDG_CURRENT_DESKTOP" ]]; then
     desktop="$XDG_CURRENT_DESKTOP"
@@ -9,21 +11,21 @@ desktop() {
     desktop="$XDG_SESSION_DESKTOP"
   elif [[ -n "$DESKTOP_SESSION" ]]; then
     desktop="$DESKTOP_SESSION"
-  fi
-
-  if [[ -z $desktop ]]; then
+  else
     id=$(xprop -root -notype _NET_SUPPORTING_WM_CHECK)
     id=${id##* }
     desktop=$(xprop -id "$id" -notype -len 100 -f _NET_WM_NAME 8t)
     desktop=${desktop/*WM_NAME = /}
     desktop=${desktop/\"/}
     desktop=${desktop/\"*/}
-    desktop=$(echo $desktop | sed 's/[\].*$//')
-  else
+    desktop=$(echo "$desktop" | sed 's/[\].*$//')
+  fi
+
+  if [[ -z $desktop ]]; then
     desktop="Can not detech desktop"
   fi
 
-  printf " %s %s \n" "$icon" "$desktop"
+  printf " %s %s \n" "^c$Foreground^^b$Red^$icon" "^c$Foreground^^b$Red_Bright^ $desktop"
 }
 
 desktop
