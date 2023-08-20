@@ -12,7 +12,7 @@
 #Created:
 #   Mon 22 November 2021, 03:15:54 PM [GMT]
 #Modified:
-#   Wed 16 August 2023, 01:02:33 AM [GMT+1]
+#   Sun 20 August 2023, 09:06:02 PM [GMT+1]
 #
 #Description:
 #   <Todo>
@@ -20,6 +20,14 @@
 #Dependencies:
 #   <None>
 #
+
+if command -v flexiflow_bar &>/dev/null; then
+  if ! pgrep -f "flexiflow_bar" >/dev/null; then
+    flexiflow_bar &
+  else
+    echo "flexiflow_bar already Running"
+  fi
+fi
 
 if command -v /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/null; then
   if ! pgrep -f "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" >/dev/null; then

@@ -3,7 +3,7 @@
 kernel() {
   . $HOME/.config/flexiflow_bar/bar_themes/minimal-mistakes
 
-  icon="  "
+  icon="  "
 
   kernel=$(uname -r | awk '{print $1}')
 
