@@ -5,9 +5,8 @@
 #The command for starting compton
 #always keep the -b argument!
 
-if pgrep -x "picom" > /dev/null
-then
-	killall picom
+if pgrep -x "xcompmgr" >/dev/null; then
+  killall xcompmgr
 else
-	picom --config ~/.config/picom/picom.conf &
+  xcompmgr &
 fi

@@ -837,17 +837,17 @@ $exe autorandr --force --load i3
 # }}} Settings
 
 #####################################################################################################################
-#################                            picom of i3wm                                          #################
+#################                            xcompmgr of i3wm                                          #################
 #####################################################################################################################
 
 #if you want transparency on non-focused windows, ...
 
-$exe_always picom --config ~/.config/i3/picom.conf
+$exe_always xcompmgr
 
 ## Category: Main Keybinds;
-# Description: Toggle Picom;
+# Description: Toggle xCompmgr;
 $control_b+$alt+o \
-    $exe ~/.config/polybar/scripts/picom-toggle.sh
+    $exe ~/.config/polybar/scripts/xcompmgr-toggle.sh
 
 ## Category: Main Keybinds;
 # Description: Reload Polybar;

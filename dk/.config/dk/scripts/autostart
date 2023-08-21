@@ -12,7 +12,7 @@
 #Created:
 #   Mon 24 April 2023, 01:52:19 PM [GMT+1]
 #Modified:
-#   Mon 24 April 2023, 02:16:28 PM [GMT+1]
+#   Mon 21 August 2023, 11:18:34 PM [GMT+1]
 #
 #Description:
 #   Autostart for DK Window Manager
@@ -26,11 +26,11 @@
 ##################
 
 if command -v /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/null; then
-    if ! pgrep -f "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" >/dev/null; then
-        /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-    else
-        echo "polkit-gnome already Running"
-    fi
+  if ! pgrep -f "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" >/dev/null; then
+    /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+  else
+    echo "polkit-gnome already Running"
+  fi
 fi
 
 ###############
@@ -38,43 +38,43 @@ fi
 ###############
 
 if command -v xautolock &>/dev/null; then
-    # shellcheck disable=SC2155
-    if ! pgrep -x "xautolock" >/dev/null; then
-        (
-            sleep 2s
-            xautolock \
-                -time 15 -locker "multimonitorlock -l -- --time-str=%I:%M:%S %p" \
-                -detectsleep
-        ) &
-    else
-        echo "xautolock already Running"
-    fi
+  # shellcheck disable=SC2155
+  if ! pgrep -x "xautolock" >/dev/null; then
+    (
+      sleep 2s
+      xautolock \
+        -time 15 -locker "multimonitorlock -l -- --time-str=%I:%M:%S %p" \
+        -detectsleep
+    ) &
+  else
+    echo "xautolock already Running"
+  fi
 fi
 
 if command -v xss-lock &>/dev/null; then
-    # shellcheck disable=SC2155
-    if ! pgrep -x "xss-lock" >/dev/null; then
-        (
-            sleep 2s
-            xss-lock -- multimonitorlock -l -- --time-str="%I:%M:%S %p"
-        ) &
-    else
-        echo "xautolock already Running"
-    fi
+  # shellcheck disable=SC2155
+  if ! pgrep -x "xss-lock" >/dev/null; then
+    (
+      sleep 2s
+      xss-lock -- multimonitorlock -l -- --time-str="%I:%M:%S %p"
+    ) &
+  else
+    echo "xautolock already Running"
+  fi
 fi
 
-################
-## Picom Comp ##
-################
+##############
+## xcompmgr ##
+##############
 
-if ! command -v picom &>/dev/null; then
-    echo "picom could not be found"
+if command -v xcompmgr &>/dev/null; then
+  if ! pgrep -x "xcompmgr" >/dev/null; then
+    xcompmgr &
+  else
+    echo "xcompmgr already Running"
+  fi
 else
-    if ! pgrep -x "picom" >/dev/null; then
-        picom -CGb --config "$HOME"/.config/picom/picom.conf &
-    else
-        echo "picom already Running"
-    fi
+  echo "xcompmgr could not be found"
 fi
 
 #############
@@ -82,17 +82,17 @@ fi
 #############
 
 if ! command -v polybar &>/dev/null; then
-    echo "polybar could not be found"
+  echo "polybar could not be found"
 else
-    if ! pgrep -x "polybar" >/dev/null; then
-        if ! test -f "$HOME/.config/polybar/launch.sh"; then
-            echo "$HOME/.config/polybar/launch.sh could not be found"
-        else
-            sh "$HOME/.config/polybar/launch.sh"
-        fi
+  if ! pgrep -x "polybar" >/dev/null; then
+    if ! test -f "$HOME/.config/polybar/launch.sh"; then
+      echo "$HOME/.config/polybar/launch.sh could not be found"
     else
-        echo "polybar already Running"
+      sh "$HOME/.config/polybar/launch.sh"
     fi
+  else
+    echo "polybar already Running"
+  fi
 fi
 
 ##############
@@ -100,36 +100,35 @@ fi
 ##############
 
 if command -v clipmenu-daemon &>/dev/null; then
-    if ! pgrep -f "clipmenu-daemon" >/dev/null; then
-        (
-            sleep 2s
-            clipmenu-daemon
-        ) &
-    else
-        echo "clipmenu-daemon already Running"
-    fi
+  if ! pgrep -f "clipmenu-daemon" >/dev/null; then
+    (
+      sleep 2s
+      clipmenu-daemon
+    ) &
+  else
+    echo "clipmenu-daemon already Running"
+  fi
 fi
-
 
 ################
 ## xRoot Menu ##
 ################
 
 if command -v xroot &>/dev/null; then
-    if ! pgrep -f "xroot" >/dev/null; then
-        if command -v xmenu_desktop &>/dev/null; then
-            if ! pgrep -f "xmenu_desktop" >/dev/null; then
-                (
-                    sleep 2s
-                    xroot -r xmenu_desktop
-                ) &
-            else
-                echo "xroot already Running"
-            fi
-        fi
-    else
+  if ! pgrep -f "xroot" >/dev/null; then
+    if command -v xmenu_desktop &>/dev/null; then
+      if ! pgrep -f "xmenu_desktop" >/dev/null; then
+        (
+          sleep 2s
+          xroot -r xmenu_desktop
+        ) &
+      else
         echo "xroot already Running"
+      fi
     fi
+  else
+    echo "xroot already Running"
+  fi
 fi
 
 ####################
@@ -137,17 +136,17 @@ fi
 ####################
 
 if ! command -v feh &>/dev/null; then
-    echo "feh could not be found"
+  echo "feh could not be found"
 else
-    if ! test -f "$HOME/.fehbg"; then
-        echo "$HOME/.fehbg could not be found"
-    else
-        sh "$HOME/.fehbg"
-        (
-            sleep 2s
-            sh "$HOME/.fehbg"
-        ) &
-    fi
+  if ! test -f "$HOME/.fehbg"; then
+    echo "$HOME/.fehbg could not be found"
+  else
+    sh "$HOME/.fehbg"
+    (
+      sleep 2s
+      sh "$HOME/.fehbg"
+    ) &
+  fi
 fi
 
 ################
@@ -155,86 +154,86 @@ fi
 ################
 
 if ! command -v ckb-next &>/dev/null; then
-    echo "ckb-next could not be found"
+  echo "ckb-next could not be found"
 else
-    if ! pgrep -x "ckb-next" >/dev/null; then
-        (
-            sleep 2s
-            ckb-next --background
-        ) &
-    else
-        echo "ckb-next already Running"
-    fi
+  if ! pgrep -x "ckb-next" >/dev/null; then
+    (
+      sleep 2s
+      ckb-next --background
+    ) &
+  else
+    echo "ckb-next already Running"
+  fi
 fi
 
 if command -v nm-applet &>/dev/null; then
-    if ! pgrep -x "nm-applet" >/dev/null; then
-        (
-            sleep 2s
-            nm-applet
-        ) &
-    else
-        echo "nm-applet already Running"
-    fi
+  if ! pgrep -x "nm-applet" >/dev/null; then
+    (
+      sleep 2s
+      nm-applet
+    ) &
+  else
+    echo "nm-applet already Running"
+  fi
 fi
 
 if command -v blueman-applet &>/dev/null; then
-    if ! pgrep -x "blueman-applet" >/dev/null; then
-        (
-            sleep 2s
-            blueman-applet
-        ) &
-    else
-        echo "blueman-applet already Running"
-    fi
+  if ! pgrep -x "blueman-applet" >/dev/null; then
+    (
+      sleep 2s
+      blueman-applet
+    ) &
+  else
+    echo "blueman-applet already Running"
+  fi
 fi
 
 if command -v touchpad-indicator &>/dev/null; then
-    if ! pgrep -f "touchpad-indicator" >/dev/null; then
-        (
-            sleep 2s
-            touchpad-indicator
-        ) &
-    else
-        echo "touchpad-indicator already Running"
-    fi
+  if ! pgrep -f "touchpad-indicator" >/dev/null; then
+    (
+      sleep 2s
+      touchpad-indicator
+    ) &
+  else
+    echo "touchpad-indicator already Running"
+  fi
 fi
 
 if command -v cbatticon &>/dev/null; then
-    if ! pgrep -x "cbatticon" >/dev/null; then
-        (
-            sleep 2s
-            cbatticon
-        ) &
-    else
-        echo "cbatticon already Running"
-    fi
+  if ! pgrep -x "cbatticon" >/dev/null; then
+    (
+      sleep 2s
+      cbatticon
+    ) &
+  else
+    echo "cbatticon already Running"
+  fi
 fi
 
 if command -v volumeicon &>/dev/null; then
-    if ! pgrep -x "volumeicon" >/dev/null; then
-        (
-            sleep 5s
-            volumeicon
-        ) &
-    else
-        echo "volumeicon already Running"
-    fi
+  if ! pgrep -x "volumeicon" >/dev/null; then
+    (
+      sleep 5s
+      volumeicon
+    ) &
+  else
+    echo "volumeicon already Running"
+  fi
 fi
 
 if command -v gufwicon &>/dev/null; then
-    if ! pgrep -x "gufwicon" >/dev/null; then
-        (
-            sleep 5s
-            gufwicon
-        ) &
-    else
-        echo "gufwicon already Running"
-    fi
+  if ! pgrep -x "gufwicon" >/dev/null; then
+    (
+      sleep 5s
+      gufwicon
+    ) &
+  else
+    echo "gufwicon already Running"
+  fi
 fi
 
 if command -v numlockx &>/dev/null; then
-    numlockx on &
+  numlockx on &
 fi
 
 ################
@@ -244,7 +243,7 @@ fi
 systemctl --user import-environment DISPLAY XAUTHORITY
 
 if command -v dbus-update-activation-environment >/dev/null 2>&1; then
-    dbus-update-activation-environment DISPLAY XAUTHORITY
+  dbus-update-activation-environment DISPLAY XAUTHORITY
 fi
 
 # see https://wiki.archlinux.org/title/GNOME/Keyring#xinitrc

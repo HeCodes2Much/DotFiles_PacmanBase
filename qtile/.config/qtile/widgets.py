@@ -174,16 +174,16 @@ class Widgets(object):
         },
     )
 
-    picom = widget.GenPollText(
+    xcompmgr = widget.GenPollText(
         fmt="{}",
         foreground=backgroundColor,
         background=colorScheme[11],
         func=lambda: subprocess.check_output(
-            expanduser("~/.config/qtile/scripts/picom.sh")
+            expanduser("~/.config/qtile/scripts/xcompmgr.sh")
         ).decode("utf-8"),
         mouse_callbacks={
             "Button1": lambda: subprocess.run(
-                expanduser("~/.config/qtile/scripts/picom-toggle.sh")
+                expanduser("~/.config/qtile/scripts/xcompmgr-toggle.sh")
             ),
         },
         update_interval=1,

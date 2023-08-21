@@ -10,7 +10,7 @@ Accessories
 	IMG:/home/repo/.cache/xdg-xmenu/icons/micro.png	Micro (Text Editor)	kitty -e micro
 	Nemo	nemo
 	IMG:/usr/share/icons/hicolor/16x16/apps/touchpad-indicator.png	Touchpad Indicator (Touchpad Indicator)	/usr/bin/touchpad-indicator
-	picom (X compositor)	picom
+	xcompmgr (X compositor)	xcompmgr
 Development
 	IMG:/usr/share/pixmaps/android-studio.png	Android Studio	android-studio
 	IMG:/usr/share/pixmaps/netbeans.png	Apache NetBeans	netbeans

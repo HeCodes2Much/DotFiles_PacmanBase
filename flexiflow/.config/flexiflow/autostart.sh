@@ -12,7 +12,7 @@
 #Created:
 #   Mon 22 November 2021, 03:15:54 PM [GMT]
 #Modified:
-#   Mon 21 August 2023, 10:09:03 PM [GMT+1]
+#   Mon 21 August 2023, 11:16:21 PM [GMT+1]
 #
 #Description:
 #   <Todo>
@@ -37,14 +37,14 @@ if command -v /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/n
   fi
 fi
 
-if command -v picom &>/dev/null; then
-  if ! pgrep -x "picom" >/dev/null; then
-    picom --config "$HOME"/.config/picom/picom.conf &
+if command -v xcompmgr &>/dev/null; then
+  if ! pgrep -x "xcompmgr" >/dev/null; then
+    xcompmgr &
   else
-    echo "picom already Running"
+    echo "xcompmgr already Running"
   fi
 else
-  echo "picom could not be found"
+  echo "xcompmgr could not be found"
 fi
 
 ####################

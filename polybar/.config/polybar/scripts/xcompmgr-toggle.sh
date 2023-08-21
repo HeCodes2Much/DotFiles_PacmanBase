@@ -3,16 +3,16 @@
 # Auto updated?
 #   Yes
 #File :
-#   picom
+#   xcompmgr-toggle
 #Author:
 #   The-Repo-Club [wayne6324@gmail.com]
 #Github:
 #   https://github.com/The-Repo-Club/
 #
 # Created:
-#   Thu 20 January 2022, 04:40:13 PM [GMT]
+#   Thu 20 January 2022, 04:40:04 PM [GMT]
 # Modified:
-#   Fri 21 January 2022, 02:29:56 PM [GMT]
+#   Mon 21 August 2023, 11:23:11 PM [GMT+1]
 #
 # Description:
 #   <Todo>
@@ -20,10 +20,11 @@
 
 # https://github.com/jaagr/polybar/wiki/User-contributed-modules
 
-#The icon that would change color
-if pgrep -x "picom" > /dev/null
-then
-	echo "Loaded"
+#The command for starting compton
+#always keep the -b argument!
+
+if pgrep -x "xcompmgr" >/dev/null; then
+  killall xcompmgr
 else
-	echo "UnLoaded"
+  xcompmgr
 fi
