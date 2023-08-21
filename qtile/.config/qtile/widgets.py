@@ -93,14 +93,14 @@ class Widgets(object):
     )
 
     volume = widget.Volume(
-        fmt="Vol: {}",
+        fmt=": {}",
         foreground=backgroundColor,
         background=colorScheme[2],
         padding=10,
     )
 
     backlight = widget.Backlight(
-        fmt="Backlight: {}",
+        fmt="󰞏 {}",
         foreground=backgroundColor,
         background=colorScheme[4],
         padding=10,
@@ -108,7 +108,7 @@ class Widgets(object):
     )
 
     net = widget.Net(
-        fmt="{}",
+        fmt="󰛳 {}",
         format="{down} ↓↑ {up}",
         foreground=backgroundColor,
         background=colorScheme[5],
@@ -155,7 +155,7 @@ class Widgets(object):
     )
 
     weather = widget.OpenWeather(
-        fmt=" {}",
+        fmt=" 󰖕 {}",
         foreground=backgroundColor,
         background=colorScheme[9],
         location="Darlington,UK",
