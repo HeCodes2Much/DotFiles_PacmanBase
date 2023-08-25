@@ -23,7 +23,6 @@ get_updates() {
     echo -e "LastUsed=${newtime}\nMessage='${updatecount}'" >$configFile
   else
     if [[ "$timestamp" -ge "$LastUsed" ]]; then
-      updatecount=" $Message"
       printf "%s %s \n" "^c$Foreground^^b$Purple^ $icon " "^c$Foreground^^b$Purple_Bright^ $updatecount"
       newtime=$(expr $timestamp + 900)
       echo -e "LastUsed=${newtime}\nMessage='${updatecount}'" >$configFile
