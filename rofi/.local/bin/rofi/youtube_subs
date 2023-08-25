@@ -12,7 +12,7 @@
 #Created:
 #   Sun 03 January 2021, 05:09:33 PM [GMT]
 #Modified:
-#   Thu 08 December 2022, 07:36:45 AM [GMT]
+#   Fri 25 August 2023, 05:45:05 PM [GMT+1]
 #
 #Description:
 #   Watch your youtube subscriptions without a youtube account
@@ -48,7 +48,7 @@ die() {
 }
 
 usage() {
-  die 'Usage: repomenue_youtube_subs [-c cat_subs] [-g gen_links] [-u update_subs] [-d daemonize]'
+  die 'Usage: youtube_subs [-c cat_subs] [-g gen_links] [-u update_subs] [-d daemonize]'
 }
 
 # -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*

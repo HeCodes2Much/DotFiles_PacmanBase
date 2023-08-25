@@ -5,11 +5,11 @@ get_updates() {
   # load colors
   . $HOME/.config/flexiflow_bar/bar_themes/minimal-mistakes
 
-  updates=$(yay -Pn)
+  updates=$(yay -Qu | wc -l)
   timestamp=$(date +%s)
-  icon="  "
+  icon=""
 
-  if [ -z "$updates" ]; then
+  if [ "$updates" -ge "0" ]; then
     updatecount="Fully Updated"
   elif [ "$updates" -ge "1" ]; then
     updatecount="$updates Update"
@@ -18,17 +18,18 @@ get_updates() {
   fi
   [[ -f $configFile ]] && . $configFile
   if [[ -z "$LastUsed" ]] || [[ -z "$Message" ]]; then
-    printf " %s %s \n" "^c$Foreground^^b$Purple^$icon" "^c$Foreground^^b$Purple_Bright^$updatecount"
+    printf "%s %s \n" "^c$Foreground^^b$Purple^ $icon " "^c$Foreground^^b$Purple_Bright^ $updatecount"
     newtime=$(expr $timestamp + 900)
     echo -e "LastUsed=${newtime}\nMessage='${updatecount}'" >$configFile
   else
     if [[ "$timestamp" -ge "$LastUsed" ]]; then
-      printf " %s %s \n" "^c$Foreground^^b$Purple^$icon" "^c$Foreground^^b$Purple_Bright^$updatecount"
+      updatecount=" $Message"
+      printf "%s %s \n" "^c$Foreground^^b$Purple^ $icon " "^c$Foreground^^b$Purple_Bright^ $updatecount"
       newtime=$(expr $timestamp + 900)
       echo -e "LastUsed=${newtime}\nMessage='${updatecount}'" >$configFile
     else
-      updatecount=" $Message"
-      printf " %s %s \n" "^c$Foreground^^b$Purple^$icon" "^c$Foreground^^b$Purple_Bright^$updatecount"
+      updatecount="$Message"
+      printf "%s %s \n" "^c$Foreground^^b$Purple^ $icon " "^c$Foreground^^b$Purple_Bright^ $updatecount"
     fi
   fi
 }
