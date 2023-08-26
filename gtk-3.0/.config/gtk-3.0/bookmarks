@@ -4,3 +4,4 @@ file:///home/repo/.config .config
 file:///home/repo/.local .local
 file:///run/media/repo/Backup/.gitlabs .gitlabs
 file:///run/media/repo/Backup/IOS IOS
+file:///home/repo/.makpkg .makpkg
