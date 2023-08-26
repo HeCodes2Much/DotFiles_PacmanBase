@@ -1,7 +1,6 @@
-file:///run/media/repo/500GB/.aur .aur
+file:///run/media/repo/Backup/.aur .aur
 file:///home/repo/.cache .cache
 file:///home/repo/.config .config
 file:///home/repo/.local .local
-file:///home/repo/.makpkg .makpkg
-file:///run/media/repo/500GB/.gitlabs .gitlabs
-file:///run/media/repo/500GB/IOS IOS
+file:///run/media/repo/Backup/.gitlabs .gitlabs
+file:///run/media/repo/Backup/IOS IOS
