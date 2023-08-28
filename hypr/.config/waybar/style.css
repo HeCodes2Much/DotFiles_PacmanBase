@@ -1,0 +1,148 @@
+* {
+	border: none;
+	border-radius: 0;
+	font-family: "Hack Nerd Font";
+	font-weight: bold;
+	font-size: 14px;
+	min-height: 0;
+}
+
+window#waybar {
+	background: #283036;
+	color: #e5e9f0;
+}
+
+tooltip {
+	background: #283036;
+	border-radius: 0px;
+}
+
+#workspaces button {
+	background: #ff9c59;
+	color: #283036;
+	padding: 5px;
+}
+
+#workspaces button.active {
+	background: #59ff59;
+	color: #283036;
+}
+
+#workspaces button.focused {
+	color: #283036;
+	background: #283036;
+	border-radius: 10px;
+}
+
+#workspaces button.urgent {
+	color: #283036;
+	background: #ff5959;
+	border-radius: 10px;
+}
+
+#workspaces button:hover {
+	background: #e5e9f0;
+	color: #283036;
+}
+
+#custom-language,
+#custom-updates,
+#custom-caffeine,
+#custom-weather,
+#cpu,
+#disk,
+#memory,
+#window,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#workspaces,
+#temperature,
+#tray,
+#language,
+#backlight {
+	background: #ffff59;
+	color: #283036;
+	padding: 0px 5px;
+	margin: 0px;
+}
+
+#tray {
+	margin-right: 0px;
+}
+
+#workspaces {
+	background: #ff9c59;
+	color: #283036;
+	margin-left: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+#custom-caffeine {
+	color: #283036;
+	border-right: 0px;
+	margin-left: 10px;
+}
+
+#custom-language {
+	color: #283036;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+#custom-updates {
+	color: #283036;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+#window,
+#disk {
+	color: #283036;
+	border-radius: 0px 10px 10px 0px;
+	padding-right: 10px;
+}
+
+#clock {
+	color: #283036;
+	margin-left: 0px;
+	border-right: 0px;
+}
+
+#network {
+	color: #283036;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+#pulseaudio {
+	color: #283036;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+#pulseaudio.microphone {
+	color: #283036;
+	margin-right: 5px;
+}
+
+#battery {
+	color: #283036;
+	margin-right: 0px;
+	border-left: 0px;
+}
+
+#custom-weather {
+	color: #283036;
+	border-right: 0px;
+	margin-left: 0px;
+}
+
+#language,
+#cpu {
+	color: #283036;
+	border-radius: 10px 0px 0px 10px;
+	padding-left: 10px;
+}

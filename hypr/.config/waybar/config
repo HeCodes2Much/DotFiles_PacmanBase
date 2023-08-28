@@ -1,0 +1,136 @@
+{
+	"layer": "top",
+	"position": "top",
+	"mod": "dock",
+	"exclusive": true,
+	"passtrough": false,
+	"gtk-layer-shell": true,
+	"height": 0,
+
+	"modules-left": ["wlr/workspaces", "hyprland/window"],
+
+	"modules-center": ["cpu", "memory", "temperature", "disk"],
+
+	"modules-right": ["hyprland/language", "backlight", "pulseaudio", "battery", "clock#time", "clock#date", "tray"],
+
+	"wlr/workspaces": {
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
+		"all-outputs": true,
+		"on-click": "activate",
+		"format": "{icon}",
+		"format-icons": {
+			"1": "一",
+			"2": "二",
+			"3": "三",
+			"4": "四",
+			"5": "五",
+			"6": "六",
+			"7": "七",
+			"8": "八",
+			"9": "九",
+			"10": "零"
+		},
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+			"9": [],
+			"10": []
+		}
+	},
+
+	"tray": {
+		"icon-size": 12,
+		"tooltip": false,
+		"spacing": 10
+	},
+
+	"clock#time": {
+		"format": "{:%H:%M}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n\n<tt><small>{calendar}</small></tt>"
+	},
+
+	"clock#date": {
+		"format": "{:%a %b %d}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n\n<tt><small>{calendar}</small></tt>"
+	},
+
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{icon} {percent}%",
+		"format-icons": ["󰃞", "󰃟", "󰃠"],
+		"on-scroll-up": "brightnessctl set 2%+",
+		"on-scroll-down": "brightnessctl set 2%-",
+		"min-length": 6
+	},
+
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"format-muted": "  Muted",
+		"tooltip": false,
+		"on-click": "pavucontrol &",
+		"scroll-step": 5,
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", "", ""]
+		}
+	},
+
+	"battery": {
+		"interval": 5,
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 20
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": "  {capacity}%",
+		"format-plugged": "  {capacity}%",
+		"format-alt": "{icon}  {time}",
+		"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+	},
+
+	"cpu": {
+		"interval": 10,
+		"format": " {usage}%",
+		"max-length": 10,
+		"on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+	},
+
+	"disk": {
+		"interval": 30,
+		"format": "󰋊 {percentage_used}%",
+		"path": "/",
+		"tooltip": true,
+		"tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
+		"on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+	},
+
+	"memory": {
+		"interval": 30,
+		"format": "󰍛 {}%",
+		"max-length": 10,
+		"tooltip": true,
+		"tooltip-format": "Memory - {used:0.1f}GB used",
+		"on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+	},
+
+	"temperature": {
+		"thermal-zone": 1,
+		"format": " {temperatureC}°C",
+		"critical-threshold": 70,
+		"format-critical": " {temperatureF}°F",
+		"on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+	}
+}

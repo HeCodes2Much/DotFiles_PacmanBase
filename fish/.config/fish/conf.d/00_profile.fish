@@ -1,10 +1,12 @@
 #-*-coding:utf-8 -*-
 xset b off
-setxkbmap -layout gb
-setxkbmap -option caps:super
+if [ "$XDG_SESSION_TYPE" = x11 ]
+    setxkbmap -layout gb
+    setxkbmap -option caps:super
+end
 
 set -gx LC_ALL "en_GB.UTF-8"
-set -gx ANDROID_HOME "/home/repo/Android/Sdk"
+set -gx ANDROID_HOME /home/repo/Android/Sdk
 set -gx PAGER more
 set -gx AUR_PAGER more
 set -gx EDITOR vim
