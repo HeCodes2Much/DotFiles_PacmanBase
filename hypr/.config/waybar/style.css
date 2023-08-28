@@ -10,6 +10,8 @@
 window#waybar {
 	background: #283036;
 	color: #e5e9f0;
+	border: #59ff59 2px solid;
+	border-radius: 15px;
 }
 
 tooltip {
@@ -59,45 +61,27 @@ tooltip {
 #network,
 #workspaces,
 #temperature,
-#tray,
 #language,
 #backlight {
 	background: #ffff59;
 	color: #283036;
 	padding: 0px 5px;
-	margin: 0px;
+	margin: 5px 0px;
 }
 
 #tray {
-	margin-right: 0px;
+	margin-right: 10px;
 }
 
 #workspaces {
 	background: #ff9c59;
 	color: #283036;
-	margin-left: 0px;
 	padding-right: 0px;
 	padding-left: 0px;
+	margin-left: 5px;
 }
 
-#custom-caffeine {
-	color: #283036;
-	border-right: 0px;
-	margin-left: 10px;
-}
-
-#custom-language {
-	color: #283036;
-	border-left: 0px;
-	border-right: 0px;
-}
-
-#custom-updates {
-	color: #283036;
-	border-left: 0px;
-	border-right: 0px;
-}
-
+#clock.date,
 #window,
 #disk {
 	color: #283036;
@@ -109,6 +93,10 @@ tooltip {
 	color: #283036;
 	margin-left: 0px;
 	border-right: 0px;
+}
+
+#clock.date {
+	margin-right: 5px;
 }
 
 #network {
@@ -140,6 +128,7 @@ tooltip {
 	margin-left: 0px;
 }
 
+#workspaces,
 #language,
 #cpu {
 	color: #283036;
