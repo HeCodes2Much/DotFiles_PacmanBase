@@ -5,7 +5,7 @@
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# to use, copy, Variables.MODify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
 
@@ -25,21 +25,15 @@ import subprocess
 
 from widgets import Widgets
 from groups import Groups
+from keys import Keys
+from variables import Commands, Variables
 from colors import colorScheme, currentColor
 
 locale.setlocale(locale.LC_ALL, "")
 
 from libqtile import qtile, bar, layout, hook
-from libqtile.config import (
-    Key,
-    Click,
-    Drag,
-    Screen,
-    Match,
-    KeyChord,
-    ScratchPad,
-    DropDown,
-)
+from libqtile.config import Key, Click, Drag, Screen, Match, ScratchPad, DropDown
+
 from libqtile.lazy import lazy
 
 from typing import Callable
@@ -71,137 +65,11 @@ def go_to_group(name: str) -> Callable:
     return _inner
 
 
-class Commands(object):
-    editor = "code"
-    menu = "menu"
-    browser = "firefox"
-    terminal = "alacritty"
-    btop = "kitty --class=btop -e btop"
-    powermenu = "rofi -show powermenu -config ~/.config/rofi/powermenu.rasi"
-    vbox = "virt-manager"
-    files = "nemo"
-    mail = "thunderbird"
-    passmenu = "passmenu"
-
-    autostart = ["autostart"]
-    configure = [
-        "youtube_subs -d",
-        "autorandr --load qtile",
-        "setxkbmap -option caps:escape",
-    ]
-
-
-##################
-## Key Bindings ##
-##################
-
-ALT = "mod1"
-MOD = "mod4"
-CTRL = "control"
-SHIFT = "shift"
-
-keys = [
-    # qtile commands
-    Key([MOD, SHIFT], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([MOD, CTRL], "r", lazy.restart(), desc="Restart qtile"),
-    # Switch between windows
-    Key([MOD], "h", lazy.layout.left(), desc="Move focus to left"),
-    Key([MOD], "l", lazy.layout.right(), desc="Move focus to right"),
-    Key([MOD], "j", lazy.layout.down(), desc="Move focus down"),
-    Key([MOD], "k", lazy.layout.up(), desc="Move focus up"),
-    # reset all windows
-    Key([MOD], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-    # Toggle between different layouts as defined below
-    Key([MOD], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([MOD], "t", lazy.window.toggle_floating(), desc="Toggle floating"),
-    Key([MOD], "q", lazy.window.kill(), desc="Kill focused window"),
-    # Custom keybinds
-    Key([MOD], "Return", lazy.spawn(Commands.terminal), desc="Launch terminal"),
-    Key([MOD], "m", lazy.spawn(Commands.menu), desc="Launch menu"),
-    Key([MOD], "p", lazy.spawn(Commands.passmenu), desc="Launch password menu"),
-    Key([MOD, CTRL], "f", lazy.spawn(Commands.browser), desc="Launch browser"),
-    Key([MOD, CTRL], "c", lazy.spawn(Commands.editor), desc="Launch editor"),
-    Key([MOD, SHIFT], "e", lazy.spawn(Commands.powermenu), desc="Launch power menu"),
-    Key([MOD, SHIFT], "Return", lazy.spawn(Commands.files), desc="Launch files"),
-    Key([MOD], "b", lazy.spawn(Commands.btop), desc="Launch btop"),
-    # Audio Settings
-    Key([], "XF86AudioMute", lazy.spawn("amixer set Master toggle")),
-    Key(
-        [],
-        "XF86AudioLowerVolume",
-        lazy.spawn("amixer set Master '5%-' unmute"),
-    ),
-    Key(
-        [],
-        "XF86AudioRaiseVolume",
-        lazy.spawn("amixer set Master '5%+' unmute"),
-    ),
-    # https://github.com/acrisci/playerctl/
-    Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
-    Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
-    Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
-    Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
-    # xBacklight
-    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set 5%+")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-")),
-]
-
-keys.extend(
-    [
-        ################
-        ## Key Chords ##
-        ################
-        # Grow windows. If current window is on the edge of screen and direction
-        # will be to screen edge - window would shrink.
-        KeyChord(
-            [MOD],
-            "r",
-            [
-                Key([], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-                Key([], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
-                Key([], "j", lazy.layout.grow_down(), desc="Grow window down"),
-                Key([], "k", lazy.layout.grow_up(), desc="Grow window up"),
-            ],
-            mode=True,
-            name="Resize Windows",
-        ),
-        KeyChord(
-            [MOD, CTRL],
-            "g",
-            [
-                Key([], "s", lazy.spawn("prime-run steam"), desc="Spawn steam"),
-                Key([], "m", lazy.spawn("prime-run minecraft"), desc="Spawn minecraft"),
-            ],
-            mode=False,
-            name="Launch Game",
-        ),
-        KeyChord(
-            [MOD],
-            "Print",
-            [
-                Key([], "w", lazy.spawn("win-shot -w"), desc="Screen Shot Window"),
-                Key([], "s", lazy.spawn("win-shot -s"), desc="Screen Shot Selected"),
-                Key([], "f", lazy.spawn("win-shot -f"), desc="Screen Shot Full"),
-            ],
-            mode=False,
-            name="Take a Screenshot",
-        ),
-    ]
-)
-
 ############
 ## Groups ##
 ############
 
 groups = Groups.groups
-
-for i in groups:
-    keys.extend(
-        [
-            Key([MOD], i.name, lazy.function(go_to_group(i.name))),
-            Key([MOD, "shift"], i.name, lazy.window.togroup(i.name)),
-        ]
-    )
 
 # Define scratchpads
 groups.append(
@@ -248,15 +116,19 @@ groups.append(
     )
 )
 
-# Scratchpad keybindings
-keys.extend(
-    [
-        Key([CTRL], "Return", lazy.group["Hyper_L"].dropdown_toggle("term")),
-        Key([ALT], "c", lazy.group["Hyper_L"].dropdown_toggle("clifm")),
-        Key([ALT], "b", lazy.group["Hyper_L"].dropdown_toggle("btop")),
-        Key([ALT], "v", lazy.group["Hyper_L"].dropdown_toggle("volume")),
-    ]
-)
+##################
+## Key Bindings ##
+##################
+
+keys = Keys.keys
+
+for i in groups:
+    keys.extend(
+        [
+            Key([Variables.MOD], i.name, lazy.function(go_to_group(i.name))),
+            Key([Variables.MOD, "shift"], i.name, lazy.window.togroup(i.name)),
+        ]
+    )
 
 
 ####################
@@ -303,7 +175,7 @@ layouts = [
         **layout_theme,
     ),
     # layout.TreeTab(**layout_theme,),
-    # layout.VerticalTile(**layout_theme,),
+    # layout.VerticVariables.ALTile(**layout_theme,),
     layout.Zoomy(
         **layout_theme,
     ),
@@ -422,15 +294,18 @@ screens = [
 ###################
 mouse = [
     Drag(
-        [MOD],
+        [Variables.MOD],
         "Button1",
         lazy.window.set_position_floating(),
         start=lazy.window.get_position(),
     ),
     Drag(
-        [MOD], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
+        [Variables.MOD],
+        "Button3",
+        lazy.window.set_size_floating(),
+        start=lazy.window.get_size(),
     ),
-    Click([MOD], "Button2", lazy.window.bring_to_front()),
+    Click([Variables.MOD], "Button2", lazy.window.bring_to_front()),
 ]
 
 ###################
