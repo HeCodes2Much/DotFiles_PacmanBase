@@ -3,7 +3,9 @@ from libqtile.lazy import lazy
 from os.path import expanduser
 import subprocess
 
-from colors import colorScheme, foregroundColor, backgroundColor
+from ext.multiColorTag import MultiColorTag
+
+from colors import colorScheme, widgetColors, foregroundColor, backgroundColor
 
 
 class Widgets(object):
@@ -35,7 +37,7 @@ class Widgets(object):
         ],
     )
 
-    groupBox1 = widget.GroupBox(
+    groupBox1 = MultiColorTag(
         margin_y=4,
         margin_x=4,
         padding_y=6,
@@ -48,7 +50,8 @@ class Widgets(object):
         rounded=False,
         highlight_method="line",
         highlight_color=backgroundColor,
-        this_current_screen_border=colorScheme[2],
+        tag_colors=widgetColors,
+        this_current_screen_border=widgetColors,
         this_screen_border=colorScheme[1],
         other_screen_border=colorScheme[6],
         other_current_screen_border=colorScheme[6],
@@ -60,7 +63,7 @@ class Widgets(object):
         use_mouse_wheel=True,
     )
 
-    groupBox2 = widget.GroupBox(
+    groupBox2 = MultiColorTag(
         margin_y=4,
         margin_x=4,
         padding_y=6,
@@ -73,7 +76,8 @@ class Widgets(object):
         rounded=False,
         highlight_method="line",
         highlight_color=backgroundColor,
-        this_current_screen_border=colorScheme[2],
+        tag_colors=widgetColors,
+        this_current_screen_border=widgetColors,
         this_screen_border=colorScheme[1],
         other_screen_border=colorScheme[6],
         other_current_screen_border=colorScheme[6],
