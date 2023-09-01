@@ -31,20 +31,20 @@ keys = [Key(*key) for key in [  # type: ignore
     ([mod, "shift"], "k", lazy.layout.shuffle_up()),
 
     # increase/decrease window size
-    ([mod], "i", lazy.layout.grow()),
-    ([mod], "m", lazy.layout.shrink()),
+    ([mod], "d", lazy.layout.grow()),
+    ([mod], "f", lazy.layout.shrink()),
 
     # window management
     ([mod, "shift"], "space", lazy.layout.flip()),
     ([mod], "o", lazy.layout.maximize()),
     ([mod], "n", lazy.layout.normalize()),
     ([mod], "q", lazy.window.kill()),
-    ([mod, "shift"], "space", lazy.window.toggle_fullscreen()),
+    ([mod, "control"], "space", lazy.window.toggle_fullscreen()),
 
     # floating window management
     ([mod], "space", lazy.window.toggle_floating()),
-    ([mod], "c", lazy.window.center()),
-    ([mod], "f", lazy.function(float_to_front)),
+    ([mod, "shift"], "c", lazy.window.center()),
+    ([mod], "x", lazy.function(float_to_front)),
 
     # toggle between layouts
     ([mod], "Tab", lazy.next_layout()),
@@ -59,7 +59,6 @@ keys = [Key(*key) for key in [  # type: ignore
     ([mod, "shift"], "Return", lazy.spawn(cfg.files)),
 
     # app launcher
-    ([mod], "r", lazy.spawn("rofi -show window")),
     ([mod], "m", lazy.spawn(cfg.menu)),
     ([mod], "p", lazy.spawn(cfg.passwords)),
     ([mod], "y", lazy.spawn(cfg.youtube)),

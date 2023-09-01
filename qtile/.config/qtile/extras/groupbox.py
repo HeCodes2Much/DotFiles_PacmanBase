@@ -1,6 +1,7 @@
 from libqtile.widget import base, groupbox
 
 from extras.drawer import framed
+from utils.palette import palette
 
 
 class GroupBox(groupbox.GroupBox):
@@ -99,9 +100,12 @@ class GroupBox(groupbox.GroupBox):
 
         def color(index: int) -> str:
             try:
-                return self.colors[index]
+                num_colors = len(self.colors)
+                effective_color_index = index % num_colors
+                if effective_color_index < len(self.colors):
+                    return self.colors[effective_color_index]
             except IndexError:
-                return "FFFFFF"
+                return palette.currentColor
 
         offset = self.margin_x
         for i, g in enumerate(self.groups):

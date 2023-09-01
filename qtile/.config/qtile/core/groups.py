@@ -3,7 +3,6 @@ from libqtile.config import Group, Key, Match, ScratchPad, DropDown
 from libqtile.lazy import lazy
 
 from core.keys import keys, mod
-from utils.match import wm_class
 
 groups: list[Group] = []
 
@@ -76,8 +75,6 @@ for key, label, layout, matches in [
             matches=matches,
             label=label,
             layout=layout,
-            persist=True,
-            exclusive=False,
         )
     )
 
