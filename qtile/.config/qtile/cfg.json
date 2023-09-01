@@ -1,0 +1,14 @@
+{
+  "bar": "shapes",
+  "bar2": "shapes",
+  "browser": "firefox",
+  "term": "alacritty",
+  "term2": "kitty",
+  "editor": "code",
+  "files": "nemo",
+  "menu": "menu",
+  "power": "powermenu_run",
+  "passwords": "passmenu",
+  "youtube": "youtube_subs",
+  "wallpaper": "~/.config/feh/backgrounds/Arch_Wallpaper-MM.png"
+}
