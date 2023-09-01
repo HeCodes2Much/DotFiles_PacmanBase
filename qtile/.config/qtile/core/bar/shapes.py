@@ -12,7 +12,7 @@ bar = {
     "border_width": 2,
     "margin": 5,
     "opacity": 1,
-    "size": 28,
+    "size": 24,
 }
 
 

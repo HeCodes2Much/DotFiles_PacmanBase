@@ -35,7 +35,7 @@ def start_once():
 
 @hook.subscribe.client_managed
 def auto_focus(window):
-    window.group.cmd_toscreen()
+    window.group.toscreen()
 
 
 @hook.subscribe.client_new
