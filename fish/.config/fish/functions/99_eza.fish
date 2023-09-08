@@ -1,10 +1,10 @@
 #list comamnds
 function l
-    exa $argv
+    eza $argv
 end
 
 function ls
-    exa $argv
+    eza $argv
 end
 
 function la
