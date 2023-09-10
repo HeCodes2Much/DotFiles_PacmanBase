@@ -10,9 +10,9 @@ bar = {
     "background": palette.backgroundColor,
     "border_color": palette.backgroundColor,
     "border_width": 2,
-    "margin": 2,
+    "margin": 5,
     "opacity": 1,
-    "size": 18,
+    "size": 24,
 }
 
 

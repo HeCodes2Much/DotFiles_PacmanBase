@@ -71,7 +71,7 @@ def volume(bg, fg) -> list:
         ),
         widget.Volume(
             **base(bg, fg),
-            **powerline("arrow_right"),
+            **powerline("arrow_left"),
             check_mute_command="pamixer --get-mute",
             check_mute_string="true",
             get_volume_command="pamixer --get-volume-human",
@@ -141,7 +141,7 @@ def cpu(bg, fg) -> list:
         ),
         widget.CPU(
             **base(bg, fg),
-            **powerline("arrow_right"),
+            **powerline("arrow_left"),
             format="{load_percent:.0f}%",
         ),
     ]

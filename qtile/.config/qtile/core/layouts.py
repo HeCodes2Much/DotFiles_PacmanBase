@@ -8,7 +8,7 @@ layout_theme = {
     "border_normal": palette.currentColor,
     "border_width": 2,
     "margin": 10,
-    "single_border_width": 0,
+    "single_border_width": 2,
     "single_margin": 10,
 }
 
