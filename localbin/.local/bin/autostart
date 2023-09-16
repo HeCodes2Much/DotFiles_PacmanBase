@@ -29,6 +29,14 @@ if command -v /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/n
   fi
 fi
 
+if command -v /usr/libexec/polkit-gnome-authentication-agent-1 &>/dev/null; then
+  if ! pgrep -f "/usr/libexec/polkit-gnome-authentication-agent-1" >/dev/null; then
+    /usr/libexec/polkit-gnome-authentication-agent-1 &
+  else
+    echo "polkit-gnome already Running"
+  fi
+fi
+
 if [[ $DESKTOP_SESSION == "i3" ]]; then
 
   if command -v polybar &>/dev/null; then

@@ -18,6 +18,7 @@ workspace_auto_back_and_forth yes
 set $TerminalEmulator alacritty
 set $WebBrowserB google-chrome-stable
 set $WebBrowserF firefox
+set $WebBrowserO opera
 set $FileManager nemo
 set $MailReader thunderbird
 set $TextEditor code
@@ -410,7 +411,7 @@ assign [class="(?i)Alacritty|Kitty"]                                            
 
 # Workspace $ws2
 assign [class="(?i)Emacs"]                                                      → $ws2
-assign [class="(?i)Code|Nvim"]                                               	→ $ws2
+assign [class="(?i)Code|Nvim"]                                               	  → $ws2
 
 # Workspace $ws3
 assign [class="(?i)Nemo"]                                                       → $ws3
@@ -423,7 +424,7 @@ assign [class="(?i)Xephyr"]                                                     
 assign [class="(?i)CmusImage"]                                                  → $ws5
 
 # Workspace $ws6
-assign [class="(?i)Firefox|Google-Chrome"]                                      → $ws6
+assign [class="(?i)Firefox|Google-Chrome|Opera"]                                → $ws6
 
 # Workspace $ws7
 assign [class="(?i)Mail|Thunderbird"]                                           → $ws7
@@ -507,9 +508,9 @@ $super_b+$control+b \
     $exe $WebBrowserB;focus
 
 ## Category: Applications;
-# Description: Launch $WebBrowserF;
+# Description: Launch $WebBrowserO;
 $super_b+$control+f \
-    $exe $WebBrowserF;focus
+    $exe $WebBrowserO;focus
 
 # workspace 7 related
 
