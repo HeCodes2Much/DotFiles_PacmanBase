@@ -16,7 +16,7 @@ for key, label, layout, matches in [
     (
         "2",
         "二",
-        "max",
+        None,
         Match(wm_class=re.compile("^Code.*|^Jetbrains.*", re.IGNORECASE)),
     ),
     (
@@ -28,43 +28,43 @@ for key, label, layout, matches in [
     (
         "4",
         "四",
-        "max",
+        None,
         Match(wm_class=re.compile("^Aseprite.*|^Krita.*", re.IGNORECASE)),
     ),
     (
         "5",
         "五",
-        "max",
+        None,
         Match(wm_class=re.compile("^CmusImage.*", re.IGNORECASE)),
     ),
     (
         "6",
         "六",
-        "max",
-        Match(wm_class=re.compile("^Firefox.*|^Brave.*", re.IGNORECASE)),
+        None,
+        Match(wm_class=re.compile("^Firefox.*|^Opera.*", re.IGNORECASE)),
     ),
     (
         "7",
         "七",
-        "max",
+        None,
         Match(wm_class=re.compile("^Mail.*|^Thunderbird.*", re.IGNORECASE)),
     ),
     (
         "8",
         "八",
-        "max",
+        None,
         Match(wm_class=re.compile("^Steam.*|^Minecraft.*|^0ad.*", re.IGNORECASE)),
     ),
     (
         "9",
         "九",
-        "max",
+        None,
         Match(wm_class=re.compile("^Discord.*", re.IGNORECASE)),
     ),
     (
         "0",
         "零",
-        "max",
+        None,
         Match(wm_class=re.compile("^Software.*|^Virt.*|^Btop.*", re.IGNORECASE)),
     ),
 ]:
@@ -92,7 +92,7 @@ for key, label, layout, matches in [
             [
                 DropDown(
                     "term",
-                    "kitty --name=scratch",
+                    "alacritty --class Scratch",
                     width=0.6,
                     height=0.6,
                     x=0.2,
@@ -101,7 +101,7 @@ for key, label, layout, matches in [
                 ),
                 DropDown(
                     "clifm",
-                    "kitty --name=clifm -e clifm",
+                    "alacritty --class CliFM -e clifm",
                     width=0.6,
                     height=0.6,
                     x=0.2,
@@ -110,7 +110,7 @@ for key, label, layout, matches in [
                 ),
                 DropDown(
                     "btop",
-                    "kitty --name=btop -e btop",
+                    "alacritty --class bTop -e btop",
                     width=0.6,
                     height=0.6,
                     x=0.2,
@@ -119,7 +119,7 @@ for key, label, layout, matches in [
                 ),
                 DropDown(
                     "volume",
-                    "pavucontrol",
+                    "PavuControl",
                     width=0.6,
                     height=0.6,
                     x=0.2,

@@ -10,7 +10,7 @@ margins = [sum(bar.margin) if bar else -1 for bar in bars]  # type: ignore
 configure = [
     "autostart",
     "youtube_subs -d",
-    "autorandr --load qtile",
+    # "autorandr --load qtile",
     "setxkbmap -option caps:escape",
 ]
 
