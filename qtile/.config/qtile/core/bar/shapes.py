@@ -66,7 +66,7 @@ def volume(bg, fg) -> list:
             **base(bg, fg),
             **icon_font(),
             **rectangle("left"),
-            text="",
+            text="󰖀",
             x=4,
         ),
         widget.Volume(
@@ -79,6 +79,26 @@ def volume(bg, fg) -> list:
             update_interval=0.1,
             volume_down_command="pamixer --decrease 5",
             volume_up_command="pamixer --increase 5",
+        ),
+    ]
+
+
+def backlight(bg, fg) -> list:
+    return [
+        modify(
+            TextBox,
+            **base(bg, fg),
+            **icon_font(),
+            **powerline("arrow_left"),
+            text="󰃟",
+            x=4,
+        ),
+        widget.Backlight(
+            **base(bg, fg),
+            **powerline("arrow_left"),
+            step=5,
+            backlight_name="intel_backlight",
+            change_command="brightnessctl set {}%",
         ),
     ]
 
@@ -220,23 +240,24 @@ def tray(bg, fg) -> list:
 def widgets():
     return [
         widget.Spacer(length=2),
-        menu(palette.colorScheme[2], palette.currentColor),
+        menu(palette.colorScheme[10], palette.currentColor),
         sep(palette.currentColor, offset=-8),
         groups(None),
         sep(palette.currentColor, offset=4, padding=4),
-        *volume(palette.colorScheme[3], palette.currentColor),
-        *updates(palette.colorScheme[12], palette.currentColor),
+        *volume(palette.colorScheme[11], palette.currentColor),
+        *backlight(palette.colorScheme[12], palette.currentColor),
+        *updates(palette.colorScheme[13], palette.currentColor),
         sep(palette.currentColor, offset=4, padding=4),
-        power(palette.colorScheme[1], palette.currentColor),
+        power(palette.colorScheme[9], palette.currentColor),
         widget.Spacer(),
         window_name(None, palette.foregroundColor),
         widget.Spacer(),
-        *cpu(palette.colorScheme[5], palette.currentColor),
-        *ram(palette.colorScheme[6], palette.currentColor),
-        *disk(palette.colorScheme[9], palette.currentColor),
+        *cpu(palette.colorScheme[11], palette.currentColor),
+        *ram(palette.colorScheme[12], palette.currentColor),
+        *disk(palette.colorScheme[13], palette.currentColor),
         sep(palette.currentColor),
         tray(None, palette.currentColor),
         sep(palette.currentColor),
-        *clock(palette.colorScheme[10], palette.currentColor),
+        *clock(palette.colorScheme[14], palette.currentColor),
         widget.Spacer(length=2),
     ]

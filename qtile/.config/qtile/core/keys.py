@@ -70,8 +70,8 @@ keys = [Key(*key) for key in [  # type: ignore
     ([mod], "c", lazy.spawn(cfg.editor)),
 
     # backlight
-    ([mod], "XF86AudioLowerVolume", lazy.spawn("brightnessctl set 5%-")),
-    ([mod], "XF86AudioRaiseVolume", lazy.spawn("brightnessctl set +5%")),
+    ([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-")),
+    ([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set 5%+")),
 
     # volume
     ([], "XF86AudioMute", lazy.spawn("pamixer --toggle-mute")),
