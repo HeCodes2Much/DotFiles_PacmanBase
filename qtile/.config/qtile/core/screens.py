@@ -8,12 +8,12 @@ screens = [
         wallpaper=cfg.wallpaper,
         wallpaper_mode="fill",
         top=Bar(cfg.bar).create(),
-        # bottom=Bar(cfg.bar2).create(),
+        bottom=Bar(cfg.bar2).create(),
     ),
-    Screen(
-        wallpaper=cfg.wallpaper,
-        wallpaper_mode="fill",
-        top=Bar(cfg.bar).create(),
-        # bottom=Bar(cfg.bar2).create(),
-    ),
+    # Screen(
+    #     wallpaper=cfg.wallpaper,
+    #     wallpaper_mode="fill",
+    #     top=Bar(cfg.bar).create(),
+    #     bottom=Bar(cfg.bar2).create(),
+    # ),
 ]

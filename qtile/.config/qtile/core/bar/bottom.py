@@ -1,10 +1,10 @@
-from libqtile.bar import CALCULATED
-from libqtile.lazy import lazy
-
 from core.bar.base import base, icon_font, powerline, rectangle
 from extras import Clock, GroupBox, TextBox, modify, widget
 from utils.config import cfg
 from utils.palette import palette
+
+from os.path import expanduser
+import subprocess
 
 bar = {
     "background": palette.backgroundColor,
@@ -53,10 +53,62 @@ def weather(bg, fg) -> list:
     ]
 
 
+def chords(bg, fg) -> list:
+    return [
+        widget.Chord(
+            **base(bg, fg),
+            fmt="{}",
+            chords_colors={
+                "Resize Windows": (fg, bg),
+                "Launch Game": (fg, bg),
+                "Take a Screenshot": (fg, bg),
+            },
+            name_transform=lambda name: name.upper(),
+        ),
+    ]
+
+
+def picom(bg, fg) -> list:
+    return [
+        modify(
+            TextBox,
+            **base(bg, fg),
+            **icon_font(),
+            **rectangle("left"),
+            offset=0,
+            padding=0,
+        ),
+        widget.GenPollText(
+            **base(bg, fg),
+            fmt="{}",
+            func=lambda: subprocess.check_output(
+                expanduser("~/.config/qtile/scripts/xcompmgr.sh")
+            ).decode("utf-8"),
+            mouse_callbacks={
+                "Button1": lambda: subprocess.run(
+                    expanduser("~/.config/qtile/scripts/xcompmgr-toggle.sh")
+                ),
+            },
+            update_interval=1,
+            padding=10,
+        ),
+        modify(
+            TextBox,
+            **base(bg, fg),
+            **icon_font(),
+            **rectangle("right"),
+            offset=0,
+            padding=0,
+        ),
+    ]
+
+
 def widgets():
     return [
         widget.Spacer(length=2),
         *weather(palette.colorScheme[1], palette.currentColor),
         widget.Spacer(),
+        *chords(palette.colorScheme[2], palette.currentColor),
+        *picom(palette.colorScheme[3], palette.currentColor),
         widget.Spacer(length=2),
     ]

@@ -115,6 +115,7 @@ def updates(bg, fg) -> list:
         widget.CheckUpdates(
             **base(bg, fg),
             **rectangle("right"),
+            mouse_callbacks={"Button1": lazy.spawn(cfg.term + " -e yay -Syu")},
             colour_have_updates=fg,
             colour_no_updates=fg,
             display_format="{updates} updates  ",
@@ -133,7 +134,10 @@ def power(bg, fg) -> TextBox:
         **base(bg, fg),
         **icon_font(),
         **rectangle(),
-        mouse_callbacks={"Button1": lazy.spawn(cfg.power)},
+        mouse_callbacks={
+            "Button1": lazy.spawn(cfg.power),
+            "Button3": lazy.spawn("qtile cmd-obj -o cmd -f restart"),
+        },
         offset=4,
         padding=7,
         text="",

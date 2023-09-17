@@ -2,7 +2,7 @@
 
 #The text that would change color
 if pgrep -x "xcompmgr" >/dev/null; then
-  echo -n "Loaded"
+  echo -n "xComp On"
 else
-  echo -n "UnLoaded"
+  echo -n "xComp Off"
 fi

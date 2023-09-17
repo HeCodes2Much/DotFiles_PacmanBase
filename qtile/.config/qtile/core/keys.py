@@ -93,12 +93,7 @@ keys.extend(
             "r",
             [
                 Key([], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-                Key(
-                    [],
-                    "l",
-                    lazy.layout.grow_right(),
-                    desc="Grow window to the right",
-                ),
+                Key([], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
                 Key([], "j", lazy.layout.grow_down(), desc="Grow window down"),
                 Key([], "k", lazy.layout.grow_up(), desc="Grow window up"),
             ],
