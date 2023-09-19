@@ -53,9 +53,12 @@ keys = [Key(*key) for key in [  # type: ignore
     ([mod, "control"], "b", lazy.hide_show_bar()),
     ([mod, "control"], "s", lazy.shutdown()),
     ([mod, "shift"], "r", restart),
+    ([mod, "shift"], "e", lazy.spawn(cfg.power)),
 
     # terminal
     ([mod], "Return", lazy.spawn(cfg.term)),
+
+    # file manager
     ([mod, "shift"], "Return", lazy.spawn(cfg.files)),
 
     # app launcher

@@ -1,7 +1,7 @@
 # ssh commands
 
 function chris
-    ssh linknsync@51.89.161.207
+    ssh linknsync@213.246.150.150
 end
 
 function sshme
