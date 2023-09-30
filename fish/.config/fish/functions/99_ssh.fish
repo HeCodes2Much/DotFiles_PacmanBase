@@ -5,5 +5,5 @@ function chris
 end
 
 function sshme
-    ssh opc@129.151.81.219
+    ssh ubuntu@129.151.81.74
 end

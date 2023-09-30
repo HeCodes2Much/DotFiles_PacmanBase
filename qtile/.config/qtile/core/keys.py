@@ -50,8 +50,8 @@ keys = [Key(*key) for key in [  # type: ignore
     ([mod], "Tab", lazy.next_layout()),
 
     # qtile stuff
-    ([mod, "control"], "b", lazy.hide_show_bar()),
-    ([mod, "control"], "s", lazy.shutdown()),
+    ([mod, "shift"], "b", lazy.hide_show_bar()),
+    ([mod, "shift"], "s", lazy.shutdown()),
     ([mod, "shift"], "r", restart),
     ([mod, "shift"], "e", lazy.spawn(cfg.power)),
 
@@ -67,10 +67,10 @@ keys = [Key(*key) for key in [  # type: ignore
     ([mod], "y", lazy.spawn(cfg.youtube)),
 
     # web browser
-    ([mod], "b", lazy.spawn(cfg.browser)),
+    ([mod, "control"], "b", lazy.spawn(cfg.browser)),
 
     # code editor
-    ([mod], "c", lazy.spawn(cfg.editor)),
+    ([mod, "control"], "e", lazy.spawn(cfg.editor)),
 
     # backlight
     ([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-")),

@@ -1,40 +1,39 @@
 #!/usr/bin/env bash
 
 network() {
-  # load colors
-  . $HOME/.config/flexiflow_bar/bar_themes/minimal-mistakes
+    drive=enp0s20f0u2
+    # load colors
+    . $HOME/.config/flexiflow_bar/bar_themes/minimal-mistakes
 
-  R1=$(cat /sys/class/net/wlan0/statistics/rx_bytes)
-  T1=$(cat /sys/class/net/wlan0/statistics/tx_bytes)
-  sleep 1
-  R2=$(cat /sys/class/net/wlan0/statistics/rx_bytes)
-  T2=$(cat /sys/class/net/wlan0/statistics/tx_bytes)
-  TBPS=$(expr $T2 - $T1)
-  RBPS=$(expr $R2 - $R1)
-  TKBPS=$(echo "$TBPS / 1024" | bc)
-  RKBPS=$(echo "$RBPS / 1024" | bc)
-  icon_up="  "
-  icon_down=" 󰖪 "
-  if [[ "$RKBPS" -gt "1024" ]]; then
-    RKBPS=$(echo "scale=2; $RKBPS / 1024" | bc)
-    RKBPS=" $RKBPS mb"
-  else
-    RKBPS=" $RKBPS kb"
-  fi
+    R1=$(cat /sys/class/net/"${drive}"/statistics/rx_bytes)
+    T1=$(cat /sys/class/net/"${drive}"/statistics/tx_bytes)
+    sleep 1
+    R2=$(cat /sys/class/net/"${drive}"/statistics/rx_bytes)
+    T2=$(cat /sys/class/net/"${drive}"/statistics/tx_bytes)
+    TBPS=$(expr $T2 - $T1)
+    RBPS=$(expr $R2 - $R1)
+    TKBPS=$(echo "$TBPS / 1024" | bc)
+    RKBPS=$(echo "$RBPS / 1024" | bc)
+    icon_up="  "
+    icon_down=" 󰖪 "
+    if [[ "$RKBPS" -gt "1024" ]]; then
+        RKBPS=$(echo "scale=2; $RKBPS / 1024" | bc)
+        RKBPS=" $RKBPS mb"
+    else
+        RKBPS=" $RKBPS kb"
+    fi
 
-  if [[ "$TKBPS" -gt "1024" ]]; then
-    TKBPS=$(echo "scale=2; $TKBPS / 1024" | bc)
-    TKBPS=" $TKBPS mb"
-  else
-    TKBPS=" $TKBPS kb"
-  fi
+    if [[ "$TKBPS" -gt "1024" ]]; then
+        TKBPS=$(echo "scale=2; $TKBPS / 1024" | bc)
+        TKBPS=" $TKBPS mb"
+    else
+        TKBPS=" $TKBPS kb"
+    fi
 
-  case "$(cat /sys/class/net/wl*/operstate 2>/dev/null)" in
-  up) printf " %s %s \n" "^c$Foreground^^b$Purple^$icon_up" "^c$Foreground^^b$Purple_Bright^ Connected" ;;
-  down) printf " %s %s \n" "^c$Foreground^^b$Purple^$icon_down" "^c$Foreground^^b$Purple_Bright^ Disconnected" ;;
-  esac
-
-  # printf " %s %s %s %s \n" "^c$Foreground^^b$Purple^$icon_down" "^c$Foreground^^b$Purple_Bright^ ${RKBPS^^}" "^c$Foreground^^b$Purple^$icon_up" "^c$Foreground^^b$Purple_Bright^ ${TKBPS^^}"
+    case "$(cat /sys/class/net/"${drive}"/operstate 2>/dev/null)" in
+    up) printf " %s %s \n" "^c$Foreground^^b$Purple^$icon_up" "^c$Foreground^^b$Purple_Bright^ Connected" ;;
+    down) printf " %s %s \n" "^c$Foreground^^b$Purple^$icon_down" "^c$Foreground^^b$Purple_Bright^ Disconnected" ;;
+    esac
 
 }
 
