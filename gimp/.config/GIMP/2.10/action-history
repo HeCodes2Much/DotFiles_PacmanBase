@@ -1,6 +1,6 @@
 # GIMP action-history
 
-(history-item "file-quit" 2)
+(history-item "file-quit" 3)
 (history-item "select-none" 3)
 (history-item "layers-new" 0)
 (history-item "tools-scale" 2)
@@ -8,9 +8,9 @@
 (history-item "file-export-as" 3)
 (history-item "image-new" 3)
 (history-item "python-fu-heal-selection" 0)
-(history-item "edit-paste" 1)
-(history-item "layers-duplicate" 0)
-(history-item "file-open" 2)
+(history-item "edit-paste" 0)
+(history-item "file-open" 1)
+(history-item "layers-duplicate" 2)
 (history-item "layers-alpha-selection-replace" 1)
 (history-item "windows-tab-position" 1)
 (history-item "tools-rotate" 0)

@@ -6,75 +6,89 @@ from core.keys import keys, mod
 
 groups: list[Group] = []
 
-for key, label, layout, matches in [
+for key, screen, label, layout, matches in [
     (
         "1",
-        "一",
+        "1",
+        "󰎤",
         "monadthreecol",
         Match(wm_class=re.compile("^Alacritty.*|^Kitty.*", re.IGNORECASE)),
     ),
     (
         "2",
-        "二",
+        "1",
+        "󰎧",
         None,
         Match(wm_class=re.compile("^Code.*|^Jetbrains.*", re.IGNORECASE)),
     ),
     (
         "3",
-        "三",
+        "1",
+        "󰎪",
         None,
         Match(wm_class=re.compile("^Nemo.*", re.IGNORECASE)),
     ),
     (
         "4",
-        "四",
+        "1",
+        "󰎭",
         None,
         Match(wm_class=re.compile("^Aseprite.*|^Krita.*", re.IGNORECASE)),
     ),
     (
         "5",
-        "五",
+        "1",
+        "󰎱",
         None,
         Match(wm_class=re.compile("^CmusImage.*", re.IGNORECASE)),
     ),
     (
         "6",
-        "六",
+        "2",
+        "󰎳",
         None,
         Match(wm_class=re.compile("^Firefox.*|^Opera.*", re.IGNORECASE)),
     ),
     (
         "7",
-        "七",
+        "2",
+        "󰎶",
         None,
         Match(wm_class=re.compile("^Mail.*|^Thunderbird.*", re.IGNORECASE)),
     ),
     (
         "8",
-        "八",
+        "2",
+        "󰎹",
         None,
         Match(wm_class=re.compile("^Steam.*|^Minecraft.*|^0ad.*", re.IGNORECASE)),
     ),
     (
         "9",
-        "九",
+        "2",
+        "󰎼",
         None,
         Match(wm_class=re.compile("^Discord.*", re.IGNORECASE)),
     ),
     (
         "0",
-        "零",
+        "2",
+        "󰎡",
         None,
         Match(wm_class=re.compile("^Software.*|^Virt.*|^Btop.*", re.IGNORECASE)),
     ),
 ]:
     groups.append(
         Group(
+            init=True,
+            persist=True,
+            exclusive=False,
             name=key,
             position=key,
             matches=matches,
             label=label,
             layout=layout,
+            screen_affinity=screen,
         )
     )
 
@@ -119,7 +133,7 @@ for key, label, layout, matches in [
                 ),
                 DropDown(
                     "volume",
-                    "PavuControl",
+                    "pavucontrol",
                     width=0.6,
                     height=0.6,
                     x=0.2,

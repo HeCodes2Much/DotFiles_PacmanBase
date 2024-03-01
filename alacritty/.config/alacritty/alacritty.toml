@@ -1,0 +1,72 @@
+[colors]
+transparent_background_colors = true
+
+[colors.bright]
+black = "0x434c5e"
+blue = "0xc5a6ff"
+cyan = "0xa6fffc"
+green = "0xa6ffa6"
+magenta = "0xffa6fc"
+red = "0xffa6a6"
+white = "0xe5e9f0"
+yellow = "0xffffa6"
+
+[colors.cursor]
+cursor = "0xe5e9f0"
+text = "0x283036"
+
+[colors.normal]
+black = "0x283036"
+blue = "0x9059ff"
+cyan = "0x59fff9"
+green = "0x59ff59"
+magenta = "0xff59f9"
+red = "0xff5959"
+white = "0xe5e9f0"
+yellow = "0xffff59"
+
+[colors.primary]
+background = "0x283036"
+foreground = "0xe5e9f0"
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 7.0
+
+[font.bold]
+family = "Hack Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hack Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "Hack Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[shell]
+program = "/bin/fish"
+
+[window]
+dynamic_padding = false
+opacity = 0.85
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 10
+y = 10

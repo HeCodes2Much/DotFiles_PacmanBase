@@ -56,6 +56,7 @@ def groups(bg) -> GroupBox:
         rainbow=True,
         hide_unused=True,
         use_mouse_wheel=True,
+        visible_groups=["6", "7", "8", "9", "0"],
     )
 
 
@@ -66,7 +67,7 @@ def volume(bg, fg) -> list:
             **base(bg, fg),
             **icon_font(),
             **rectangle("left"),
-            text="󰖀",
+            text="󰕾",
             x=4,
         ),
         widget.Volume(
@@ -259,8 +260,8 @@ def widgets():
         *cpu(palette.colorScheme[11], palette.currentColor),
         *ram(palette.colorScheme[12], palette.currentColor),
         *disk(palette.colorScheme[13], palette.currentColor),
-        sep(palette.currentColor),
-        tray(None, palette.currentColor),
+        # sep(palette.currentColor),
+        # tray(None, palette.currentColor),
         sep(palette.currentColor),
         *clock(palette.colorScheme[14], palette.currentColor),
         widget.Spacer(length=2),

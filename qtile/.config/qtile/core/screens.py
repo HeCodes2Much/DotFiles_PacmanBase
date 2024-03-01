@@ -7,13 +7,13 @@ screens = [
     Screen(
         wallpaper=cfg.wallpaper,
         wallpaper_mode="fill",
-        top=Bar(cfg.bar).create(),
-        bottom=Bar(cfg.bar2).create(),
+        top=Bar(cfg.mon0top).create(),
+        bottom=Bar(cfg.mon0bottom).create(),
     ),
-    # Screen(
-    #     wallpaper=cfg.wallpaper,
-    #     wallpaper_mode="fill",
-    #     top=Bar(cfg.bar).create(),
-    #     bottom=Bar(cfg.bar2).create(),
-    # ),
+    Screen(
+        wallpaper=cfg.wallpaper,
+        wallpaper_mode="fill",
+        top=Bar(cfg.mon1top).create(),
+        bottom=Bar(cfg.mon1bottom).create(),
+    ),
 ]

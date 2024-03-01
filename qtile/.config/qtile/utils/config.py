@@ -6,8 +6,10 @@ from os.path import exists, expanduser, join
 
 @dataclass
 class Config:
-    bar: str = "shapes"
-    bar2: str = ""
+    mon0top: str = "mon0top"
+    mon0bottom: str = "mon0bottom"
+    mon1top: str = "mon1top"
+    mon1bottom: str = "mon1bottom"
     browser: str = ""
     term: str = ""
     term2: str = ""
