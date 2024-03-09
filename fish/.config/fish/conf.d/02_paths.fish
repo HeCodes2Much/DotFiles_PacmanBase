@@ -1,5 +1,30 @@
 set PATH "$HOME/.local/bin:$PATH"
 
+
+# Adds `/opt/flutter/bin` to $PATH
+# set PATH so it includes user's private bin if it exists
+if test -d "/opt/flutter/bin"
+    set PATH "/opt/flutter/bin:$PATH"
+end
+
+# Adds `ANDROID_HOME/tools` to $PATH
+# set PATH so it includes user's private bin if it exists
+if test -d "$ANDROID_HOME/tools"
+    set PATH "$ANDROID_HOME/tools:$PATH"
+end
+
+# Adds `ANDROID_HOME/tools/bin` to $PATH
+# set PATH so it includes user's private bin if it exists
+if test -d "$ANDROID_HOME/tools/bin"
+    set PATH "$ANDROID_HOME/tools/bin:$PATH"
+end
+
+# Adds `ANDROID_HOME/platform-tools` to $PATH
+# set PATH so it includes user's private bin if it exists
+if test -d "$ANDROID_HOME/platform-tools"
+    set PATH "$ANDROID_HOME/platform-tools:$PATH"
+end
+
 # Adds `~/.config/composer/vendor/bin` to $PATH
 # set PATH so it includes user's private bin if it exists
 if test -d "$HOME/.config/composer/vendor/bin"
