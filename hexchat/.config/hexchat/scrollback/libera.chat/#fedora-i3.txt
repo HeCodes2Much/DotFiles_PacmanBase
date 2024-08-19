@@ -1,6 +1,0 @@
-T 1658813864 19*	Now talking on 22#fedora-i3
-T 1658813864 22*	Topic for 22#fedora-i3 is: welcome app (Meeting topic: i3-sig)
-T 1658813864 22*	Topic for 22#fedora-i3 set by 26zodbot!~supybot@fedora/bot/zodbot (24Thu Dec  9 18:20:14 2021)
-T 1659287390 19*	Now talking on 22#fedora-i3
-T 1659287390 22*	Topic for 22#fedora-i3 is: welcome app (Meeting topic: i3-sig)
-T 1659287390 22*	Topic for 22#fedora-i3 set by 26zodbot!~supybot@fedora/bot/zodbot (24Thu Dec  9 18:20:14 2021)

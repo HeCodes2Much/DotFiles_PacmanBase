@@ -1,9 +1,0 @@
-configuration {
-    modi: "wifimanager:wifimanager";
-    font: "Hack Nerd Font 12";
-}
-@theme "wifimanager"
-listview {
-	lines: 6;
-	columns: 1;
-}

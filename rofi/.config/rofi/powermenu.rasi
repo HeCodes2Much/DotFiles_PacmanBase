@@ -1,9 +1,0 @@
-configuration {
-    modi: "powermenu:powermenu";
-    font: "Hack Nerd Font 12";
-}
-@theme "powermenu"
-listview {
-	lines: 6;
-	columns: 1;
-}

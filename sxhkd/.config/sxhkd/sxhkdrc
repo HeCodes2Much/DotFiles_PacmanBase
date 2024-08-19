@@ -1,4 +1,0 @@
-## Category:  Main Keybinds;
-# Description: Kill a window;
-super + shift + c
-	bspc node -c
