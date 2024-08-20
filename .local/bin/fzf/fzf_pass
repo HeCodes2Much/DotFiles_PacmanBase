@@ -1,0 +1,115 @@
+#!/usr/bin/env bash
+# -*-coding:utf-8 -*-
+# Auto updated?
+#   Yes
+#File :
+#   fzf_pass
+#Author:
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github:
+#   https://github.com/The-Repo-Club/
+#
+# Created:
+#   Wed 10 March 2021, 12:34:47 PM [GMT]
+# Modified:
+#   Thu 20 October 2022, 06:02:31 AM [GMT+1]
+#
+# Description:
+#   fzf
+#
+# shellcheck disable=all
+
+shopt -s nullglob globstar
+
+typeit=0
+if [[ $1 == "--type" ]]; then
+    typeit=1
+    shift
+fi
+xdotool="xsel -b"
+
+
+STARTDIR=${PASSWORD_STORE_DIR-~/.password-store}
+BASEDIR=$STARTDIR
+DONE=0
+LEVEL=0
+PREVSELECTION=""
+SELECTION=""
+URL_FIELD='url'
+LOGIN_FIELD='login'
+
+while [ "$DONE" -eq 0 ] ; do
+    password_files=( "$STARTDIR"/* )
+    password_files=( "${password_files[@]#"$STARTDIR"/}" )
+    password_files=( "${password_files[@]%.gpg}" )
+
+    if [ "$LEVEL" -ne 0 ] ; then
+        password_files=(".." "${password_files[@]}")
+    fi
+    entry=$(printf ' %s\n' "${password_files[@]}" | fzf --prompt="Password Search: " --border=rounded --margin=1% --color=dark --height 100% --reverse --header="   PASSWORD MENU " --info=hidden --header-first)
+    entry=$(echo $entry | sed "s/ //")
+
+    if [ -z "$entry" ] ; then
+        DONE=1
+        exit
+    fi
+
+    if [ "$entry" != ".." ] ; then
+        PREVSELECTION=$SELECTION
+        SELECTION="$SELECTION/$entry"
+
+    # check if another dir
+    if [ -d "$STARTDIR/$entry" ] ; then
+        STARTDIR="$STARTDIR/$entry"
+        LEVEL=$((LEVEL+1))
+    else
+        # not a directory so it must be a real password entry
+
+        if [[ $typeit -eq 0 ]]; then
+            FIELDS=()
+            PASSWORD=$(pass show "$SELECTION" | head -1 | sed '/^$/d')
+            OTHER=$(pass show "$SELECTION" | awk -F: '(NR>1){ st = index($0,":");print $1 substr($0,st+1)}')
+            FIELDS+=" Password\n"
+            if [ ! -z "${OTHER}" ]; then
+                while read -r line; do
+                    FIELD=$(echo -e "$line" | awk '{print $1}')
+                    if [ "$FIELD" = "login" ]; then
+                        FIELDS+=" ${FIELD^}\n"
+                    elif [ "$FIELD" = "url" ]; then
+                        FIELDS+="爵 ${FIELD^^}\n"
+                    else
+                        FIELDS+=" ${FIELD^}\n"
+                    fi
+                done <<< "$OTHER"
+            fi
+
+            ENTRY_FIELD=$(echo -e "$FIELDS" | sed '/^$/d' | fzf --prompt="Password Settings: " --border=rounded --margin=1% --color=dark --height 100% --reverse --header="   PASSWORD MENU " --info=hidden --header-first)
+            if [[ $ENTRY_FIELD = *'Password' ]]; then
+                PASSWORD=$(pass show "$SELECTION" | sed "s/^[ \t]*//" | head -1 | sed '/^$/d')
+                echo -n "$PASSWORD" | $xdotool
+            elif [[ $ENTRY_FIELD = *'URL' ]]; then
+                URL=$(pass show "$SELECTION" | grep "${URL_FIELD}" | awk '{sub(/:/,"")}{print $2}1' | sed "s/^[ \t]*//" | head -1 | sed '/^$/d')
+                echo -n "$URL" | $xdotool
+            elif [[ $ENTRY_FIELD = *'Login' ]]; then
+                LOGIN=$(pass show "$SELECTION" | grep "${LOGIN_FIELD}" | awk '{sub(/:/,"")}{print $2}1' | sed "s/^[ \t]*//" | head -1 | sed '/^$/d')
+                echo -n "$LOGIN" | $xdotool
+            else
+                CUSTOM_FIELD=$(echo -e "$ENTRY_FIELD" | awk 'NF>1 {sub("^[^A-Z]*","")} {print}')
+                CUSTOM_FIELD=$(pass show "$SELECTION" | grep "${CUSTOM_FIELD,,}" | awk '{sub(/:/,"")}{first = $1; $1=""; print $0;}1' | sed "s/^[ \t]*//" | head -1 | sed '/^$/d')
+                echo -n "$CUSTOM_FIELD" | $xdotool
+            fi
+        else
+            xdotool - <<<"type --clearmodifiers -- $(pass show "$SELECTION" | head -n 1 | sed '/^$/d')"
+        fi
+        DONE=1
+    fi
+
+else
+    LEVEL=$((LEVEL-1))
+    SELECTION=$PREVSELECTION
+    STARTDIR="$BASEDIR/$SELECTION"
+  fi
+done
+
+
+

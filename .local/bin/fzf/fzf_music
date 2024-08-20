@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+#-*-coding:utf-8 -*-
+#Auto updated?
+#   Yes
+#File:
+#   fzf_music
+#Author:
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github:
+#   https://github.com/The-Repo-Club/
+#
+#Created:
+#   Wed 10 March 2021, 12:34:47 PM [GMT]
+#Modified:
+#   Mon 21 November 2022, 07:44:23 AM [GMT]
+#
+#Description:
+#   fzf music player
+#
+#Dependencies:
+#   fzf
+#
+
+REPOMENU_MUSICPLAYER="ffplay -nodisp -loglevel quiet"
+
+asksetting() {
+  playlist=$*
+  if [[ -z ${playlist} ]]; then
+    for Song in "$HOME"/Music/*; do
+      if [ -f "$Song" ]; then
+        Name=${Song##*/}
+        case $Name in
+        *.mp3 | *.flac | *.wav | .ogg)
+          options+=${Song##*/}$'\n'
+          ;;
+        esac
+      fi
+    done
+  else
+    for Song in "$playlist"/*; do
+      if [ -f "$Song" ]; then
+        Name=${Song##*/}
+        case $Name in
+        *.mp3 | *.flac | *.wav | *.ogg)
+          options+=${Song##*/}$'\n'
+          ;;
+        esac
+      fi
+    done
+  fi
+  echo -e "${options::-1}
+
+Close music player" | fzf --prompt="Song Search: " --border=rounded --margin=1% --color=dark --height 100% --reverse --header="   MUSIC MENU " --info=hidden --header-first
+}
+
+LOOPSETTING="true"
+while [ -n "$LOOPSETTING" ]; do
+  CHOICE="$(asksetting "$1")"
+  [ -n "$CHOICE" ] || exit
+  unset LOOPSETTING
+  case $CHOICE in
+  *.mp3 | *.flac | *.wav | *.ogg)
+    playlist=$*
+    if [[ -z ${playlist} ]]; then
+      folder=$HOME/Music
+    else
+      folder=$playlist
+    fi
+    $REPOMENU_MUSICPLAYER "$folder/$CHOICE" &
+    ;;
+  *Close*)
+    pkill "${REPOMENU_MUSICPLAYER%% *}" &
+    ;;
+  *)
+    echo "Program terminated." && exit
+    ;;
+  esac
+done

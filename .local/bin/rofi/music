@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+# -*-coding:utf-8 -*-
+# Auto updated?
+#   Yes
+#File :
+#   music
+#Author:
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github:
+#   https://github.com/The-Repo-Club/
+#
+# Created:
+#   Wed 10 March 2021, 12:34:47 PM [GMT]
+# Modified:
+#   Sat 05 August 2023, 11:57:57 PM [GMT+1]
+#
+# Description:
+#   <Todo>
+#
+# shellcheck disable=all
+
+MUSICPLAYER="mplayer"
+CURRENT_SONG=$(lsof -c "$MUSICPLAYER" | grep -F ".mp3" | awk -F"/" '{ print $NF; }' | cut -d'.' -f1)
+PLAYING_MSG="Currently Playing :: ${CURRENT_SONG}"
+MUSICDIR=$HOME/Music
+
+for Song in "$MUSICDIR/"*; do
+    if [ -f "$Song" ]; then
+        Name=${Song##*/}
+        case $Name in
+        *.mp3 | *.flac | *.wav | .ogg)
+            options+=${Song##*/}$'\n'
+            ;;
+        esac
+    fi
+done
+CHOICE=$(rofi -dmenu -no-custom -p "Muisc Player" -kb-custom-1 "Alt+Return" -mesg "${PLAYING_MSG}" "$@" <<ENDOPTS
+${options::-1}
+ENDOPTS
+)
+
+ret=$?
+
+if [[ $ret -eq 0 ]]; then
+    case $CHOICE in
+        *.mp3 | *.flac | *.wav | *.ogg)
+            if pgrep -f "$MUSICPLAYER" >/dev/null; then
+                killall -9 "$MUSICPLAYER"
+            fi
+            if [[ $MUSICPLAYER == "mplayer" ]]; then
+                $MUSICPLAYER -ao alsa "$MUSICDIR/$CHOICE" >> /dev/null &
+            else
+                $MUSICPLAYER "$MUSICDIR/$CHOICE" &
+            fi
+            ;;
+        *)
+            echo "Program terminated." && exit
+            ;;
+    esac
+elif [[ $ret -gt 1 ]]; then
+    if [[ $ret -eq 10 ]]; then
+        killall -9 "$MUSICPLAYER"
+    fi
+fi

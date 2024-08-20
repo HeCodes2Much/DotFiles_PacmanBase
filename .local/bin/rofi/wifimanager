@@ -1,0 +1,224 @@
+#!/usr/bin/env bash
+#-*-coding:utf-8 -*-
+#Auto updated?
+#   Yes
+#File:
+#   wifimanager
+#Author:
+#   The-Repo-Club [wayne6324@gmail.com]
+#Github:
+#   https://github.com/The-Repo-Club/
+#
+#Created:
+#   Wed 07 December 2022, 11:01:26 PM [GMT]
+#Modified:
+#   Mon 16 January 2023, 05:33:28 PM [GMT]
+#
+#Description:
+#   <Todo>
+#
+#Dependencies:
+#   rofi nmcli(Network Manager) dunst
+#
+# shellcheck disable=all
+
+if [ -z "${ROFI_OUTSIDE}" ]
+then
+    echo "run this script in rofi".
+    exit
+fi
+
+CACHE_DIR="$HOME/.cache/rofi/network"
+[ ! -d $CACHE_DIR ] && mkdir -p "$CACHE_DIR"
+
+station=$(nmcli device | grep "wifi " | awk '{ printf $1 }') # Device Station name
+
+function network_status () {
+	state=$(nmcli -fields WIFI g | sed -n 2p | xargs) # Wifi enbaled or disabled
+	connection=$(nmcli connection show --active | grep "wifi" | awk -F "wifi" '{ print $1 }' | sed -e '1{s/[^ ]\+\s*$//}')
+}
+
+# Don't allow custom entries
+echo -e "\0no-custom\x1ftrue"
+
+function network_options() {
+	if [[ "$state" == "enabled" ]]; then
+		if [ -z "$connection" ]; then
+			echo "-=|> Connect to a Network"
+            echo "-=|> Connect to a Hidden Network"
+            connection="N/A"
+		elif [ ! -z "$connection" ]; then
+			echo "-=|> Connect to a Network"
+            echo "-=|> Connect to a Hidden Network"
+			echo "-=|> Disconnect Current Network"
+		fi
+		echo "-=|> Disable Wifi"
+	elif [[ "$state" =~ "disabled" ]]; then
+		echo "-=|> Enable Wifi"
+	fi
+}
+
+function main_scrn() { # Main window to be displayed on start
+	rm $CACHE_DIR/* >/dev/null 2>&1
+	network_status
+    network_options
+    echo -en "\x00prompt\x1fWifi\n"
+    echo -en "\0message\x1fWIFI Status :: ${state^}\t\tConnected to :: ${connection}\n"
+	echo -en "-=|> Delete existing connections\n"
+	echo -en "-=|> Refresh\n"
+}
+
+function show_available_networks(){ # Output the list of available Wifi networks
+	nmcli -f BSSID,SSID device wifi list > "$CACHE_DIR/available_networks"
+    echo -en "\0message\x1f $(cat "$CACHE_DIR/available_networks" | sed '1!d')\n"
+    echo "$(cat "$CACHE_DIR/available_networks" | sed '1d')"
+    echo "-=|> Rescan available networks"
+    echo "<|=- To Previous Menu"
+}
+
+function saved_connections() {
+    echo "delete_network" > "$CACHE_DIR/delete_connection"
+    echo -en "\0message\x1f\t\t\t\t\t\t[Enter] - Delete selected connection\n"	
+    echo -en "UUID\t\t\t\t      TYPE\tNAME\0nonselectable\x1ftrue\n"
+    echo -en "\0active\x1f0\n"
+    nmcli --fields UUID,TYPE,NAME con show | grep wifi
+    echo "<|=- To Previous Menu"
+}
+
+function error_status() {
+    if [[ "$status" =~ "Connection successfully activated " ]]; then # If connected successfully, then notify and exit 
+        notify-send "Connected to " "$SSID"
+        exit 0
+    elif [[ "$status" =~ "Device '$station' successfully activated with " ]]; then # If connected successfully, then notify and exit 
+        notify-send "Network " "$(echo $status | cut -c 6-)"
+        rm $CACHE_DIR/*
+        exit 0
+    else
+        if [ -f $CACHE_DIR/network_ssid ]; then 
+            echo -en "\0message\x1f! Connection Failed. This is normal if connecting to a hidden network, Try again.\n"
+        elif [ -f $CACHE_DIR/network_bssid ]; then 
+            echo -en "\0message\x1f! Connection Failed! Check your password.\n"
+        fi
+        echo "$status" # If failed to connect, shows the error code and asks for password 
+        echo "<|=- To Previous Menu"
+    fi
+}
+
+function get_ssid() {
+    echo "hidden" > "$CACHE_DIR/get_ssid"
+    echo -en "\00prompt\x1fEnter SSID\n"
+    echo -en "\0message\x1f# Type your network SSID (Network Name).\n"
+    echo "<|=- To Previous Menu"
+}
+
+function get_password() {
+    echo -en "\00prompt\x1fPassword\n"
+    echo -en "\0message\x1f# Type your network security passphrase here.\n"
+    echo "<|=- To Previous Menu"
+}
+
+function restore_view() {
+    if [ -f $CACHE_DIR/delete_connection ]; then
+        saved_connections
+    elif [ -f $CACHE_DIR/available_networks ]; then
+        show_available_networks
+    elif [ -f $CACHE_DIR/network_selected ]; then
+        show_available_networks
+    elif [ -f $CACHE_DIR/get_ssid ]; then
+        get_ssid
+    elif [ -f $CACHE_DIR/network_bssid ] || [ -f $CACHE_DIR/network_ssid ]; then
+        get_password
+    else
+        main_scrn
+    fi
+}
+
+function show_previous_menu() {        
+    if [ -f $CACHE_DIR/network_bssid ]; then
+        rm $CACHE_DIR/network_bssid
+        show_available_networks
+    elif [ -f $CACHE_DIR/network_ssid ]; then
+        rm $CACHE_DIR/network_ssid
+        get_ssid
+    else
+        main_scrn
+    fi
+}
+
+if [[ "${ROFI_RETV}" == "0" ]]; then
+    main_scrn
+
+elif [[ "${ROFI_RETV}" == "1" ]]; then
+    if [[ "$@" == "<|=- To Previous Menu" ]]; then 
+        show_previous_menu
+    elif [[ "$@" == "-=|> Refresh" ]]; then
+        main_scrn
+    elif [[ "$@" == "-=|> Disable Wifi" ]]; then
+        nmcli radio wifi off
+        restore_view
+    elif [[ "$@" == "-=|> Enable Wifi" ]]; then
+        nmcli radio wifi on
+        restore_view
+    elif [[ "$@" == "-=|> Connect to a Network" ]]; then
+        show_available_networks
+    elif [[ "$@" == "-=|> Connect to a Hidden Network" ]]; then
+        get_ssid
+    elif [[ "$@" == "-=|> Disconnect Current Network" ]]; then # Disconnect any connected network
+        con_uuid=$(nmcli connection show --active | grep "wifi" | awk -F "wifi" '{print $1}' | awk '{print $NF}' | xargs)
+        nmcli connection down "$con_uuid" > /dev/null 2>&1
+        restore_view
+    elif [[ "$@" == "-=|> Delete existing connections" ]]; then # Opens the saved networks list window
+        saved_connections
+    elif [ -f $CACHE_DIR/delete_connection ]; then
+        connection_uuid=$(echo "$@" | awk '{print $1}')
+        nmcli con delete uuid "$connection_uuid" >/dev/null 2>&1
+        restore_view
+    elif [ -f $CACHE_DIR/available_networks ]; then
+        if [[ "$@" == "-=|> Rescan available networks" ]]; then
+            nmcli device wifi rescan >/dev/null 2>&1
+            restore_view
+        else
+            rm $CACHE_DIR/available_networks
+            echo "$@" > "$CACHE_DIR/network_selected"
+            BSSID=$(echo "$@" | awk '{print $1}')
+            SSID=$(echo "$@" | cut -c 20- | xargs)
+            SECURITY=$(nmcli -f BSSID,SECURITY device wifi | grep "$BSSID" | awk -F "  " '{print $2}' | xargs)
+            if [[ $(nmcli -f NAME con show | grep -o -m 1 "$SSID") == "$SSID" ]]; then
+                status=$(nmcli connection up "$SSID")
+                error_status
+                exit 0
+            elif [[ "$SECURITY" =~ "--" ]] || [ -z "$SECURITY" ]; then
+                nmcli device wifi connect "$BSSID" >/dev/null 2>&1
+                notify-send "Successfully connected to " "$SSID"
+            elif [[ "$SECURITY" =~ "WPA" ]] || [ "$SECURITY" =~ "WEP" ]; then
+                rm $CACHE_DIR/network_selected
+                echo "$BSSID" > "$CACHE_DIR/network_bssid"
+                get_password
+            fi
+        fi
+    fi
+
+elif [[ "${ROFI_RETV}" == "2" ]]; then
+    if [ -f $CACHE_DIR/get_ssid ]; then
+        rm $CACHE_DIR/get_ssid
+        echo "$@" > "$CACHE_DIR/network_ssid"
+        get_password
+    elif [ -f $CACHE_DIR/network_bssid ]; then
+        PASSWORD="$@"
+        BSSID=$(cat "$CACHE_DIR/network_bssid") 
+        status=$(nmcli device wifi connect "$BSSID" password "$PASSWORD")
+        error_status
+    elif [ -f $CACHE_DIR/network_ssid ]; then
+        PASSWORD="$@"
+        SSID=$(cat "$CACHE_DIR/network_ssid")
+        status=$(nmcli device wifi connect "$SSID" password "$PASSWORD" hidden true)
+        error_status
+    else
+        restore_view
+    fi
+
+else
+    restore_view
+    echo -en "\0message\x1f# Custom key events are not valid in this mode.\n"
+
+fi
