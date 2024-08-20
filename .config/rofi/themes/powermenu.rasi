@@ -1,0 +1,183 @@
+* {
+    background:                     #283036;
+    foreground:                     #e5e9f0;
+
+    active-background:              #434c5e;
+    active-foreground:              @foreground;
+    normal-background:              @background;
+    normal-foreground:              @foreground;
+    urgent-background:              #ff5959;
+    urgent-foreground:              @background;
+
+    alternate-active-background:    @active-background;
+    alternate-active-foreground:    @active-foreground;
+    alternate-normal-background:    @background;
+    alternate-normal-foreground:    @foreground;
+    alternate-urgent-background:    @background;
+    alternate-urgent-foreground:    @foreground;
+
+    selected-active-background:     #81a1c1;
+    selected-active-foreground:     @foreground;
+    selected-normal-background:     #434c5e;
+    selected-normal-foreground:     @foreground;
+    selected-urgent-background:     #ff5959;
+    selected-urgent-foreground:     @foreground;
+
+    background-color:               @background;
+    border-color:                   #59ff59;
+    spacing:                        2;
+
+    text-font:                      "Hack Nerd Font 12";
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+#window {
+    background-color: @background;
+    location: 0;
+    width: 30%;
+    padding: 2.5ch;
+    font: @text-font;
+}
+
+#mainbox {
+    border:  0;
+    padding: 0;
+}
+
+#message {
+    border: 2px 2px 2px;
+    border-color: @border-color;
+    padding: 5px;
+    margin: 0px 0px 8px 0px;
+}
+
+#textbox {
+    text-color: @foreground;
+}
+
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    background-color: @border-color;
+    padding: 2px;
+    margin: 0px 0px 10px 0px;
+}
+
+#prompt {
+    spacing: 0;
+    margin: 2px 6px 2px 6px;
+    background-color: @border-color;
+    text-color: @background;
+    padding: 4px;
+}
+
+#textbox-prompt-colon {
+    expand:     false;
+    str: "->";
+    text-color: @active-foreground;
+    padding: 5px;
+}
+
+#entry {
+    spacing: 0;
+    text-color: @normal-foreground;
+    padding: 5px;
+}
+
+#case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+#listview {
+    fixed-height: 0;
+    border: 2px 2px 2px 2px;
+    border-color: @border-color;
+    scrollbar: false;
+    padding: 5px;
+}
+
+#scrollbar {
+    width:        4px ;
+    border:       0;
+    handle-width: 8px ;
+    padding:      0;
+}
+
+#sidebar {
+    border: 2px 0px 0px;
+    border-color: @border-color;
+}
+
+#mode-switcher {
+    border:       2px 0px 0px ;
+    border-color: @border-color;
+}
+
+#button {
+    text-color: @normal-foreground;
+}
+
+#button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+#inputbar {
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    2px ;
+}
+
+#element {
+    border:  0;
+    padding: 6px ;
+}
+
+#element.normal.normal {
+    background-color: @normal-background;
+    text-color: @normal-foreground;
+}
+
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color: @urgent-foreground;
+}
+
+#element.normal.active {
+    background-color: @active-background;
+    text-color: @active-foreground;
+}
+
+#element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color: @selected-normal-foreground;
+}
+
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color: @selected-urgent-foreground;
+}
+
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color: @selected-active-foreground;
+}
+
+#element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color: @alternate-normal-foreground;
+}
+
+#element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color: @alternate-urgent-foreground;
+}
+
+#element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color: @alternate-active-foreground;
+}
