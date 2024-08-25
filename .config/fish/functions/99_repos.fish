@@ -6,9 +6,9 @@ function updaterepo
 
         switch $confirm
             case Y y
-                cd /run/media/wayne/Backup/.gitlabs/ArchLinux.Repo.063240.xyz/scripts/
+                cd /run/media/wayne/Backup/.gitlabs/ArchLinux_Repo/scripts/
                 python mkindex.py --header "arch.linuxrepos.org" ../x86_64 >../x86_64/index.html
-                cd /run/media/wayne/Backup/.gitlabs/ArchLinux.Repo.063240.xyz/
+                cd /run/media/wayne/Backup/.gitlabs/ArchLinux_Repo/
                 ./x86_64/updaterepo.sh $argv
                 cd $dirprev[1]
                 echoResponce "Arch repo has been updated."
@@ -25,10 +25,10 @@ function updatereadme
 
         switch $confirm
             case Y y
-                cd /run/media/wayne/Backup/.gitlabs/ArchLinux.Repo.063240.xyz/scripts/
+                cd /run/media/wayne/Backup/.gitlabs/ArchLinux_Repo/scripts/
                 python updatereadme.py
                 cd $dirprev[1]
-                cd /run/media/wayne/Backup/.gitlabs/ArchLinux.Repo.063240.xyz/x86_64/
+                cd /run/media/wayne/Backup/.gitlabs/ArchLinux_Repo/x86_64/
                 python updatereadme.py
                 cd $dirprev[1]
                 echoResponce "Arch readme has been updated."
